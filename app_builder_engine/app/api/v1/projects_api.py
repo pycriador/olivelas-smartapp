@@ -35,8 +35,8 @@ class ProjectCreateRequest(BaseModel):
     name: str = Field(..., min_length=2)
     description: str = ""
     domain: str = "Core Engineering"
-    owner: str = "willian.jesus@loft.com.br"
-    architecture: str = "Loft Standard Fullstack Architecture"
+    owner: str = "willian.jesus@olivelas.com.br"
+    architecture: str = "Olivelas Standard Fullstack Architecture"
     architecture_id: str = "arch_loft_standard_fullstack"
     blueprint_id: str | None = None
     template_id: str | None = None
@@ -137,7 +137,7 @@ async def create_project(
     service: ProjectService = Depends(get_project_service),
 ):
     rbac_service.require_permission("create", claims.get("role"))
-    actor_email = claims.get("email") or body.owner or "willian.jesus@loft.com.br"
+    actor_email = claims.get("email") or body.owner or "willian.jesus@olivelas.com.br"
     arch_obj = db.architectures.get(body.architecture_id)
     arch_name = arch_obj.name if arch_obj else body.architecture
 
@@ -219,7 +219,7 @@ async def update_project(
     db.projects[prj.id] = prj
 
 
-    actor_email = claims.get("email", "willian.jesus@loft.com.br")
+    actor_email = claims.get("email", "willian.jesus@olivelas.com.br")
     db.audit_logs.insert(
         0,
         AuditLog(
@@ -292,7 +292,7 @@ async def create_project_version(
     service: ProjectService = Depends(get_project_service),
 ):
     rbac_service.require_permission("update", claims.get("role"))
-    actor_email = claims.get("email", "willian.jesus@loft.com.br")
+    actor_email = claims.get("email", "willian.jesus@olivelas.com.br")
     snap = versioning_service.create_version_snapshot(
         entity_type="Project",
         entity_id=project_id,
@@ -311,7 +311,7 @@ async def restore_project_version(
     service: ProjectService = Depends(get_project_service),
 ):
     rbac_service.require_permission("restore", claims.get("role"))
-    actor_email = claims.get("email", "willian.jesus@loft.com.br")
+    actor_email = claims.get("email", "willian.jesus@olivelas.com.br")
     restored = versioning_service.restore_version(
         entity_type="Project",
         entity_id=project_id,

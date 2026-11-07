@@ -61,7 +61,7 @@ export const DashboardPage: React.FC = () => {
     <div className="space-y-6">
       <PageHeader
         title="Engineering Workspace"
-        subtitle="Central de governança, catálogos e composição de arquiteturas padronizadas Loft"
+        subtitle="Central de governança, catálogos e composição de arquiteturas padronizadas Olivelas"
         breadcrumbs={[
           { title: 'Engineering Workspace' },
           { title: 'Dashboard' },
@@ -99,7 +99,7 @@ export const DashboardPage: React.FC = () => {
                 <span>100% Homologado</span>
               </div>
               <div className="text-xs text-[#829AB1]">
-                Padrões Loft Portal & Copan Enforced
+                Padrões Olivelas Portal & Copan Enforced
               </div>
             </Col>
 

@@ -1,6 +1,6 @@
 ---
-id: REF-AIOPS-TEAM-006
-title: "AIOps — Stacks in use"
+id: REF-OLIVELAS-TEAM-006
+title: "Olivelas — Stacks in use"
 status: "DRAFT"
 owner: "aiops"
 updated: "2026-08-24"
@@ -15,7 +15,7 @@ review_date: "2026-11-24"
 >
 > Documentation Standard v1.0
 
-Summary of stacks in the AIOps catalog. **Full detail:** [../aiops-apps/README.md](../aiops-apps/README.md).
+Summary of stacks in the Olivelas catalog. **Full detail:** [../aiops-apps/README.md](../aiops-apps/README.md).
 
 ## Frontend (web apps)
 
@@ -34,14 +34,14 @@ Summary of stacks in the AIOps catalog. **Full detail:** [../aiops-apps/README.m
 
 | Capability | Apps |
 | --- | --- |
-| Flask + Gunicorn | DataForge, Deep Insight, Loft Carteiras |
+| Flask + Gunicorn | DataForge, Deep Insight, Olivelas Carteiras |
 | FastAPI + uvicorn | Qualidade |
 | slack-bolt (Socket Mode) | AVA |
 | PostgreSQL | All (RDS) |
 
 ## Infra and deploy
 
-| Layer | Loft pattern |
+| Layer | Olivelas pattern |
 | --- | --- |
 | CI/CD | GitHub Actions + `loft-br/actions/deploy@deploy/v1.8.0` |
 | Runtime | EKS (`cross`), `linux/arm64` |

@@ -1,13 +1,13 @@
 ---
-id: REF-AIOPS-TEAM-001
-title: "AIOps — Time"
+id: REF-OLIVELAS-TEAM-001
+title: "Olivelas — Time"
 status: "DRAFT"
 owner: "aiops"
 updated: "2026-08-24"
 review_date: "2026-11-24"
 ---
 
-# AIOps — Time
+# Olivelas — Time
 
 > Language: pt-BR | [English (EN)](../../en/aiops-team/README.md)
 >
@@ -17,7 +17,7 @@ review_date: "2026-11-24"
 
 > Prefere uma explicação em linguagem simples? Veja o [Guia](README-guia.md).
 
-Hub de documentação do **time AIOps** no espaço Confluence [AIOps](https://loftbr.atlassian.net/wiki/spaces/AIOps/folder/6086460456). Coexiste com a metodologia do framework de documentação neste repositório.
+Hub de documentação do **time Olivelas** no espaço Confluence [Olivelas](https://loftbr.atlassian.net/wiki/spaces/Olivelas/folder/6086460456). Coexiste com a metodologia do framework de documentação neste repositório.
 
 ## Modelo em três níveis
 
@@ -43,7 +43,7 @@ Publicação Confluence: perfil `documentacao-inicial.pt-BR.yaml` (parent `60864
 | [stacks.md](stacks.md) | Stacks utilizadas (resumo + pointers) |
 | [ways-of-working.md](ways-of-working.md) | Forma de trabalho — rituais e fluxos |
 | [technical-standards.md](technical-standards.md) | Padrões técnicos e links para metodologia |
-| [security.md](security.md) | Segurança transversal AIOps |
+| [security.md](security.md) | Segurança transversal Olivelas |
 | [observability.md](observability.md) | Observabilidade — Datadog e práticas |
 | [troubleshooting.md](troubleshooting.md) | Troubleshooting transversal |
 | [documentation-model.md](documentation-model.md) | Modelo de documentação em 3 níveis |
@@ -54,6 +54,6 @@ Publicação Confluence: perfil `documentacao-inicial.pt-BR.yaml` (parent `60864
 
 | Pack | Caminho | Confluence (parent) |
 | --- | --- | --- |
-| Apps (nível 2) | [../aiops-apps/](../aiops-apps/README.md) | [AIOps - Stack](https://loftbr.atlassian.net/wiki/spaces/AIOps/pages/6091309071) |
-| Infra Loft | [../loft-infra/](../loft-infra/README.md) | [Infra Loft](https://loftbr.atlassian.net/wiki/spaces/AIOps/pages/6090358809) |
-| Observabilidade | [../loft-observability/](../loft-observability/README.md) | (incluído no pack Infra Loft) |
+| Apps (nível 2) | [../aiops-apps/](../aiops-apps/README.md) | [Olivelas - Stack](https://loftbr.atlassian.net/wiki/spaces/Olivelas/pages/6091309071) |
+| Infra Olivelas | [../loft-infra/](../loft-infra/README.md) | [Infra Olivelas](https://loftbr.atlassian.net/wiki/spaces/Olivelas/pages/6090358809) |
+| Observabilidade | [../loft-observability/](../loft-observability/README.md) | (incluído no pack Infra Olivelas) |

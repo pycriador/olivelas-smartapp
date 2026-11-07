@@ -343,25 +343,25 @@ documents:
     updated: 2026-08-10
     authority: Informational
     tags: [templates]
-  - id: REF-LOFT-INFRA-001
+  - id: REF-OLIVELAS-INFRA-001
     path: loft-infra/README.md
-    title: Current Loft infra (AIOps)
+    title: Current Olivelas infra (Olivelas)
     type: Reference
     status: ACCEPTED
     owner: aiops
     updated: 2026-08-11
     authority: Verified
     tags: [loft-infra, aiops]
-  - id: REF-LOFT-INFRA-002
+  - id: REF-OLIVELAS-INFRA-002
     path: loft-infra/overview.md
-    title: Overview — publishing AIOps apps
+    title: Overview — publishing Olivelas apps
     type: Reference
     status: ACCEPTED
     owner: aiops
     updated: 2026-08-11
     authority: Verified
     tags: [loft-infra, aiops]
-  - id: REF-LOFT-INFRA-003
+  - id: REF-OLIVELAS-INFRA-003
     path: loft-infra/github-actions-deploy.md
     title: GitHub Actions — production deploy
     type: Reference
@@ -370,7 +370,7 @@ documents:
     updated: 2026-08-11
     authority: Verified
     tags: [loft-infra, aiops, cicd]
-  - id: REF-LOFT-INFRA-004
+  - id: REF-OLIVELAS-INFRA-004
     path: loft-infra/k8s-apps.md
     title: k8s-apps — Kubernetes / Argo CD config
     type: Reference
@@ -379,7 +379,7 @@ documents:
     updated: 2026-08-11
     authority: Verified
     tags: [loft-infra, aiops, kubernetes]
-  - id: REF-LOFT-INFRA-005
+  - id: REF-OLIVELAS-INFRA-005
     path: loft-infra/kong-gateway.md
     title: Kong — corp and external exposure
     type: Reference
@@ -388,25 +388,25 @@ documents:
     updated: 2026-08-11
     authority: Verified
     tags: [loft-infra, aiops, kong]
-  - id: REF-LOFT-INFRA-006
+  - id: REF-OLIVELAS-INFRA-006
     path: loft-infra/dockerfiles.md
-    title: Dockerfiles — AIOps patterns and examples
+    title: Dockerfiles — Olivelas patterns and examples
     type: Reference
     status: ACCEPTED
     owner: aiops
     updated: 2026-08-11
     authority: Verified
     tags: [loft-infra, aiops, docker]
-  - id: REF-LOFT-INFRA-007
+  - id: REF-OLIVELAS-INFRA-007
     path: loft-infra/checklist-novo-servico.md
-    title: Checklist — ship an AIOps service
+    title: Checklist — ship an Olivelas service
     type: Reference
     status: ACCEPTED
     owner: aiops
     updated: 2026-08-11
     authority: Informational
     tags: [loft-infra, aiops, checklist]
-  - id: REF-LOFT-INFRA-008
+  - id: REF-OLIVELAS-INFRA-008
     path: loft-infra/infra-live-route53.md
     title: infra-live — Route53 DNS (loft-corp.com.br)
     type: Reference
@@ -415,52 +415,52 @@ documents:
     updated: 2026-08-11
     authority: Verified
     tags: [loft-infra, aiops, dns, infra-live]
-  - id: REF-LOFT-INFRA-009
+  - id: REF-OLIVELAS-INFRA-009
     path: loft-infra/vault-secrets.md
-    title: Vault — secret configuration for AIOps apps
+    title: Vault — secret configuration for Olivelas apps
     type: Reference
     status: ACCEPTED
     owner: aiops
     updated: 2026-08-11
     authority: Verified
     tags: [loft-infra, aiops, vault, secrets]
-  - id: REF-LOFT-INFRA-010
+  - id: REF-OLIVELAS-INFRA-010
     path: loft-infra/publish-guide.md
-    title: Publish guide — AIOps apps on Loft infra
+    title: Publish guide — Olivelas apps on Olivelas infra
     type: Reference
     status: DRAFT
     owner: aiops
     updated: 2026-08-24
     authority: Informational
     tags: [loft-infra, aiops, publish, runbook]
-  - id: REF-LOFT-INFRA-011
+  - id: REF-OLIVELAS-INFRA-011
     path: loft-infra/examples/README.md
-    title: Examples — Loft infra publish templates
+    title: Examples — Olivelas infra publish templates
     type: Reference
     status: DRAFT
     owner: aiops
     updated: 2026-08-24
     authority: Informational
     tags: [loft-infra, aiops, examples, templates]
-  - id: REF-LOFT-OBS-001
+  - id: REF-OLIVELAS-OBS-001
     path: loft-observability/README.md
-    title: Loft observability — Datadog (as-is)
+    title: Olivelas observability — Datadog (as-is)
     type: Reference
     status: DRAFT
     owner: aiops
     updated: 2026-08-19
     review_date: 2026-11-19
     tags: [loft-observability, datadog, aiops]
-  - id: REF-LOFT-OBS-002
+  - id: REF-OLIVELAS-OBS-002
     path: loft-observability/overview.md
-    title: Overview — Datadog on Loft EKS
+    title: Overview — Datadog on Olivelas EKS
     type: Reference
     status: DRAFT
     owner: aiops
     updated: 2026-08-19
     review_date: 2026-11-19
     tags: [loft-observability, datadog, aiops]
-  - id: REF-LOFT-OBS-003
+  - id: REF-OLIVELAS-OBS-003
     path: loft-observability/documentation-prerequisites.md
     title: Documentation prerequisites — logs in Datadog
     type: Reference
@@ -469,7 +469,7 @@ documents:
     updated: 2026-08-19
     review_date: 2026-11-19
     tags: [loft-observability, datadog, aiops, logging]
-  - id: REF-LOFT-OBS-004
+  - id: REF-OLIVELAS-OBS-004
     path: loft-observability/k8s-datadog-enablement.md
     title: Kubernetes — Datadog enablement (web-server chart)
     type: Reference
@@ -478,7 +478,7 @@ documents:
     updated: 2026-08-19
     review_date: 2026-11-19
     tags: [loft-observability, datadog, kubernetes, aiops]
-  - id: REF-LOFT-OBS-005
+  - id: REF-OLIVELAS-OBS-005
     path: loft-observability/application-instrumentation.md
     title: Application instrumentation — Datadog APM
     type: Reference
@@ -487,7 +487,7 @@ documents:
     updated: 2026-08-19
     review_date: 2026-11-19
     tags: [loft-observability, datadog, aiops, apm]
-  - id: REF-LOFT-OBS-006
+  - id: REF-OLIVELAS-OBS-006
     path: loft-observability/structured-logging.md
     title: Structured logging for Datadog
     type: Reference
@@ -496,7 +496,7 @@ documents:
     updated: 2026-08-19
     review_date: 2026-11-19
     tags: [loft-observability, datadog, logging, aiops]
-  - id: REF-LOFT-OBS-007
+  - id: REF-OLIVELAS-OBS-007
     path: loft-observability/datadog-usage-guide.md
     title: Datadog usage guide (operators)
     type: Reference
@@ -505,7 +505,7 @@ documents:
     updated: 2026-08-19
     review_date: 2026-11-19
     tags: [loft-observability, datadog, aiops]
-  - id: REF-LOFT-OBS-008
+  - id: REF-OLIVELAS-OBS-008
     path: loft-observability/verification-checklist.md
     title: Verification checklist — post-deploy Datadog
     type: Reference
@@ -514,43 +514,43 @@ documents:
     updated: 2026-08-19
     review_date: 2026-11-19
     tags: [loft-observability, datadog, aiops, checklist]
-  - id: REF-AIOPS-APPS-001
+  - id: REF-OLIVELAS-APPS-001
     path: aiops-apps/README.md
-    title: AIOps Apps — application stacks
+    title: Olivelas Apps — application stacks
     type: Reference
     status: ACCEPTED
     owner: aiops
     updated: 2026-08-11
     authority: Verified
     tags: [aiops-apps, frontend, backend]
-  - id: REF-AIOPS-APPS-002
+  - id: REF-OLIVELAS-APPS-002
     path: aiops-apps/overview.md
-    title: AIOps project organization
+    title: Olivelas project organization
     type: Reference
     status: ACCEPTED
     owner: aiops
     updated: 2026-08-11
     authority: Verified
     tags: [aiops-apps]
-  - id: REF-AIOPS-APPS-003
+  - id: REF-OLIVELAS-APPS-003
     path: aiops-apps/frontend-stack.md
-    title: AIOps frontend stack
+    title: Olivelas frontend stack
     type: Reference
     status: ACCEPTED
     owner: aiops
     updated: 2026-08-11
     authority: Verified
     tags: [aiops-apps, frontend]
-  - id: REF-AIOPS-APPS-004
+  - id: REF-OLIVELAS-APPS-004
     path: aiops-apps/backend-stack.md
-    title: AIOps backend stack
+    title: Olivelas backend stack
     type: Reference
     status: ACCEPTED
     owner: aiops
     updated: 2026-08-11
     authority: Verified
     tags: [aiops-apps, backend]
-  - id: REF-AIOPS-APPS-005
+  - id: REF-OLIVELAS-APPS-005
     path: aiops-apps/routes.md
     title: Common routes — API and frontend
     type: Reference
@@ -559,16 +559,16 @@ documents:
     updated: 2026-08-11
     authority: Verified
     tags: [aiops-apps, routes]
-  - id: REF-AIOPS-APPS-006
+  - id: REF-OLIVELAS-APPS-006
     path: aiops-apps/security.md
-    title: Security in AIOps apps
+    title: Security in Olivelas apps
     type: Reference
     status: ACCEPTED
     owner: aiops
     updated: 2026-08-11
     authority: Verified
     tags: [aiops-apps, security]
-  - id: REF-AIOPS-APPS-007
+  - id: REF-OLIVELAS-APPS-007
     path: aiops-apps/ava-prod.md
     title: AVA — Slack recognition and feedback bot
     type: Reference
@@ -577,7 +577,7 @@ documents:
     updated: 2026-08-11
     authority: Verified
     tags: [aiops-apps, ava, slack]
-  - id: REF-AIOPS-APPS-008
+  - id: REF-OLIVELAS-APPS-008
     path: aiops-apps/dataforge.md
     title: DataForge — projects and data platform
     type: Reference
@@ -586,7 +586,7 @@ documents:
     updated: 2026-08-24
     review_date: 2026-11-24
     tags: [aiops-apps, dataforge]
-  - id: REF-AIOPS-APPS-009
+  - id: REF-OLIVELAS-APPS-009
     path: aiops-apps/deep-insight.md
     title: Deep Insight — knowledge and AI studio
     type: Reference
@@ -595,7 +595,7 @@ documents:
     updated: 2026-08-24
     review_date: 2026-11-24
     tags: [aiops-apps, deep-insight]
-  - id: REF-AIOPS-APPS-010
+  - id: REF-OLIVELAS-APPS-010
     path: aiops-apps/qualidade-loft.md
     title: Qualidade — knowledge base and surveys
     type: Reference
@@ -604,108 +604,108 @@ documents:
     updated: 2026-08-24
     review_date: 2026-11-24
     tags: [aiops-apps, qualidade]
-  - id: REF-AIOPS-APPS-011
+  - id: REF-OLIVELAS-APPS-011
     path: aiops-apps/loft-carteiras.md
-    title: Loft Carteiras — IAM and integrations
+    title: Olivelas Carteiras — IAM and integrations
     type: Reference
     status: DRAFT
     owner: aiops
     updated: 2026-08-24
     review_date: 2026-11-24
     tags: [aiops-apps, loft-carteiras]
-  - id: REF-AIOPS-TEAM-001
+  - id: REF-OLIVELAS-TEAM-001
     path: aiops-team/README.md
-    title: AIOps — Team hub
+    title: Olivelas — Team hub
     type: Reference
     status: DRAFT
     owner: aiops
     updated: 2026-08-24
     review_date: 2026-11-24
     tags: [aiops-team]
-  - id: REF-AIOPS-TEAM-002
+  - id: REF-OLIVELAS-TEAM-002
     path: aiops-team/documentation-model.md
-    title: AIOps documentation model — 3 levels
+    title: Olivelas documentation model — 3 levels
     type: Reference
     status: DRAFT
     owner: aiops
     updated: 2026-08-24
     review_date: 2026-11-24
     tags: [aiops-team, publishing]
-  - id: REF-AIOPS-TEAM-003
+  - id: REF-OLIVELAS-TEAM-003
     path: aiops-team/who-we-are.md
-    title: AIOps — Who we are
+    title: Olivelas — Who we are
     type: Reference
     status: DRAFT
     owner: aiops
     updated: 2026-08-24
     review_date: 2026-11-24
     tags: [aiops-team]
-  - id: REF-AIOPS-TEAM-004
+  - id: REF-OLIVELAS-TEAM-004
     path: aiops-team/responsibilities.md
-    title: AIOps — Responsibilities
+    title: Olivelas — Responsibilities
     type: Reference
     status: DRAFT
     owner: aiops
     updated: 2026-08-24
     review_date: 2026-11-24
     tags: [aiops-team]
-  - id: REF-AIOPS-TEAM-005
+  - id: REF-OLIVELAS-TEAM-005
     path: aiops-team/applications.md
-    title: AIOps — Applications and solutions
+    title: Olivelas — Applications and solutions
     type: Reference
     status: DRAFT
     owner: aiops
     updated: 2026-08-24
     review_date: 2026-11-24
     tags: [aiops-team, aiops-apps]
-  - id: REF-AIOPS-TEAM-006
+  - id: REF-OLIVELAS-TEAM-006
     path: aiops-team/stacks.md
-    title: AIOps — Stacks in use
+    title: Olivelas — Stacks in use
     type: Reference
     status: DRAFT
     owner: aiops
     updated: 2026-08-24
     review_date: 2026-11-24
     tags: [aiops-team]
-  - id: REF-AIOPS-TEAM-007
+  - id: REF-OLIVELAS-TEAM-007
     path: aiops-team/ways-of-working.md
-    title: AIOps — Ways of working
+    title: Olivelas — Ways of working
     type: Reference
     status: DRAFT
     owner: aiops
     updated: 2026-08-24
     review_date: 2026-11-24
     tags: [aiops-team]
-  - id: REF-AIOPS-TEAM-008
+  - id: REF-OLIVELAS-TEAM-008
     path: aiops-team/technical-standards.md
-    title: AIOps — Technical standards
+    title: Olivelas — Technical standards
     type: Reference
     status: DRAFT
     owner: aiops
     updated: 2026-08-24
     review_date: 2026-11-24
     tags: [aiops-team]
-  - id: REF-AIOPS-TEAM-009
+  - id: REF-OLIVELAS-TEAM-009
     path: aiops-team/security.md
-    title: AIOps — Security
+    title: Olivelas — Security
     type: Reference
     status: DRAFT
     owner: aiops
     updated: 2026-08-24
     review_date: 2026-11-24
     tags: [aiops-team, security]
-  - id: REF-AIOPS-TEAM-010
+  - id: REF-OLIVELAS-TEAM-010
     path: aiops-team/observability.md
-    title: AIOps — Observability
+    title: Olivelas — Observability
     type: Reference
     status: DRAFT
     owner: aiops
     updated: 2026-08-24
     review_date: 2026-11-24
     tags: [aiops-team, observability]
-  - id: REF-AIOPS-TEAM-011
+  - id: REF-OLIVELAS-TEAM-011
     path: aiops-team/troubleshooting.md
-    title: AIOps — Troubleshooting
+    title: Olivelas — Troubleshooting
     type: Reference
     status: DRAFT
     owner: aiops

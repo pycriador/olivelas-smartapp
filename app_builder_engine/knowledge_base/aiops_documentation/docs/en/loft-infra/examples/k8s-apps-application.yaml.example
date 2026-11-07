@@ -1,11 +1,11 @@
-# Example — Argo CD Application for an AIOps app on cross-prod
+# Example — Argo CD Application for an Olivelas app on cross-prod
 # Target path in loft-br/k8s-apps:
 #   clusters/cross-prod/applications/<namespace>.yaml
 #
 # Reference: clusters/cross-prod/applications/aiops-dataforge.yaml
 # Working copy: deploy/k8s/aiops-central.application.yaml
 #
-# Chart pin: AIOps apps currently use web-server 2.15.3 (same as DataForge / Qualidade).
+# Chart pin: Olivelas apps currently use web-server 2.15.3 (same as DataForge / Qualidade).
 # Confirm helm-charts-versions.yaml before bumping.
 
 apiVersion: argoproj.io/v1alpha1

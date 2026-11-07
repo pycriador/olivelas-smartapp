@@ -1,4 +1,4 @@
-# Visão geral — publicação de apps AIOps
+# Visão geral — publicação de apps Olivelas
 
 > Language: pt-BR | [English (EN)](../../en/loft-infra/overview.md)
 >
@@ -93,4 +93,4 @@ Exceção observada: [aiops-loft-carteira](https://github.com/loft-br/aiops-loft
 ## Relação com docs genéricos
 
 - Metodologia de deploy deste padrão: [../templates/deployment.md](../templates/deployment.md) (template).
-- Esta pasta descreve a **implementação Loft atual** para AIOps em `cross-prod`, não o template genérico.
+- Esta pasta descreve a **implementação Olivelas atual** para Olivelas em `cross-prod`, não o template genérico.

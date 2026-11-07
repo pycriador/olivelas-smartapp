@@ -1,5 +1,5 @@
 ---
-id: REF-AIOPS-APPS-012
+id: REF-OLIVELAS-APPS-012
 title: "DataForge — Plain-language guide"
 status: "DRAFT"
 owner: "aiops"
@@ -19,11 +19,11 @@ review_date: "2026-11-30"
 
 ## What it is
 
-DataForge is the internal platform where Loft squads organize **data projects**: they upload files, compare and reconcile information, and look up data dictionaries. It's also where administrators manage the service accounts used by automated integrations.
+DataForge is the internal platform where Olivelas squads organize **data projects**: they upload files, compare and reconcile information, and look up data dictionaries. It's also where administrators manage the service accounts used by automated integrations.
 
 ## Who it's for
 
-Internal squads that need to cross-check or validate data between systems use DataForge for that day to day. Administrators use the same platform to manage service access. It's a **corporate internal** tool — not aimed at Loft's external customers.
+Internal squads that need to cross-check or validate data between systems use DataForge for that day to day. Administrators use the same platform to manage service access. It's a **corporate internal** tool — not aimed at Olivelas's external customers.
 
 ## Why it matters
 
@@ -31,7 +31,7 @@ If DataForge goes down, the project and data-reconciliation flows of squads that
 
 ## How it works, in short
 
-Behind a web interface, DataForge has a visual part (what you see in the browser) and a back-end part that processes data and talks to the database where everything is stored. It also connects to internal Loft tooling for authentication, monitoring, and secrets — none of that needs to be understood to use the product, only to keep it running.
+Behind a web interface, DataForge has a visual part (what you see in the browser) and a back-end part that processes data and talks to the database where everything is stored. It also connects to internal Olivelas tooling for authentication, monitoring, and secrets — none of that needs to be understood to use the product, only to keep it running.
 
 ## Want to go deeper?
 

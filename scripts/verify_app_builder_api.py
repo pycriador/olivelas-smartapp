@@ -30,7 +30,7 @@ def run_tests():
 
     # 2. IAM Login
     print("   [TEST 2] Auth login...")
-    admin_user = os.getenv("LOFT_ADMIN_USER", "admin@loft.com.br")
+    admin_user = os.getenv("LOFT_ADMIN_USER", "admin@olivelas.com.br")
     admin_pass = os.getenv("LOFT_ADMIN_PASSWORD") or os.getenv("DEFAULT_ADMIN_PASSWORD", "admin_dev_pass")
     login_res = client.auth.login(admin_user, admin_pass)
     assert login_res.access_token, "No access token returned"

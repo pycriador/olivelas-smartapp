@@ -82,10 +82,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ appName, onExploreDash
     <div className="space-y-8 max-w-7xl mx-auto">
       <PageHeader
         title={appName}
-        subtitle="Apresentação institucional completa de produtos, garantias e soluções digitais Loft."
+        subtitle="Apresentação institucional completa de produtos, garantias e soluções digitais Olivelas."
         badge={
           <span className="bg-[#FFF2EC] text-[#F56738] border border-[#FDC4B2] text-xs font-bold px-2.5 py-1 rounded-full">
-            Loft Copan Design System
+            Olivelas Copan Design System
           </span>
         }
         actions={
@@ -115,7 +115,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ appName, onExploreDash
             Tecnologia e Segurança para <span className="text-[#F56738]">Transformar</span> o Mercado Imobiliário
           </h1>
           <p className="text-base md:text-lg text-[#627D98] leading-relaxed">
-            Oferecemos uma suíte completa de produtos integrados para locação, análise de crédito, CRM e repasses financeiros com a confiabilidade e padrão de qualidade Loft.
+            Oferecemos uma suíte completa de produtos integrados para locação, análise de crédito, CRM e repasses financeiros com a confiabilidade e padrão de qualidade Olivelas.
           </p>
           <div className="pt-2 flex flex-wrap items-center gap-4">
             <Button
@@ -190,7 +190,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ appName, onExploreDash
       <div className="space-y-4">
         <div>
           <h2 className="text-xl font-bold text-[#121619]">Soluções em Destaque</h2>
-          <p className="text-sm text-[#627D98]">Conheça os produtos do ecossistema Loft projetados para maximizar a sua operação.</p>
+          <p className="text-sm text-[#627D98]">Conheça os produtos do ecossistema Olivelas projetados para maximizar a sua operação.</p>
         </div>
 
         <Row gutter={[16, 16]}>

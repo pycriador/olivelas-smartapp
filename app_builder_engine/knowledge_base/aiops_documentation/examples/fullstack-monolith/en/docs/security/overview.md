@@ -45,7 +45,7 @@ Illustrative roles; scopes `global|group|own|none`; granular permission evaluati
 
 ## Secrets
 
-Never in docs. Env/secret store only. Loft secrets practice may apply as org convention — not a requirement of this framework.
+Never in docs. Env/secret store only. Olivelas secrets practice may apply as org convention — not a requirement of this framework.
 
 ## Related
 

@@ -552,7 +552,7 @@ export const BlueprintWorkshopPage: React.FC = () => {
                 )}
               </div>
               <p className="text-xs text-loft-muted leading-relaxed">
-                Acelere o desenvolvimento pré-carregando um <b>Template Canônico da Loft</b> ou um <b>Blueprint Existente</b>. O Workshop preencherá automaticamente a arquitetura, módulos, componentes Copan e Golden Rules associadas para você editar somente o que for necessário.
+                Acelere o desenvolvimento pré-carregando um <b>Template Canônico da Olivelas</b> ou um <b>Blueprint Existente</b>. O Workshop preencherá automaticamente a arquitetura, módulos, componentes Copan e Golden Rules associadas para você editar somente o que for necessário.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
@@ -564,7 +564,7 @@ export const BlueprintWorkshopPage: React.FC = () => {
                   <Select
                     showSearch
                     allowClear
-                    placeholder="Selecione um Template Loft..."
+                    placeholder="Selecione um Template Olivelas..."
                     className="w-full"
                     value={selectedPreloadTplId}
                     onChange={handlePreloadTemplate}
@@ -987,7 +987,7 @@ export const BlueprintWorkshopPage: React.FC = () => {
                         readOnly
                         rows={6}
                         className="w-full p-3 font-mono text-xs bg-[#FAFBFD] border border-loft-border rounded-lg"
-                        value={`Você é o agente de engenharia da Loft. Construa a aplicação "${builtBlueprint.name}" com arquitetura "${builtBlueprint.architecture_id}".\n\nMódulos:\n- ${builtBlueprint.modules.join('\n- ')}\n\nComponentes Copan:\n- ${builtBlueprint.components.join('\n- ')}\n\nRegras Mandatórias:\n- ${builtBlueprint.rules.join('\n- ')}`}
+                        value={`Você é o agente de engenharia da Olivelas. Construa a aplicação "${builtBlueprint.name}" com arquitetura "${builtBlueprint.architecture_id}".\n\nMódulos:\n- ${builtBlueprint.modules.join('\n- ')}\n\nComponentes Copan:\n- ${builtBlueprint.components.join('\n- ')}\n\nRegras Mandatórias:\n- ${builtBlueprint.rules.join('\n- ')}`}
                       />
                     </div>
                   ),

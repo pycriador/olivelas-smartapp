@@ -1,6 +1,6 @@
 ---
-id: REF-AIOPS-TEAM-003
-title: "AIOps — Quem somos"
+id: REF-OLIVELAS-TEAM-003
+title: "Olivelas — Quem somos"
 status: "DRAFT"
 owner: "aiops"
 updated: "2026-08-24"
@@ -15,13 +15,13 @@ review_date: "2026-11-24"
 >
 > Documentation Standard v1.0
 
-## Squad AIOps
+## Squad Olivelas
 
 | Campo | Valor |
 | --- | --- |
 | Identificador k8s / deploy | `squad-ai-ops` ou `squad-infosec` (por app) — **Confirmed** em [`aiops-apps/overview.md`](../aiops-apps/overview.md) |
 | Product (AWS / Vault) | `ai-ops` — **Confirmed** |
-| Espaço Confluence | [AIOps](https://loftbr.atlassian.net/wiki/spaces/AIOps/) |
+| Espaço Confluence | [Olivelas](https://loftbr.atlassian.net/wiki/spaces/Olivelas/) |
 
 ## Missão
 

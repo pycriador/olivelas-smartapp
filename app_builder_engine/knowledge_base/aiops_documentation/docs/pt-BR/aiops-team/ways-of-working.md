@@ -1,6 +1,6 @@
 ---
-id: REF-AIOPS-TEAM-007
-title: "AIOps — Forma de trabalho"
+id: REF-OLIVELAS-TEAM-007
+title: "Olivelas — Forma de trabalho"
 status: "DRAFT"
 owner: "aiops"
 updated: "2026-08-24"
@@ -15,21 +15,21 @@ review_date: "2026-11-24"
 >
 > Documentation Standard v1.0
 
-Rituais, fluxos de entrega e práticas do time AIOps.
+Rituais, fluxos de entrega e práticas do time Olivelas.
 
 ## Desenvolvimento
 
 | Prática | Detalhe | Classificação |
 | --- | --- | --- |
-| Code review | Obrigatório antes de merge — princípio Loft de melhoria contínua | **Inferred** (padrão org) |
-| Idioma no código | Inglês em código, commits e APIs | **Confirmed** (Loft language standards) |
+| Code review | Obrigatório antes de merge — princípio Olivelas de melhoria contínua | **Inferred** (padrão org) |
+| Idioma no código | Inglês em código, commits e APIs | **Confirmed** (Olivelas language standards) |
 | UI end-user | Português brasileiro | **Confirmed** |
 | Testes | Automatizados exigidos para código novo | **Inferred** (padrão org) |
 | Lint/format | Seguir ferramentas do projeto (`ruff`, ESLint, etc.) | **Confirmed** |
 
 ## Deploy
 
-Ordem típica para novo serviço AIOps: workflows → Dockerfiles → k8s-apps → Kong → DNS → Vault → Datadog → validação.
+Ordem típica para novo serviço Olivelas: workflows → Dockerfiles → k8s-apps → Kong → DNS → Vault → Datadog → validação.
 
 Checklist: [../loft-infra/checklist-novo-servico.md](../loft-infra/checklist-novo-servico.md).
 

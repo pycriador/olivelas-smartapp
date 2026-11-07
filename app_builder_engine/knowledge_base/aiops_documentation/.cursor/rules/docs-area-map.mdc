@@ -22,9 +22,9 @@ Canonical knowledge is in **`.md` files**. Use this table to open the right entr
 | Governance / validation | `docs/en/governance.md`, `docs/en/automation-commands.md`, `Makefile` `docs-validate` |
 | Documentation debt | `docs/en/documentation-debt.md` |
 | Changelog | `docs/en/changelog-policy.md` |
-| As-is: Loft infra publish path | `docs/en/loft-infra/README.md` (start: `publish-guide.md`, `examples/`) |
-| As-is: Loft Datadog observability | `docs/en/loft-observability/README.md` |
-| As-is: AIOps apps | `docs/en/aiops-apps/README.md` |
+| As-is: Olivelas infra publish path | `docs/en/loft-infra/README.md` (start: `publish-guide.md`, `examples/`) |
+| As-is: Olivelas Datadog observability | `docs/en/loft-observability/README.md` |
+| As-is: Olivelas apps | `docs/en/aiops-apps/README.md` |
 | Templates | `docs/en/templates/` |
 | Examples | `examples/README.md` |
 | Optional Confluence publish | `docs-sync/README.md`, `docs/en/publishing-surfaces.md` |

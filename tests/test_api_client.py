@@ -84,14 +84,14 @@ def test_api_client_with_testclient():
 
     # 2. IAM Login
     import os
-    admin_user = os.getenv("LOFT_ADMIN_USER", "admin@loft.com.br")
+    admin_user = os.getenv("LOFT_ADMIN_USER", "admin@olivelas.com.br")
     admin_password = os.getenv("LOFT_ADMIN_PASSWORD", "test_admin_pass")
     login = client.auth.login(admin_user, admin_password)
     assert login.access_token is not None
 
     # 3. AI Blueprint Composition
     blueprint = client.ai.compose_blueprint(
-        name="Loft Teste App",
+        name="Olivelas Teste App",
         description="Aplicação de teste",
         requirements=["Autenticação JWT", "Tabela de Propostas", "App Switcher Copan"],
     )
@@ -106,7 +106,7 @@ def test_api_client_with_testclient():
 
     # 5. Project Registration
     project = client.projects.create_project(
-        name="Loft Teste App",
+        name="Olivelas Teste App",
         description="Aplicação de teste",
         template_id="tpl_loft_partner_portal",
     )
@@ -115,7 +115,7 @@ def test_api_client_with_testclient():
     # 6. Scaffolding in Temporary Directory
     with tempfile.TemporaryDirectory() as tmp_dir:
         scaffolder = ApplicationScaffolder(target_dir=tmp_dir)
-        summary = scaffolder.scaffold(blueprint=blueprint, app_name="Loft Teste App")
+        summary = scaffolder.scaffold(blueprint=blueprint, app_name="Olivelas Teste App")
 
         assert summary["status"] == "success"
         assert summary["files_created_count"] >= 15

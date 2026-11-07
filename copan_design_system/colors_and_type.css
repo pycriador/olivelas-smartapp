@@ -1,5 +1,5 @@
 /* ============================================================
-   Copan Design System — Loft
+   Copan Design System — Olivelas
    Base color + type tokens.
    Source of truth: Copan-Components.fig + Copan-Foundation.fig
    Font policy: Inter only (official rule: "apenas a família Inter").
@@ -89,7 +89,7 @@
   --copan-informative-500: #4B94C5;  /* informative · azul */
   --copan-informative-700: #1F4E73;
 
-  /* Premium — for Loft-owned listings */
+  /* Premium — for Olivelas-owned listings */
   --copan-premium-500:  #BD7B00;
   --copan-sand-300:     #E4B266;
 

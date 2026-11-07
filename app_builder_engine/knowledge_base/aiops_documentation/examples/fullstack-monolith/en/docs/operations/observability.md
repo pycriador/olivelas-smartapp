@@ -31,7 +31,7 @@ version: "1.0"
 
 ## Organizational platform (optional)
 
-Datadog may be expected in Loft orgs. That is an **organizational convention**, **not** a requirement of the Engineering Documentation Standard.
+Datadog may be expected in Olivelas orgs. That is an **organizational convention**, **not** a requirement of the Engineering Documentation Standard.
 
 | Field | Value |
 | --- | --- |

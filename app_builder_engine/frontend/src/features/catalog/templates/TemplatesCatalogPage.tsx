@@ -301,7 +301,7 @@ export const TemplatesCatalogPage: React.FC = () => {
     <div className="space-y-6">
       <PageHeader
         title="Catálogo de Templates Certificados"
-        subtitle="Blueprints pré-configurados para novos projetos na Loft: Portais, Backoffices, Microserviços e Dashboards. CRUD completo e versionamento SemVer."
+        subtitle="Blueprints pré-configurados para novos projetos na Olivelas: Portais, Backoffices, Microserviços e Dashboards. CRUD completo e versionamento SemVer."
         breadcrumbs={[
           { title: 'Catálogo', href: '/catalog' },
           { title: 'Templates' },
@@ -615,7 +615,7 @@ export const TemplatesCatalogPage: React.FC = () => {
                 label="Nome do Template"
                 rules={[{ required: true, message: 'Informe o nome' }]}
               >
-                <Input placeholder="Ex: Loft Partner Portal Starter" />
+                <Input placeholder="Ex: Olivelas Partner Portal Starter" />
               </Form.Item>
             </Col>
             <Col span={8}>

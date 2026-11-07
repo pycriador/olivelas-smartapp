@@ -1,12 +1,12 @@
-# 🏢 Loft AI Copilot Support
+# 🏢 Olivelas AI Copilot Support
 
-> Página de chatbot sem banco de dados, somente mock, com design padrão Loft Copan  
-> Desenvolvido e governado através do **Loft App Builder Engine** e **Copan Design System**.
+> Página de chatbot sem banco de dados, somente mock, com design padrão Olivelas Copan  
+> Desenvolvido e governado através do **Olivelas App Builder Engine** e **Copan Design System**.
 
 ---
 
 ## 🛠️ Stack Tecnológica & Arquitetura
-- **Design System:** Copan Design System (Ant Design v5 + Loft Brand Tokens `#F56738`)
+- **Design System:** Copan Design System (Ant Design v5 + Olivelas Brand Tokens `#F56738`)
 - **Frontend:** React 19 + TypeScript + Vite + Tailwind CSS + TanStack Query
 - **Backend:** FastAPI (Python 3.11+) + Pydantic v2 + SQLite / SQLAlchemy 2.x
 - **Governança:** Zero Trust, RBAC, Rate Limiting, Audit Trail e Contratos OpenAPI

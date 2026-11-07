@@ -1,5 +1,5 @@
 /* ============================================================
-   Copan Design System — Loft Portal Standard
+   Copan Design System — Olivelas Portal Standard
    Base color + semantic tokens + portal components
    ============================================================ */
 
@@ -9,7 +9,7 @@
   --copan-orange-200:  #FFD9C7;
   --copan-orange-400:  #FFA782;
   --copan-orange-500:  #FF774A;
-  --copan-orange-550:  #F56738;   /* Primary Loft Brand CTA */
+  --copan-orange-550:  #F56738;   /* Primary Olivelas Brand CTA */
   --copan-orange-600:  #D94616;   /* Primary Hover / Press */
   --copan-orange-800:  #8A2606;
 

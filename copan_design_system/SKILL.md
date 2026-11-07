@@ -1,6 +1,6 @@
 ---
 name: loft-design
-description: Use this skill to generate well-branded interfaces and assets for Loft, either for production or throwaway prototypes/mocks/etc. Contains essential design guidelines, colors, type, fonts, assets, and UI kit components for prototyping with the Copan design system.
+description: Use this skill to generate well-branded interfaces and assets for Olivelas, either for production or throwaway prototypes/mocks/etc. Contains essential design guidelines, colors, type, fonts, assets, and UI kit components for prototyping with the Copan design system.
 user-invocable: true
 ---
 
@@ -10,7 +10,7 @@ Key files:
 - `README.md` — brand context, voice, visual foundations, iconography
 - `colors_and_type.css` — drop-in CSS custom properties for all color + type tokens
 - `preview/*.html` — small reference cards for each foundation + component
-- `ui_kits/marketing-site/` — click-through recreation of Loft's browse/search surface
+- `ui_kits/marketing-site/` — click-through recreation of Olivelas's browse/search surface
 - `assets/` — logos and imagery
 
 If creating visual artifacts (slides, mocks, throwaway prototypes, etc), copy assets out and create static HTML files for the user to view. Reference `colors_and_type.css` via `<link>` rather than inlining tokens. If working on production code, you can copy assets and read the rules here to become an expert in designing with this brand.

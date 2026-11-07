@@ -1,4 +1,4 @@
-# Guia de publicação — apps AIOps na infra Loft
+# Guia de publicação — apps Olivelas na infra Olivelas
 
 > Language: pt-BR | [English (EN)](../../en/loft-infra/publish-guide.md)
 >
@@ -8,7 +8,7 @@
 >
 > Authority: Informational
 
-Runbook operacional para publicar (ou re-publicar) um app AIOps no modelo atual: GitHub Actions → ECR → `k8s-apps` → Kong → DNS → Vault → CORS.
+Runbook operacional para publicar (ou re-publicar) um app Olivelas no modelo atual: GitHub Actions → ECR → `k8s-apps` → Kong → DNS → Vault → CORS.
 
 Detalhes as-is por tópico: [overview.md](overview.md), [github-actions-deploy.md](github-actions-deploy.md), [dockerfiles.md](dockerfiles.md), [vault-secrets.md](vault-secrets.md), [k8s-apps.md](k8s-apps.md), [kong-gateway.md](kong-gateway.md), [infra-live-route53.md](infra-live-route53.md).
 
@@ -25,7 +25,7 @@ Detalhes as-is por tópico: [overview.md](overview.md), [github-actions-deploy.m
 | Só front | só front | `Dockerfile` na raiz |
 | Só API | só api | `Dockerfile` na raiz **ou** `backend/Dockerfile` (ajuste `context` / `dockerfile` no workflow) |
 
-## Nomes (padrão AIOps / Cross)
+## Nomes (padrão Olivelas / Cross)
 
 | Campo | Valor típico |
 | --- | --- |
@@ -198,7 +198,7 @@ Templates: [kong-front-*.example](../../en/loft-infra/examples/), [kong-api-*.ex
 
 ### Acesso humano (Independente da rota)
 
-Usuários precisam de egress Netskope + liberação JumpCloud/corp via Infosec em [central.loft.com.br](https://central.loft.com.br).
+Usuários precisam de egress Netskope + liberação JumpCloud/corp via Infosec em [central.olivelas.com.br](https://central.olivelas.com.br).
 
 Detalhes: [kong-gateway.md](kong-gateway.md), [infra-live-route53.md](infra-live-route53.md).
 

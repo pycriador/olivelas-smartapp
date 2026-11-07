@@ -279,7 +279,7 @@ export const ComponentsCatalogPage: React.FC = () => {
     <div className="space-y-6">
       <PageHeader
         title="Catálogo de Componentes Copan"
-        subtitle="Biblioteca oficial de componentes do Loft Design System Copan & React. Visualização de código, versionamento SemVer e CRUD completo."
+        subtitle="Biblioteca oficial de componentes do Olivelas Design System Copan & React. Visualização de código, versionamento SemVer e CRUD completo."
         breadcrumbs={[
           { title: 'Catálogo', href: '/catalog' },
           { title: 'Componentes' },

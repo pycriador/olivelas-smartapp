@@ -1,4 +1,4 @@
-# Exemplos — publicação na infra Loft
+# Exemplos — publicação na infra Olivelas
 
 > Language: pt-BR | [English (EN)](../../../en/loft-infra/examples/README.md)
 >
@@ -8,7 +8,7 @@
 >
 > Authority: Informational
 
-Templates com o **mínimo** para publicar um app AIOps no EKS da Loft (`cross` / `ai-ops` / `linux/arm64`).  
+Templates com o **mínimo** para publicar um app Olivelas no EKS da Olivelas (`cross` / `ai-ops` / `linux/arm64`).  
 Nem todo repositório tem front e API — copie só o que se aplica.
 
 Os arquivos `.example` ficam em [docs/en/loft-infra/examples/](../../../en/loft-infra/examples/) (fonte única; evita divergência EN/pt-BR).

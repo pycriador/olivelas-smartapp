@@ -10,7 +10,7 @@ function DashboardScreen({ goto }) {
     { title: "Vistoria técnica", desc: "Visita do engenheiro para laudo do imóvel", meta: "Aguardando" },
     { title: "Análise jurídica", desc: "Verificação de matrícula e ônus do imóvel", meta: "Aguardando" },
     { title: "Assinatura digital", desc: "Contrato de compra e venda no Gov.br", meta: "Aguardando" },
-    { title: "Registro em cartório", desc: "Loft envia ao cartório e acompanha o registro", meta: "Aguardando" },
+    { title: "Registro em cartório", desc: "Olivelas envia ao cartório e acompanha o registro", meta: "Aguardando" },
   ];
 
   return (
@@ -19,7 +19,7 @@ function DashboardScreen({ goto }) {
         <StatCard label="Etapa atual" value="3 de 7" hint="Análise de documentos" icon="git-merge" accent="orange" />
         <StatCard label="Valor da proposta" value="R$ 1.245.000" delta="+2,1%" hint="vs. avaliação" icon="banknote" accent="green" />
         <StatCard label="Documentos pendentes" value="2" hint="prazo até 22 abr" icon="file-text" accent="blue" />
-        <StatCard label="Previsão de fechamento" value="22 dias" hint="estimativa Loft" icon="calendar-clock" accent="purple" />
+        <StatCard label="Previsão de fechamento" value="22 dias" hint="estimativa Olivelas" icon="calendar-clock" accent="purple" />
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr", gap: 16 }}>
@@ -55,7 +55,7 @@ function DashboardScreen({ goto }) {
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {[
                 { dot: "#E5A300", title: "Vistoria técnica", date: "23 abr · 10h", who: "Eng. Paulo R." },
-                { dot: "#4B94C5", title: "Análise jurídica", date: "26 abr", who: "Time Loft" },
+                { dot: "#4B94C5", title: "Análise jurídica", date: "26 abr", who: "Time Olivelas" },
                 { dot: "#387BA8", title: "Reunião com Carla", date: "29 abr · 15h", who: "Videochamada" },
               ].map((a, i) => (
                 <div key={i} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>

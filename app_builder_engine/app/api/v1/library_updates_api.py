@@ -72,7 +72,7 @@ async def apply_library_update(
     Never touches git — committing/pushing this change to the shared `main`
     branch remains a deliberate, separate, manual step."""
     rbac_service.require_permission("library_updates:manage", user_role=claims.get("role"))
-    actor = claims.get("email", "willian.jesus@loft.com.br")
+    actor = claims.get("email", "willian.jesus@olivelas.com.br")
     updated_stack = library_updates_service.apply_update(body.ecosystem, body.package, body.version)
     audit.log(
         action="LIBRARY_UPDATE_APPLIED",

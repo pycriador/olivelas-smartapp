@@ -92,14 +92,14 @@ def _parse_version_snapshot(v: Any) -> VersionSnapshot:
             version=str(v),
             changelog="Versão canônica",
             created_at=datetime.now(timezone.utc),
-            created_by="willian.jesus@loft.com.br",
+            created_by="willian.jesus@olivelas.com.br",
             snapshot_data={},
         )
     return VersionSnapshot(
         version=str(v.get("version", "1.0.0")),
         changelog=str(v.get("changelog") or v.get("note") or v.get("description") or "Snapshot de versão"),
         created_at=_ensure_dt(v.get("created_at") or v.get("date") or v.get("timestamp")),
-        created_by=str(v.get("created_by") or v.get("author") or v.get("owner") or "willian.jesus@loft.com.br"),
+        created_by=str(v.get("created_by") or v.get("author") or v.get("owner") or "willian.jesus@olivelas.com.br"),
         snapshot_data=v.get("snapshot_data") or {},
     )
 
@@ -384,12 +384,12 @@ def orm_to_rule(m: RuleModel) -> Rule:
             "bad": m.bad_example or "return {'id': 'usr_01', 'name': 'Maria'}",
             "good": m.good_example or "return ApiResponse(data={'id': 'usr_01', 'name': 'Maria'}, meta=ApiMeta(total=1))",
             "success_single_response": {
-                "data": {"id": "prj_01", "name": "Portal Loft", "status": "Active"},
+                "data": {"id": "prj_01", "name": "Portal Olivelas", "status": "Active"},
                 "meta": {"page": 1, "page_size": 20, "total": 1, "timestamp": "2026-10-19T12:00:00Z", "version": "1.0.0"},
                 "error": None,
             },
             "success_list_response": {
-                "data": [{"id": "prj_01", "name": "Portal Loft"}],
+                "data": [{"id": "prj_01", "name": "Portal Olivelas"}],
                 "meta": {"page": 1, "page_size": 20, "total": 1, "timestamp": "2026-10-19T12:00:00Z", "version": "1.0.0"},
             },
             "error_response": {
@@ -412,7 +412,7 @@ def orm_to_rule(m: RuleModel) -> Rule:
             "error_codes_table": CANONICAL_ERROR_CODES_TABLE,
             "sample_401": {
                 "data": None,
-                "error": {"code": "AUTHENTICATION_FAILED", "message": "Credenciais inválidas para 'user@loft.com.br'.", "details": {}, "request_id": "req_401"},
+                "error": {"code": "AUTHENTICATION_FAILED", "message": "Credenciais inválidas para 'user@olivelas.com.br'.", "details": {}, "request_id": "req_401"},
             },
             "sample_423": {
                 "data": None,
@@ -490,9 +490,9 @@ def orm_to_architecture(m: ArchitectureModel) -> Architecture:
     if m.id == "arch_static_landing_page":
         db_engine = "None (Stateless / In-Memory)"
     elif m.id == "arch_loft_postgres_opsbase_fullstack":
-        db_engine = "PostgreSQL 16 via AIOps Opsbase (SQLAlchemy 2.0 + Alembic)"
+        db_engine = "PostgreSQL 16 via Olivelas Opsbase (SQLAlchemy 2.0 + Alembic)"
     else:
-        db_engine = "PostgreSQL 16 (SQLAlchemy 2.0 + Alembic / AIOps Opsbase)"
+        db_engine = "PostgreSQL 16 (SQLAlchemy 2.0 + Alembic / Olivelas Opsbase)"
     return Architecture(
         id=m.id,
         name=m.name,

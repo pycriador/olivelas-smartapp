@@ -1,4 +1,4 @@
-# AIOps frontend stack
+# Olivelas frontend stack
 
 > Language: EN | [Português (pt-BR)](../../pt-BR/aiops-apps/frontend-stack.md)
 >
@@ -10,7 +10,7 @@
 
 ## Families
 
-**A — TanStack Start:** DataForge, Loft Carteiras — `@tanstack/react-start`, file routes, Query, Radix/shadcn, RHF+zod, Tailwind via `@tailwindcss/vite`.
+**A — TanStack Start:** DataForge, Olivelas Carteiras — `@tanstack/react-start`, file routes, Query, Radix/shadcn, RHF+zod, Tailwind via `@tailwindcss/vite`.
 
 **B — react-router-dom:** Qualidade (SPA + `ProtectedRoute`/`PermissionRoute`); Deep Insight (CSR + Express SSR in `server/`, markdown, motion).
 

@@ -12,9 +12,9 @@
 
 [loft-br/kong-configs](https://github.com/loft-br/kong-configs)
 
-## Dois gateways relevantes para AIOps
+## Dois gateways relevantes para Olivelas
 
-| Gateway path | Uso típico AIOps | Exemplos |
+| Gateway path | Uso típico Olivelas | Exemplos |
 | --- | --- | --- |
 | `gateways/infra-prod/corp/cross/` | Frontends corporativos (`*.loft-corp.com.br`) | `aiops-dataforge-front-*`, `aiops-qualidade-front-*`, … |
 | `gateways/infra-prod/external/cross/` | APIs corporativas com política adicional (ex.: IP restriction) | `aiops-dataforge-api-*`, `aiops-deep-insight-api-*`, `aiops-loft-carteiras-api-*` |
@@ -122,6 +122,6 @@ Observadas de forma consistente:
 5. Abrir PR em `kong-configs`; validar staging (comentário do pipeline com `Host` + `X-Kong-Gateway`) antes do merge.
 6. DNS: corp costuma ser criado pelo sync após merge em `gateways/*/corp/**`; API external exige record em `infra-live` com `kong_accessibility = external` — ver [infra-live-route53.md](infra-live-route53.md).
 7. Alinhar bake do front (`VITE_*` / `published-hosts.env`) e `CORS_ORIGINS` da API com os hosts finais.
-8. Acesso humano ao corp: Infosec / [central.loft.com.br](https://central.loft.com.br) (JumpCloud) — independente da rota.
+8. Acesso humano ao corp: Infosec / [central.olivelas.com.br](https://central.olivelas.com.br) (JumpCloud) — independente da rota.
 
 Guia completo: [publish-guide.md](publish-guide.md).

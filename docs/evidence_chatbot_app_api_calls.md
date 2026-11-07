@@ -1,8 +1,8 @@
-# Relatório de Evidências: Criação da 3ª Aplicação (Loft AI Copilot Support)
+# Relatório de Evidências: Criação da 3ª Aplicação (Olivelas AI Copilot Support)
 
 **Data de Execução:** 10 de Setembro de 2026  
-**Ambiente:** Loft App Builder Engine (API REST v1 + SQLite Database + Design System Copan)  
-**Aplicação Criada:** Loft AI Copilot Support (`loft-ai-copilot-support`)  
+**Ambiente:** Olivelas App Builder Engine (API REST v1 + SQLite Database + Design System Copan)  
+**Aplicação Criada:** Olivelas AI Copilot Support (`loft-ai-copilot-support`)  
 **Tipo:** Chatbot Conversacional / Assistente Inteligente (Stateless / Clean Architecture Mock)  
 
 ---
@@ -12,7 +12,7 @@
 A terceira aplicação foi concebida conforme as diretrizes:
 - **Propósito:** Página de Chatbot assistente interativo.
 - **Banco de Dados:** Sem persistência em SQL (Zero SQL DB / Stateless In-Memory & Mock).
-- **Design System:** Padrão canônico Loft Copan (Paleta `#F56738`, `#121619`, `#FAFBFD`, `#20A483`, tipografia, modais centralizados, badges e menu Waffle 9-dots).
+- **Design System:** Padrão canônico Olivelas Copan (Paleta `#F56738`, `#121619`, `#FAFBFD`, `#20A483`, tipografia, modais centralizados, badges e menu Waffle 9-dots).
 - **Simulação da IA:** Execução 100% orientada por APIs da plataforma App Builder Engine, consumindo o catálogo real do banco de dados, compondo o blueprint determinístico e registrando todas as evidências de chamadas HTTP.
 
 ---
@@ -25,7 +25,7 @@ Todas as chamadas foram realizadas contra os endpoints canônicos sob `http://12
 
 | Etapa | Método | Endpoint | Status | Duração | Descrição |
 |---|---|---|---|---|---|
-| **01** | `POST` | `/iam/login` | `200 OK` | 38.24ms | Autenticação do usuário admin (`willian.jesus@loft.com.br`) gerando token JWT com 63 permissões RBAC. |
+| **01** | `POST` | `/iam/login` | `200 OK` | 38.24ms | Autenticação do usuário admin (`willian.jesus@olivelas.com.br`) gerando token JWT com 63 permissões RBAC. |
 | **02** | `GET` | `/dashboard/metrics` | `200 OK` | 5.72ms | Consulta métricas consolidadas do banco de dados (182 componentes, 21 templates, 11 módulos, 24 regras, 10 specs). |
 | **03** | `GET` | `/components` | `200 OK` | 8.20ms | Listagem de componentes frontend e backend disponíveis no catálogo. |
 | **04** | `GET` | `/modules` | `200 OK` | 4.15ms | Mapeamento de módulos de domínio (incluindo `mod_ai_chat_copilot`, `mod_landing_page_marketing`, etc.). |
@@ -47,7 +47,7 @@ Todas as chamadas foram realizadas contra os endpoints canônicos sob `http://12
 - **Request Payload:**
 ```json
 {
-  "username_or_email": "admin@loft.com.br",
+  "username_or_email": "admin@olivelas.com.br",
   "password": "<REDACTED_PASSWORD>"
 }
 ```
@@ -62,7 +62,7 @@ Todas as chamadas foram realizadas contra os endpoints canônicos sob `http://12
     "user": {
       "id": "usr_admin01",
       "name": "Willian Jesus",
-      "email": "willian.jesus@loft.com.br",
+      "email": "willian.jesus@olivelas.com.br",
       "role": "Global Admin",
       "permissions": ["ai.agents:create", "blueprints:create", "components:read", "projects:create", "...63 total"]
     }
@@ -77,8 +77,8 @@ Todas as chamadas foram realizadas contra os endpoints canônicos sob `http://12
 ```json
 {
   "application": {
-    "name": "Loft AI Copilot Support",
-    "description": "Página de chatbot sem banco de dados, somente mock, com design padrão Loft Copan"
+    "name": "Olivelas AI Copilot Support",
+    "description": "Página de chatbot sem banco de dados, somente mock, com design padrão Olivelas Copan"
   },
   "requirements": [
     "Chatbot com IA",
@@ -93,7 +93,7 @@ Todas as chamadas foram realizadas contra os endpoints canônicos sob `http://12
 - **Response Status:** `200 OK`
 - **Blueprint Composto:**
   - `blueprint_id`: `bp_ea9b7743`
-  - `architecture`: `arch_static_landing_page` (*Loft Institutional Landing Page & Static Showcase Architecture*)
+  - `architecture`: `arch_static_landing_page` (*Olivelas Institutional Landing Page & Static Showcase Architecture*)
   - `identified_modules`: `['mod_ai_chat_copilot', 'mod_layout_navigation', 'mod_landing_page_marketing', ...]`
   - `identified_components`: `['cmp_fe_app_shell', 'cmp_fe_page_header', 'cmp_fe_sidebar_navigation', ...]`
   - `identified_rules`: `['rul_copan_01_brand_orange', 'rul_copan_02_tokens_only', 'rul_copan_03_app_switcher_layout', 'rul_arch_01_layered_separation', ...]`
@@ -104,9 +104,9 @@ Todas as chamadas foram realizadas contra os endpoints canônicos sob `http://12
 - **Request Payload:**
 ```json
 {
-  "name": "Loft AI Copilot Support",
+  "name": "Olivelas AI Copilot Support",
   "slug": "loft-ai-copilot-support",
-  "description": "Página de chatbot sem banco de dados, somente mock, com design padrão Loft Copan",
+  "description": "Página de chatbot sem banco de dados, somente mock, com design padrão Olivelas Copan",
   "template_id": "tpl_loft_ai_support_chatbot",
   "architecture": "arch_static_landing_page",
   "status": "Active",
@@ -125,12 +125,12 @@ Todas as chamadas foram realizadas contra os endpoints canônicos sob `http://12
 
 A IA compreendeu que a aplicação necessita de:
 1. **Frontend Conversacional Copan:**
-   - Tela `ChatbotPage.tsx` com histórico de balões de mensagens, avatar Loft `#F56738`, indicador de digitação dinâmica (`isTyping`), chips de prompts rápidos (Fiança Aluguel, Documentação KYC, Taxas & Prazos, API de Integração) e tags de ações sugeridas.
+   - Tela `ChatbotPage.tsx` com histórico de balões de mensagens, avatar Olivelas `#F56738`, indicador de digitação dinâmica (`isTyping`), chips de prompts rápidos (Fiança Aluguel, Documentação KYC, Taxas & Prazos, API de Integração) e tags de ações sugeridas.
    - Navegação unificada no `AppHeader.tsx` e `Sidebar.tsx` permitindo alternar entre **Chatbot & Copiloto**, **Apresentação Institucional** e **Painel de Gestão**.
    - Seletor de ecossistema Waffle 9-dots (`AppSwitcher.tsx`).
 2. **Backend FastAPI Canônico com Rota de Chat:**
    - Endpoint `POST /api/v1/chat/message` recebendo `{ message: str, history: list }` e retornando envelope padronizado `ApiResponse[ChatMessageResponse]`.
-   - Base de conhecimento contextual para produtos Loft (Fiança Locatícia, Análise de Crédito, APIs e Prazos).
+   - Base de conhecimento contextual para produtos Olivelas (Fiança Locatícia, Análise de Crédito, APIs e Prazos).
    - Suporte a modo stateless / in-memory com zero dependência de banco SQL pesado.
 3. **Qualidade e Governança:**
    - Suíte de testes unitários backend em Pytest cobrindo `/health`, `/proposals` e `/chat/message`.

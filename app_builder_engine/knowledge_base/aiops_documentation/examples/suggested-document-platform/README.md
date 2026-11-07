@@ -1,8 +1,8 @@
 # Suggested Document Platform Example / Exemplo: Plataforma de Documentos Sugerida
 
-> **SUGGESTED / ILLUSTRATIVE** stack · **NOT** the AIOps Documentation Standard · **NOT** a Loft platform mandate
+> **SUGGESTED / ILLUSTRATIVE** stack · **NOT** the Olivelas Documentation Standard · **NOT** a Olivelas platform mandate
 >
-> **Stack SUGERIDA / ILUSTRATIVA** · **NÃO** é o Padrão de Documentação AIOps · **NÃO** é mandato de plataforma Loft
+> **Stack SUGERIDA / ILUSTRATIVA** · **NÃO** é o Padrão de Documentação Olivelas · **NÃO** é mandato de plataforma Olivelas
 >
 > Status: ACCEPTED · Owner: example-team · Updated: 2026-08-10
 >
@@ -12,8 +12,8 @@
 
 | Language | Message |
 | --- | --- |
-| EN | This package is a **suggested / illustrative** documentation shape inspired by patterns from an **isolated reference project** (document intelligence / RAG / SSR BFF / Flask / Slack worker / scheduler / PostgreSQL). It is **NOT** the AIOps Documentation Standard, **NOT** the definitive guide on how to use the framework, and **NOT** a Loft platform mandate. Technology choices (React SSR, Flask, external LLM, Slack Socket Mode, optional vector search, Vault, Helm-style values) are **example-only**. |
-| pt-BR | Este pacote é uma forma de documentação **sugerida / ilustrativa**, inspirada em padrões de um **projeto isolado de referência** (inteligência documental / RAG / SSR BFF / Flask / worker Slack / scheduler / PostgreSQL). **NÃO** é o Padrão de Documentação AIOps, **NÃO** é o guia definitivo de uso do framework e **NÃO** é um mandato de plataforma Loft. Escolhas de tecnologia (React SSR, Flask, LLM externo, Slack Socket Mode, busca vetorial opcional, Vault, values estilo Helm) são **apenas exemplo**. |
+| EN | This package is a **suggested / illustrative** documentation shape inspired by patterns from an **isolated reference project** (document intelligence / RAG / SSR BFF / Flask / Slack worker / scheduler / PostgreSQL). It is **NOT** the Olivelas Documentation Standard, **NOT** the definitive guide on how to use the framework, and **NOT** a Olivelas platform mandate. Technology choices (React SSR, Flask, external LLM, Slack Socket Mode, optional vector search, Vault, Helm-style values) are **example-only**. |
+| pt-BR | Este pacote é uma forma de documentação **sugerida / ilustrativa**, inspirada em padrões de um **projeto isolado de referência** (inteligência documental / RAG / SSR BFF / Flask / worker Slack / scheduler / PostgreSQL). **NÃO** é o Padrão de Documentação Olivelas, **NÃO** é o guia definitivo de uso do framework e **NÃO** é um mandato de plataforma Olivelas. Escolhas de tecnologia (React SSR, Flask, LLM externo, Slack Socket Mode, busca vetorial opcional, Vault, values estilo Helm) são **apenas exemplo**. |
 
 **Fictional product name / Nome de produto fictício:** **Northstar Document Platform**
 

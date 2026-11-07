@@ -1,13 +1,13 @@
 ---
-id: REF-AIOPS-TEAM-001
-title: "AIOps — Team"
+id: REF-OLIVELAS-TEAM-001
+title: "Olivelas — Team"
 status: "DRAFT"
 owner: "aiops"
 updated: "2026-08-24"
 review_date: "2026-11-24"
 ---
 
-# AIOps — Team
+# Olivelas — Team
 
 > Language: EN | [Português (pt-BR)](../../pt-BR/aiops-team/README.md)
 >
@@ -17,7 +17,7 @@ review_date: "2026-11-24"
 
 > Prefer a plain-language explanation? See the [Guide](README-guide.md).
 
-Documentation hub for the **AIOps team** in the Confluence [AIOps](https://loftbr.atlassian.net/wiki/spaces/AIOps/folder/6086460456) space. Coexists with the documentation framework methodology in this repository.
+Documentation hub for the **Olivelas team** in the Confluence [Olivelas](https://loftbr.atlassian.net/wiki/spaces/Olivelas/folder/6086460456) space. Coexists with the documentation framework methodology in this repository.
 
 ## Three-level model
 
@@ -43,7 +43,7 @@ Confluence publish: profile `documentacao-inicial.pt-BR.yaml` (parent `608646045
 | [stacks.md](stacks.md) | Stacks in use (summary + pointers) |
 | [ways-of-working.md](ways-of-working.md) | Ways of working — rituals and flows |
 | [technical-standards.md](technical-standards.md) | Technical standards and methodology links |
-| [security.md](security.md) | Cross-cutting AIOps security |
+| [security.md](security.md) | Cross-cutting Olivelas security |
 | [observability.md](observability.md) | Observability — Datadog and practices |
 | [troubleshooting.md](troubleshooting.md) | Cross-cutting troubleshooting |
 | [documentation-model.md](documentation-model.md) | Three-level documentation model |
@@ -54,6 +54,6 @@ Confluence publish: profile `documentacao-inicial.pt-BR.yaml` (parent `608646045
 
 | Pack | Path | Confluence (parent) |
 | --- | --- | --- |
-| Apps (level 2) | [../aiops-apps/](../aiops-apps/README.md) | [AIOps - Stack](https://loftbr.atlassian.net/wiki/spaces/AIOps/pages/6091309071) |
-| Loft infra | [../loft-infra/](../loft-infra/README.md) | [Infra Loft](https://loftbr.atlassian.net/wiki/spaces/AIOps/pages/6090358809) |
-| Observability | [../loft-observability/](../loft-observability/README.md) | (included in Infra Loft pack) |
+| Apps (level 2) | [../aiops-apps/](../aiops-apps/README.md) | [Olivelas - Stack](https://loftbr.atlassian.net/wiki/spaces/Olivelas/pages/6091309071) |
+| Olivelas infra | [../loft-infra/](../loft-infra/README.md) | [Infra Olivelas](https://loftbr.atlassian.net/wiki/spaces/Olivelas/pages/6090358809) |
+| Observability | [../loft-observability/](../loft-observability/README.md) | (included in Infra Olivelas pack) |

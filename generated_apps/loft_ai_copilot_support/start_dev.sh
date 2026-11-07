@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-echo "🚀 Iniciando ambiente de desenvolvimento Loft..."
+echo "🚀 Iniciando ambiente de desenvolvimento Olivelas..."
 
 # 1. Setup Backend
 if [ -d "backend" ]; then

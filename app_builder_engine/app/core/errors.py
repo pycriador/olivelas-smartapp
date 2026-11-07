@@ -91,7 +91,7 @@ HTTP_STATUS_TO_CANONICAL_CODE: dict[int, str] = {
 
 
 async def application_error_handler(request: Request, exc: ApplicationError) -> JSONResponse:
-    """Standardized Loft error format (rul_loft_be_api_envelope & rul_loft_be_error_codes)."""
+    """Standardized Olivelas error format (rul_loft_be_api_envelope & rul_loft_be_error_codes)."""
     request_id = getattr(request.state, "request_id", "req_unknown")
     logger.warning(f"[{request_id}] ApplicationError: {exc.code} - {exc.message} on {request.url.path}")
     return JSONResponse(
@@ -111,7 +111,7 @@ async def application_error_handler(request: Request, exc: ApplicationError) -> 
 
 
 async def http_exception_handler(request: Request, exc: StarletteHTTPException) -> JSONResponse:
-    """Standardize FastAPI/Starlette HTTPException into Loft canonical error envelope."""
+    """Standardize FastAPI/Starlette HTTPException into Olivelas canonical error envelope."""
     request_id = getattr(request.state, "request_id", "req_unknown")
     code = HTTP_STATUS_TO_CANONICAL_CODE.get(exc.status_code, "APPLICATION_ERROR")
     message = exc.detail if isinstance(exc.detail, str) else str(exc.detail)

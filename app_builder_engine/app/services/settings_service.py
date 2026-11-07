@@ -67,7 +67,7 @@ DEFAULT_CATEGORIES_METADATA = {
     ("specifications", "Design System"): ("Diretrizes canônicas de design Copan", "#805AD5", True),
     ("specifications", "Security Specification"): ("Especificações de segurança, RBAC e tokens", "#E12D39", True),
     # Architectures
-    ("architectures", "Standard"): ("Arquiteturas recomendadas pela governança Loft", "#10B981", True),
+    ("architectures", "Standard"): ("Arquiteturas recomendadas pela governança Olivelas", "#10B981", True),
     ("architectures", "Modular"): ("Arquiteturas baseadas em módulos independentes", "#0066CC", True),
     # Projects
     ("projects", "Core Engine"): ("Engenharia e plataformas core de software", "#6366F1", True),
@@ -190,7 +190,7 @@ class SettingsService:
         result.sort(key=lambda x: (x.type, -x.count, x.name))
         return result
 
-    def create_category(self, body: CategoryCreateRequest, actor_email: str = "willian.jesus@loft.com.br", actor_role: str = "Global Admin") -> CategoryItem:
+    def create_category(self, body: CategoryCreateRequest, actor_email: str = "willian.jesus@olivelas.com.br", actor_role: str = "Global Admin") -> CategoryItem:
         self.check_permission(actor_role, action="create")
 
         type_map = {
@@ -270,7 +270,7 @@ class SettingsService:
         self,
         category_id: str,
         body: CategoryUpdateRequest,
-        actor_email: str = "willian.jesus@loft.com.br",
+        actor_email: str = "willian.jesus@olivelas.com.br",
         actor_role: str = "Global Admin",
     ) -> CategoryItem:
         self.check_permission(actor_role, action="manage")
@@ -342,7 +342,7 @@ class SettingsService:
     def delete_category(
         self,
         category_id: str,
-        actor_email: str = "willian.jesus@loft.com.br",
+        actor_email: str = "willian.jesus@olivelas.com.br",
         actor_role: str = "Global Admin",
     ):
         self.check_permission(actor_role, action="delete")
@@ -400,7 +400,7 @@ class SettingsService:
             total_custom_categories=len(custom_dict),
         )
 
-    def update_rbac_settings(self, settings: CategoryRbacSettings, actor_email: str = "willian.jesus@loft.com.br"):
+    def update_rbac_settings(self, settings: CategoryRbacSettings, actor_email: str = "willian.jesus@olivelas.com.br"):
         self._save_rbac_settings(settings)
         db.audit_logs.append(
             AuditLog(

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Loft AI Application Generator with Complete API Tracing & Evidence Capture
+Olivelas AI Application Generator with Complete API Tracing & Evidence Capture
 """
 from __future__ import annotations
 import json
@@ -63,8 +63,8 @@ def main():
         evidence.append(record)
         return res_json
 
-    print("🚀 [Step 1/7] Authenticating with Loft IAM API...")
-    admin_user = os.getenv("LOFT_ADMIN_USER", "admin@loft.com.br")
+    print("🚀 [Step 1/7] Authenticating with Olivelas IAM API...")
+    admin_user = os.getenv("LOFT_ADMIN_USER", "admin@olivelas.com.br")
     admin_password = os.getenv("LOFT_ADMIN_PASSWORD") or os.getenv("DEFAULT_ADMIN_PASSWORD", "admin_dev_pass")
     login_resp = record_call("POST", "/iam/login", {
         "username_or_email": admin_user,
@@ -83,8 +83,8 @@ def main():
     record_call("GET", "/ai/agents", headers=auth_headers)
 
     print("🧠 [Step 3/7] Sending Requirements to AI Composition Engine...")
-    app_name = "Loft AI Copilot Support"
-    app_desc = "Página de chatbot sem banco de dados, somente mock, com design padrão Loft Copan"
+    app_name = "Olivelas AI Copilot Support"
+    app_desc = "Página de chatbot sem banco de dados, somente mock, com design padrão Olivelas Copan"
     features = [
         "Chatbot com IA",
         "Histórico de Mensagens",

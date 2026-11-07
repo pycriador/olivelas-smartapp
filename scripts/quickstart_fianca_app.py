@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Quickstart Script: 1-Click Generator for 'Loft Fiança Aluguel & Garantia Locatícia'.
+Quickstart Script: 1-Click Generator for 'Olivelas Fiança Aluguel & Garantia Locatícia'.
 Calls the App Builder Engine API to automatically scaffold the canonical rental guarantee portal.
 """
 from __future__ import annotations
@@ -17,12 +17,12 @@ from api_client.scaffolder import ApplicationScaffolder
 
 
 def main():
-    print("🚀 Gerando 'Loft Fiança Aluguel' 100% via API do App Builder Engine...")
+    print("🚀 Gerando 'Olivelas Fiança Aluguel' 100% via API do App Builder Engine...")
     
     api_url = os.getenv("APP_BUILDER_BASE_URL", "http://127.0.0.1:8000")
     client = AppBuilderClient(base_url=api_url)
 
-    app_name = "Loft Fiança Aluguel"
+    app_name = "Olivelas Fiança Aluguel"
     app_desc = "Portal oficial de garantia locatícia, esteira de análise de crédito instantânea e gestão de contratos para imobiliárias parceiras."
     requirements = [
         "Autenticação JWT e RBAC para imobiliárias e corretores parceiros",

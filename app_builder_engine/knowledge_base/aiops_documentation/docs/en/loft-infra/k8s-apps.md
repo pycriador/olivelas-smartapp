@@ -32,7 +32,7 @@ Reference: [aiops-dataforge.yaml](https://github.com/loft-br/k8s-apps/blob/main/
 
 ## `values.yaml` contract
 
-Recurring fields: `application.name`, `cpuArchitecture: arm64`, ECR `image.repository`/`tag`, `network.port`, probes, `environmentVariables`, `vaultSecrets` (`mount: cross`, path under `ai-ops/…`), `team`, `ingress.className: kong`, HPA, `podAnnotations.loft.com.br/source-repository`.
+Recurring fields: `application.name`, `cpuArchitecture: arm64`, ECR `image.repository`/`tag`, `network.port`, probes, `environmentVariables`, `vaultSecrets` (`mount: cross`, path under `ai-ops/…`), `team`, `ingress.className: kong`, HPA, `podAnnotations.olivelas.com.br/source-repository`.
 
 ECR pattern observed: `886819405138.dkr.ecr.us-east-1.amazonaws.com/<namespace>-<service>`.
 

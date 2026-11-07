@@ -70,7 +70,7 @@ export const ApiClientDrawer: React.FC<ApiClientDrawerProps> = ({
 
   // Request State
   const [method, setMethod] = useState<string>('GET');
-  const [url, setUrl] = useState<string>('https://loft.atlassian.net/wiki/rest/api/content');
+  const [url, setUrl] = useState<string>('https://olivelas.atlassian.net/wiki/rest/api/content');
   const [activeReqTab, setActiveReqTab] = useState<string>('params');
   const [params, setParams] = useState<ParamRow[]>([
     { key: 'spaceKey', value: 'TECH', enabled: true, description: 'Chave do Espaço' },
@@ -414,7 +414,7 @@ ${formattedContent}
           <Input
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            placeholder="https://api.loft.com.br/v1/resource"
+            placeholder="https://api.olivelas.com.br/v1/resource"
             style={{ fontSize: 13, fontFamily: 'monospace' }}
           />
           <Button
@@ -866,10 +866,10 @@ ${formattedContent}
       >
         <Form form={sourceForm} layout="vertical" onFinish={handleCreateSource}>
           <Form.Item label="Nome da Fonte" name="name" rules={[{ required: true, message: 'Informe o nome' }]}>
-            <Input placeholder="e.g. Loft Broker API Staging" />
+            <Input placeholder="e.g. Olivelas Broker API Staging" />
           </Form.Item>
           <Form.Item label="URL Base" name="base_url" rules={[{ required: true, message: 'Informe a URL base' }]}>
-            <Input placeholder="https://api-staging.loft.com.br" />
+            <Input placeholder="https://api-staging.olivelas.com.br" />
           </Form.Item>
           <Form.Item label="Tipo de Autenticação Padrão" name="auth_type">
             <Select defaultValue="none">

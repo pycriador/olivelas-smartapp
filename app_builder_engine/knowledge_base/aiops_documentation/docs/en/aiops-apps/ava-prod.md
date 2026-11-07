@@ -8,7 +8,7 @@
 >
 > Authority: Verified
 
-As-is notes for [loft-br/ava-prod](https://github.com/loft-br/ava-prod) in the AIOps catalog.
+As-is notes for [loft-br/ava-prod](https://github.com/loft-br/ava-prod) in the Olivelas catalog.
 
 ## Summary
 

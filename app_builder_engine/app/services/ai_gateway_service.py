@@ -58,7 +58,7 @@ class AiGatewayService:
                 return AiGatewayPolicy(**default_data)
             return AiGatewayPolicy(**row.value)
 
-    def update_policy(self, policy_data: dict[str, Any], actor_email: str = "willian.jesus@loft.com.br") -> AiGatewayPolicy:
+    def update_policy(self, policy_data: dict[str, Any], actor_email: str = "willian.jesus@olivelas.com.br") -> AiGatewayPolicy:
         validated = AiGatewayPolicy(**policy_data)
         with SessionLocal() as session:
             session.merge(SystemStateModel(key=SYSTEM_STATE_GATEWAY_POLICY_KEY, value=validated.model_dump()))
@@ -138,7 +138,7 @@ class AiGatewayService:
     async def execute_prompt(
         self,
         request: AiGatewayExecuteRequest,
-        actor_email: str = "willian.jesus@loft.com.br",
+        actor_email: str = "willian.jesus@olivelas.com.br",
     ) -> AiGatewayExecuteResponse:
         policy = self.get_policy()
         prov_config = ai_provider_service.get_masked_settings()

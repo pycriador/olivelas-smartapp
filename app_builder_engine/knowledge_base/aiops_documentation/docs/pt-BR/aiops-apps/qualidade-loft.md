@@ -1,5 +1,5 @@
 ---
-id: REF-AIOPS-APPS-010
+id: REF-OLIVELAS-APPS-010
 title: "Qualidade — base de conhecimento e surveys"
 status: "DRAFT"
 owner: "aiops"
@@ -63,7 +63,7 @@ Browser → aiops-qualidade.loft-corp.com.br
 | PostgreSQL | asyncpg + SQLAlchemy 2 |
 | Confluence | Sync/conteúdo — domínio qualidade |
 | JumpCloud | SSO OAuth |
-| Kong / Vault / Datadog | Padrão Loft |
+| Kong / Vault / Datadog | Padrão Olivelas |
 
 ## Stack (resumo)
 

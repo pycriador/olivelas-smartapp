@@ -69,7 +69,7 @@ class GeminiAIProvider(BaseAIProvider):
             raise AIServiceError("Chave de API do Google Gemini não está configurada. Configure sua chave em /ai/providers.")
 
         url = f"{self.base_url}/models/{self.model}:generateContent?key={self.api_key}"
-        sys_inst = system_prompt or self.system_instruction or "Você é o assistente técnico de inteligência artificial da Loft."
+        sys_inst = system_prompt or self.system_instruction or "Você é o assistente técnico de inteligência artificial da Olivelas."
 
         payload: dict[str, Any] = {
             "contents": [
@@ -179,7 +179,7 @@ class AnthropicAIProvider(BaseAIProvider):
             raise AIServiceError("Chave de API da Anthropic Claude não está configurada. Configure sua chave em /ai/providers.")
 
         endpoint = f"{self.base_url}/v1/messages" if not self.base_url.endswith("/v1") else f"{self.base_url}/messages"
-        sys_inst = system_prompt or self.system_instruction or "Você é o assistente técnico de inteligência artificial da Loft."
+        sys_inst = system_prompt or self.system_instruction or "Você é o assistente técnico de inteligência artificial da Olivelas."
 
         req_headers = {
             "Content-Type": "application/json",
@@ -306,7 +306,7 @@ class OpenAICompatibleAIProvider(BaseAIProvider):
         if self.project_id:
             req_headers["OpenAI-Project"] = self.project_id
 
-        sys_inst = system_prompt or self.system_instruction or "Você é o assistente técnico de inteligência artificial da Loft."
+        sys_inst = system_prompt or self.system_instruction or "Você é o assistente técnico de inteligência artificial da Olivelas."
         messages = [
             {"role": "system", "content": sys_inst},
             {"role": "user", "content": prompt},

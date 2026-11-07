@@ -1,4 +1,4 @@
-// components.jsx — Copan UI kit for Loft
+// components.jsx — Copan UI kit for Olivelas
 // All shared components. Exported to window at the bottom.
 // Source of truth: Copan-Components.fig (Button, Chips, Tags, Feedback-banner).
 

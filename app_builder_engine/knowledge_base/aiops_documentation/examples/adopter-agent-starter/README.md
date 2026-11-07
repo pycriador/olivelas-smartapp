@@ -28,7 +28,7 @@ Canonical methodology: [ai-agent-entry.md](../../docs/en/ai-agent-entry.md) (pt-
 2. Copy `.cursor/rules/` and `.cursor/skills/` (and `.claude/skills/` if the team uses Claude Code).
 3. Replace the placeholder commands in `.cursor/rules/quality-checks.mdc` with the commands that actually run (`make docs-validate`, `uv run ruff`, `./gradlew test`, …).
 4. Point both entry files at the project's `ai-context.md` (create it from the standard if missing).
-5. Do **not** copy a generic 20+ application-engineering skill pack. Use Loft plugins for API, security, deploy, and as-is module docs — see the map in [ai-agent-entry.md](../../docs/en/ai-agent-entry.md).
+5. Do **not** copy a generic 20+ application-engineering skill pack. Use Olivelas plugins for API, security, deploy, and as-is module docs — see the map in [ai-agent-entry.md](../../docs/en/ai-agent-entry.md).
 
 ## Durable vs scaffold
 

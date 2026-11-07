@@ -1,4 +1,4 @@
-# Checklist — publicar um serviço AIOps no modelo atual
+# Checklist — publicar um serviço Olivelas no modelo atual
 
 > Language: pt-BR | [English (EN)](../../en/loft-infra/checklist-novo-servico.md)
 >
@@ -32,7 +32,7 @@ Checklist operacional baseado no que os apps de referência já fazem. Não subs
 - [ ] `cpuArchitecture: arm64`, image repository ECR, probes, resources
 - [ ] `vaultSecrets` com `mount: cross` e path `ai-ops/<service>` (sem `/secrets` extra se o KV não usa)
 - [ ] `ingress.className: kong`
-- [ ] `podAnnotations.loft.com.br/source-repository`
+- [ ] `podAnnotations.olivelas.com.br/source-repository`
 - [ ] Application Argo CD em `clusters/cross-prod/applications/<namespace>.yaml`
 - [ ] Chart `web-server` + base values + values do serviço
 - [ ] Namespace de destino criado via sync (`CreateNamespace=true`)
@@ -88,7 +88,7 @@ Pack: [../loft-observability/README.md](../loft-observability/README.md). **Logs
 - [ ] Argo CD Synced/Healthy; `VaultStaticSecret` OK
 - [ ] Probes OK; HPA coerente
 - [ ] Host corp responde HTTPS (JumpCloud); API external respeita IP policy
-- [ ] Usuários com acesso JumpCloud/corp (Infosec / [Central](https://central.loft.com.br)) quando necessário
+- [ ] Usuários com acesso JumpCloud/corp (Infosec / [Central](https://central.olivelas.com.br)) quando necessário
 - [ ] Sem secret em logs / imagens / PRs
 
 ## Referências rápidas

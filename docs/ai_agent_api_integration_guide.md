@@ -1,6 +1,6 @@
 # 🤖 Guia de Integração e Roadmap de API para Agentes de IA
 
-> **Padrão Técnico Loft AIOps Documentation**  
+> **Padrão Técnico Olivelas Documentation**  
 > **Status:** Confirmed / Ativo  
 > **Público-alvo:** Agentes Autônomos de IA (Cursor, Claude Code, Antigravity) & Engenheiros de Software  
 > **Versão da API:** v1.0.0  
@@ -10,7 +10,7 @@
 
 ## 🏛️ 1. Contexto e Visão Geral da Arquitetura
 
-O **Loft App Builder Engine** expõe uma API RESTful completa, projetada especificamente para ser consumida tanto por interfaces visuais quanto por **Agentes Autônomos de Inteligência Artificial**. 
+O **Olivelas App Builder Engine** expõe uma API RESTful completa, projetada especificamente para ser consumida tanto por interfaces visuais quanto por **Agentes Autônomos de Inteligência Artificial**. 
 
 Através desta API, um Agente de IA pode:
 1. **Autenticar-se** de forma segura via JWT Bearer Token com controle granular de acesso (RBAC).
@@ -85,7 +85,7 @@ Authorization: Bearer <SEU_ACCESS_TOKEN_JWT>
 **Request Payload:**
 ```json
 {
-  "username_or_email": "willian.jesus@loft.com.br",
+  "username_or_email": "willian.jesus@olivelas.com.br",
   "password": "admin_dev_pass"
 }
 ```
@@ -104,7 +104,7 @@ Authorization: Bearer <SEU_ACCESS_TOKEN_JWT>
     "user": {
       "id": "usr_admin01",
       "name": "Willian Jesus",
-      "email": "willian.jesus@loft.com.br",
+      "email": "willian.jesus@olivelas.com.br",
       "username": "willian.jesus",
       "role": "Global Admin",
       "permissions": ["projects:create", "projects:update", "ai.gateway:execute", "..."]
@@ -173,7 +173,7 @@ Ao atualizar o projeto via `PUT /api/v1/projects/{project_id}`:
 }
 ```
 
-### 4.2 Boas Práticas Canônicas da Loft para Banco de Dados
+### 4.2 Boas Práticas Canônicas da Olivelas para Banco de Dados
 - **Connection Pooling**: Sempre utilizar pooling de conexões (ex.: SQLAlchemy `QueuePool` com `pool_size=20`, `max_overflow=10`).
 - **Segurança**: Nunca hardcodar senhas de banco; utilizar referências a variáveis de ambiente (`DATABASE_URL`, `POSTGRES_PASSWORD`).
 - **Migrações**: Utilizar Alembic para versionamento determinístico do schema relacional.
@@ -198,7 +198,7 @@ async function runAIAgentPipeline() {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      username_or_email: process.env.LOFT_ADMIN_USER || 'willian.jesus@loft.com.br',
+      username_or_email: process.env.LOFT_ADMIN_USER || 'willian.jesus@olivelas.com.br',
       password: process.env.LOFT_ADMIN_PASSWORD || 'admin_dev_pass'
     })
   });
@@ -280,7 +280,7 @@ API_V1 = f"{BASE_URL}/api/v1"
 
 # 1. Autenticação e Obtenção do Token JWT
 login_payload = {
-    "username_or_email": os.getenv("LOFT_ADMIN_USER", "willian.jesus@loft.com.br"),
+    "username_or_email": os.getenv("LOFT_ADMIN_USER", "willian.jesus@olivelas.com.br"),
     "password": os.getenv("LOFT_ADMIN_PASSWORD") or os.getenv("DEFAULT_ADMIN_PASSWORD", "admin_dev_pass"),
 }
 login_res = requests.post(f"{API_V1}/iam/login", json=login_payload).json()
@@ -353,7 +353,7 @@ API_V1="${BASE_URL}/api/v1"
 # 1. Login e obtenção do Bearer Token
 LOGIN_RESP=$(curl -s -X POST "${API_V1}/iam/login" \
   -H "Content-Type: application/json" \
-  -d '{"username_or_email": "willian.jesus@loft.com.br", "password": "admin_dev_pass"}')
+  -d '{"username_or_email": "willian.jesus@olivelas.com.br", "password": "admin_dev_pass"}')
 
 ACCESS_TOKEN=$(echo "${LOGIN_RESP}" | jq -r '.data.access_token')
 AUTH_HEADER="Authorization: Bearer ${ACCESS_TOKEN}"
@@ -434,7 +434,7 @@ Todas as respostas seguem o envelope `ApiResponse` (`rul_loft_be_api_envelope`):
 
 ---
 
-## 🛡️ 8. Segurança e Diretrizes de Engenharia da Loft
+## 🛡️ 8. Segurança e Diretrizes de Engenharia da Olivelas
 
 1. **Proteção de Segredos**: Nunca comite senhas ou connection strings em repositórios Git públicos. Utilize sempre variáveis de ambiente (`.env`) ou secrets managers.
 2. **Auditoria Contínua**: Toda operação realizada por um Agente de IA gera um registro na trilha de auditoria (`/api/v1/audit/logs`) associando o email do autor autenticado via JWT e a ação executada.

@@ -18,7 +18,7 @@ type: "operations"
 >
 > Documentation Standard v1.0
 >
-> **SUGGESTED / ILLUSTRATIVE** — Helm-style values are **org-specific** and **not** a Loft mandate.
+> **SUGGESTED / ILLUSTRATIVE** — Helm-style values are **org-specific** and **not** a Olivelas mandate.
 
 ## Workloads
 

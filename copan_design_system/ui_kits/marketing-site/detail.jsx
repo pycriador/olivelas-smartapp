@@ -78,7 +78,7 @@ function DetailScreen({ goto, property }) {
               {tab === 0 && (
                 <div>
                   <p style={{ fontFamily:"Inter", fontSize:16, lineHeight:"26px", color:"#343A3F" }}>
-                    Apartamento reformado pela Loft em {p.neigh}, um dos bairros mais procurados de São Paulo. Com {p.area}m² distribuídos em {p.rooms} {p.rooms === 1 ? "quarto" : "quartos"}, o imóvel oferece acabamento padrão Loft e está pronto para morar.
+                    Apartamento reformado pela Olivelas em {p.neigh}, um dos bairros mais procurados de São Paulo. Com {p.area}m² distribuídos em {p.rooms} {p.rooms === 1 ? "quarto" : "quartos"}, o imóvel oferece acabamento padrão Olivelas e está pronto para morar.
                   </p>
                   <p style={{ fontFamily:"Inter", fontSize:16, lineHeight:"26px", color:"#343A3F", marginTop:16 }}>
                     O prédio conta com infraestrutura completa e está a poucos metros do metrô, ciclovia e parques da região.
@@ -147,7 +147,7 @@ function DetailScreen({ goto, property }) {
                 <div style={{ width: 40, height: 40, borderRadius: 999, background: "linear-gradient(135deg, #F56738, #D94616)" }} />
                 <div>
                   <div style={{ fontFamily:"Inter", fontWeight:700, fontSize:14, color:"#121619" }}>Mariana Costa</div>
-                  <div style={{ fontFamily:"Inter", fontSize:12, color:"#697077" }}>Consultora Loft · responde em ~2h</div>
+                  <div style={{ fontFamily:"Inter", fontSize:12, color:"#697077" }}>Consultora Olivelas · responde em ~2h</div>
                 </div>
               </div>
             </div>

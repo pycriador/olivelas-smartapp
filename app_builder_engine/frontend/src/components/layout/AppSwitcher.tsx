@@ -69,7 +69,7 @@ export const AppSwitcher: React.FC<AppSwitcherProps> = ({
     },
     {
       id: 'portal-loft',
-      name: 'Portal Loft',
+      name: 'Portal Olivelas',
       description: 'Acompanhe seus anúncios e integrações em tempo real.',
       url: '#',
     },
@@ -77,10 +77,10 @@ export const AppSwitcher: React.FC<AppSwitcherProps> = ({
 
   const utilityLinks: UtilityItem[] = [
     { id: 'qualifica', name: 'Qualifica Leads', url: '#' },
-    { id: 'clube', name: 'Clube Loft', url: '#' },
+    { id: 'clube', name: 'Clube Olivelas', url: '#' },
     { id: 'credsign', name: 'CredSign', url: '#' },
-    { id: 'assistente', name: 'Assistente Loft', url: '#' },
-    { id: 'selo', name: 'Selo de tecnologia Loft', url: '#' },
+    { id: 'assistente', name: 'Assistente Olivelas', url: '#' },
+    { id: 'selo', name: 'Selo de tecnologia Olivelas', url: '#' },
   ];
 
   return (
@@ -148,7 +148,7 @@ export const AppSwitcher: React.FC<AppSwitcherProps> = ({
           })}
         </div>
 
-        {/* Secondary Utility Links (Pills with Loft Key Marker) */}
+        {/* Secondary Utility Links (Pills with Olivelas Key Marker) */}
         <div>
           <span className="text-[11px] font-bold text-loft-muted uppercase tracking-wider block mb-2.5">
             Soluções & Ferramentas Integradas
@@ -161,7 +161,7 @@ export const AppSwitcher: React.FC<AppSwitcherProps> = ({
                 onClick={(e) => e.preventDefault()}
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F8FAFC] border border-loft-border hover:border-[#FF774A] hover:bg-white text-xs font-medium text-loft-dark transition shadow-2xs"
               >
-                {/* Loft Key Marker: orange hollow circle + solid horizontal line */}
+                {/* Olivelas Key Marker: orange hollow circle + solid horizontal line */}
                 <div className="flex items-center">
                   <div className="w-[9px] h-[9px] rounded-full border-[1.5px] border-[#FF774A]" />
                   <div className="w-[6px] h-[2px] bg-[#FF774A]" />

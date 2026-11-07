@@ -18,7 +18,7 @@ type: "infrastructure"
 >
 > Documentation Standard v1.0
 >
-> **SUGGESTED / ILLUSTRATIVE** — container + Helm-style values are **org-specific**, not a Loft or framework mandate.
+> **SUGGESTED / ILLUSTRATIVE** — container + Helm-style values are **org-specific**, not a Olivelas or framework mandate.
 
 ## Purpose
 

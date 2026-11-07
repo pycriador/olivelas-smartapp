@@ -1,5 +1,5 @@
 /**
- * Loft News Portal — 100% Connected to App Builder Engine API (localhost:8000)
+ * Olivelas News Portal — 100% Connected to App Builder Engine API (localhost:8000)
  */
 const API_BASE = 'http://127.0.0.1:8000/api/v1';
 
@@ -214,11 +214,11 @@ function loadDefaultNewsArticles() {
   state.articles = [
     {
       id: 'news_01',
-      title: 'Loft Lança Nova Plataforma de Inteligência Artificial para Corretores e Imobiliárias',
+      title: 'Olivelas Lança Nova Plataforma de Inteligência Artificial para Corretores e Imobiliárias',
       category: 'AI & Inovação',
       summary: 'Novo motor de recomendação preditiva utiliza modelos de última geração para acelerar fechamento de contratos de compra e locação.',
-      content: 'A Loft anunciou hoje a expansão de seus motores de inteligência artificial aplicados ao mercado imobiliário brasileiro. Com o novo sistema integrado ao AI Gateway, corretores parceiros conseguem avaliar a liquidez de venda de imóveis em segundos, reduzindo o tempo médio de negociação em mais de 35%.\n\nA arquitetura do sistema baseia-se em microsserviços modernos com FastAPI e processamento em tempo real.',
-      author: 'Redação Loft Tech',
+      content: 'A Olivelas anunciou hoje a expansão de seus motores de inteligência artificial aplicados ao mercado imobiliário brasileiro. Com o novo sistema integrado ao AI Gateway, corretores parceiros conseguem avaliar a liquidez de venda de imóveis em segundos, reduzindo o tempo médio de negociação em mais de 35%.\n\nA arquitetura do sistema baseia-se em microsserviços modernos com FastAPI e processamento em tempo real.',
+      author: 'Redação Olivelas Tech',
       date: '10/09/2026',
       tags: ['ai', 'inovacao', 'proptech', 'mercado'],
       readTime: '4 min'
@@ -236,10 +236,10 @@ function loadDefaultNewsArticles() {
     },
     {
       id: 'news_03',
-      title: 'Padrões de Engenharia: Como a Loft Estrutura Microsserviços com Clean Architecture e FSD',
+      title: 'Padrões de Engenharia: Como a Olivelas Estrutura Microsserviços com Clean Architecture e FSD',
       category: 'Tecnologia & Dev',
       summary: 'Diretrizes canônicas garantem escalabilidade, tipagem estrita com Pydantic v2 e governança de acessos RBAC.',
-      content: 'A guilda de engenharia da Loft consolidou os princípios arquiteturais que regem o desenvolvimento de software na companhia. O foco em desacoplamento de camadas e contratos bem definidos permite deploys contínuos e alta resiliência operacional.',
+      content: 'A guilda de engenharia da Olivelas consolidou os princípios arquiteturais que regem o desenvolvimento de software na companhia. O foco em desacoplamento de camadas e contratos bem definidos permite deploys contínuos e alta resiliência operacional.',
       author: 'Guilda de Arquitetura',
       date: '08/09/2026',
       tags: ['engenharia', 'fastapi', 'clean-arch'],
@@ -328,7 +328,7 @@ async function summarizeArticleWithAi(article) {
   modalSummarizeBtn.disabled = true;
 
   try {
-    const prompt = `Você é o jornalista e editor executivo do portal de notícias Loft Tech.
+    const prompt = `Você é o jornalista e editor executivo do portal de notícias Olivelas Tech.
 Faça um resumo conciso de 3 pontos-chave da seguinte matéria:
 Título: ${article.title}
 Conteúdo: ${article.content || article.summary}`;
@@ -353,12 +353,12 @@ Conteúdo: ${article.content || article.summary}`;
         <strong>Destaques da Matéria:</strong><br>
         • <strong>Foco Principal:</strong> ${article.summary || article.title}<br>
         • <strong>Categoria:</strong> ${article.category}<br>
-        • <strong>Impacto:</strong> Modernização arquitetural e conformidade com padrões Enterprise Loft.
+        • <strong>Impacto:</strong> Modernização arquitetural e conformidade com padrões Enterprise Olivelas.
       `;
     }
   } catch (err) {
     modalAiContent.innerHTML = `
-      <strong>Resumo Rápido:</strong> ${article.summary || 'Matéria técnica detalhando padrões de arquitetura e tecnologia Loft.'}
+      <strong>Resumo Rápido:</strong> ${article.summary || 'Matéria técnica detalhando padrões de arquitetura e tecnologia Olivelas.'}
     `;
   } finally {
     modalSummarizeBtn.disabled = false;
@@ -426,7 +426,7 @@ function formatDocToArticle(doc) {
     category: cat,
     summary: doc.summary || doc.description || (doc.content ? doc.content.slice(0, 180) + '...' : 'Sem resumo'),
     content: doc.content || doc.body || doc.summary || '',
-    author: doc.author || 'Loft Tech Team',
+    author: doc.author || 'Olivelas Tech Team',
     date: doc.created_at ? new Date(doc.created_at).toLocaleDateString('pt-BR') : 'Hoje',
     tags: doc.tags || ['engineering', 'loft'],
     readTime: `${Math.max(2, Math.ceil((doc.content?.length || 500) / 400))} min`

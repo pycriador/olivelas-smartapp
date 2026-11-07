@@ -1,5 +1,5 @@
 /**
- * Loft Intelligent Support Chatbot — 100% Connected to App Builder Engine API (localhost:8000)
+ * Olivelas Intelligent Support Chatbot — 100% Connected to App Builder Engine API (localhost:8000)
  */
 const API_BASE = 'http://127.0.0.1:8000/api/v1';
 
@@ -193,7 +193,7 @@ async function sendMessage(text) {
       const docs = Array.isArray(ragData) ? ragData : (ragData.results || ragData.data || []);
       if (docs.length > 0) {
         const topDoc = docs[0];
-        ragContext = `\nContexto relevante da base técnica Loft:\nDocumento: ${topDoc.title}\nResumo: ${topDoc.summary || ''}\nConteúdo: ${topDoc.content ? topDoc.content.slice(0, 600) : ''}\n`;
+        ragContext = `\nContexto relevante da base técnica Olivelas:\nDocumento: ${topDoc.title}\nResumo: ${topDoc.summary || ''}\nConteúdo: ${topDoc.content ? topDoc.content.slice(0, 600) : ''}\n`;
         citation = {
           title: topDoc.title,
           category: topDoc.category || 'Especificação Técnica',
@@ -205,7 +205,7 @@ async function sendMessage(text) {
   }
 
   // Step B: Build prompt with system persona & knowledge grounding
-  const systemPrompt = `Você é o Loft Assistant, assistente oficial de suporte técnico e operacional da Loft.
+  const systemPrompt = `Você é o Olivelas Assistant, assistente oficial de suporte técnico e operacional da Olivelas.
 Responda de forma clara, prestativa, objetiva e estruturada em português do Brasil.
 Use formatação Markdown simples (negrito, listas e tópicos).`;
 
@@ -247,11 +247,11 @@ function generateFallbackAnswer(query, citation) {
   let text = '';
 
   if (q.includes('fiança') || q.includes('aluguel') || q.includes('garantia')) {
-    text = `A **Fiança Aluguel Loft** substitui o fiador tradicional e o depósito caução.
+    text = `A **Fiança Aluguel Olivelas** substitui o fiador tradicional e o depósito caução.
 - **Vantagens para Imobiliárias:** Aprovação instantânea via motor de crédito, cobertura de inadimplência e sinistros.
-- **Contratação:** Realizada 100% digital através do portal parceiro Loft com retorno em menos de 1 minuto.`;
+- **Contratação:** Realizada 100% digital através do portal parceiro Olivelas com retorno em menos de 1 minuto.`;
   } else if (q.includes('arquitetura') || q.includes('fastapi') || q.includes('regra') || q.includes('backend')) {
-    text = `As **Golden Rules de Engenharia Loft** estabelecem:
+    text = `As **Golden Rules de Engenharia Olivelas** estabelecem:
 1. **Clean Architecture & FSD:** Separação estrita de camadas e desacoplamento de infraestrutura.
 2. **Pydantic v2 & Tipagem Estrita:** Todos os payloads e schemas são tipados.
 3. **Segurança RBAC:** Validação semântica de privilégios em todos os endpoints sensíveis.`;
@@ -261,7 +261,7 @@ function generateFallbackAnswer(query, citation) {
 - **Ativação Instantânea:** Permissões granulares mapeadas na matriz de privilégios.
 - **Trilha de Auditoria Universal:** Todo evento de mutação de usuário ou grupo é registrado com IP e timestamp.`;
   } else {
-    text = `Entendido! Essa operação está totalmente alinhada às especificações da plataforma Loft.
+    text = `Entendido! Essa operação está totalmente alinhada às especificações da plataforma Olivelas.
 Caso queira consultar documentações específicas ou efetuar operações no sistema, utilize os módulos da barra lateral ou consulte nossa central de conhecimento.`;
   }
 
@@ -287,7 +287,7 @@ function appendMessage(sender, text, citation = null) {
   msgEl.innerHTML = `
     <div class="message__avatar">${isBot ? '🤖' : '👤'}</div>
     <div class="message__bubble">
-      <div class="message__sender">${isBot ? 'Loft Assistant' : (state.user?.name || 'Você')}</div>
+      <div class="message__sender">${isBot ? 'Olivelas Assistant' : (state.user?.name || 'Você')}</div>
       <div class="message__text">${formatMarkdown(text)}</div>
       ${citationHtml}
       <div class="message__time">${timeStr}</div>
@@ -320,7 +320,7 @@ function resetChat() {
     <div class="message message--bot">
       <div class="message__avatar">🤖</div>
       <div class="message__bubble">
-        <div class="message__sender">Loft Assistant</div>
+        <div class="message__sender">Olivelas Assistant</div>
         <div class="message__text">
           Nova sessão iniciada! Como posso ajudar você agora?
         </div>

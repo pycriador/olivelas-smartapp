@@ -36,10 +36,10 @@ docs-sync-pt-br:
 
 docs-sync-pt-br-cleanup-dry:
 	cd docs-sync && uv run docs-sync cleanup --config config.pt-BR.yaml \
-		--title "AIOps Docs" --match prefix --dry-run \
+		--title "Olivelas Docs" --match prefix --dry-run \
 		--protect 6086460456 --protect 6090391603 --protect 6090358809 --protect 6091309071
 
-# Scoped AIOps hub sync (level 1 — aiops-team/)
+# Scoped Olivelas hub sync (level 1 — aiops-team/)
 docs-sync-aiops-team-status:
 	cd docs-sync && uv run docs-sync status --config aiops-config/documentacao-inicial.pt-BR.yaml \
 		--docs ../../docs/pt-BR/aiops-team --changes-only
@@ -53,7 +53,7 @@ docs-sync-aiops-team:
 		--docs ../../docs/pt-BR/aiops-team --changes-only --relink
 
 # Scoped app page sync (level 2) — usage: make docs-sync-aiops-app APP=dataforge.md
-# Single target: aiops-apps.pt-BR.yaml (AIOps - Stack). Confluence enforces
+# Single target: aiops-apps.pt-BR.yaml (Olivelas - Stack). Confluence enforces
 # page-title uniqueness per space, not per parent, so these pages cannot
 # also be published under documentacao-inicial.pt-BR.yaml (excluded there).
 APP ?= dataforge.md

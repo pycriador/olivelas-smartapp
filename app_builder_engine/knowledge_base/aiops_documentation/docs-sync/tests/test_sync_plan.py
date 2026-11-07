@@ -31,7 +31,7 @@ def test_build_plan_skips_warm_for_new_stable_ids_in_nonempty_state(tmp_path: Pa
         config_path=cfg_path,
     )
     state = SyncState(
-        space="AIOps",
+        space="Olivelas",
         pages={"REF-OLD": "999"},
         content_hashes={"REF-OLD": "abc"},
     )
@@ -45,7 +45,7 @@ def test_build_plan_skips_warm_for_new_stable_ids_in_nonempty_state(tmp_path: Pa
                 title="Hub",
                 content="# Hub\n",
                 absolute_path=str(docs / "README.md"),
-                metadata=DocumentationMetadata(document_id="REF-AIOPS-TEAM-001"),
+                metadata=DocumentationMetadata(document_id="REF-OLIVELAS-TEAM-001"),
                 is_directory_index=True,
             )
         },
@@ -77,7 +77,7 @@ def test_build_plan_uses_state_hash_without_warm_for_existing_pages(tmp_path: Pa
         title="Hub",
         content="# Hub\n",
         absolute_path=str(docs / "README.md"),
-        metadata=DocumentationMetadata(document_id="REF-AIOPS-TEAM-001"),
+        metadata=DocumentationMetadata(document_id="REF-OLIVELAS-TEAM-001"),
         is_directory_index=True,
     )
     doc.content_hash = doc.content  # simplified; mapper hashes body
@@ -86,9 +86,9 @@ def test_build_plan_uses_state_hash_without_warm_for_existing_pages(tmp_path: Pa
 
     mapping = ConfluenceMapper(config).map_document(doc, tree=None)
     state = SyncState(
-        space="AIOps",
-        pages={"REF-AIOPS-TEAM-001": "1001"},
-        content_hashes={"REF-AIOPS-TEAM-001": mapping.content_hash},
+        space="Olivelas",
+        pages={"REF-OLIVELAS-TEAM-001": "1001"},
+        content_hashes={"REF-OLIVELAS-TEAM-001": mapping.content_hash},
     )
     save_state(state_path, state)
 

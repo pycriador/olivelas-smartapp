@@ -12,8 +12,8 @@
 
 | Language | Message |
 | --- | --- |
-| EN | The stack and module names are **illustrative only**. They are **not** the documentation standard, not a Loft platform mandate, and not the only valid way to adopt this framework. |
-| pt-BR | A stack e os nomes de módulos são **apenas ilustrativos**. **Não** são o padrão de documentação, nem um mandato de plataforma Loft, nem a única forma válida de adotar este framework. |
+| EN | The stack and module names are **illustrative only**. They are **not** the documentation standard, not a Olivelas platform mandate, and not the only valid way to adopt this framework. |
+| pt-BR | A stack e os nomes de módulos são **apenas ilustrativos**. **Não** são o padrão de documentação, nem um mandato de plataforma Olivelas, nem a única forma válida de adotar este framework. |
 
 This example is inspired by patterns observed in an **isolated reference project** (corporate spreadsheet workspace). The reference project is **out of scope** of this repository and must not be treated as canonical guidance for the standard.
 
@@ -39,7 +39,7 @@ Este exemplo inspira-se em padrões observados em um **projeto isolado de refer�
 | Auth | JWT + optional API tokens + M2M service accounts | Pattern-level; not a vendor mandate |
 | Object storage | Google Drive adapter (S3 as Proposed stub) | Edge integration example |
 | Process model | Gunicorn + optional container / Workers deploy | Deployment is organizational |
-| Observability | Health checks + audit log + local ring buffers; Datadog **optional** for Loft | Framework does not require Datadog |
+| Observability | Health checks + audit log + local ring buffers; Datadog **optional** for Olivelas | Framework does not require Datadog |
 
 **Do not** copy this table into a project as “required by aiops-documentation”. Prefer the technology-agnostic templates.
 

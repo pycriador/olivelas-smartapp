@@ -19,7 +19,7 @@ Como a documentação deve linkar quando é lida no **GitHub / checkout local** 
 
 ## Regras obrigatórias (todo pack de sync)
 
-1. **Declarar o repositório da documentação** no perfil do `docs-sync`: `project.repository_url` (ex.: `https://github.com/loft-br/aiops-documentation`). Sincronizar com `include_footer: true` (padrão) para cada página do Confluence apontar de volta ao arquivo no GitHub.
+1. **Declarar o repositório da documentação** no perfil do `docs-sync`: `project.repository_url` (ex.: `https://github.com/pycriador/olivelas-smartapp`). Sincronizar com `include_footer: true` (padrão) para cada página do Confluence apontar de volta ao arquivo no GitHub.
 2. **Sempre resolver links** em publicações reais: `sync` com `--relink` (padrão). Não deixar placeholders `confluence://…` no corpo publicado — use `audit` e depois `sync --force --relink` se necessário.
 3. **Todo link deve resolver nas duas superfícies.** Links relativos só são permitidos quando o alvo existe **dentro da árvore de documentação / pack de sync**. `docs-sync validate` e `make docs-validate` **interrompem** em relativos quebrados, caminhos que escapam da árvore e prosa `../../…/*.md` nua. Não inventar URLs GitHub para arquivos inexistentes.
 4. **Links entre documentos no Markdown permanecem relativos** só dentro da mesma árvore publicada (ex.: `[Architecture](architecture/README.md)`). Autores não devem hardcodar URLs de páginas do Confluence gerenciadas pelo `docs-sync`. Alvos cross-pack **neste** repo fora da raiz de sync devem usar URL `blob` do GitHub (ou ampliar o pack). Arquivos em **outro** repositório GitHub devem usar URL `blob` absoluta — nunca `../../backend/README.md`.
@@ -101,9 +101,9 @@ Antes de publicar um pack a partir de um clone local:
 
 Ferramentas: [docs-sync/README.md](../../docs-sync/README.md), perfis em [docs-sync/aiops-config/](../../docs-sync/aiops-config/).
 
-## Hub AIOps em três níveis
+## Hub Olivelas em três níveis
 
-O time AIOps usa um modelo dedicado ([aiops-team/documentation-model.md](aiops-team/documentation-model.md)):
+O time Olivelas usa um modelo dedicado ([aiops-team/documentation-model.md](aiops-team/documentation-model.md)):
 
 | Nível | SoT | Publicação Confluence |
 | --- | --- | --- |
@@ -117,7 +117,7 @@ Registro e comandos scoped: [docs-sync/aiops-config/hub-registry.yaml](../../doc
 
 - Publicar sem `repository_url` (páginas Confluence sem origem no GitHub)
 - Hardcodar URLs do Confluence gerenciadas no Markdown SoT (quebra em rename/reparent; contorna o `--relink`)
-- Citar outro repo Loft só pelo nome informal
+- Citar outro repo Olivelas só pelo nome informal
 - Colar código sem caminho e link blob
 - Deixar hrefs `confluence://` sem resolver depois do sync
 - Caminhos nus ou relativos estilo `../../knowledge/README.md` vindos de monorepo de app (mortos no Confluence; errados neste GitHub)

@@ -159,7 +159,7 @@ export const ShareDocModal: React.FC<ShareDocModalProps> = ({
       {/* Internal Sharing Form */}
       <div style={{ marginBottom: 20 }}>
         <Text strong style={{ fontSize: 14, color: '#1E293B', display: 'block', marginBottom: 10 }}>
-          <TeamOutlined style={{ marginRight: 6, color: '#0066CC' }} /> Compartilhar com Usuários ou Grupos da Loft
+          <TeamOutlined style={{ marginRight: 6, color: '#0066CC' }} /> Compartilhar com Usuários ou Grupos da Olivelas
         </Text>
 
         <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
@@ -204,7 +204,7 @@ export const ShareDocModal: React.FC<ShareDocModalProps> = ({
             </Select>
           ) : (
             <Input
-              placeholder="e.g. willian.jesus@loft.com.br"
+              placeholder="e.g. willian.jesus@olivelas.com.br"
               value={userEmailInput}
               onChange={(e) => setUserEmailInput(e.target.value)}
               style={{ flex: 1 }}
@@ -240,7 +240,7 @@ export const ShareDocModal: React.FC<ShareDocModalProps> = ({
           emptyText: (
             <div style={{ padding: 12, textAlign: 'center', color: '#94A3B8' }}>
               <GlobalOutlined style={{ fontSize: 20, marginBottom: 4 }} />
-              <div>Documento disponível publicamente na base de conhecimento interna da Loft.</div>
+              <div>Documento disponível publicamente na base de conhecimento interna da Olivelas.</div>
             </div>
           ),
         }}

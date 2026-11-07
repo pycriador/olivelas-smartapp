@@ -1,4 +1,4 @@
-# Vault — configuração de secrets nos apps AIOps
+# Vault — configuração de secrets nos apps Olivelas
 
 > Language: pt-BR | [English (EN)](../../en/loft-infra/vault-secrets.md)
 >
@@ -8,7 +8,7 @@
 >
 > Authority: Verified
 
-## Modelo preferido na Loft
+## Modelo preferido na Olivelas
 
 Em serviços no EKS, o caminho oficial é **HashiCorp Vault + Vault Secrets Operator**:
 
@@ -61,7 +61,7 @@ envFrom:
 
 Todas as **keys** do KV viram env vars no processo. A aplicação só precisa ler `os.environ` / equivalente.
 
-## Paths observados nos apps AIOps
+## Paths observados nos apps Olivelas
 
 | Serviço | `mount` | `path` em `vaultSecrets` |
 | --- | --- | --- |
@@ -94,7 +94,7 @@ Pré-requisito local: CLI `vault` autenticada (token/OIDC) com permissão de esc
 - Comentário no example: o path da API também alimenta workers (scheduler/slack) via o mesmo `vaultSecrets`
 - Push usa JSON via stdin no `vault kv put` (evita secrets na linha de comando do shell)
 
-### Loft Carteira — runtime local vs EKS
+### Olivelas Carteira — runtime local vs EKS
 
 [`backend/env_loader.py`](https://github.com/loft-br/aiops-loft-carteira/blob/main/backend/env_loader.py):
 
@@ -126,7 +126,7 @@ Pré-requisito local: CLI `vault` autenticada (token/OIDC) com permissão de esc
    Nunca commitado. Scripts de push leem `.env` → Vault. Se um `.env` vazou no Git: **rotacionar primeiro**, depois limpar histórico.
 
 8. **Legacy**  
-   `loft-br/actions/secret_kubernetes` ainda existe para repos antigos; apps AIOps de referência usam `vaultSecrets`. Não introduzir o legado em serviço novo.
+   `loft-br/actions/secret_kubernetes` ainda existe para repos antigos; apps Olivelas de referência usam `vaultSecrets`. Não introduzir o legado em serviço novo.
 
 9. **Health / boot**  
    Se a app exige `DATABASE_URL` / `JWT_SECRET_KEY` no boot e o VaultStaticSecret falha (path errado, permissão, VSO), o pod crasha ou fica sem ready — checar eventos do `VaultStaticSecret` e do Secret gerado no namespace.

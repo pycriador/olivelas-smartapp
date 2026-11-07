@@ -1,5 +1,5 @@
 ---
-id: REF-AIOPS-APPS-008
+id: REF-OLIVELAS-APPS-008
 title: "DataForge — projects and data platform"
 status: "DRAFT"
 owner: "aiops"
@@ -19,7 +19,7 @@ review_date: "2026-11-24"
 
 > Prefer a plain-language explanation? See the [Guide](dataforge-guide.md).
 
-**As-is** documentation for [loft-br/aiops-dataforge](https://github.com/loft-br/aiops-dataforge) — AIOps catalog **level 2**.
+**As-is** documentation for [loft-br/aiops-dataforge](https://github.com/loft-br/aiops-dataforge) — Olivelas catalog **level 2**.
 
 ## Goal
 
@@ -27,13 +27,13 @@ Web platform for **projects**, **files**, data comparison/reconciliation, dictio
 
 ## Context
 
-Standard AIOps **web app** monorepo: TanStack Start front at repo root + Flask API in `backend/`. Evidence: [overview.md](overview.md#dataforge-aiops-dataforge).
+Standard Olivelas **web app** monorepo: TanStack Start front at repo root + Flask API in `backend/`. Evidence: [overview.md](overview.md#dataforge-aiops-dataforge).
 
 ## Users / areas
 
 | User / area | Need |
 | --- | --- |
-| Internal Loft squads | Data projects, upload, reconciliation |
+| Internal Olivelas squads | Data projects, upload, reconciliation |
 | Admins | Service accounts, administration — **Inferred** |
 
 ## Impact

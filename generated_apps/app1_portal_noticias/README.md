@@ -1,4 +1,4 @@
-# 📰 Loft News Portal (App 1)
+# 📰 Olivelas News Portal (App 1)
 
 Aplicação frontend completa, moderna e isolada consumindo **100% da API** da plataforma App Builder Engine (`http://127.0.0.1:8000/api/v1`).
 

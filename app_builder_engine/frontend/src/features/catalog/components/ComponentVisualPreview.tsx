@@ -159,7 +159,7 @@ export const ComponentVisualPreview: React.FC<ComponentVisualPreviewProps> = ({
           </div>
 
           <div className="bg-white rounded-xl border border-loft-border p-4 min-h-[220px] flex items-center justify-center">
-            {feedbackTab === 'loading' && <LoadingState tip="Sincronizando dados com o Loft Engine..." />}
+            {feedbackTab === 'loading' && <LoadingState tip="Sincronizando dados com o Olivelas Engine..." />}
             {feedbackTab === 'empty' && (
               <EmptyState
                 title="Nenhum imóvel disponível para locação"
@@ -194,7 +194,7 @@ export const ComponentVisualPreview: React.FC<ComponentVisualPreviewProps> = ({
             <StatusTag status="Archived" />
             <StatusTag status="Error" />
             <StatusTag status="Deprecated" />
-            <Tag color="#F56738" className="font-semibold px-2.5 py-1">Loft Brand Tag</Tag>
+            <Tag color="#F56738" className="font-semibold px-2.5 py-1">Olivelas Brand Tag</Tag>
             <Badge status="processing" text="Online / Sincronizado" className="text-xs font-medium" />
           </div>
         </div>
@@ -285,7 +285,7 @@ export const ComponentVisualPreview: React.FC<ComponentVisualPreviewProps> = ({
               </div>
               <div>
                 <div className="text-xs font-bold text-loft-dark">{component.name}</div>
-                <div className="text-[10px] text-loft-muted">Loft Enterprise Copan Structure</div>
+                <div className="text-[10px] text-loft-muted">Olivelas Enterprise Copan Structure</div>
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -564,7 +564,7 @@ export const ComponentVisualPreview: React.FC<ComponentVisualPreviewProps> = ({
             children: (
               <div className="space-y-3 p-2">
                 <div>
-                  <div className="text-xs font-semibold text-loft-muted mb-1">Importação Padrão no Loft Workspace:</div>
+                  <div className="text-xs font-semibold text-loft-muted mb-1">Importação Padrão no Olivelas Workspace:</div>
                   <MarkdownViewer
                     content={`\`\`\`typescript\nimport { ${component.name.replace(/[^a-zA-Z0-9]/g, '')} } from '@/components/loft';\n\`\`\``}
                   />

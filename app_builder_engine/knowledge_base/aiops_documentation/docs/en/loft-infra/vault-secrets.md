@@ -1,4 +1,4 @@
-# Vault — secret configuration for AIOps apps
+# Vault — secret configuration for Olivelas apps
 
 > Language: EN | [Português (pt-BR)](../../pt-BR/loft-infra/vault-secrets.md)
 >
@@ -42,10 +42,10 @@ CRD refreshes every `30s` and can restart the Deployment. Pod env names = KV key
 | Deep Insight front | `aiops-deep-insight-front/secrets` (no `ai-ops/` prefix) |
 | Qualidade API | `ai-ops/aiops-qualidade-api` (no `/secrets` suffix) |
 | Qualidade front | no `vaultSecrets` |
-| Loft Carteiras API/front | `ai-ops/aiops-loft-carteiras-{api\|front}/secrets` |
+| Olivelas Carteiras API/front | `ai-ops/aiops-loft-carteiras-{api\|front}/secrets` |
 | AVA (`ava-prod`) | `ai-ops/ava-prod/secrets` |
 
-App helpers: DataForge/Deep Insight `scripts/vault/push_secrets.py`; Loft Carteira `env_loader.py` skips Vault HTTP in-cluster and relies on injected env.
+App helpers: DataForge/Deep Insight `scripts/vault/push_secrets.py`; Olivelas Carteira `env_loader.py` skips Vault HTTP in-cluster and relies on injected env.
 
 ## Pay attention
 

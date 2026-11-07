@@ -1,5 +1,5 @@
 /**
- * Loft Imóveis para Venda — 100% Connected to App Builder Engine API (localhost:8000)
+ * Olivelas Imóveis para Venda — 100% Connected to App Builder Engine API (localhost:8000)
  */
 const API_BASE = 'http://127.0.0.1:8000/api/v1';
 
@@ -327,7 +327,7 @@ function setupModalEvents() {
   simDownPayment.addEventListener('input', recalculateFinancing);
 
   btnApproveFinancing.addEventListener('click', () => {
-    alert('Proposta de crédito pré-aprovada com sucesso na esteira Loft Fiança & Financiamento!');
+    alert('Proposta de crédito pré-aprovada com sucesso na esteira Olivelas Fiança & Financiamento!');
     financingModal.hidden = true;
   });
 
@@ -348,7 +348,7 @@ function setupModalEvents() {
         })
       });
     } catch (e) {}
-    alert(`Visita agendada com sucesso para o imóvel ${state.currentProp.code}! Um corretor especialista Loft entrará em contato.`);
+    alert(`Visita agendada com sucesso para o imóvel ${state.currentProp.code}! Um corretor especialista Olivelas entrará em contato.`);
   });
 
   btnRequestAiAppraisal.addEventListener('click', () => {
@@ -405,7 +405,7 @@ function renderProperties() {
     card.innerHTML = `
       <div class="card-img-wrap">
         <img src="${prop.photos[0]}" alt="${prop.title}">
-        <span class="tag-exclusive">Exclusivo Loft</span>
+        <span class="tag-exclusive">Exclusivo Olivelas</span>
         <span class="photo-count">📷 ${prop.photos.length} fotos</span>
       </div>
       <div class="card-body">

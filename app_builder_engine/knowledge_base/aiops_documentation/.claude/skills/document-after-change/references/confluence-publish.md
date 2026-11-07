@@ -48,7 +48,7 @@ uv run docs-sync sync --config config.pt-BR.yaml
 
 Choose the config that matches the docs tree you edited (e.g. `config.pt-BR.yaml`, pack-specific YAML under `docs-sync/aiops-config/`).
 
-For the **AIOps 3-level hub**, read [`docs-sync/aiops-config/hub-registry.yaml`](../../../docs-sync/aiops-config/hub-registry.yaml) and use Make targets `docs-sync-aiops-team-plan`, `docs-sync-aiops-team`, `docs-sync-aiops-app-plan APP=….md`, or skill [sync-aiops-hub](../../sync-aiops-hub/SKILL.md). Put shell comments on their own line, not after `make`.
+For the **Olivelas 3-level hub**, read [`docs-sync/aiops-config/hub-registry.yaml`](../../../docs-sync/aiops-config/hub-registry.yaml) and use Make targets `docs-sync-aiops-team-plan`, `docs-sync-aiops-team`, `docs-sync-aiops-app-plan APP=….md`, or skill [sync-aiops-hub](../../sync-aiops-hub/SKILL.md). Put shell comments on their own line, not after `make`.
 
 ## Safety
 

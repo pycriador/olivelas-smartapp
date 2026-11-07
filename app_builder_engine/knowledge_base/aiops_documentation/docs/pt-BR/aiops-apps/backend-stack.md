@@ -1,4 +1,4 @@
-# Stack backend AIOps
+# Stack backend Olivelas
 
 > Language: pt-BR | [English (EN)](../../en/aiops-apps/backend-stack.md)
 >
@@ -79,7 +79,7 @@ Factory `create_app()`:
 - Blueprints: `/api`, `/external`, `/api/knowledge`, `/api/prompts`, `/api/conversations`, `/api/ai`, …
 - Módulo `app/security.py` aplica headers de segurança em `after_request`.
 
-### Loft Carteiras — extras
+### Olivelas Carteiras — extras
 
 Pins explícitos com comentários de CVE em `requirements.txt` (`flask==3.1.3`, `PyJWT==2.12.0`, …).
 

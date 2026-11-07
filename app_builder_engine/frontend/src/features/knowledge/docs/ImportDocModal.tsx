@@ -49,7 +49,7 @@ export const ImportDocModal: React.FC<ImportDocModalProps> = ({
       const doc = await knowledgeService.importConfluence({
         space_key: values.space_key,
         page_id_or_title: values.page_id_or_title,
-        base_url: values.base_url || 'https://loft.atlassian.net/wiki',
+        base_url: values.base_url || 'https://olivelas.atlassian.net/wiki',
         username: values.username,
         api_token: values.api_token,
         target_category: values.target_category || 'external_confluence',
@@ -146,9 +146,9 @@ export const ImportDocModal: React.FC<ImportDocModalProps> = ({
                   layout="vertical"
                   onFinish={handleImportConfluence}
                   initialValues={{
-                    base_url: 'https://loft.atlassian.net/wiki',
+                    base_url: 'https://olivelas.atlassian.net/wiki',
                     space_key: 'TECH',
-                    page_id_or_title: 'Loft Engineering Guidelines',
+                    page_id_or_title: 'Olivelas Engineering Guidelines',
                     target_category: 'external_confluence',
                   }}
                 >
@@ -157,7 +157,7 @@ export const ImportDocModal: React.FC<ImportDocModalProps> = ({
                     name="base_url"
                     rules={[{ required: true, message: 'Informe a base URL do Confluence' }]}
                   >
-                    <Input placeholder="https://loft.atlassian.net/wiki" />
+                    <Input placeholder="https://olivelas.atlassian.net/wiki" />
                   </Form.Item>
 
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
@@ -176,7 +176,7 @@ export const ImportDocModal: React.FC<ImportDocModalProps> = ({
 
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                     <Form.Item label="Usuário Atlassian (E-mail)" name="username">
-                      <Input placeholder="willian.jesus@loft.com.br" />
+                      <Input placeholder="willian.jesus@olivelas.com.br" />
                     </Form.Item>
 
                     <Form.Item label="API Token (Opcional se pré-configurado)" name="api_token">
@@ -221,7 +221,7 @@ export const ImportDocModal: React.FC<ImportDocModalProps> = ({
                   type="info"
                   showIcon
                   message="Conector GitHub Docs"
-                  description="Importa repositórios de documentação como loft-br/aiops-documentation ou especificações técnicas diretamente do branch desejado."
+                  description="Importa repositórios de documentação como pycriador/olivelas-smartapp ou especificações técnicas diretamente do branch desejado."
                   style={{ marginBottom: 16 }}
                 />
 
@@ -230,7 +230,7 @@ export const ImportDocModal: React.FC<ImportDocModalProps> = ({
                   layout="vertical"
                   onFinish={handleImportGitHub}
                   initialValues={{
-                    repo_url: 'https://github.com/loft-br/aiops-documentation',
+                    repo_url: 'https://github.com/pycriador/olivelas-smartapp',
                     branch: 'main',
                     path_filter: 'docs/architecture',
                     target_category: 'external_github',
@@ -241,7 +241,7 @@ export const ImportDocModal: React.FC<ImportDocModalProps> = ({
                     name="repo_url"
                     rules={[{ required: true, message: 'Informe a URL do repositório' }]}
                   >
-                    <Input placeholder="https://github.com/loft-br/aiops-documentation" />
+                    <Input placeholder="https://github.com/pycriador/olivelas-smartapp" />
                   </Form.Item>
 
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>

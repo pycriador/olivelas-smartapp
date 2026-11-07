@@ -1,4 +1,4 @@
-# Overview — Datadog na EKS Loft
+# Overview — Datadog na EKS Olivelas
 
 > Language: pt-BR | [English (EN)](../../en/loft-observability/overview.md)
 >
@@ -12,7 +12,7 @@ Repo: [loft-br/k8s-apps](https://github.com/loft-br/k8s-apps) (chart `web-server
 
 ## Papel da plataforma
 
-Na Loft, o **Datadog** é a plataforma padrão de **métricas, logs e traces**. Um agent Datadog roda nos nodes EKS; pods com tolerations Datadog recebem coleta em nível de host.
+Na Olivelas, o **Datadog** é a plataforma padrão de **métricas, logs e traces**. Um agent Datadog roda nos nodes EKS; pods com tolerations Datadog recebem coleta em nível de host.
 
 | Camada | Dono | O que entrega |
 | --- | --- | --- |
@@ -69,7 +69,7 @@ Ambientes não produtivos default **desligado**, salvo opt-in com TTL.
 
 ## Relação com documentação
 
-Para serviços Loft na EKS:
+Para serviços Olivelas na EKS:
 
 - **Logging** no Datadog é **pré-requisito documental** antes de considerar docs operacionais completas — [documentation-prerequisites.md](documentation-prerequisites.md).
 - Times ainda preenchem [templates/observability.md](../templates/observability.md) com status honesto `Implemented` / `Partial` / `Not Applicable`.

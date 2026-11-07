@@ -1,6 +1,6 @@
 ---
-id: REF-AIOPS-TEAM-008
-title: "AIOps — Technical standards"
+id: REF-OLIVELAS-TEAM-008
+title: "Olivelas — Technical standards"
 status: "DRAFT"
 owner: "aiops"
 updated: "2026-08-24"
@@ -15,7 +15,7 @@ review_date: "2026-11-24"
 >
 > Documentation Standard v1.0
 
-Pointers to standards the AIOps team follows when developing and publishing services.
+Pointers to standards the Olivelas team follows when developing and publishing services.
 
 ## Application
 
@@ -24,7 +24,7 @@ Pointers to standards the AIOps team follows when developing and publishing serv
 | Monorepo organization | [../aiops-apps/overview.md](../aiops-apps/overview.md) |
 | Routes and health | [../aiops-apps/routes.md](../aiops-apps/routes.md) |
 | App security | [../aiops-apps/security.md](../aiops-apps/security.md) |
-| REST APIs | Loft API plugin (English paths, JSON, English errors) |
+| REST APIs | Olivelas API plugin (English paths, JSON, English errors) |
 
 ## Infra and publish
 
@@ -37,7 +37,7 @@ Pointers to standards the AIOps team follows when developing and publishing serv
 | Vault secrets | [../loft-infra/vault-secrets.md](../loft-infra/vault-secrets.md) |
 | New service | [../loft-infra/checklist-novo-servico.md](../loft-infra/checklist-novo-servico.md) |
 
-## AIOps deploy conventions
+## Olivelas deploy conventions
 
 | Field | Typical value |
 | --- | --- |
@@ -54,7 +54,7 @@ Pointers to standards the AIOps team follows when developing and publishing serv
 | --- | --- |
 | Documentation standard | [../standards.md](../standards.md) |
 | Dual surfaces (GitHub + Confluence) | [../publishing-surfaces.md](../publishing-surfaces.md) |
-| AIOps 3-level model | [documentation-model.md](documentation-model.md) |
+| Olivelas 3-level model | [documentation-model.md](documentation-model.md) |
 
 ## Related
 

@@ -44,7 +44,7 @@ class AICompositionRequest(BaseModel):
     def normalize_input(cls, values: Any) -> Any:
         if isinstance(values, dict):
             if "application" not in values or not values["application"]:
-                app_name = values.get("project_name") or values.get("name") or "Loft Application"
+                app_name = values.get("project_name") or values.get("name") or "Olivelas Application"
                 values["application"] = {
                     "name": app_name,
                     "description": values.get("description"),
@@ -326,21 +326,21 @@ class AICompositionService:
         arch = db.architectures.get(arch_id)
         if is_static_app:
             database_engine = "None (Stateless / In-Memory)"
-            arch_name = arch.name if arch else "Loft Institutional Landing Page & Static Showcase Architecture"
+            arch_name = arch.name if arch else "Olivelas Institutional Landing Page & Static Showcase Architecture"
             selection_rationale[arch_id] = "Arquitetura stateless selecionada pois não há requisitos de persistência em banco de dados."
         elif asks_sqlite:
             database_engine = "SQLite 3.x (SQLAlchemy 2.0 ORM)"
-            arch_name = arch.name if arch else "Loft Standard Fullstack (React 19 + FastAPI + SQLAlchemy 2.0)"
+            arch_name = arch.name if arch else "Olivelas Standard Fullstack (React 19 + FastAPI + SQLAlchemy 2.0)"
             selection_rationale[arch_id] = "Arquitetura fullstack selecionada com persistência local em SQLite conforme solicitado."
         elif asks_opsbase:
-            database_engine = "PostgreSQL 16 via AIOps Opsbase (SQLAlchemy 2.0 + Alembic)"
-            arch_name = arch.name if arch else "Loft Standard Fullstack (Vite React 19 + FastAPI + PostgreSQL / Opsbase)"
+            database_engine = "PostgreSQL 16 via Olivelas Opsbase (SQLAlchemy 2.0 + Alembic)"
+            arch_name = arch.name if arch else "Olivelas Standard Fullstack (Vite React 19 + FastAPI + PostgreSQL / Opsbase)"
             selection_rationale[arch_id] = (
-                "Arquitetura fullstack persistente selecionada para atender aos requisitos de banco PostgreSQL gerenciado via AIOps Opsbase."
+                "Arquitetura fullstack persistente selecionada para atender aos requisitos de banco PostgreSQL gerenciado via Olivelas Opsbase."
             )
         else:
             database_engine = "PostgreSQL 16 (SQLAlchemy 2.0 + Alembic)"
-            arch_name = arch.name if arch else "Loft Standard Fullstack (Vite React 19 + FastAPI + PostgreSQL)"
+            arch_name = arch.name if arch else "Olivelas Standard Fullstack (Vite React 19 + FastAPI + PostgreSQL)"
             selection_rationale[arch_id] = (
                 "Arquitetura fullstack canônica selecionada com persistência transacional em PostgreSQL 16 + SQLAlchemy 2.0 + Alembic."
             )
@@ -638,7 +638,7 @@ class AICompositionService:
     async def compose_blueprint_async(
         self,
         req: AICompositionRequest,
-        actor_email: str = "willian.jesus@loft.com.br",
+        actor_email: str = "willian.jesus@olivelas.com.br",
     ) -> AICompositionResponse:
         base_res = self.compose_blueprint(req)
 
@@ -650,7 +650,7 @@ class AICompositionService:
         target_provider = req.provider or prov_config.default_provider or "gemini"
         target_model = req.model or prov_config.default_model or "gemini-2.5-flash"
 
-        system_instruction = req.system_instruction or """Você é o Engenheiro Chefe de Arquitetura de Software da Loft (Loft Enterprise Architecture Lead).
+        system_instruction = req.system_instruction or """Você é o Engenheiro Chefe de Arquitetura de Software da Olivelas (Olivelas Enterprise Architecture Lead).
 Sua missão é emitir um Parecer Técnico e Racional de Engenharia para o Blueprint de aplicação composto deterministicamente.
 Analise:
 1. Aderência às Golden Rules de Engenharia (RUL-01 a RUL-04).
@@ -658,7 +658,7 @@ Analise:
 3. Recomendações de segurança (BOLA, RBAC), idempotência e observabilidade com OpenTelemetry.
 Seja conciso, técnico, direto e estruturado."""
 
-        prompt = f"""=== PARECER DE ARQUITETURA PARA NOVA APLICAÇÃO LOFT ===
+        prompt = f"""=== PARECER DE ARQUITETURA PARA NOVA APLICAÇÃO OLIVELAS ===
 Nome da Aplicação: {req.application.name}
 Descrição: {req.application.description or 'N/A'}
 Banco de Dados Selecionado: {base_res.database}

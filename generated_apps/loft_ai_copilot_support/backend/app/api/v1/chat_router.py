@@ -6,7 +6,7 @@ router = APIRouter(prefix="/chat", tags=["Chatbot & AI Copilot"])
 KNOWLEDGE_BASE = [
     {
         "keywords": ["fiança", "fianca", "garantia", "aluguel", "locação", "locacao"],
-        "reply": "A Fiança Aluguel Loft substitui fiador e caução com aprovação 100% digital em até 15 minutos. Cobre inadimplência de aluguel, condomínio, IPTU e danos ao imóvel com segurança jurídica integral.",
+        "reply": "A Fiança Aluguel Olivelas substitui fiador e caução com aprovação 100% digital em até 15 minutos. Cobre inadimplência de aluguel, condomínio, IPTU e danos ao imóvel com segurança jurídica integral.",
         "intent": "fianca_aluguel",
         "actions": ["Simular taxa de fiança", "Ver documentos necessários", "Falar com consultor"]
     },
@@ -18,7 +18,7 @@ KNOWLEDGE_BASE = [
     },
     {
         "keywords": ["api", "integrar", "integracao", "integração", "desenvolvedor", "webhook", "endpoint"],
-        "reply": "A Loft disponibiliza API REST e Webhooks para imobiliárias e parceiros emitirem garantias diretamente em seus CRMs ou ERPs com autenticação JWT e contratos OpenAPI 3.1.",
+        "reply": "A Olivelas disponibiliza API REST e Webhooks para imobiliárias e parceiros emitirem garantias diretamente em seus CRMs ou ERPs com autenticação JWT e contratos OpenAPI 3.1.",
         "intent": "api_developer",
         "actions": ["Acessar Swagger API", "Gerar API Key", "Ver documentação técnica"]
     },
@@ -44,7 +44,7 @@ def send_chat_message(payload: ChatMessageRequest):
         intent = matched["intent"]
         actions = matched["actions"]
     else:
-        reply_text = f"Olá! Sou o Assistente Inteligente Loft Copan. Recebi sua mensagem: '{payload.message}'. Posso te ajudar com contratação de Fiança Aluguel, análise de crédito, envio de propostas ou integração com nossa API."
+        reply_text = f"Olá! Sou o Assistente Inteligente Olivelas Copan. Recebi sua mensagem: '{payload.message}'. Posso te ajudar com contratação de Fiança Aluguel, análise de crédito, envio de propostas ou integração com nossa API."
         intent = "general_support"
         actions = ["Como funciona a Fiança?", "Quais documentos preciso?", "Falar com suporte humano"]
 

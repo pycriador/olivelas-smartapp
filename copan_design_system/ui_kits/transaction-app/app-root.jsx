@@ -18,7 +18,7 @@ function App() {
     dashboard: { t: "Sua transação", s: "Pinheiros · 62m² · Apto 142 · Proposta #2841", b: ["Início", "Transações", "Proposta #2841"] },
     proposal:  { t: "Proposta", s: "Detalhes financeiros e termos negociados", b: ["Início", "Transações", "Proposta #2841", "Detalhes"] },
     documents: { t: "Documentos", s: "Envio e validação dos documentos da transação", b: ["Início", "Transações", "Proposta #2841", "Documentos"] },
-    messages:  { t: "Mensagens", s: "Converse com o time Loft que cuida da sua transação", b: ["Início", "Transações", "Proposta #2841", "Mensagens"] },
+    messages:  { t: "Mensagens", s: "Converse com o time Olivelas que cuida da sua transação", b: ["Início", "Transações", "Proposta #2841", "Mensagens"] },
   };
   const cur = titles[route];
 

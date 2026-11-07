@@ -1,13 +1,13 @@
 ---
-id: REF-AIOPS-TEAM-002
-title: "Modelo de documentação AIOps — 3 níveis"
+id: REF-OLIVELAS-TEAM-002
+title: "Modelo de documentação Olivelas — 3 níveis"
 status: "DRAFT"
 owner: "aiops"
 updated: "2026-08-24"
 review_date: "2026-11-24"
 ---
 
-# Modelo de documentação AIOps — 3 níveis
+# Modelo de documentação Olivelas — 3 níveis
 
 > Language: pt-BR | [English (EN)](../../en/aiops-team/documentation-model.md)
 >
@@ -15,11 +15,11 @@ review_date: "2026-11-24"
 >
 > Documentation Standard v1.0
 
-Define onde cada tipo de conhecimento AIOps deve ser escrito e como publicar no Confluence via `docs-sync`.
+Define onde cada tipo de conhecimento Olivelas deve ser escrito e como publicar no Confluence via `docs-sync`.
 
 ## Níveis
 
-### Nível 1 — AIOps / Time
+### Nível 1 — Olivelas / Time
 
 **Local:** `docs/{lang}/aiops-team/`
 
@@ -33,7 +33,7 @@ Conteúdo transversal da squad: identidade, responsabilidades, catálogo de prod
 
 Uma página por produto com: objetivo, contexto, usuários, impacto, arquitetura resumida, integrações e **links blob** para documentação técnica no repo da app.
 
-**Publicação:** dois perfis Confluence quando aplicável — árvore em [Documentação Inicial](https://loftbr.atlassian.net/wiki/spaces/AIOps/folder/6086460456) e pack [AIOps - Stack](https://loftbr.atlassian.net/wiki/spaces/AIOps/pages/6091309071).
+**Publicação:** dois perfis Confluence quando aplicável — árvore em [Documentação Inicial](https://loftbr.atlassian.net/wiki/spaces/Olivelas/folder/6086460456) e pack [Olivelas - Stack](https://loftbr.atlassian.net/wiki/spaces/Olivelas/pages/6091309071).
 
 ### Nível 3 — Repositório / README
 
@@ -57,6 +57,6 @@ Skill: [`.cursor/skills/sync-aiops-hub/SKILL.md`](../../../.cursor/skills/sync-a
 | Superfície | Papel |
 | --- | --- |
 | GitHub / checkout local | Fonte da verdade (Markdown) |
-| Confluence AIOps | Vista publicada (`docs-sync`, one-way) |
+| Confluence Olivelas | Vista publicada (`docs-sync`, one-way) |
 
 Política completa: [publishing-surfaces.md](../publishing-surfaces.md).

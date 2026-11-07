@@ -82,12 +82,12 @@ class Settings(BaseModel):
     CORS_ORIGINS: list[str] = Field(default=["*"])
 
     # Admin & App Builder Credentials (loaded from .env / environment)
-    LOFT_ADMIN_USER: str = Field(default="willian.jesus@loft.com.br")
-    LOFT_ADMIN_EMAIL: str = Field(default="willian.jesus@loft.com.br")
+    LOFT_ADMIN_USER: str = Field(default="willian.jesus@olivelas.com.br")
+    LOFT_ADMIN_EMAIL: str = Field(default="willian.jesus@olivelas.com.br")
     LOFT_ADMIN_PASSWORD: str = Field(default="admin_dev_pass")
-    AIOPS_APP_BUILDER_USER: str = Field(default="willian.jesus@loft.com.br")
+    AIOPS_APP_BUILDER_USER: str = Field(default="willian.jesus@olivelas.com.br")
     AIOPS_APP_BUILDER_PASSWORD: str = Field(default="admin_dev_pass")
-    DEFAULT_ADMIN_USER: str = Field(default="admin@loft.com.br")
+    DEFAULT_ADMIN_USER: str = Field(default="admin@olivelas.com.br")
     DEFAULT_ADMIN_PASSWORD: str = Field(default="admin_dev_pass")
 
     # JWT signing secret, loaded from JWT_SECRET_KEY in the environment/.env.
@@ -172,9 +172,9 @@ class Settings(BaseModel):
             "BOOTSTRAP_ADMIN_USERNAME",
         ]
         identities: list[str] = [
-            "willian.jesus@loft.com.br",
+            "willian.jesus@olivelas.com.br",
             "willian.jesus",
-            "admin@loft.com.br",
+            "admin@olivelas.com.br",
             "admin",
         ]
         for k in env_keys:
@@ -344,7 +344,7 @@ class Settings(BaseModel):
             or os.getenv("aiops_app_builder_user")
             or os.getenv("LOFT_ADMIN_USER")
             or os.getenv("LOFT_ADMIN_EMAIL")
-            or "willian.jesus@loft.com.br"
+            or "willian.jesus@olivelas.com.br"
         )
         return cls(
             ENVIRONMENT=env,
@@ -364,7 +364,7 @@ class Settings(BaseModel):
             LOFT_ADMIN_PASSWORD=admin_pw,
             AIOPS_APP_BUILDER_USER=admin_user,
             AIOPS_APP_BUILDER_PASSWORD=admin_pw,
-            DEFAULT_ADMIN_USER=os.getenv("DEFAULT_ADMIN_USER", "admin@loft.com.br"),
+            DEFAULT_ADMIN_USER=os.getenv("DEFAULT_ADMIN_USER", "admin@olivelas.com.br"),
             DEFAULT_ADMIN_PASSWORD=admin_pw,
             jwt_secret_key=jwt_secret_key,
         )

@@ -262,7 +262,7 @@ export const BlueprintsPage: React.FC = () => {
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Blueprints Arquiteturais da Loft"
+        title="Blueprints Arquiteturais da Olivelas"
         subtitle="Especificações determinísticas completas contendo regras de negócio, componentes Copan, contratos de API e estrutura física de pastas. CRUD completo e versionamento SemVer."
         breadcrumbs={[
           { title: 'Workspaces', href: '/blueprints' },

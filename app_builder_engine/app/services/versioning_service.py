@@ -17,7 +17,7 @@ class VersioningService:
         entity_id: str,
         new_version: str,
         changelog: str,
-        actor: str = "willian.jesus@loft.com.br",
+        actor: str = "willian.jesus@olivelas.com.br",
     ) -> VersionSnapshot:
         entity = self._get_entity(entity_type, entity_id)
         if not entity:
@@ -61,7 +61,7 @@ class VersioningService:
         entity_type: str,
         entity_id: str,
         target_version: str,
-        actor: str = "willian.jesus@loft.com.br",
+        actor: str = "willian.jesus@olivelas.com.br",
     ) -> Any:
         entity = self._get_entity(entity_type, entity_id)
         if not entity:
@@ -101,7 +101,7 @@ class VersioningService:
         entity_type: str,
         entity_id: str,
         new_status: EntityLifecycleStatus,
-        actor: str = "willian.jesus@loft.com.br",
+        actor: str = "willian.jesus@olivelas.com.br",
     ) -> Any:
         entity = self._get_entity(entity_type, entity_id)
         if not entity:

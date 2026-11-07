@@ -95,7 +95,7 @@ export const EntityVersionModal: React.FC<EntityVersionModalProps> = ({
                 version: activeV,
                 changelog: 'Versão canônica ativa',
                 created_at: new Date().toISOString(),
-                created_by: 'willian.jesus@loft.com.br',
+                created_by: 'willian.jesus@olivelas.com.br',
                 snapshot_data: {},
               },
             ];
@@ -132,7 +132,7 @@ export const EntityVersionModal: React.FC<EntityVersionModalProps> = ({
           version: cleanVer,
           changelog: values.changelog,
           created_at: new Date().toISOString(),
-          created_by: 'willian.jesus@loft.com.br',
+          created_by: 'willian.jesus@olivelas.com.br',
         };
       } else {
         const res = await catalogService.createVersion(entityType, entityId, {
@@ -143,7 +143,7 @@ export const EntityVersionModal: React.FC<EntityVersionModalProps> = ({
           version: cleanVer,
           changelog: values.changelog,
           created_at: new Date().toISOString(),
-          created_by: 'willian.jesus@loft.com.br',
+          created_by: 'willian.jesus@olivelas.com.br',
         };
       }
 
@@ -361,7 +361,7 @@ export const EntityVersionModal: React.FC<EntityVersionModalProps> = ({
                               <UserOutlined />{' '}
                               {v.created_by ||
                                 (v as any).author ||
-                                'willian.jesus@loft.com.br'}
+                                'willian.jesus@olivelas.com.br'}
                             </span>
                             <span className="flex items-center gap-1">
                               <CalendarOutlined /> {v.created_at || (v as any).date || 'Recente'}

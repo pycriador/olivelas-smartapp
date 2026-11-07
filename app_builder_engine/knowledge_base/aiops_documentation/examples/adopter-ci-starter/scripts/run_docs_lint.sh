@@ -6,7 +6,7 @@ DOCS_ROOT="${DOCS_ROOT:-docs}"
 LINT_SCRIPT="${LINT_SCRIPT:-scripts/docs_lint.py}"
 
 if [[ ! -f "$ROOT/$LINT_SCRIPT" ]]; then
-  echo "Missing $LINT_SCRIPT — copy docs_lint.py from loft-br/aiops-documentation or set LINT_SCRIPT." >&2
+  echo "Missing $LINT_SCRIPT — copy docs_lint.py from pycriador/olivelas-smartapp or set LINT_SCRIPT." >&2
   exit 1
 fi
 

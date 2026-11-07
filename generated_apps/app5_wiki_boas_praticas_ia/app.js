@@ -1,5 +1,5 @@
 /**
- * Loft AI & Engineering Wiki — 100% Connected to App Builder Engine API (localhost:8000)
+ * Olivelas AI & Engineering Wiki — 100% Connected to App Builder Engine API (localhost:8000)
  */
 const API_BASE = 'http://127.0.0.1:8000/api/v1';
 
@@ -9,10 +9,10 @@ const BUILTIN_DOCS = {
     title: 'Engenharia de Prompts Estruturados para Agentes e LLMs',
     category: 'Boas Práticas com IA',
     subCategory: 'Engenharia de Software',
-    author: 'Loft AI Core Team',
+    author: 'Olivelas AI Core Team',
     updated: '10/09/2026',
     readTime: '5 min',
-    content: `## 1. Princípios Fundamentais de Prompts na Loft
+    content: `## 1. Princípios Fundamentais de Prompts na Olivelas
 
 Prompts bem estruturados são a chave para eliminar alucinações, diminuir a latência de inferência e garantir que respostas de modelos (ex: Gemini 3.0 Flash/Pro) sigam contratos rigorosos de schema.
 
@@ -23,7 +23,7 @@ Prompts bem estruturados são a chave para eliminar alucinações, diminuir a la
 
 \`\`\`markdown
 [PAPEL / PERSONA]
-Você é o agente de triagem de crédito da Loft. Responda estritamente em JSON válido.
+Você é o agente de triagem de crédito da Olivelas. Responda estritamente em JSON válido.
 
 [CONTEXTO DE NEGÓCIO]
 O usuário está solicitando uma análise para o produto Fiança Aluguel.
@@ -68,7 +68,7 @@ Quando o modelo precisar citar regras de negócio ou contratos de locação:
     title: 'Guardrails, Segurança & Defesa contra Prompt Injection',
     category: 'Boas Práticas com IA',
     subCategory: 'Segurança & Compliance',
-    author: 'Loft SecOps & AI Governance',
+    author: 'Olivelas SecOps & AI Governance',
     updated: '10/09/2026',
     readTime: '6 min',
     content: `## 1. O que é Prompt Injection?
@@ -80,13 +80,13 @@ Prompt Injection ocorre quando um usuário insere comandos maliciosos em campos 
 
 ---
 
-## 2. Camadas de Defesa Recomendadas na Loft
+## 2. Camadas de Defesa Recomendadas na Olivelas
 
 ### A. Delimitação de Entrada do Usuário
 Sempre encapsule o input do usuário em tags XML ou delimitadores de bloco markdown:
 
 \`\`\`markdown
-Você é o assistente de suporte da Loft.
+Você é o assistente de suporte da Olivelas.
 Analise a mensagem do usuário a seguir e responda apenas sobre o tema de aluguel.
 
 <user_message>
@@ -109,7 +109,7 @@ Nunca trafegue dados pessoais não anonimizados (CPF, número de cartão de cré
     title: 'Padrão RAG & Grounding de Fatos em Bases Técnicas',
     category: 'Boas Práticas com IA',
     subCategory: 'Arquitetura de Dados',
-    author: 'Loft Data & AI Platform',
+    author: 'Olivelas Data & AI Platform',
     updated: '10/09/2026',
     readTime: '4 min',
     content: `## 1. Retrieval-Augmented Generation (RAG)
@@ -121,7 +121,7 @@ O padrão RAG combina a busca de documentos com a capacidade de geração de tex
 
 ---
 
-## 2. Fluxo Arquitetural RAG na Loft
+## 2. Fluxo Arquitetural RAG na Olivelas
 
 1. **User Query:** Usuário faz uma pergunta ("Quais as taxas do financiamento?").
 2. **Retrieval:** O backend busca documentos relevantes via \`GET /api/v1/knowledge/search\`.
@@ -146,7 +146,7 @@ async function queryWithRAG(userQuery: string) {
     title: 'Otimização de Tokens, Latência e Context Caching',
     category: 'Boas Práticas com IA',
     subCategory: 'Performance & FinOps',
-    author: 'Loft Engineering Ops',
+    author: 'Olivelas Engineering Ops',
     updated: '09/09/2026',
     readTime: '3 min',
     content: `## 1. Redução de Custos e Latência
@@ -159,10 +159,10 @@ async function queryWithRAG(userQuery: string) {
     title: 'Guia de Seleção de Modelos (Flash vs Pro vs Flash-Lite)',
     category: 'Boas Práticas com IA',
     subCategory: 'Infraestrutura de IA',
-    author: 'Loft AI Platform',
+    author: 'Olivelas AI Platform',
     updated: '08/09/2026',
     readTime: '4 min',
-    content: `## Matriz de Decisão de Modelos na Loft
+    content: `## Matriz de Decisão de Modelos na Olivelas
 
 | Modelo | Latência | Custo | Casos de Uso Recomendados |
 |---|---|---|---|
@@ -174,7 +174,7 @@ async function queryWithRAG(userQuery: string) {
     title: 'Métricas de Avaliação, Testes Automatizados e Alucinação',
     category: 'Boas Práticas com IA',
     subCategory: 'Qualidade & QA',
-    author: 'Loft QA & AI Ops',
+    author: 'Olivelas QA & AI Ops',
     updated: '08/09/2026',
     readTime: '5 min',
     content: `## 1. Estratégia de Testes para Pipelines de IA
@@ -187,10 +187,10 @@ async function queryWithRAG(userQuery: string) {
     title: 'Clean Architecture & Feature-Sliced Design (FSD)',
     category: 'Arquitetura & Engenharia',
     subCategory: 'Padrões de Projeto',
-    author: 'Loft Engineering Guild',
+    author: 'Olivelas Engineering Guild',
     updated: '10/09/2026',
     readTime: '4 min',
-    content: `## Clean Architecture nos Microsserviços Loft
+    content: `## Clean Architecture nos Microsserviços Olivelas
 
 1. **Domain Layer:** Entidades de negócio e regras puras sem dependências externas.
 2. **Application Layer:** Casos de uso (Use Cases) e orquestração.
@@ -213,7 +213,7 @@ async function queryWithRAG(userQuery: string) {
     title: 'Autorização Semântica RBAC & Trilha de Auditoria',
     category: 'Segurança & RBAC',
     subCategory: 'Segurança & Compliance',
-    author: 'Loft Security Team',
+    author: 'Olivelas Security Team',
     updated: '08/09/2026',
     readTime: '4 min',
     content: `## Padrão RBAC de 4 Níveis
@@ -224,15 +224,15 @@ async function queryWithRAG(userQuery: string) {
 - **Viewer:** Leitura e visualização analítica.`
   },
   'rule-copan-design': {
-    title: 'Design System Copan & Padrões Visuais Loft',
+    title: 'Design System Copan & Padrões Visuais Olivelas',
     category: 'Design System Copan',
     subCategory: 'Frontend & UI',
-    author: 'Loft Design Guild',
+    author: 'Olivelas Design Guild',
     updated: '07/09/2026',
     readTime: '4 min',
     content: `## Tokens Visuais Canônicos
 
-- **Cores Primárias:** Laranja Loft (\`#FF774A\`), Verde Principal (\`#0B6B4F\`).
+- **Cores Primárias:** Laranja Olivelas (\`#FF774A\`), Verde Principal (\`#0B6B4F\`).
 - **Tipografia:** Fonte \`Inter\` para textos e títulos, \`JetBrains Mono\` para blocos de código.
 - **Espaçamento:** Múltiplos de 4px (8px, 12px, 16px, 24px, 32px, 48px).`
   }
@@ -451,7 +451,7 @@ function renderCurrentDoc(docId) {
         title: foundApi.title,
         category: foundApi.category || 'Especificação Técnica',
         subCategory: 'API & Sistema',
-        author: foundApi.author || 'Loft Engineering',
+        author: foundApi.author || 'Olivelas Engineering',
         updated: foundApi.created_at ? new Date(foundApi.created_at).toLocaleDateString('pt-BR') : 'Recente',
         readTime: '3 min',
         content: foundApi.content || foundApi.summary || 'Documentação técnica sincronizada com a base SQLite.'
@@ -530,7 +530,7 @@ async function askAiAboutDocument() {
   copilotResponse.innerHTML = '<em>⚡ Consultando AI Gateway (Gemini 3.X)...</em>';
 
   const doc = BUILTIN_DOCS[state.currentDocId] || state.apiDocs.find(d => d.id === state.currentDocId);
-  const prompt = `Você é o AI Doc Copilot da Loft. O usuário está lendo o seguinte guia técnico:
+  const prompt = `Você é o AI Doc Copilot da Olivelas. O usuário está lendo o seguinte guia técnico:
 Título: ${doc?.title}
 Conteúdo: ${doc?.content ? doc.content.slice(0, 1200) : ''}
 

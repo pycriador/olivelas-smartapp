@@ -53,14 +53,14 @@ Use esta seção para achar packs e hubs rapidamente. O inventário completo de 
 
 **Quando a árvore de docs mudar** (adicionar, renomear, mover ou remover categoria/pack em `docs/`), atualize este índice **e** os READMEs de idioma no mesmo PR. Veja [CONTRIBUTING.pt-BR.md](CONTRIBUTING.pt-BR.md).
 
-### Packs as-is Loft (mais consultados)
+### Packs as-is Olivelas (mais consultados)
 
-Estes packs descrevem a **prática atual de AIOps na Loft**, com evidência em repositórios reais. São separados do framework genérico de documentação.
+Estes packs descrevem a **prática atual de Olivelas na Olivelas**, com evidência em repositórios reais. São separados do framework genérico de documentação.
 
 | Pack | Resumo | Entrada |
 | --- | --- | --- |
-| **Infra Loft (AIOps)** | Caminho de publicação hoje: GitHub Actions → ECR → `k8s-apps` (Argo CD) → Kong → Route53 (`infra-live`) + secrets Vault | [docs/pt-BR/loft-infra/README.md](docs/pt-BR/loft-infra/README.md) |
-| **AIOps Apps** | Stacks front/back dos apps AIOps de referência (monorepo, libs, rotas, segurança) e bot Slack AVA | [docs/pt-BR/aiops-apps/README.md](docs/pt-BR/aiops-apps/README.md) |
+| **Infra Olivelas (Olivelas)** | Caminho de publicação hoje: GitHub Actions → ECR → `k8s-apps` (Argo CD) → Kong → Route53 (`infra-live`) + secrets Vault | [docs/pt-BR/loft-infra/README.md](docs/pt-BR/loft-infra/README.md) |
+| **Olivelas Apps** | Stacks front/back dos apps Olivelas de referência (monorepo, libs, rotas, segurança) e bot Slack AVA | [docs/pt-BR/aiops-apps/README.md](docs/pt-BR/aiops-apps/README.md) |
 
 #### `loft-infra` — documentos
 
@@ -181,7 +181,7 @@ Publicar essa documentação local no **Confluence** é **opcional**. Quando pre
 │   ├── manifest.yaml         # Seletor de idioma dos manifests
 │   ├── en/                   # Padrão em inglês + packs as-is
 │   │   ├── loft-infra/       # As-is: caminho de publicação (Actions, k8s-apps, Kong, …)
-│   │   ├── aiops-apps/       # As-is: stacks front/back AIOps
+│   │   ├── aiops-apps/       # As-is: stacks front/back Olivelas
 │   │   └── …                 # metodologia, templates, categorias
 │   └── pt-BR/                # Espelho em português (mesmo layout)
 └── examples/
@@ -311,8 +311,8 @@ Veja [CONTRIBUTING.pt-BR.md](CONTRIBUTING.pt-BR.md) / [CONTRIBUTING.md](CONTRIBU
 | Documento | Descrição |
 | --- | --- |
 | [docs/README.md](docs/README.md) | Seletor de idioma |
-| [docs/pt-BR/loft-infra/README.md](docs/pt-BR/loft-infra/README.md) | As-is: caminho de publicação AIOps Loft |
-| [docs/pt-BR/aiops-apps/README.md](docs/pt-BR/aiops-apps/README.md) | As-is: stacks de aplicação AIOps |
+| [docs/pt-BR/loft-infra/README.md](docs/pt-BR/loft-infra/README.md) | As-is: caminho de publicação Olivelas |
+| [docs/pt-BR/aiops-apps/README.md](docs/pt-BR/aiops-apps/README.md) | As-is: stacks de aplicação Olivelas |
 | [docs/pt-BR/principles.md](docs/pt-BR/principles.md) | Princípios de documentação |
 | [docs/pt-BR/lifecycle.md](docs/pt-BR/lifecycle.md) | Ciclo de vida documental |
 | [docs/pt-BR/architecture-model.md](docs/pt-BR/architecture-model.md) | Metodologia de arquitetura |

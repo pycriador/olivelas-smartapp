@@ -50,7 +50,7 @@ async def update_ai_settings(
     user_role = claims.get("role", "Viewer")
     rbac_service.require_permission("ai.providers:manage", user_role)
 
-    actor = claims.get("email", "willian.jesus@loft.com.br")
+    actor = claims.get("email", "willian.jesus@olivelas.com.br")
     updated = ai_provider_service.update_settings(body, actor=actor)
     return ApiResponse(data=updated)
 
@@ -82,7 +82,7 @@ async def create_custom_provider(
     user_role = claims.get("role", "Viewer")
     rbac_service.require_permission("ai.providers:manage", user_role)
 
-    actor = claims.get("email", "willian.jesus@loft.com.br")
+    actor = claims.get("email", "willian.jesus@olivelas.com.br")
     created = ai_provider_service.create_custom_provider(body, actor=actor)
     return ApiResponse(data=created, message="Provedor customizado adicionado com sucesso.")
 
@@ -97,7 +97,7 @@ async def update_provider_by_id(
     user_role = claims.get("role", "Viewer")
     rbac_service.require_permission("ai.providers:manage", user_role)
 
-    actor = claims.get("email", "willian.jesus@loft.com.br")
+    actor = claims.get("email", "willian.jesus@olivelas.com.br")
     updated = ai_provider_service.update_provider_by_id(provider_id, body or AiCustomProviderUpdateRequest(), actor=actor)
     return ApiResponse(data=updated, message="Configurações do provedor atualizadas com sucesso.")
 
@@ -111,7 +111,7 @@ async def delete_provider_by_id(
     user_role = claims.get("role", "Viewer")
     rbac_service.require_permission("ai.providers:manage", user_role)
 
-    actor = claims.get("email", "willian.jesus@loft.com.br")
+    actor = claims.get("email", "willian.jesus@olivelas.com.br")
     result = ai_provider_service.delete_provider_by_id(provider_id, actor=actor)
     return ApiResponse(data=result, message="Provedor excluído/redefinido com sucesso.")
 

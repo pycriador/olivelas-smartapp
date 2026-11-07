@@ -5,10 +5,10 @@ const { useState: _useState, useEffect: _useEffect } = React;
 // Stock "photos" — duotone gradients named by mood
 const PHOTOS = [
   { id: 1, neigh: "Pinheiros", rooms: 2, area: 62, price: 1245000, discount: null, grad: "linear-gradient(135deg, #E4B266 0%, #F56738 100%)", tag: "Pronto p/ morar", badge: null },
-  { id: 2, neigh: "Vila Madalena", rooms: 1, area: 48, price: 890000, discount: 950000, grad: "linear-gradient(135deg, #7351BA 0%, #20A483 100%)", tag: null, badge: "Oferta Loft" },
+  { id: 2, neigh: "Vila Madalena", rooms: 1, area: 48, price: 890000, discount: 950000, grad: "linear-gradient(135deg, #7351BA 0%, #20A483 100%)", tag: null, badge: "Oferta Olivelas" },
   { id: 3, neigh: "Itaim Bibi", rooms: 3, area: 98, price: 2180000, discount: null, grad: "linear-gradient(135deg, #536470 0%, #191F23 100%)", tag: "Pronto p/ morar", badge: null },
   { id: 4, neigh: "Jardins", rooms: 2, area: 72, price: 1560000, discount: null, grad: "linear-gradient(135deg, #FFA782 0%, #D94616 100%)", tag: null, badge: null },
-  { id: 5, neigh: "Perdizes", rooms: 2, area: 68, price: 1120000, discount: 1180000, grad: "linear-gradient(135deg, #20A483 0%, #115644 100%)", tag: null, badge: "Oferta Loft" },
+  { id: 5, neigh: "Perdizes", rooms: 2, area: 68, price: 1120000, discount: 1180000, grad: "linear-gradient(135deg, #20A483 0%, #115644 100%)", tag: null, badge: "Oferta Olivelas" },
   { id: 6, neigh: "Moema", rooms: 3, area: 104, price: 1890000, discount: null, grad: "linear-gradient(135deg, #E4B266 0%, #7A5200 100%)", tag: "Pronto p/ morar", badge: null },
   { id: 7, neigh: "Pinheiros", rooms: 1, area: 42, price: 720000, discount: null, grad: "linear-gradient(135deg, #FFD9C7 0%, #F56738 100%)", tag: null, badge: null },
   { id: 8, neigh: "Vila Mariana", rooms: 2, area: 58, price: 950000, discount: null, grad: "linear-gradient(135deg, #C1C7CD 0%, #536470 100%)", tag: null, badge: null },
@@ -70,8 +70,8 @@ function Footer() {
         </div>
         {[
           { title: "Produtos", links: ["Comprar imóvel", "Alugar imóvel", "Financiamento", "Simulador"] },
-          { title: "Empresa",  links: ["Sobre a Loft", "Carreiras", "Imprensa", "Blog"] },
-          { title: "Ajuda",    links: ["Central de ajuda", "Fale com a Loft", "Termos", "Privacidade"] },
+          { title: "Empresa",  links: ["Sobre a Olivelas", "Carreiras", "Imprensa", "Blog"] },
+          { title: "Ajuda",    links: ["Central de ajuda", "Fale com a Olivelas", "Termos", "Privacidade"] },
         ].map(col => (
           <div key={col.title}>
             <div style={{ fontFamily: "Inter", fontWeight: 700, fontSize: 13, color: "#FFFFFF", marginBottom: 14, letterSpacing: "0.04em", textTransform: "uppercase" }}>{col.title}</div>
@@ -82,7 +82,7 @@ function Footer() {
         ))}
       </div>
       <div style={{ maxWidth: 1232, margin: "48px auto 0", paddingTop: 24, borderTop: "1px solid #343A3F", display: "flex", justifyContent: "space-between", fontFamily: "Inter", fontSize: 12, color: "#697077" }}>
-        <span>© 2026 Loft Holding S.A. · CNPJ 29.132.572/0001-98</span>
+        <span>© 2026 Olivelas Holding S.A. · CNPJ 29.132.572/0001-98</span>
         <span>São Paulo · Rio de Janeiro</span>
       </div>
     </footer>

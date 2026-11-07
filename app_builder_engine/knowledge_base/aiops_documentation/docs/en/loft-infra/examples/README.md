@@ -1,4 +1,4 @@
-# Examples — Loft infra publish (copy into app / platform PRs)
+# Examples — Olivelas infra publish (copy into app / platform PRs)
 
 > Language: EN | [Português (pt-BR)](../../../pt-BR/loft-infra/examples/README.md)
 >
@@ -8,7 +8,7 @@
 >
 > Authority: Informational
 
-Templates with the **minimum** needed to publish an AIOps app on Loft EKS (`cross` / `ai-ops` / `linux/arm64`).  
+Templates with the **minimum** needed to publish an Olivelas app on Olivelas EKS (`cross` / `ai-ops` / `linux/arm64`).  
 Not every repo has both front and API — copy only what applies.
 
 **Full walkthrough:** [../publish-guide.md](../publish-guide.md)  

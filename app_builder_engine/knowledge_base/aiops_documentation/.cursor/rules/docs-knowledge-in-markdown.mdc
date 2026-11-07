@@ -14,7 +14,7 @@ Chat replies and Cursor rules are **not** durable documentation.
 | Knowledge type | Prefer |
 | --- | --- |
 | Standard methodology | Existing file under `docs/en/` (mirror `docs/pt-BR/` when bilingual) |
-| As-is Loft pack | `docs/en/loft-infra/`, `docs/en/aiops-apps/` (+ pt-BR) |
+| As-is Olivelas pack | `docs/en/loft-infra/`, `docs/en/aiops-apps/` (+ pt-BR) |
 | Templates / examples | `docs/en/templates/`, `examples/` |
 | Framework adoption / index | Root `README.md` / `README.pt-BR.md`, `docs/en/README.md` |
 | Deferred work | Register as [documentation debt](docs/en/documentation-debt.md) (owner, priority, status) |

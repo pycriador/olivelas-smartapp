@@ -32,7 +32,7 @@ def create_access_token(subject: str | Any, expires_delta: Optional[timedelta] =
 async def get_current_user(credentials: Optional[HTTPAuthorizationCredentials] = Depends(security_scheme)) -> dict:
     if not credentials:
         # Development fallback
-        return {"sub": "usr_dev01", "email": "dev@loft.com.br", "role": "Global Admin", "name": "Desenvolvedor Loft"}
+        return {"sub": "usr_dev01", "email": "dev@olivelas.com.br", "role": "Global Admin", "name": "Desenvolvedor Olivelas"}
     token = credentials.credentials
     try:
         payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])

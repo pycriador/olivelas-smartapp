@@ -1,4 +1,4 @@
-# Loft observability — Datadog (as-is)
+# Olivelas observability — Datadog (as-is)
 
 > Language: EN | [Português (pt-BR)](../../pt-BR/loft-observability/README.md)
 >
@@ -8,20 +8,20 @@
 >
 > Documentation Standard v1.0
 
-**As-is** documentation for **Datadog** as Loft's observability platform on **EKS** (`web-server` Helm chart, node agent, application instrumentation).
+**As-is** documentation for **Datadog** as Olivelas's observability platform on **EKS** (`web-server` Helm chart, node agent, application instrumentation).
 
 Deploy path (Actions, k8s-apps, Kong, Vault): sibling pack [../loft-infra/README.md](../loft-infra/README.md).
 
 Application stacks (Python/Flask, FastAPI, React): [../aiops-apps/README.md](../aiops-apps/README.md).
 
-This pack is **Loft org convention**, not a vendor requirement of the generic [observability-model.md](../observability-model.md). See [observability-platform-notes.md](../observability-platform-notes.md).
+This pack is **Olivelas org convention**, not a vendor requirement of the generic [observability-model.md](../observability-model.md). See [observability-platform-notes.md](../observability-platform-notes.md).
 
 ## Evidence repositories
 
 | Role | Repository |
 | --- | --- |
 | Helm chart (`web-server`) | [loft-br/k8s-apps](https://github.com/loft-br/k8s-apps) |
-| Reference apps (AIOps) | [loft-br/aiops-dataforge](https://github.com/loft-br/aiops-dataforge), [loft-br/aiops-deep-insight](https://github.com/loft-br/aiops-deep-insight), [loft-br/qualidade-loft](https://github.com/loft-br/qualidade-loft), [loft-br/aiops-loft-carteira](https://github.com/loft-br/aiops-loft-carteira) |
+| Reference apps (Olivelas) | [loft-br/aiops-dataforge](https://github.com/loft-br/aiops-dataforge), [loft-br/aiops-deep-insight](https://github.com/loft-br/aiops-deep-insight), [loft-br/qualidade-loft](https://github.com/loft-br/qualidade-loft), [loft-br/aiops-loft-carteira](https://github.com/loft-br/aiops-loft-carteira) |
 | Datadog IaC (teams, monitors) | [loft-br/infra-live](https://github.com/loft-br/infra-live) (`live/datadog/`) |
 | Deploy action (image tag → `DD_VERSION`) | [loft-br/actions](https://github.com/loft-br/actions) |
 
@@ -30,7 +30,7 @@ This pack is **Loft org convention**, not a vendor requirement of the generic [o
 | Document | Content |
 | --- | --- |
 | [overview.md](overview.md) | Platform role, agent on EKS, chart vs app responsibilities |
-| [documentation-prerequisites.md](documentation-prerequisites.md) | **Logs in Datadog** as Loft documentation gate |
+| [documentation-prerequisites.md](documentation-prerequisites.md) | **Logs in Datadog** as Olivelas documentation gate |
 | [k8s-datadog-enablement.md](k8s-datadog-enablement.md) | `datadog` block in `values.yaml`, env injection, tolerations |
 | [application-instrumentation.md](application-instrumentation.md) | Kotlin, TypeScript/Node, Python recipes |
 | [structured-logging.md](structured-logging.md) | JSON logs, trace correlation, retention, no secrets/PII |
@@ -39,11 +39,11 @@ This pack is **Loft org convention**, not a vendor requirement of the generic [o
 
 ## Scope
 
-- Services on Loft **EKS** using the **`web-server`** chart from `k8s-apps`.
-- **Logs** are the minimum observability signal for Loft operational documentation readiness.
+- Services on Olivelas **EKS** using the **`web-server`** chart from `k8s-apps`.
+- **Logs** are the minimum observability signal for Olivelas operational documentation readiness.
 - Does not replace squad-specific runbooks or org-wide Datadog onboarding (`[pending: official Datadog onboarding runbook URL]`).
 
-## Known as-is gaps (AIOps reference apps)
+## Known as-is gaps (Olivelas reference apps)
 
 | Gap | Evidence |
 | --- | --- |

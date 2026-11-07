@@ -19,7 +19,7 @@ function ProposalScreen({ goto }) {
             <path d="M9 22V12h6v10" />
           </svg>
           <div style={{ position: "absolute", top: 14, left: 14, background: "#121619", color: "#E4B266", fontSize: 11, fontWeight: 700, padding: "4px 10px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 5 }}>
-            <Ico name="sparkles" size={11} /> Loft premium
+            <Ico name="sparkles" size={11} /> Olivelas premium
           </div>
         </div>
 
@@ -28,14 +28,14 @@ function ProposalScreen({ goto }) {
             <div>
               <div style={{ fontSize: 12, fontWeight: 600, color: "#697077", letterSpacing: "0.04em", textTransform: "uppercase", marginBottom: 4 }}>Proposta #2841 · Pinheiros</div>
               <div style={{ fontSize: 22, fontWeight: 700, color: "#121619", lineHeight: "28px" }}>Rua Cardeal Arcoverde, 1200 — Apto 142</div>
-              <div style={{ fontSize: 13, color: "#697077", marginTop: 4 }}>62m² · 2 quartos · 1 suíte · 1 vaga · Reformado pela Loft em 2024</div>
+              <div style={{ fontSize: 13, color: "#697077", marginTop: 4 }}>62m² · 2 quartos · 1 suíte · 1 vaga · Reformado pela Olivelas em 2024</div>
             </div>
             <StatusPill tone="attention">Aguardando documentos</StatusPill>
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, borderTop: "1px solid #E1E9EF", paddingTop: 14 }}>
             <div><div style={{ fontSize: 11, color: "#697077", marginBottom: 2 }}>Valor proposto</div><div style={{ fontSize: 18, fontWeight: 700, color: "#121619" }}>R$ 1.245.000</div></div>
-            <div><div style={{ fontSize: 11, color: "#697077", marginBottom: 2 }}>Avaliação Loft</div><div style={{ fontSize: 18, fontWeight: 700, color: "#121619" }}>R$ 1.219.000 <span style={{ fontSize: 12, color: "#115644", fontWeight: 600 }}>+2,1%</span></div></div>
+            <div><div style={{ fontSize: 11, color: "#697077", marginBottom: 2 }}>Avaliação Olivelas</div><div style={{ fontSize: 18, fontWeight: 700, color: "#121619" }}>R$ 1.219.000 <span style={{ fontSize: 12, color: "#115644", fontWeight: 600 }}>+2,1%</span></div></div>
             <div><div style={{ fontSize: 11, color: "#697077", marginBottom: 2 }}>Reservada em</div><div style={{ fontSize: 18, fontWeight: 700, color: "#121619" }}>14 abr 2026</div></div>
             <div><div style={{ fontSize: 11, color: "#697077", marginBottom: 2 }}>Validade</div><div style={{ fontSize: 18, fontWeight: 700, color: "#D94616" }}>22 abr 2026</div></div>
           </div>
@@ -91,7 +91,7 @@ function OverviewTab() {
         <Row k="Cartório · escritura" v="R$ 4.870" />
         <Row k="Cartório · registro" v="R$ 6.180" />
         <Row k="Avaliação do banco" v="R$ 3.500" sub="Caixa Econômica" />
-        <Row k="Taxa Loft" v="Isenta" sub="Reforma incluída" highlight />
+        <Row k="Taxa Olivelas" v="Isenta" sub="Reforma incluída" highlight />
         <div style={{ display: "flex", justifyContent: "space-between", padding: "16px 0 0", borderTop: "2px solid #121619", marginTop: 6 }}>
           <span style={{ fontSize: 14, fontWeight: 700, color: "#121619" }}>Total estimado</span>
           <span style={{ fontSize: 18, fontWeight: 700, color: "#D94616", fontVariantNumeric: "tabular-nums" }}>R$ 51.900</span>
@@ -170,12 +170,12 @@ function PeopleTab() {
       />
       <PeopleCard
         title="Vendedor"
-        people={[{ name: "Loft Holding S.A.", role: "Vendedor · CNPJ 27.058.181/0001-70", doc: "Contato: Vendas · vendas@loft.com.br", initials: "LF", color: "#121619", company: true }]}
+        people={[{ name: "Olivelas Holding S.A.", role: "Vendedor · CNPJ 27.058.181/0001-70", doc: "Contato: Vendas · vendas@olivelas.com.br", initials: "LF", color: "#121619", company: true }]}
       />
       <PeopleCard
-        title="Time Loft acompanhando você"
+        title="Time Olivelas acompanhando você"
         people={[
-          { name: "Carla Tavares", role: "Especialista de transação", doc: "carla.t@loft.com.br · (11) 9 9282-1142", initials: "CT", color: "#115644" },
+          { name: "Carla Tavares", role: "Especialista de transação", doc: "carla.t@olivelas.com.br · (11) 9 9282-1142", initials: "CT", color: "#115644" },
           { name: "Rafael Andrade", role: "Análise jurídica", doc: "Disponível 9h–18h", initials: "RA", color: "#1F4E73" },
         ]}
       />
@@ -214,10 +214,10 @@ function PeopleCard({ title, people }) {
 
 function HistoryTab() {
   const events = [
-    { who: "Sistema Loft", what: "Documentos pendentes notificados", when: "16 abr · 18:42", icon: "bell", color: "#7A5200", bg: "#FFF4DF" },
+    { who: "Sistema Olivelas", what: "Documentos pendentes notificados", when: "16 abr · 18:42", icon: "bell", color: "#7A5200", bg: "#FFF4DF" },
     { who: "Mariana Castro", what: "Enviou extrato bancário (3.8 MB)", when: "16 abr · 18:42", icon: "upload-cloud", color: "#1F4E73", bg: "#EAF3F9" },
     { who: "Carla Tavares", what: "Validou documentos pessoais e renda parcial", when: "15 abr · 16:20", icon: "check-circle-2", color: "#115644", bg: "#DEF5E5" },
-    { who: "Loft Holding S.A.", what: "Aceitou a proposta no valor de R$ 1.245.000", when: "15 abr · 14:08", icon: "handshake", color: "#D94616", bg: "#FFE5D6" },
+    { who: "Olivelas Holding S.A.", what: "Aceitou a proposta no valor de R$ 1.245.000", when: "15 abr · 14:08", icon: "handshake", color: "#D94616", bg: "#FFE5D6" },
     { who: "Mariana Castro", what: "Enviou proposta inicial · Pagamento sinal R$ 12.450", when: "14 abr · 09:32", icon: "file-signature", color: "#1F4E73", bg: "#EAF3F9" },
   ];
   return (

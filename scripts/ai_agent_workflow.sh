@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# Loft App Builder Engine — AI Agent Integration Workflow (cURL / Bash)
+# Olivelas App Builder Engine — AI Agent Integration Workflow (cURL / Bash)
 # ==============================================================================
 # Comprehensive end-to-end integration script demonstrating how an autonomous AI Agent
 # connects via REST API, obtains & manages JWT tokens, inspects building blocks,
@@ -14,7 +14,7 @@ set -e
 
 BASE_URL="${APP_BUILDER_BASE_URL:-http://127.0.0.1:8000}"
 API_V1="${BASE_URL}/api/v1"
-ADMIN_USER="${LOFT_ADMIN_USER:-willian.jesus@loft.com.br}"
+ADMIN_USER="${LOFT_ADMIN_USER:-willian.jesus@olivelas.com.br}"
 ADMIN_PASSWORD="${LOFT_ADMIN_PASSWORD:-${DEFAULT_ADMIN_PASSWORD:-admin_dev_pass}}"
 
 GREEN='\033[0;32m'
@@ -24,7 +24,7 @@ CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
 echo "================================================================================"
-echo " 🤖 LOFT APP BUILDER ENGINE — WORKFLOW DE INTEGRAÇÃO DE AGENTE DE IA (cURL)"
+echo " 🤖 OLIVELAS APP BUILDER ENGINE — WORKFLOW DE INTEGRAÇÃO DE AGENTE DE IA (cURL)"
 echo "================================================================================"
 
 # ------------------------------------------------------------------------------

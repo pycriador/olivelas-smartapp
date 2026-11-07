@@ -49,7 +49,7 @@ Saída esperada: escopo, não-objetivos, 1 diagrama de contexto, 1 interface ver
 | `security/overview` mínimo | Authn/Authz observáveis; threat model pode permanecer Unknown |
 | `operations/service-profile.md` | **Owner e on-call preenchidos ou `Unknown`** — ver template |
 | 1–2 runbooks de falha real | Health/DB, auth bootstrap, dependência crítica |
-| `operations/observability.md` | Honestidade de sinais; plataforma org (ex. Datadog na Loft) é opcional ao padrão |
+| `operations/observability.md` | Honestidade de sinais; plataforma org (ex. Datadog na Olivelas) é opcional ao padrão |
 
 ## Day 90 — Confiabilidade, segurança e AI-ready
 
@@ -79,7 +79,7 @@ Se o repositório já tem muitos Markdown soltos: [flat-docs-migration.md](flat-
 ## O que este guia não é
 
 - Não é um mandato de stack (Flask, React, Kotlin, etc.).
-- Não é documentação de um produto Loft específico.
+- Não é documentação de um produto Olivelas específico.
 - Não substitui `documentation-checklist.md` nem quality gates do próprio padrão.
 - Não é o “único jeito” definitivo de adotar o framework — a maturidade é progressiva.
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Loft Automated Application Generator (Powered by App Builder Engine API)
+Olivelas Automated Application Generator (Powered by App Builder Engine API)
 
 This script:
 1. Connects to the running App Builder Engine API.
@@ -33,9 +33,9 @@ from api_client.exceptions import AppBuilderApiError, ApiConnectionError
 
 def print_banner():
     print("=" * 80)
-    print(" 🚀 LOFT APP BUILDER ENGINE — 100% AUTOMATED APPLICATION GENERATOR")
+    print(" 🚀 OLIVELAS APP BUILDER ENGINE — 100% AUTOMATED APPLICATION GENERATOR")
     print("=" * 80)
-    print(" Camada de automação de engenharia Loft conectada via API REST e AI Gateway.")
+    print(" Camada de automação de engenharia Olivelas conectada via API REST e AI Gateway.")
     print("=" * 80 + "\n")
 
 
@@ -50,7 +50,7 @@ def main():
     )
     parser.add_argument(
         "--name",
-        help="Nome da aplicação (ex: 'Loft Fiança Aluguel', 'CRM Customer 360')",
+        help="Nome da aplicação (ex: 'Olivelas Fiança Aluguel', 'CRM Customer 360')",
     )
     parser.add_argument(
         "--description",
@@ -101,7 +101,7 @@ def main():
 
     if not args.non_interactive and not app_name:
         print("\n📝 [2/6] Configuração da Nova Aplicação:")
-        app_name = input("   👉 Nome da Aplicação [Loft Fiança Express]: ").strip() or "Loft Fiança Express"
+        app_name = input("   👉 Nome da Aplicação [Olivelas Fiança Express]: ").strip() or "Olivelas Fiança Express"
         app_desc = input(f"   👉 Descrição [{app_name} com esteira de garantia locatícia]: ").strip() or f"{app_name} com esteira de garantia locatícia e análise instantânea."
         
         print("\n   Selecione ou digite os requisitos da aplicação (separados por vírgula):")
@@ -118,7 +118,7 @@ def main():
                 "Trilha de auditoria e métricas de desempenho",
             ]
     else:
-        app_name = app_name or "Loft Fiança Express"
+        app_name = app_name or "Olivelas Fiança Express"
         app_desc = app_desc or f"{app_name} com esteira de garantia locatícia e análise instantânea."
         if not features:
             features = [
@@ -196,7 +196,7 @@ def main():
         "arch_static_landing_page" in str(blueprint_resp) or
         "sem banco de dados" in app_desc.lower()
     )
-    arch_display = getattr(blueprint_resp, "architecture", None) or "Loft Institutional Landing Page & Static Showcase Architecture"
+    arch_display = getattr(blueprint_resp, "architecture", None) or "Olivelas Institutional Landing Page & Static Showcase Architecture"
     backend_stack = "Python 3.12 + FastAPI (Stateless / In-Memory Mock)" if is_static else "Python 3.12 + FastAPI + SQLAlchemy 2.0 + Pydantic v2"
 
     print(f"\n🎉 [6/6] Aplicação criada com 100% de sucesso!")

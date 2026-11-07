@@ -48,7 +48,7 @@ async def execute_prompt(
     GET /api/v1/ai/gateway/logs and the AuditLogModel table).
     """
     rbac_service.require_permission("ai.gateway:execute", user_role=claims.get("role"))
-    actor = claims.get("email", "willian.jesus@loft.com.br")
+    actor = claims.get("email", "willian.jesus@olivelas.com.br")
     sys_prompt = body.system_prompt or PromptRegistry.BUILDER_SYSTEM_PROMPT
 
     provider = gateway.provider

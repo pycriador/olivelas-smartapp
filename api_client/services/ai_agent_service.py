@@ -43,7 +43,7 @@ class AiAgentService:
         return AICompositionResponse.from_dict(res)
 
     def search_knowledge(self, query: str, category: Optional[str] = None, limit: int = 10) -> List[Dict[str, Any]]:
-        """Perform semantic search across Loft engineering specifications, rules, and components."""
+        """Perform semantic search across Olivelas engineering specifications, rules, and components."""
         payload = {"query": query, "category": category, "limit": limit}
         res = self.http.post("ai/search", json_data=payload)
         if isinstance(res, list):

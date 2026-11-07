@@ -26,7 +26,7 @@ class KnowledgeDocShare(BaseModel):
     id: str
     document_id: str
     target_type: str  # "user" | "group"
-    target_id: str  # e.g. "willian.jesus@loft.com.br" or "tech-leads"
+    target_id: str  # e.g. "willian.jesus@olivelas.com.br" or "tech-leads"
     target_name: str
     role: str = "viewer"  # "viewer" | "editor"
     created_at: str
@@ -43,7 +43,7 @@ class KnowledgeDocument(BaseModel):
     key_points: list[str] = Field(default_factory=list)
     tags: list[str] = Field(default_factory=list)
     content: str | None = None
-    author: str | None = "Loft Engineering"
+    author: str | None = "Olivelas Engineering"
     version: str | None = "1.0.0"
     updated_at: str | None = None
     is_custom: bool = False

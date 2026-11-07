@@ -54,7 +54,7 @@ async def create_document(
     service: KnowledgeService = Depends(get_knowledge_service),
 ):
     """Create a new custom knowledge document."""
-    return service.create_document(body, author_email=claims.get("email", "willian.jesus@loft.com.br"))
+    return service.create_document(body, author_email=claims.get("email", "willian.jesus@olivelas.com.br"))
 
 
 @router.get("/docs/{doc_id}", response_model=KnowledgeDocumentDetail)
@@ -106,7 +106,7 @@ async def add_document_share(
     service: KnowledgeService = Depends(get_knowledge_service),
 ):
     """Share document internally with a user or group."""
-    return service.add_doc_share(doc_id, body, author_email=claims.get("email", "willian.jesus@loft.com.br"))
+    return service.add_doc_share(doc_id, body, author_email=claims.get("email", "willian.jesus@olivelas.com.br"))
 
 
 @router.delete("/docs/{doc_id}/shares/{share_id}")
@@ -128,7 +128,7 @@ async def list_user_favorites(
     service: KnowledgeService = Depends(get_knowledge_service),
 ):
     """List document IDs favorited by the logged-in user."""
-    user_id = claims.get("email", "willian.jesus@loft.com.br")
+    user_id = claims.get("email", "willian.jesus@olivelas.com.br")
     favs = service.list_user_favorites(user_id=user_id)
     return {"favorites": favs, "user_id": user_id, "total": len(favs)}
 
@@ -140,7 +140,7 @@ async def toggle_document_favorite(
     service: KnowledgeService = Depends(get_knowledge_service),
 ):
     """Toggle favorite status for a document for the logged-in user."""
-    user_id = claims.get("email", "willian.jesus@loft.com.br")
+    user_id = claims.get("email", "willian.jesus@olivelas.com.br")
     res = service.toggle_user_favorite(user_id=user_id, doc_id=doc_id)
     return res
 
@@ -153,7 +153,7 @@ async def import_confluence(
     service: KnowledgeService = Depends(get_knowledge_service),
 ):
     """Import space or page documentation from Atlassian Confluence Cloud."""
-    return await service.import_from_confluence(body, author_email=claims.get("email", "willian.jesus@loft.com.br"))
+    return await service.import_from_confluence(body, author_email=claims.get("email", "willian.jesus@olivelas.com.br"))
 
 
 @router.post("/import/github", response_model=KnowledgeDocumentDetail)
@@ -163,7 +163,7 @@ async def import_github(
     service: KnowledgeService = Depends(get_knowledge_service),
 ):
     """Import documentation from a GitHub repository."""
-    return await service.import_from_github(body, author_email=claims.get("email", "willian.jesus@loft.com.br"))
+    return await service.import_from_github(body, author_email=claims.get("email", "willian.jesus@olivelas.com.br"))
 
 
 @router.post("/import/raw", response_model=KnowledgeDocumentDetail)
@@ -173,7 +173,7 @@ async def import_raw(
     service: KnowledgeService = Depends(get_knowledge_service),
 ):
     """Import custom Markdown or external raw URL documentation."""
-    return service.import_raw_doc(body, author_email=claims.get("email", "willian.jesus@loft.com.br"))
+    return service.import_raw_doc(body, author_email=claims.get("email", "willian.jesus@olivelas.com.br"))
 
 
 @router.get("/search", response_model=list[KnowledgeSearchResult])
@@ -191,5 +191,5 @@ async def search_knowledge(
 async def sync_aiops_documentation(
     service: KnowledgeService = Depends(get_knowledge_service),
 ):
-    """Trigger synchronization and re-indexing of loft-br/aiops-documentation repository."""
+    """Trigger synchronization and re-indexing of pycriador/olivelas-smartapp repository."""
     return service.sync_aiops_documentation()

@@ -1,4 +1,4 @@
-# 📖 Loft AI & Engineering Wiki (App 5)
+# 📖 Olivelas AI & Engineering Wiki (App 5)
 
 Página de documentação moderna tipo Wiki com guias canônicos de Boas Práticas com IA, Prompt Engineering, Guardrails, Otimização de Tokens e Copilot Interativo, conectada **100% à API** da plataforma App Builder Engine (`http://127.0.0.1:8000/api/v1`).
 

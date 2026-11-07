@@ -18,7 +18,7 @@ Kubernetes env injection ([k8s-datadog-enablement.md](k8s-datadog-enablement.md)
 | **TypeScript / Node** | JSON (`pino` preferred) | `import "dd-trace/init"` first | `dd-trace` / `hot-shots` |
 | **Python** | JSON logging + trace ids | `ddtrace-run` wrapper | `datadog` DogStatsD |
 
-AIOps reference apps today are mostly **Python (Flask/FastAPI)** and **Node (SSR)** — see [../aiops-apps/backend-stack.md](../aiops-apps/backend-stack.md).
+Olivelas reference apps today are mostly **Python (Flask/FastAPI)** and **Node (SSR)** — see [../aiops-apps/backend-stack.md](../aiops-apps/backend-stack.md).
 
 ## Kotlin / JVM
 
@@ -65,7 +65,7 @@ Deep Insight uses Express SSR under `server/` — apply the same init-at-top rul
 3. Logs: JSON via `structlog` or stdlib `logging` JSON formatter; bind `dd.trace_id` and `dd.span_id` when not using automatic injection alone.
 4. Custom metrics: `datadog` Python DogStatsD library.
 
-### As-is gap (AIOps DataForge)
+### As-is gap (Olivelas DataForge)
 
 Observed entrypoint uses plain `gunicorn` without `ddtrace-run`:
 
@@ -75,7 +75,7 @@ Treat APM as **Partial** or **Not Documented** until instrumentation is added an
 
 ## Frontend (React / Vite)
 
-Browser RUM is out of scope for this pack unless the squad adopts Datadog RUM explicitly (`[pending: Loft frontend RUM standard]`). Server-side Node SSR follows the Node.js section above.
+Browser RUM is out of scope for this pack unless the squad adopts Datadog RUM explicitly (`[pending: Olivelas frontend RUM standard]`). Server-side Node SSR follows the Node.js section above.
 
 ## Verification
 

@@ -45,7 +45,7 @@ export const CatalogHubPage: React.FC = () => {
     {
       title: 'Componentes Copan',
       count: metrics?.components_count || 0,
-      description: 'Componentes React/TypeScript homologados do Design System Loft Portal com tokens semânticos e estados acessíveis.',
+      description: 'Componentes React/TypeScript homologados do Design System Olivelas Portal com tokens semânticos e estados acessíveis.',
       icon: <AppstoreOutlined className="text-xl text-loft-orange" />,
       route: '/catalog/components',
       tag: 'UI Foundation & Data Display',

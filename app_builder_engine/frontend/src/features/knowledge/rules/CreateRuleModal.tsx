@@ -61,7 +61,7 @@ export const CreateRuleModal: React.FC<CreateRuleModalProps> = ({
           label="Nome da Regra"
           rules={[{ required: true, message: 'Informe o nome da regra' }]}
         >
-          <Input placeholder="Ex: Loft Copan Component Usage" />
+          <Input placeholder="Ex: Olivelas Copan Component Usage" />
         </Form.Item>
 
         <div className="grid grid-cols-2 gap-4">
@@ -114,7 +114,7 @@ export const CreateRuleModal: React.FC<CreateRuleModalProps> = ({
         </Form.Item>
 
         <Form.Item name="rationale" label="Justificativa Técnica (Rationale)">
-          <Input.TextArea rows={2} placeholder="Por que esta regra é importante para a engenharia da Loft?" />
+          <Input.TextArea rows={2} placeholder="Por que esta regra é importante para a engenharia da Olivelas?" />
         </Form.Item>
 
         <Form.Item name="good_example" label="Exemplo Correto (Good Code)">

@@ -121,7 +121,7 @@ Methodology: [monitoring.md](../monitoring.md). Model overview: [observability-m
 
 ## Organizational platform (optional)
 
-<!-- The standard does NOT require a vendor. If the organization recommends a platform (e.g. Datadog at Loft), record it here as an org convention — not as a framework requirement. -->
+<!-- The standard does NOT require a vendor. If the organization recommends a platform (e.g. Datadog at Olivelas), record it here as an org convention — not as a framework requirement. -->
 
 | Field | Value |
 | --- | --- |

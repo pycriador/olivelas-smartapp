@@ -13,11 +13,11 @@ def test_resolve_confluence_hrefs():
         html,
         stable_id_to_page_id={"ARCH-001": "42"},
         base_url="https://example.atlassian.net",
-        space_key="AIOps",
+        space_key="Olivelas",
     )
     assert unresolved == 0
     assert "confluence://" not in out
-    assert "/wiki/spaces/AIOps/pages/42" in out
+    assert "/wiki/spaces/Olivelas/pages/42" in out
     assert count_unresolved_confluence_hrefs(out) == 0
 
 
@@ -27,7 +27,7 @@ def test_unresolved_links_counted():
         html,
         stable_id_to_page_id={},
         base_url="https://example.atlassian.net",
-        space_key="AIOps",
+        space_key="Olivelas",
     )
     assert unresolved == 1
     assert "confluence://MISSING" in out

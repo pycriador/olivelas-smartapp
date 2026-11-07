@@ -11,7 +11,7 @@ from typing import Any
 
 
 class JSONFormatter(logging.Formatter):
-    """Formats log records into JSON according to Loft Observability standards."""
+    """Formats log records into JSON according to Olivelas Observability standards."""
 
     def format(self, record: logging.LogRecord) -> str:
         log_data: dict[str, Any] = {

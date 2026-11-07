@@ -18,7 +18,7 @@ type: "infrastructure"
 >
 > Documentation Standard v1.0
 >
-> **SUGERIDO / ILUSTRATIVO** — container + values estilo Helm são **específicos da org**, não mandato Loft nem do framework.
+> **SUGERIDO / ILUSTRATIVO** — container + values estilo Helm são **específicos da org**, não mandato Olivelas nem do framework.
 
 ## Propósito
 

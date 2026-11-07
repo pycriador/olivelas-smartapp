@@ -1,7 +1,7 @@
 # App Builder Engine
 
 > **Plataforma Modular de Engenharia de Software Orientada por IA**
-> Camada intermediária entre agentes de IA (Cursor, Claude Code, Antigravity) e a base estruturada de conhecimento técnico, componentes reutilizáveis, regras e padrões arquiteturais da Loft.
+> Camada intermediária entre agentes de IA (Cursor, Claude Code, Antigravity) e a base estruturada de conhecimento técnico, componentes reutilizáveis, regras e padrões arquiteturais da Olivelas.
 
 ---
 
@@ -15,11 +15,11 @@ O **App Builder Engine** centraliza e governa o desenvolvimento de software auxi
 
 ---
 
-## 🎨 Stack Tecnológica & Padrões Loft Frontend
+## 🎨 Stack Tecnológica & Padrões Olivelas Frontend
 
-Seguindo estritamente a documentação canônica de frontend da Loft (**FSD — Feature-Sliced Design**):
+Seguindo estritamente a documentação canônica de frontend da Olivelas (**FSD — Feature-Sliced Design**):
 - **Core**: React 18 + TypeScript + Vite
-- **Design System**: Loft Copan Design System integrado via Ant Design (`ConfigProvider`) com paleta corporativa (`#F56738`, `#121619`, `#F2F4F8`, `#E1E9EF`, `#20A483`) e tipografia **Inter**
+- **Design System**: Olivelas Copan Design System integrado via Ant Design (`ConfigProvider`) com paleta corporativa (`#F56738`, `#121619`, `#F2F4F8`, `#E1E9EF`, `#20A483`) e tipografia **Inter**
 - **State Management**: TanStack React Query (Server State) & Zustand (Client/UI State)
 - **Componentes & Ícones**: Ant Design (`antd`), `@ant-design/icons`, Lucide React
 - **Estilização**: Tailwind CSS utilitário + Ant Design tokens
@@ -62,7 +62,7 @@ python3 -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 
 ## 🌟 Funcionalidades na Interface Web
 
-- **Application Shell Loft Portal**: Header oficial com avatar Copan, busca global `⌘K`, Breadcrumbs padronizados e menu lateral fixo e retrátil (`w-64` ↔ `w-[72px]`) com rolagem independente por camadas e persistência de estado.
+- **Application Shell Olivelas Portal**: Header oficial com avatar Copan, busca global `⌘K`, Breadcrumbs padronizados e menu lateral fixo e retrátil (`w-64` ↔ `w-[72px]`) com rolagem independente por camadas e persistência de estado.
 - **Engine Status em Tempo Real (`/api/v1/dashboard/engine-status`)**: Indicador fixo no rodapé da barra lateral com polling automático da saúde operacional do motor, banco de dados SQLite, versão da engine e contadores de especificações, regras e componentes.
 - **Paginação Padronizada via URL (`?page=X&page_size=Y`) & Server-Side**: Todas as páginas de catálogo, conhecimento, projetos, blueprints, auditoria, agentes de IA e IAM sincronizam `page` e `page_size` na URL (`useUrlPagination`) e carregam sob demanda apenas os registros da página solicitada no backend (com `/platform/library-updates` realizando varredura sob demanda e paginação via URL).
 - **360° Knowledge Graph Drawer**: Painel lateral detalhado para qualquer ativo de engenharia respondendo: *O que é?*, *Para que serve?*, *Do que depende?*, *Onde é utilizado?*, *Quais regras possui?*, *Qual documentação está relacionada?*, *Qual versão está ativa?*.
@@ -72,7 +72,7 @@ python3 -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 - **Catálogo de Componentes Copan**: Filtros por categoria, visualização de props, ciclo de vida (`Publicar` / `Descontinuar`) e formulário de cadastro.
 - **Catálogo de Módulos & Templates**: Módulos de domínio encapsulados e templates de scaffold.
 - **Golden Rules com Good vs Bad Code**: Visualizador de regras mandatórias com blocos de código comparativo entre padrão Copan e anti-patterns.
-- **Especificações Técnicas (SDDs)**: Leitor completo dos 4 volumes da Loft (Foundation, Design System, Component Catalog e FSD).
+- **Especificações Técnicas (SDDs)**: Leitor completo dos 4 volumes da Olivelas (Foundation, Design System, Component Catalog e FSD).
 - **Atualizações de Bibliotecas (`/platform/library-updates`)**: Scanner sob demanda de pacotes npm, pip e imagens Docker com bootstrap automático de sessão JWT (`/api/v1/rbac/session-token`) e filtro paginado na URL.
 - **Simulador do Agente de IA**: Teste em tempo real do raciocínio determinístico para agentes externos.
 - **Trilha de Governança (Audit Logs)**: Histórico imutável de todas as ações na plataforma.
@@ -124,17 +124,17 @@ app_builder_engine/
 │   ├── main.py                            # Ponto de entrada FastAPI + montagem de assets React
 │   ├── core/                              # Configurações, logs estruturados e erros
 │   ├── domain/                            # Modelos de domínio (Component, Module, Rule, Blueprint, etc.)
-│   ├── storage/                           # Banco de dados e seeds da Loft
+│   ├── storage/                           # Banco de dados e seeds da Olivelas
 │   ├── services/                          # Serviços (360 Relations, Catalog, Blueprints, AI, Audit)
 │   ├── api/v1/                            # Rotas REST e AI Gateway
 │   └── static/dist/                       # Bundle compilado de produção React + Copan
 ├── frontend/                              # Aplicação React + TypeScript + Ant Design + Vite
 │   ├── src/
-│   │   ├── theme/                         # Loft Copan Design System tokens & antd-theme
+│   │   ├── theme/                         # Olivelas Copan Design System tokens & antd-theme
 │   │   ├── types/                         # TypeScript Domain & API types
 │   │   ├── services/                      # API Client & Services
 │   │   ├── stores/                        # Zustand UI store & active contexts
-│   │   ├── components/layout/             # Header, Sidebar, AppLayout (Loft Portal Shell)
+│   │   ├── components/layout/             # Header, Sidebar, AppLayout (Olivelas Portal Shell)
 │   │   ├── components/ui/                 # PageHeader, StatusBadge, FeedbackStates, CommandPalette
 │   │   └── features/                      # FSD Feature Pages & 360° Inspector Drawer
 │   └── package.json

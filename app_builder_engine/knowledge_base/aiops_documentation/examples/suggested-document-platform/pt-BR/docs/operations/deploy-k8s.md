@@ -18,7 +18,7 @@ type: "operations"
 >
 > Documentation Standard v1.0
 >
-> **SUGERIDO / ILUSTRATIVO** — values estilo Helm são **específicos da org** e **não** são mandato Loft.
+> **SUGERIDO / ILUSTRATIVO** — values estilo Helm são **específicos da org** e **não** são mandato Olivelas.
 
 ## Workloads
 

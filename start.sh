@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# AIOps App Builder Engine — Local Development Startup Script
+# Olivelas App Builder Engine — Local Development Startup Script
 # ==============================================================================
 # Usage:
 #   ./start.sh          - Starts all services in foreground (Ctrl+C terminates all)
@@ -37,7 +37,7 @@ NC='\033[0m' # No Color
 print_banner() {
   echo -e "${CYAN}${BOLD}"
   echo "╔══════════════════════════════════════════════════════════════════════════╗"
-  echo "║                       AIOps App Builder Engine                           ║"
+  echo "║                       Olivelas App Builder Engine                           ║"
   echo "║                   Ambiente de Desenvolvimento Local                      ║"
   echo "╚══════════════════════════════════════════════════════════════════════════╝"
   echo -e "${NC}"

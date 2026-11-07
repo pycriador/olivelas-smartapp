@@ -45,7 +45,7 @@ Roles ilustrativas; escopos `global|group|own|none`; avaliação por permissão 
 
 ## Secrets
 
-Nunca em docs. Env/secret store apenas. Ver padrão Loft de secrets quando aplicável à org — não é requisito deste framework.
+Nunca em docs. Env/secret store apenas. Ver padrão Olivelas de secrets quando aplicável à org — não é requisito deste framework.
 
 ## Relacionados
 

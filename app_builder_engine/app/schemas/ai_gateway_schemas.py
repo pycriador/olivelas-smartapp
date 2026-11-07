@@ -46,7 +46,7 @@ class AiGatewayExecutionLog(BaseModel):
     latency_ms: int
     tokens_used: int
     status: str = "SUCCESS"  # "SUCCESS", "ERROR", "CACHED"
-    actor: str = "willian.jesus@loft.com.br"
+    actor: str = "willian.jesus@olivelas.com.br"
     timestamp: str
 
 

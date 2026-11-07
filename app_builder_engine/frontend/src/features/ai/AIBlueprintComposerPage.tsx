@@ -35,7 +35,7 @@ import type { MultiProviderSettings, AiModelOption } from '@/types/ai.types';
 import type { AIComposeBlueprintResponse } from '@/types/api.types';
 
 // ==========================================
-// CANONICAL SDD APPLICATION PRESETS (LOFT)
+// CANONICAL SDD APPLICATION PRESETS (OLIVELAS)
 // ==========================================
 interface SddComposerPreset {
   id: string;
@@ -55,7 +55,7 @@ const COMPOSER_PRESETS: SddComposerPreset[] = [
     title: 'Marketplace & Split Financeiro',
     icon: '🏢',
     tag: 'Fullstack / Finanças',
-    appName: 'Loft Marketplace & Finance Split Hub',
+    appName: 'Olivelas Marketplace & Finance Split Hub',
     description:
       'Plataforma de intermediação imobiliária com split automático de comissões para corretores, emissão de boletos e conciliação bancária.',
     requirements: [
@@ -64,11 +64,11 @@ const COMPOSER_PRESETS: SddComposerPreset[] = [
       'Tabelas SQLAlchemy 2.0 PostgreSQL com índices compostos para busca rápida de imóveis',
       'Scripts de migração Alembic reversíveis com estratégia Zero-Downtime Expand & Contract',
       'Frontend em React 19 e Vite estruturado em Feature-Sliced Design (FSD)',
-      'Componentes visuais do Loft Copan Design System com acessibilidade WCAG 2.1 AA',
+      'Componentes visuais do Olivelas Copan Design System com acessibilidade WCAG 2.1 AA',
       'Rastreamento distribuído e observabilidade com OpenTelemetry',
     ],
     systemInstruction:
-      'Você é o Arquiteto de Software Lead da Loft. Gere um Blueprint técnico completo e determinístico alinhado às Golden Rules (RUL-01 a RUL-04), garantindo isolamento de dados e zero-downtime.',
+      'Você é o Arquiteto de Software Lead da Olivelas. Gere um Blueprint técnico completo e determinístico alinhado às Golden Rules (RUL-01 a RUL-04), garantindo isolamento de dados e zero-downtime.',
     temperature: 0.2,
   },
   {
@@ -76,7 +76,7 @@ const COMPOSER_PRESETS: SddComposerPreset[] = [
     title: 'Portal de Contratos & Renegociação',
     icon: '📜',
     tag: 'Legal & Contratos',
-    appName: 'Loft Lease Contract Negotiation Portal',
+    appName: 'Olivelas Lease Contract Negotiation Portal',
     description:
       'Portal de gestão e renegociação de contratos de locação imobiliária com cálculo de reajuste por IGP-M/IPCA e assinatura digital.',
     requirements: [
@@ -87,7 +87,7 @@ const COMPOSER_PRESETS: SddComposerPreset[] = [
       'Sanitização estrita de PII (dados sensíveis de inquilinos e fiadores) em logs',
     ],
     systemInstruction:
-      'Você é o Especialista em Segurança e Contratos da Loft. Formule o Blueprint com foco em governança de dados, conformidade jurídica e prevenção a vulnerabilidades OWASP Top 10.',
+      'Você é o Especialista em Segurança e Contratos da Olivelas. Formule o Blueprint com foco em governança de dados, conformidade jurídica e prevenção a vulnerabilidades OWASP Top 10.',
     temperature: 0.15,
   },
   {
@@ -95,7 +95,7 @@ const COMPOSER_PRESETS: SddComposerPreset[] = [
     title: 'Vistorias & Laudos Digitais',
     icon: '📋',
     tag: 'Operações / Mobile',
-    appName: 'Loft Property Inspection & Digital Claims',
+    appName: 'Olivelas Property Inspection & Digital Claims',
     description:
       'Sistema de agendamento e emissão de laudos de vistoria de entrada e saída com fotos geolocalizadas e checklist dinâmico.',
     requirements: [
@@ -106,7 +106,7 @@ const COMPOSER_PRESETS: SddComposerPreset[] = [
       'Contratos de API documentados em OpenAPI 3.1 com exemplos realistas',
     ],
     systemInstruction:
-      'Você é o Arquiteto de Soluções Cloud da Loft. Desenvolva o Blueprint priorizando alta disponibilidade, otimização de assets multimídia e resiliência a falhas de rede.',
+      'Você é o Arquiteto de Soluções Cloud da Olivelas. Desenvolva o Blueprint priorizando alta disponibilidade, otimização de assets multimídia e resiliência a falhas de rede.',
     temperature: 0.2,
   },
   {
@@ -114,7 +114,7 @@ const COMPOSER_PRESETS: SddComposerPreset[] = [
     title: 'CRM de Corretores & AI Lead Dispatch',
     icon: '🤝',
     tag: 'Comercial / CRM',
-    appName: 'Loft Broker CRM & Intelligent Lead Dispatch',
+    appName: 'Olivelas Broker CRM & Intelligent Lead Dispatch',
     description:
       'CRM especializado para corretores parceiros com fila de atendimento inteligente, pontuação de leads por IA e funil de vendas.',
     requirements: [
@@ -125,7 +125,7 @@ const COMPOSER_PRESETS: SddComposerPreset[] = [
       'Métricas de desempenho com cálculo de SLA de primeiro contato',
     ],
     systemInstruction:
-      'Você é o Engenheiro Lead de Sistemas Distribuídos da Loft. Estruture o Blueprint para alta vazão de mensagens e processamento assíncrono com idempotência.',
+      'Você é o Engenheiro Lead de Sistemas Distribuídos da Olivelas. Estruture o Blueprint para alta vazão de mensagens e processamento assíncrono com idempotência.',
     temperature: 0.25,
   },
   {
@@ -133,7 +133,7 @@ const COMPOSER_PRESETS: SddComposerPreset[] = [
     title: 'Integração de Condomínios & Boletos',
     icon: '🏦',
     tag: 'Integrações / Core',
-    appName: 'Loft Condominium Bill & Fee Integration Service',
+    appName: 'Olivelas Condominium Bill & Fee Integration Service',
     description:
       'Microsserviço de conciliação de taxas condominiais, emissão de boletos registrados e baixa automática via APIs bancárias.',
     requirements: [
@@ -144,7 +144,7 @@ const COMPOSER_PRESETS: SddComposerPreset[] = [
       'Relatórios financeiros consolidados exportáveis em CSV e PDF',
     ],
     systemInstruction:
-      'Você é o Principal Engineer do Core Bancário da Loft. Garanta que o Blueprint reflita transações financeiras atômicas, tolerância a falhas e total rastreabilidade contábil.',
+      'Você é o Principal Engineer do Core Bancário da Olivelas. Garanta que o Blueprint reflita transações financeiras atômicas, tolerância a falhas e total rastreabilidade contábil.',
     temperature: 0.1,
   },
   {
@@ -152,7 +152,7 @@ const COMPOSER_PRESETS: SddComposerPreset[] = [
     title: 'Painel Executivo de IAM & Auditoria',
     icon: '🛡️',
     tag: 'Segurança / IAM',
-    appName: 'Loft Enterprise IAM & Security Audit Dashboard',
+    appName: 'Olivelas Enterprise IAM & Security Audit Dashboard',
     description:
       'Console de segurança para auditoria em tempo real de acessos, matriz RBAC, sessões ativas e histórico imutável de eventos.',
     requirements: [
@@ -163,7 +163,7 @@ const COMPOSER_PRESETS: SddComposerPreset[] = [
       'Geração automatizada de relatórios de conformidade SOC2 e LGPD',
     ],
     systemInstruction:
-      'Você é o Diretor de Segurança da Informação (CISO) e Arquiteto de IAM da Loft. Construa o Blueprint com foco em Zero-Trust, menor privilégio e observabilidade profunda de acessos.',
+      'Você é o Diretor de Segurança da Informação (CISO) e Arquiteto de IAM da Olivelas. Construa o Blueprint com foco em Zero-Trust, menor privilégio e observabilidade profunda de acessos.',
     temperature: 0.15,
   },
 ];
@@ -354,7 +354,7 @@ export const AIBlueprintComposerPage: React.FC = () => {
     <div className="space-y-6">
       <PageHeader
         title="AI Blueprint Composer"
-        subtitle="Compositor inteligente orientado por IA para geração de Blueprints, mapeamento determinístico de módulos e parecer de arquitetura Loft"
+        subtitle="Compositor inteligente orientado por IA para geração de Blueprints, mapeamento determinístico de módulos e parecer de arquitetura Olivelas"
       />
 
       {/* Banner de Sincronização com /ai/providers */}
@@ -401,19 +401,19 @@ export const AIBlueprintComposerPage: React.FC = () => {
         </Space>
       </div>
 
-      {/* 6 Presets Canônicos SDD Loft */}
+      {/* 6 Presets Canônicos SDD Olivelas */}
       <Card
         title={
           <div className="flex items-center gap-2 text-xs font-bold text-loft-dark">
             <BulbOutlined className="text-loft-orange" />
-            <span>Exemplos Canônicos SDD Loft (Frontend & Backend)</span>
+            <span>Exemplos Canônicos SDD Olivelas (Frontend & Backend)</span>
           </div>
         }
         className="shadow-2xs border-loft-border"
         size="small"
       >
         <div className="text-xs text-loft-muted mb-3">
-          Selecione um exemplo pré-configurado baseado nas especificações reais de arquitetura e design system da Loft:
+          Selecione um exemplo pré-configurado baseado nas especificações reais de arquitetura e design system da Olivelas:
         </div>
         <Row gutter={[10, 10]}>
           {COMPOSER_PRESETS.map((p) => {
@@ -476,7 +476,7 @@ export const AIBlueprintComposerPage: React.FC = () => {
                 <Input
                   value={appName}
                   onChange={(e) => setAppName(e.target.value)}
-                  placeholder="Ex: Loft Marketplace & Finance Split Hub"
+                  placeholder="Ex: Olivelas Marketplace & Finance Split Hub"
                   className="font-medium"
                 />
               </div>

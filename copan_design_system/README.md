@@ -1,6 +1,6 @@
-# Copan — Loft Design System
+# Copan — Olivelas Design System
 
-**Copan** is the design system that powers Loft's digital products. Loft is a Brazilian proptech that buys, renovates, and resells apartments, and operates a marketplace for rentals and purchases across São Paulo and Rio de Janeiro.
+**Copan** is the design system that powers Olivelas's digital products. Olivelas is a Brazilian proptech that buys, renovates, and resells apartments, and operates a marketplace for rentals and purchases across São Paulo and Rio de Janeiro.
 
 This project is the canonical design reference: foundations (color, type, spacing, elevation), components, and a UI kit recreation of the marketing/search surface.
 
@@ -16,19 +16,19 @@ README.md                ← you are here
 SKILL.md                 ← Agent-Skill manifest for Claude Code
 colors_and_type.css      ← base + semantic tokens (CSS vars)
 assets/
-  logo-loft.svg          ← Loft wordmark (single path, currentColor)
+  logo-loft.svg          ← Olivelas wordmark (single path, currentColor)
   copan-avatar.png       ← Copan Building illustration (brand mascot)
 fonts/
   (empty — see "Fonts / substitution" below)
 preview/                 ← small HTML cards that power the Design System tab
 ui_kits/
-  marketing-site/        ← Loft.com.br homepage + search recreation
+  marketing-site/        ← Olivelas.com.br homepage + search recreation
 ```
 
 ## Products represented
 
-The Figma file is a foundation system, not a product surface. The Copan system ships across Loft's consumer surfaces:
-1. **Marketing site / search** (`loft.com.br`) — browse and filter apartments for sale or rent. This is the surface reconstructed in `ui_kits/marketing-site/`.
+The Figma file is a foundation system, not a product surface. The Copan system ships across Olivelas's consumer surfaces:
+1. **Marketing site / search** (`olivelas.com.br`) — browse and filter apartments for sale or rent. This is the surface reconstructed in `ui_kits/marketing-site/`.
 2. **Transaction app** — propostas, financing, document upload (not reconstructed here — no source material was provided).
 
 If you need UI kits for the transaction app, ask the user to attach the relevant Figma pages or codebase.
@@ -37,9 +37,9 @@ If you need UI kits for the transaction app, ask the user to attach the relevant
 
 ## CONTENT FUNDAMENTALS
 
-**Language.** Primary locale is **pt-BR**. All product copy in the source file is in Portuguese; keep any English strings to true brand names ("Loft", "Copan Foundation").
+**Language.** Primary locale is **pt-BR**. All product copy in the source file is in Portuguese; keep any English strings to true brand names ("Olivelas", "Copan Foundation").
 
-**Person.** Second-person singular: "você", imperativo gentil ("Encontre seu próximo lar", "Agende sua visita"). Never "Sr./Sra." or "nós"; rarely first-person plural ("na Loft") when needed for clarity about the company.
+**Person.** Second-person singular: "você", imperativo gentil ("Encontre seu próximo lar", "Agende sua visita"). Never "Sr./Sra." or "nós"; rarely first-person plural ("na Olivelas") when needed for clarity about the company.
 
 **Casing.** Sentence case for all UI — buttons, headings, titles. Title Case only for proper nouns (neighborhood names, "São Paulo", "Pinheiros"). ALL CAPS is reserved for `overline` (10/16 · +8% tracking); never used in running copy.
 
@@ -58,11 +58,11 @@ If you need UI kits for the transaction app, ask the user to attach the relevant
 **Emoji.** Never in product UI. Never in marketing hero. Acceptable in internal comms and in speaker-notes for internal decks only.
 
 **Example copy (from Figma / brand voice):**
-- ✅ "Encontre seu próximo lar com a Loft."
+- ✅ "Encontre seu próximo lar com a Olivelas."
 - ✅ "Moradia pronta para morar hoje."
 - ✅ "Apartamentos reformados em locais privilegiados."
 - ❌ "🚀 Revolucione sua busca por imóveis! 🏠"
-- ❌ "A Loft é a melhor proptech do Brasil!!!"
+- ❌ "A Olivelas é a melhor proptech do Brasil!!!"
 
 ---
 
@@ -127,10 +127,10 @@ The Figma file references library icons (`/external-shared/SizeMedium16`, `SizeM
 <script>lucide.createIcons();</script>
 ```
 
-**Substitution flag.** ⚠️ This is a CDN substitution, not the production Loft icon set. If you have access to the real Loft icon font/sprite, drop it into `assets/icons/` and update `ui_kits/marketing-site/components/Icon.jsx`.
+**Substitution flag.** ⚠️ This is a CDN substitution, not the production Olivelas icon set. If you have access to the real Olivelas icon font/sprite, drop it into `assets/icons/` and update `ui_kits/marketing-site/components/Icon.jsx`.
 
 **Logos copied.**
-- `assets/logo-loft.svg` — the Loft wordmark, single path, `currentColor` fill. Renders at any size.
+- `assets/logo-loft.svg` — the Olivelas wordmark, single path, `currentColor` fill. Renders at any size.
 - `assets/copan-avatar.png` — Copan Building illustration used on the Figma cover.
 
 **Emoji.** Never in product UI.
@@ -158,6 +158,6 @@ The Figma file references library icons (`/external-shared/SizeMedium16`, `SizeM
 
 | Product | Path | Status |
 |---|---|---|
-| Marketing site / search (`loft.com.br`) | `ui_kits/marketing-site/` | Reconstructed from Copan foundations + brand voice. Click-through: home → search results → property detail. |
+| Marketing site / search (`olivelas.com.br`) | `ui_kits/marketing-site/` | Reconstructed from Copan foundations + brand voice. Click-through: home → search results → property detail. |
 
 The transaction app, mortgage simulator, and seller dashboard are referenced in brand copy but no source material was provided — ask the user to attach those Figma pages to extend the system.

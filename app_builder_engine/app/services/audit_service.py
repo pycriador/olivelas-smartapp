@@ -14,7 +14,7 @@ class AuditService:
         action: AuditAction | str,
         resource: str,
         resource_id: str,
-        user_email: str = "system@loft.com.br",
+        user_email: str = "system@olivelas.com.br",
         result: str = "SUCCESS",
         metadata: dict[str, Any] | None = None,
     ) -> AuditLog:

@@ -1,4 +1,4 @@
-# Checklist — ship an AIOps service on the current model
+# Checklist — ship an Olivelas service on the current model
 
 > Language: EN | [Português (pt-BR)](../../pt-BR/loft-infra/checklist-novo-servico.md)
 >
@@ -61,7 +61,7 @@ Pack: [../loft-observability/README.md](../loft-observability/README.md). **Logs
 ## Verify
 
 - [ ] Workflow green → new tag in k8s-apps → Argo Healthy → `VaultStaticSecret` OK → corp HTTPS OK (JumpCloud)
-- [ ] Users have JumpCloud/corp access via Infosec / [Central](https://central.loft.com.br) when required
+- [ ] Users have JumpCloud/corp access via Infosec / [Central](https://central.olivelas.com.br) when required
 - [ ] No secrets in logs, images, or PRs
 
 See also: [publish-guide.md](publish-guide.md), [examples/](examples/README.md), [overview.md](overview.md), [infra-live-route53.md](infra-live-route53.md), [vault-secrets.md](vault-secrets.md), [kong-gateway.md](kong-gateway.md), [k8s-apps.md](k8s-apps.md), [../loft-observability/README.md](../loft-observability/README.md).

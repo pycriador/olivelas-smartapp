@@ -317,11 +317,11 @@ Exemplos fictícios: [../../examples/governance/](../../examples/governance/).
 | --- | --- | --- |
 | Arquitetura | [architecture/](architecture/) | Estrutura e comportamento arquitetural |
 | Application | [application/](application/) | Componentes da aplicação |
-| AIOps Team | [aiops-team/](aiops-team/) | Hub do time AIOps — responsabilidades, catálogo, padrões (3 níveis) |
-| AIOps Apps | [aiops-apps/](aiops-apps/) | Stacks front/back dos apps AIOps (libs, rotas, segurança) |
+| Olivelas Team | [aiops-team/](aiops-team/) | Hub do time Olivelas — responsabilidades, catálogo, padrões (3 níveis) |
+| Olivelas Apps | [aiops-apps/](aiops-apps/) | Stacks front/back dos apps Olivelas (libs, rotas, segurança) |
 | Infrastructure | [infrastructure/](infrastructure/) | Infraestrutura e recursos |
-| Infra Loft (AIOps) | [loft-infra/](loft-infra/) | Como apps AIOps são publicados hoje (guia + exemplos + Actions, k8s-apps, Kong, Docker) |
-| Observabilidade Loft (Datadog) | [loft-observability/](loft-observability/) | Datadog no EKS, logs estruturados, APM, guia operacional (as-is Loft) |
+| Infra Olivelas (Olivelas) | [loft-infra/](loft-infra/) | Como apps Olivelas são publicados hoje (guia + exemplos + Actions, k8s-apps, Kong, Docker) |
+| Observabilidade Olivelas (Datadog) | [loft-observability/](loft-observability/) | Datadog no EKS, logs estruturados, APM, guia operacional (as-is Olivelas) |
 | Segurança | [security/](security/) | Segurança e controle de acesso |
 | Operações | [operations/](operations/) | Operação, confiabilidade, incidentes, recuperação |
 | Observability | [observability/](observability/) | Logs, métricas, tracing, SLIs/SLOs, alertas |
@@ -341,15 +341,15 @@ Documente componentes, responsabilidades, entradas/saídas e considerações ope
 
 Template: [templates/component.md](templates/component.md)
 
-### AIOps Team
+### Olivelas Team
 
-Hub **as-is** do time AIOps — nível 1 do [modelo em 3 níveis](aiops-team/documentation-model.md): quem somos, responsabilidades, catálogo de apps, stacks, forma de trabalho, padrões, segurança, observabilidade e troubleshooting transversal.
+Hub **as-is** do time Olivelas — nível 1 do [modelo em 3 níveis](aiops-team/documentation-model.md): quem somos, responsabilidades, catálogo de apps, stacks, forma de trabalho, padrões, segurança, observabilidade e troubleshooting transversal.
 
 Hub: [aiops-team/README.md](aiops-team/README.md) · [aiops-team/applications.md](aiops-team/applications.md) · [aiops-team/documentation-model.md](aiops-team/documentation-model.md)
 
-### AIOps Apps
+### Olivelas Apps
 
-Pacote **as-is** das stacks de frontend e backend dos apps AIOps de referência (bibliotecas, monorepo, rotas, segurança), com matrizes de evidência no README — **nível 2** do modelo AIOps.
+Pacote **as-is** das stacks de frontend e backend dos apps Olivelas de referência (bibliotecas, monorepo, rotas, segurança), com matrizes de evidência no README — **nível 2** do modelo Olivelas.
 
 Hub: [aiops-apps/README.md](aiops-apps/README.md) · [aiops-apps/dataforge.md](aiops-apps/dataforge.md) · [aiops-apps/deep-insight.md](aiops-apps/deep-insight.md) · [aiops-apps/qualidade-loft.md](aiops-apps/qualidade-loft.md) · [aiops-apps/loft-carteiras.md](aiops-apps/loft-carteiras.md) · [aiops-apps/ava-prod.md](aiops-apps/ava-prod.md)
 
@@ -357,15 +357,15 @@ Hub: [aiops-apps/README.md](aiops-apps/README.md) · [aiops-apps/dataforge.md](a
 
 Documente ambientes, recursos, provisionamento e restrições operacionais sem assumir um provedor ou runtime específico.
 
-### Infra Loft (AIOps)
+### Infra Olivelas (Olivelas)
 
-Pacote **as-is** da publicação atual de apps AIOps na Loft (GitHub Actions → ECR → `k8s-apps` → Kong), grounded em repositórios reais.
+Pacote **as-is** da publicação atual de apps Olivelas na Olivelas (GitHub Actions → ECR → `k8s-apps` → Kong), grounded em repositórios reais.
 
 Hub: [loft-infra/README.md](loft-infra/README.md) · [loft-infra/publish-guide.md](loft-infra/publish-guide.md) · [loft-infra/examples/](loft-infra/examples/) · [loft-infra/overview.md](loft-infra/overview.md) · [loft-infra/github-actions-deploy.md](loft-infra/github-actions-deploy.md) · [loft-infra/k8s-apps.md](loft-infra/k8s-apps.md) · [loft-infra/kong-gateway.md](loft-infra/kong-gateway.md) · [loft-infra/infra-live-route53.md](loft-infra/infra-live-route53.md) · [loft-infra/vault-secrets.md](loft-infra/vault-secrets.md) · [loft-infra/dockerfiles.md](loft-infra/dockerfiles.md)
 
-### Observabilidade Loft (Datadog)
+### Observabilidade Olivelas (Datadog)
 
-Pacote **as-is** de Datadog no EKS Loft: habilitação no chart, logs JSON estruturados, instrumentação de app, pré-requisitos documentais (gate de logs), guia operacional, checklist de verificação.
+Pacote **as-is** de Datadog no EKS Olivelas: habilitação no chart, logs JSON estruturados, instrumentação de app, pré-requisitos documentais (gate de logs), guia operacional, checklist de verificação.
 
 Hub: [loft-observability/README.md](loft-observability/README.md) · [loft-observability/documentation-prerequisites.md](loft-observability/documentation-prerequisites.md) · [loft-observability/k8s-datadog-enablement.md](loft-observability/k8s-datadog-enablement.md) · [loft-observability/application-instrumentation.md](loft-observability/application-instrumentation.md) · [loft-observability/structured-logging.md](loft-observability/structured-logging.md) · [loft-observability/datadog-usage-guide.md](loft-observability/datadog-usage-guide.md) · [loft-observability/verification-checklist.md](loft-observability/verification-checklist.md)
 

@@ -1,4 +1,4 @@
-# Stack frontend AIOps
+# Stack frontend Olivelas
 
 > Language: pt-BR | [English (EN)](../../en/aiops-apps/frontend-stack.md)
 >

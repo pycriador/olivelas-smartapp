@@ -38,9 +38,9 @@ Tenant Isolated
 
 Segurança deve ser tratada como requisito arquitetural e não como uma etapa posterior ao desenvolvimento.
 
-## Security Configuration (Valores Padrão Canônicos Loft)
+## Security Configuration (Valores Padrão Canônicos Olivelas)
 
-Toda aplicação cliente e serviço backend construído no ecossistema Loft deve adotar os seguintes valores canônicos de configuração de segurança (salvo exceção formal aprovada em ADR):
+Toda aplicação cliente e serviço backend construído no ecossistema Olivelas deve adotar os seguintes valores canônicos de configuração de segurança (salvo exceção formal aprovada em ADR):
 
 | Parâmetro | Chave de Configuração / Env | Valor Padrão Canônico | Descrição e Regra Operacional |
 | :--- | :--- | :--- | :--- |
@@ -3496,7 +3496,7 @@ Monitoring
 
 # 235. Loft Backend Security Standard
 
-O backend Loft deve ser construído assumindo que:
+O backend Olivelas deve ser construído assumindo que:
 
 ```text
 Clients are untrusted.

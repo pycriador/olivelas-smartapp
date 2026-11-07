@@ -28,7 +28,7 @@ logger = logging.getLogger("AppBuilderClient")
 
 class AppBuilderClient:
     """
-    Main SDK Client for Loft App Builder Engine.
+    Main SDK Client for Olivelas App Builder Engine.
     
     Example:
         ```python
@@ -39,7 +39,7 @@ class AppBuilderClient:
         
         # 1. Compose application blueprint via AI Gateway
         blueprint = client.ai.compose_blueprint(
-            name="Loft Fiança Aluguel",
+            name="Olivelas Fiança Aluguel",
             description="Portal de locação e esteira de garantia locatícia",
             requirements=[
                 "Autenticação JWT e RBAC",
@@ -51,7 +51,7 @@ class AppBuilderClient:
         
         # 2. Register project and link blueprint
         project = client.projects.create_project(
-            name="Loft Fiança Aluguel",
+            name="Olivelas Fiança Aluguel",
             description="Portal de locação e esteira de garantia locatícia",
             template_id="tpl_loft_partner_portal"
         )
@@ -62,7 +62,7 @@ class AppBuilderClient:
         self,
         base_url: str = "http://127.0.0.1:8000",
         auth_token: Optional[str] = None,
-        actor_email: str = "willian.jesus@loft.com.br",
+        actor_email: str = "willian.jesus@olivelas.com.br",
         actor_role: str = "Global Admin",
         timeout_seconds: float = 60.0,
         config: Optional[ApiClientConfig] = None,
@@ -121,3 +121,6 @@ class AppBuilderClient:
             has_authentication=has_auth,
             template_id=template_id,
         )
+
+
+OlivelasClient = AppBuilderClient

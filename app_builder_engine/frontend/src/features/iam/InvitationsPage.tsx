@@ -199,7 +199,7 @@ export const InvitationsPage: React.FC = () => {
       >
         <Form form={form} layout="vertical" onFinish={handleCreateInvitation}>
           <Form.Item name="email" label="E-mail Corporativo" rules={[{ required: true, type: 'email', message: 'Insira um e-mail válido' }]}>
-            <Input placeholder="ex: novo.engenheiro@loft.com.br" />
+            <Input placeholder="ex: novo.engenheiro@olivelas.com.br" />
           </Form.Item>
           <Form.Item name="role_id" label="Papel Inicial" rules={[{ required: true, message: 'Selecione o papel' }]}>
             <Select placeholder="Selecione o papel">

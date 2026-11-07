@@ -56,6 +56,6 @@ Northstar é uma plataforma fictícia de inteligência documental: SSR BFF + Fla
 
 ## Fora de escopo para agentes
 
-- Tratar esta árvore como normativa do Padrão de Documentação AIOps
+- Tratar esta árvore como normativa do Padrão de Documentação Olivelas
 - Copiar a stack ilustrativa para produção sem revisão da org
 - Usar nomes fictícios como se fossem serviços reais

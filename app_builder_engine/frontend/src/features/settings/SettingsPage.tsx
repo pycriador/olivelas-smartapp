@@ -1032,7 +1032,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ initialTab }) => {
           <Form.Item name="description" label="Descrição da Categoria">
             <Input.TextArea
               rows={3}
-              placeholder="Descreva o propósito desta categoria e suas diretrizes de uso na arquitetura Loft..."
+              placeholder="Descreva o propósito desta categoria e suas diretrizes de uso na arquitetura Olivelas..."
             />
           </Form.Item>
 

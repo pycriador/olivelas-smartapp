@@ -1,6 +1,6 @@
 """
 Canonical Seed Data for App Builder Engine
-Structured catalog of Components, Rules, Architecture Patterns, and Templates extracted from Loft SDDs
+Structured catalog of Components, Rules, Architecture Patterns, and Templates extracted from Olivelas SDDs
 """
 from __future__ import annotations
 from app.domain.models import (
@@ -47,9 +47,9 @@ SEED_COMPONENTS: list[LoftComponent] = [
         name="AppSwitcher (Waffle Menu)",
         layer=ComponentLayer.FRONTEND,
         category=ComponentCategory.NAVIGATION,
-        description="Menu de 9 pontos ('waffle') fixo no canto esquerdo da viewport para alternar entre produtos do ecossistema Loft, composto com DropdownMenu + ActionButton do Copan.",
+        description="Menu de 9 pontos ('waffle') fixo no canto esquerdo da viewport para alternar entre produtos do ecossistema Olivelas, composto com DropdownMenu + ActionButton do Copan.",
         responsibilities=[
-            "Navegação entre produtos Loft (Fiança Aluguel, Sites, Adm Imóveis, CRM, Financiamento, Portal)",
+            "Navegação entre produtos Olivelas (Fiança Aluguel, Sites, Adm Imóveis, CRM, Financiamento, Portal)",
             "Posicionamento fixed ancorado à esquerda da tela",
             "Lista de produtos via DropdownMenu.menuItems, com Typography para os títulos",
             "Produto atual destacado com Tag/StatusLight em vez de cor hardcoded",
@@ -58,7 +58,7 @@ SEED_COMPONENTS: list[LoftComponent] = [
         allowed_imports=["@loft/react-loft", "@loft/react-icons", "@loft/tokens-loft"],
         forbidden_imports=["antd", "@ant-design/icons", "@mui/*"],
         interface_spec="interface AppSwitcherProps { currentProductKey: string; onNavigate?: (productKey: string) => void }",
-        example_usage="<DropdownMenu\n  menuItems={products.map((p) => ({ label: p.name, onClick: () => onNavigate?.(p.key) }))}\n  open={isOpen}\n  onDismiss={() => setIsOpen(false)}\n  placement=\"bottom-start\"\n>\n  <ActionButton aria-label=\"Alternar produto Loft\" quiet onClick={() => setIsOpen(true)}>\n    <GridIcon size=\"md\" color={color.icon.primary} />\n  </ActionButton>\n</DropdownMenu>",
+        example_usage="<DropdownMenu\n  menuItems={products.map((p) => ({ label: p.name, onClick: () => onNavigate?.(p.key) }))}\n  open={isOpen}\n  onDismiss={() => setIsOpen(false)}\n  placement=\"bottom-start\"\n>\n  <ActionButton aria-label=\"Alternar produto Olivelas\" quiet onClick={() => setIsOpen(true)}>\n    <GridIcon size=\"md\" color={color.icon.primary} />\n  </ActionButton>\n</DropdownMenu>",
         rules_of_use=[
             "Painel deve ser position: fixed com left: 0 abaixo do header",
             "Produto atual usa color.background.brand ou color.decorative.* + Tag de destaque — nunca hex fixo (#EAF9EF, #0B6B4F etc.)",
@@ -201,13 +201,13 @@ SEED_RULES: list[ArchitecturalRule] = [
     # FRONTEND RULES
     ArchitecturalRule(
         id="FE-001",
-        title="Uso Obrigatório do Copan (Design System Loft)",
+        title="Uso Obrigatório do Copan (Design System Olivelas)",
         category=RuleCategory.FRONTEND,
         severity=RuleSeverity.CRITICAL,
-        statement="Toda UI de uma aplicação padrão Loft deve ser construída com os pacotes reais do Copan — '@loft/react-loft' (componentes), '@loft/tokens-loft' (tokens de cor/espaçamento/tipografia) e '@loft/react-icons' (ícones). Nunca usar Ant Design, Material UI, Chakra ou qualquer biblioteca de UI genérica, nem hex/rgb hardcoded no lugar de tokens.",
-        rationale="O Copan é o design system oficial da Loft (https://copan-loft.loft.technology/) — usá-lo de fato, e não apenas copiar sua paleta de cores, é o que garante acessibilidade, responsividade e consistência visual entre produtos. Os pacotes '@loft/*' são privados e exigem um NPM_TOKEN com acesso ao escopo '@loft' configurado no '.npmrc' do projeto gerado ('//registry.npmjs.org/:_authToken=${NPM_TOKEN}') — isso é esperado para aplicações internas Loft, que é o público deste gerador.",
+        statement="Toda UI de uma aplicação padrão Olivelas deve ser construída com os pacotes reais do Copan — '@loft/react-loft' (componentes), '@loft/tokens-loft' (tokens de cor/espaçamento/tipografia) e '@loft/react-icons' (ícones). Nunca usar Ant Design, Material UI, Chakra ou qualquer biblioteca de UI genérica, nem hex/rgb hardcoded no lugar de tokens.",
+        rationale="O Copan é o design system oficial da Olivelas (https://copan-loft.loft.technology/) — usá-lo de fato, e não apenas copiar sua paleta de cores, é o que garante acessibilidade, responsividade e consistência visual entre produtos. Os pacotes '@loft/*' são privados e exigem um NPM_TOKEN com acesso ao escopo '@loft' configurado no '.npmrc' do projeto gerado ('//registry.npmjs.org/:_authToken=${NPM_TOKEN}') — isso é esperado para aplicações internas Olivelas, que é o público deste gerador.",
         bad_example="import { Button, Table } from 'antd'; // usa só a cor de marca via ConfigProvider, não é Copan",
-        good_example="import { Button } from '@loft/react-loft';\nimport { color } from '@loft/tokens-loft';\n// variant='primary' já aplica a cor de marca Loft — nunca hex hardcoded",
+        good_example="import { Button } from '@loft/react-loft';\nimport { color } from '@loft/tokens-loft';\n// variant='primary' já aplica a cor de marca Olivelas — nunca hex hardcoded",
         referenced_sdd="sdd-frontend/Volume I — Loft Design System",
     ),
     ArchitecturalRule(
@@ -312,8 +312,8 @@ SEED_RULES: list[ArchitecturalRule] = [
 SEED_ARCHITECTURES: list[ArchitecturePattern] = [
     ArchitecturePattern(
         id="arch-fastapi-react-loft",
-        name="Padrão Oficial Loft: FastAPI + React/Copan",
-        description="Arquitetura desacoplada Fullstack recomendada pela Loft. Backend assíncrono em camadas limpas + Frontend SPA com Copan (@loft/react-loft + @loft/tokens-loft).",
+        name="Padrão Oficial Olivelas: FastAPI + React/Copan",
+        description="Arquitetura desacoplada Fullstack recomendada pela Olivelas. Backend assíncrono em camadas limpas + Frontend SPA com Copan (@loft/react-loft + @loft/tokens-loft).",
         folder_structure="""project/
 ├── backend/
 │   ├── app/
@@ -330,7 +330,7 @@ SEED_ARCHITECTURES: list[ArchitecturePattern] = [
 └── frontend/
     ├── src/
     │   ├── app/ (Providers, Root Router)
-    │   ├── components/ (Loft Component Catalog)
+    │   ├── components/ (Olivelas Component Catalog)
     │   ├── features/ (Módulos por domínio)
     │   ├── services/ (API Clients)
     │   └── theme/ (@loft/tokens-loft re-exports, sem ConfigProvider de terceiros)
@@ -345,7 +345,7 @@ SEED_ARCHITECTURES: list[ArchitecturePattern] = [
         ],
         data_flow="UI Action -> TanStack Query -> API Client -> FastAPI Router -> Application Service -> Domain Policy -> Repository -> PostgreSQL / LLMGateway",
         best_for=[
-            "Aplicações corporativas e portais Loft",
+            "Aplicações corporativas e portais Olivelas",
             "Sistemas imobiliários, CRM, gestão de contratos e esteiras de crédito",
             "Aplicações integradas com IA generativa e RAG",
         ],

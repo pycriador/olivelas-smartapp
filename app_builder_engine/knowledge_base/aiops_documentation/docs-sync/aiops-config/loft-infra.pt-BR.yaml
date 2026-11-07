@@ -1,12 +1,12 @@
-# Publish docs/pt-BR/loft-infra → Confluence "Infra Loft"
-# Parent: https://loftbr.atlassian.net/wiki/spaces/AIOps/pages/6090358809
+# Publish docs/pt-BR/loft-infra → Confluence "Infra Olivelas"
+# Parent: https://loftbr.atlassian.net/wiki/spaces/Olivelas/pages/6090358809
 #
 #   set -a && source ../.env && set +a
 #   uv run docs-sync sync --config aiops-config/loft-infra.pt-BR.yaml --force --relink
 
 project:
   name: "aiops-loft-infra-pt-BR"
-  repository_url: "https://github.com/loft-br/aiops-documentation"
+  repository_url: "https://github.com/pycriador/olivelas-smartapp"
 
 confluence:
   url: "${CONFLUENCE_URL}"
@@ -14,7 +14,7 @@ confluence:
   username: "${CONFLUENCE_USERNAME}"
   api_token: "${CONFLUENCE_API_TOKEN}"
   api_profile: "cloud"
-  root_page: "Infra Loft"
+  root_page: "Infra Olivelas"
   root_page_id: "6090358809"
 
 documentation:

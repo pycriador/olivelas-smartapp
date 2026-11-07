@@ -8,7 +8,7 @@
 >
 > Authority: Verified
 
-**Structured logs** are the minimum observability signal for Loft operational documentation — [documentation-prerequisites.md](documentation-prerequisites.md).
+**Structured logs** are the minimum observability signal for Olivelas operational documentation — [documentation-prerequisites.md](documentation-prerequisites.md).
 
 ## Requirements
 
@@ -17,7 +17,7 @@
 | Format | **One JSON object per log line** on stdout/stderr |
 | Destination | Container stdout → Datadog agent → Datadog Logs |
 | Correlation | With `DD_LOGS_INJECTION=true`, traces link to logs; optionally include `trace_id` / `span_id` in JSON |
-| Language | Log **messages** for operators may be English; user-facing UI copy stays pt-BR per Loft language policy |
+| Language | Log **messages** for operators may be English; user-facing UI copy stays pt-BR per Olivelas language policy |
 | Secrets | **Never** log credentials, tokens, full CPF/CNPJ, bank data — placeholders only |
 | PII | Mask or omit; default deny for document examples |
 
@@ -46,7 +46,7 @@ Some stacks also receive default `LOG_FORMAT=ndjson` and `LOG_LEVEL=info` from t
 
 Non-production temporary enablement uses `datadog.ttl` (e.g. `7d`, chart default `eod` for opt-in annotations).
 
-Production retention follows org Datadog account policies (`[pending: Loft log retention policy link]`).
+Production retention follows org Datadog account policies (`[pending: Olivelas log retention policy link]`).
 
 ## Health checks and noise
 

@@ -57,9 +57,9 @@ Times precisam importar CSV/XLSX, tipar colunas, aplicar regras, exportar output
 | Auth | JWT + API tokens + service accounts | Proposed (example only) |
 | Files | Adapter tipo Google Drive; S3 como stub Proposed | Proposed (example only) |
 | Runtime API | Gunicorn / container | Proposed (example only) |
-| Observabilidade | Health + audit; Datadog opcional em orgs Loft | Proposed (example only) |
+| Observabilidade | Health + audit; Datadog opcional em orgs Olivelas | Proposed (example only) |
 
-> Se o seu projeto usa Kotlin, Node, PHP legado ou outra stack Loft: **ignore esta tabela** e documente a stack real com Classification correta.
+> Se o seu projeto usa Kotlin, Node, PHP legado ou outra stack Olivelas: **ignore esta tabela** e documente a stack real com Classification correta.
 
 ## Arquitetura
 

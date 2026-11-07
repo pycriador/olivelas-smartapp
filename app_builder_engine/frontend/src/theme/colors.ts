@@ -1,5 +1,5 @@
 export const colors = {
-  primary: '#F56738', // Loft Orange (Copan)
+  primary: '#F56738', // Olivelas Orange (Copan)
   primaryHover: '#D94616',
   primaryActive: '#B83207',
   primaryBg: '#FFF2EC',

@@ -7,7 +7,7 @@ class InMemoryDatabase:
         self.proposals = [
             {
                 "id": "prop_loft_01",
-                "title": "Apresentação Loft Soluções Imobiliárias",
+                "title": "Apresentação Olivelas Soluções Imobiliárias",
                 "client_name": "Mariana Santos",
                 "client_email": "mariana.santos@exemplo.com",
                 "client_document": "234.567.890-12",

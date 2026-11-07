@@ -1,4 +1,4 @@
-# AIOps Apps — application stacks
+# Olivelas Apps — application stacks
 
 > Language: EN | [Português (pt-BR)](../../pt-BR/aiops-apps/README.md)
 >
@@ -8,7 +8,7 @@
 >
 > Documentation Standard v1.0
 
-**As-is** documentation of **frontend** and **backend** stacks for reference AIOps apps — monorepo layout, libraries, common routes, and security.
+**As-is** documentation of **frontend** and **backend** stacks for reference Olivelas apps — monorepo layout, libraries, common routes, and security.
 
 Publish path (Actions, k8s-apps, Kong, Route53, Vault): [../loft-infra/README.md](../loft-infra/README.md).
 
@@ -21,7 +21,7 @@ Publish path (Actions, k8s-apps, Kong, Route53, Vault): [../loft-infra/README.md
 | DataForge | [loft-br/aiops-dataforge](https://github.com/loft-br/aiops-dataforge) | Flask + Gunicorn |
 | Deep Insight | [loft-br/aiops-deep-insight](https://github.com/loft-br/aiops-deep-insight) | Flask + Gunicorn |
 | Qualidade | [loft-br/qualidade-loft](https://github.com/loft-br/qualidade-loft) | FastAPI + uvicorn |
-| Loft Carteiras | [loft-br/aiops-loft-carteira](https://github.com/loft-br/aiops-loft-carteira) | Flask + Gunicorn |
+| Olivelas Carteiras | [loft-br/aiops-loft-carteira](https://github.com/loft-br/aiops-loft-carteira) | Flask + Gunicorn |
 | **AVA** | [loft-br/ava-prod](https://github.com/loft-br/ava-prod) | slack-bolt + uv (Slack UI, no web front) |
 
 Dedicated page: [ava-prod.md](ava-prod.md).
@@ -30,7 +30,7 @@ Dedicated page: [ava-prod.md](ava-prod.md).
 
 ## Evidence — frontend matrix
 
-| Capability | DataForge | Deep Insight | Qualidade | Loft Carteiras |
+| Capability | DataForge | Deep Insight | Qualidade | Olivelas Carteiras |
 | --- | --- | --- | --- | --- |
 | UI | React + TS | React + TS | React + TS | React + TS |
 | Bundler | Vite | Vite | Vite | Vite |
@@ -49,7 +49,7 @@ Dedicated page: [ava-prod.md](ava-prod.md).
 
 ## Evidence — backend matrix
 
-| Capability | DataForge | Deep Insight | Qualidade | Loft Carteiras |
+| Capability | DataForge | Deep Insight | Qualidade | Olivelas Carteiras |
 | --- | --- | --- | --- | --- |
 | Framework | Flask 3.x | Flask 3.x | **FastAPI** | Flask 3.x |
 | Server | Gunicorn | Gunicorn | uvicorn | Gunicorn |
@@ -75,7 +75,7 @@ Dedicated page: [ava-prod.md](ava-prod.md).
 | [dataforge.md](dataforge.md) | DataForge — projects and data |
 | [deep-insight.md](deep-insight.md) | Deep Insight — knowledge and AI |
 | [qualidade-loft.md](qualidade-loft.md) | Qualidade — KB and surveys |
-| [loft-carteiras.md](loft-carteiras.md) | Loft Carteiras — IAM and integrations |
+| [loft-carteiras.md](loft-carteiras.md) | Olivelas Carteiras — IAM and integrations |
 
 Team hub (level 1): [../aiops-team/README.md](../aiops-team/README.md).
 

@@ -33,7 +33,7 @@ class KnowledgeDocumentSummary(BaseModel):
     summary: str
     key_points: list[str] = Field(default_factory=list)
     tags: list[str] = Field(default_factory=list)
-    author: str | None = "Loft Engineering"
+    author: str | None = "Olivelas Engineering"
     version: str | None = "1.0.0"
     updated_at: str | None = None
     is_custom: bool = False
@@ -54,7 +54,7 @@ class KnowledgeDocumentCreate(BaseModel):
     content: str = Field(..., min_length=10)
     key_points: list[str] = Field(default_factory=list)
     tags: list[str] = Field(default_factory=list)
-    author: str | None = "Loft Engineering"
+    author: str | None = "Olivelas Engineering"
     version: str | None = "1.0.0"
     source_url: str | None = None
 
@@ -73,14 +73,14 @@ class KnowledgeDocumentUpdate(BaseModel):
 class ConfluenceImportRequest(BaseModel):
     space_key: str = Field(..., description="Chave do espaço no Confluence (ex: ENG, TECH, ARCH)")
     page_id_or_title: str | None = Field(default=None, description="ID ou Título da página específica")
-    base_url: str = Field(default="https://loft.atlassian.net/wiki", description="Base URL do Confluence Cloud")
+    base_url: str = Field(default="https://olivelas.atlassian.net/wiki", description="Base URL do Confluence Cloud")
     api_token: str | None = Field(default=None, description="API Token / Personal Access Token")
     username: str | None = Field(default=None, description="E-mail do usuário Atlassian")
     target_category: KnowledgeCategory = Field(default=KnowledgeCategory.EXTERNAL_CONFLUENCE)
 
 
 class GitHubImportRequest(BaseModel):
-    repo_url: str = Field(..., description="URL do repositório (ex: https://github.com/loft-br/aiops-documentation)")
+    repo_url: str = Field(..., description="URL do repositório (ex: https://github.com/pycriador/olivelas-smartapp)")
     branch: str = Field(default="main", description="Branch para sincronização")
     path_filter: str | None = Field(default="docs", description="Diretório ou arquivo para importar")
     github_token: str | None = Field(default=None, description="GitHub Personal Access Token (para repos privados)")

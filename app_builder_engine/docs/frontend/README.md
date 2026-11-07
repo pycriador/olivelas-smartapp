@@ -1,8 +1,8 @@
-# Padrões de Frontend Loft
+# Padrões de Frontend Olivelas
 
 ## 🎨 Design System & UI
 
-- **Fundação:** Ant Design + Loft Tokens (`#FF774A` como cor primária) + Loft Conventions.
+- **Fundação:** Ant Design + Olivelas Tokens (`#FF774A` como cor primária) + Olivelas Conventions.
 - **Proibição Absoluta:** NUNCA importar `@loft/*` ou pacotes privados do Copan. O Copan é apenas referência visual.
 - **Tipografia:** Família `Inter`, com hierarquia clara e tom de voz imperativo gentil em `pt-BR`.
 - **Cards e Superfícies:** Raio de borda de 12px com borda de 1px OU sombra suave (nunca ambos).

@@ -1,4 +1,4 @@
-# Dockerfiles — padrões e exemplos AIOps
+# Dockerfiles — padrões e exemplos Olivelas
 
 > Language: pt-BR | [English (EN)](../../en/loft-infra/dockerfiles.md)
 >
@@ -42,7 +42,7 @@ Pontos de design no próprio arquivo:
 - Runtime: `PORT=8080`, `USER app`, entrypoint em `docker/entrypoint.sh`, HEALTHCHECK via `fetch` em `/health`.
 
 ```dockerfile
-# AIOPS DataForge — Frontend (TanStack Start SSR + Node)
+# OLIVELAS DataForge — Frontend (TanStack Start SSR + Node)
 # Use Debian slim (glibc), not Alpine: sharp/workerd/esbuild ship linux-* binaries for glibc;
 # Alpine musl + arm64 builds frequently break `npm ci` in CI.
 FROM node:22-bookworm-slim AS build
@@ -145,7 +145,7 @@ EXPOSE 8000
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
 ```
 
-## API — Loft Carteira (Flask + Gunicorn)
+## API — Olivelas Carteira (Flask + Gunicorn)
 
 Fonte: [backend/Dockerfile](https://github.com/loft-br/aiops-loft-carteira/blob/main/backend/Dockerfile).
 

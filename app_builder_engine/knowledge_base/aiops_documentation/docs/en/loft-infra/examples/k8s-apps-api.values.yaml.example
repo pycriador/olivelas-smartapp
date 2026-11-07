@@ -64,4 +64,4 @@ autoscaling:
   maxReplicas: 4
   targetCPUUtilizationPercentage: 80
 podAnnotations:
-  loft.com.br/source-repository: <github-repo-name>
+  olivelas.com.br/source-repository: <github-repo-name>

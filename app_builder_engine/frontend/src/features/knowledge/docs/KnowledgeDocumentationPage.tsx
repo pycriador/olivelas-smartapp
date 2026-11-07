@@ -109,7 +109,7 @@ const NAV_GROUPS: NavGroup[] = [
   {
     key: 'devops_sre',
     groupTitle: 'DevOps, Observabilidade & SRE',
-    subtitle: 'Loft Observability (Datadog Pack), Health Checks & Runbooks',
+    subtitle: 'Olivelas Observability (Datadog Pack), Health Checks & Runbooks',
     categories: ['devops_sre'],
     icon: <ThunderboltOutlined style={{ color: '#8B5CF6' }} />,
     badgeColor: '#8B5CF6',
@@ -421,12 +421,12 @@ export const KnowledgeDocumentationPage: React.FC = () => {
             <Text type="secondary" style={{ fontSize: 12 }}>
               Persistido em banco de dados SQLite/PostgreSQL & sincronizado com{' '}
               <a
-                href="https://github.com/loft-br/aiops-documentation"
+                href="https://github.com/pycriador/olivelas-smartapp"
                 target="_blank"
                 rel="noreferrer"
                 style={{ color: '#0066CC', fontWeight: 500 }}
               >
-                loft-br/aiops-documentation
+                pycriador/olivelas-smartapp
               </a>
             </Text>
           </div>
@@ -1025,7 +1025,7 @@ export const KnowledgeDocumentationPage: React.FC = () => {
                 >
                   <span>
                     <UserOutlined style={{ marginRight: 4 }} /> Autor:{' '}
-                    <strong>{selectedDocDetail.author || 'Loft Engineering'}</strong>
+                    <strong>{selectedDocDetail.author || 'Olivelas Engineering'}</strong>
                   </span>
                   <span>•</span>
                   <span>

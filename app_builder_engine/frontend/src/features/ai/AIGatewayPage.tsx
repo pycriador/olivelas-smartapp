@@ -62,10 +62,10 @@ export const AIGatewayPage: React.FC = () => {
 
   // Playground state
   const [playgroundPrompt, setPlaygroundPrompt] = useState<string>(
-    'Explique brevemente as diretrizes de governança de arquitetura de microsserviços na Loft.'
+    'Explique brevemente as diretrizes de governança de arquitetura de microsserviços na Olivelas.'
   );
   const [playgroundSysPrompt, setPlaygroundSysPrompt] = useState<string>(
-    'Você é o assistente sênior de arquitetura de software da Loft.'
+    'Você é o assistente sênior de arquitetura de software da Olivelas.'
   );
   const [playgroundTemp, setPlaygroundTemp] = useState<number>(0.2);
   const [executing, setExecuting] = useState<boolean>(false);

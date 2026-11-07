@@ -36,23 +36,23 @@ class AiAgentService:
                 "slug": "copan-ui-refactor",
                 "role": "Copan Design System Specialist",
                 "domain": "Frontend / UI",
-                "description": "Analisa componentes e código legado React/TSX, refatorando-os para utilizar exclusivamente os componentes e design tokens canônicos do Loft Copan Design System com Feature-Sliced Design (FSD) e acessibilidade WCAG.",
+                "description": "Analisa componentes e código legado React/TSX, refatorando-os para utilizar exclusivamente os componentes e design tokens canônicos do Olivelas Copan Design System com Feature-Sliced Design (FSD) e acessibilidade WCAG.",
                 "avatar_icon": "CodeOutlined",
                 "color": "#FF774A",
                 "provider": "gemini",
                 "model": "gemini-2.5-flash",
                 "temperature": 0.2,
-                "system_instruction": """Você é o Especialista Canônico em Copan Design System da Loft.
-Sua missão é inspecionar o código React / TypeScript fornecido e refatorá-lo segundo o SDD de Frontend da Loft:
+                "system_instruction": """Você é o Especialista Canônico em Copan Design System da Olivelas.
+Sua missão é inspecionar o código React / TypeScript fornecido e refatorá-lo segundo o SDD de Frontend da Olivelas:
 1. Arquitetura Feature-Sliced Design (FSD): Organize o componente nas camadas adequadas (shared / entities / features / widgets / pages).
 2. Usar componentes canônicos do pacote @/components/loft (PageContainer, PageHeader, LoftCard, StatCard, EmptyState, DataTable, LoftButton).
-3. Substituir CSS inline ou cores arbitrárias pelos tokens oficiais Loft (#FF774A, #121619, #0B6B4F, #F0F4F8, #D9E2EC).
+3. Substituir CSS inline ou cores arbitrárias pelos tokens oficiais Olivelas (#FF774A, #121619, #0B6B4F, #F0F4F8, #D9E2EC).
 4. Tipagem TypeScript estrita de Props com interfaces exportadas (ex: UserCardProps).
 5. Conformidade de Acessibilidade WCAG 2.1 AA (atributos aria-label, role, navegação por teclado).
 6. Forneça o código TSX completo e refatorado acompanhado de uma explicação técnica das melhorias.""",
                 "capabilities": [
                     "Detecção de CSS/estilos inline arbitrários",
-                    "Conversão para Design Tokens Loft Copan",
+                    "Conversão para Design Tokens Olivelas Copan",
                     "Aderência a Feature-Sliced Design (FSD)",
                     "Aprimoramento de acessibilidade WCAG 2.1 AA",
                     "Tipagem TypeScript estrita de Props"
@@ -74,7 +74,7 @@ Sua missão é inspecionar o código React / TypeScript fornecido e refatorá-lo
                 "provider": "gemini",
                 "model": "gemini-2.5-flash",
                 "temperature": 0.1,
-                "system_instruction": """Você é o Arquiteto Especialista em Banco de Dados e Migrações da Loft (PostgreSQL & Alembic).
+                "system_instruction": """Você é o Arquiteto Especialista em Banco de Dados e Migrações da Olivelas (PostgreSQL & Alembic).
 Sua missão é analisar o schema ou requisito de banco de dados fornecido e produzir:
 1. Script Alembic de migração completo com funções upgrade() e downgrade() estritamente reversíveis.
 2. Modelos ORM SQLAlchemy 2.0 (Mapped, mapped_column, ForeignKey com ondelete adequado, UUID v4 primary keys).
@@ -105,8 +105,8 @@ Sua missão é analisar o schema ou requisito de banco de dados fornecido e prod
                 "provider": "gemini",
                 "model": "gemini-2.5-flash",
                 "temperature": 0.2,
-                "system_instruction": """Você é o Especialista em Engenharia Backend FastAPI e Clean Architecture da Loft.
-Sua missão é estruturar módulos backend robustos seguindo as diretrizes técnicas da Loft:
+                "system_instruction": """Você é o Especialista em Engenharia Backend FastAPI e Clean Architecture da Olivelas.
+Sua missão é estruturar módulos backend robustos seguindo as diretrizes técnicas da Olivelas:
 1. Camadas Desacopladas (Clean Architecture / DDD):
    - Router/Controller: Validação HTTP, cabeçalhos, status codes padronizados (200, 201, 400, 404, 409, 500).
    - Service/Use Case: Regras de negócio puras, orquestração de transações e eventos.
@@ -139,7 +139,7 @@ Sua missão é estruturar módulos backend robustos seguindo as diretrizes técn
                 "provider": "gemini",
                 "model": "gemini-2.5-flash",
                 "temperature": 0.1,
-                "system_instruction": """Você é o Agente Auditor de Segurança de Aplicações da Loft.
+                "system_instruction": """Você é o Agente Auditor de Segurança de Aplicações da Olivelas.
 Sua missão é realizar uma análise estrita de segurança e RBAC sobre a especificação ou código submetido:
 1. Identificar riscos de BOLA (Broken Object Level Authorization) em identificadores de recursos (/projects/{id}, /users/{id}).
 2. Validar que cada endpoint possui decorator ou middleware de autorização (@require_permission / Depends(verify_tenant_access)).
@@ -168,7 +168,7 @@ Sua missão é realizar uma análise estrita de segurança e RBAC sobre a especi
                 "provider": "gemini",
                 "model": "gemini-2.5-flash",
                 "temperature": 0.2,
-                "system_instruction": """Você é o Especialista em Engenharia de Qualidade e Contratos de API da Loft.
+                "system_instruction": """Você é o Especialista em Engenharia de Qualidade e Contratos de API da Olivelas.
 Sua missão é produzir:
 1. Suites completas de testes unitários (PyTest com FastAPI TestClient ou Jest para React) com cobertura de casos felizes e cenários de borda (edge cases e 4xx/5xx).
 2. Contratos OpenAPI 3.1 claros com exemplos reais de payloads de requisição e resposta.
@@ -190,13 +190,13 @@ Sua missão é produzir:
                 "slug": "golden-rules-enforcer",
                 "role": "Enterprise Architecture Enforcer",
                 "domain": "Architecture",
-                "description": "Valida propostas de arquitetura e blueprints em relação às Golden Rules canônicas da Loft (isolamento de banco de dados, SemVer estrito, tracing distribuído e idempotent APIs).",
+                "description": "Valida propostas de arquitetura e blueprints em relação às Golden Rules canônicas da Olivelas (isolamento de banco de dados, SemVer estrito, tracing distribuído e idempotent APIs).",
                 "avatar_icon": "CrownOutlined",
                 "color": "#FA8C16",
                 "provider": "gemini",
                 "model": "gemini-2.5-flash",
                 "temperature": 0.1,
-                "system_instruction": """Você é o Guardião Canônico das Golden Rules de Engenharia da Loft.
+                "system_instruction": """Você é o Guardião Canônico das Golden Rules de Engenharia da Olivelas.
 Analise o Blueprint ou proposta técnica contra as regras fundamentais:
 - RUL-01: Isolamento de banco por domínio (sem cross-database joins).
 - RUL-02: APIs idempotentes com chaves Idempotency-Key em operações mutantes.
@@ -204,7 +204,7 @@ Analise o Blueprint ou proposta técnica contra as regras fundamentais:
 - RUL-04: Versionamento SemVer estrito em endpoints e modelos.
 Emita o Relatório de Conformidade com Status (APROVADO, APROVADO COM RESSALVAS, REJEITADO) e plano de remediação.""",
                 "capabilities": [
-                    "Verificação de aderência às Golden Rules Loft",
+                    "Verificação de aderência às Golden Rules Olivelas",
                     "Auditoria de arquitetura distribuída",
                     "Validação de SemVer e retrocompatibilidade",
                     "Análise de acoplamento entre domínios"
@@ -265,7 +265,7 @@ Emita o Relatório de Conformidade com Status (APROVADO, APROVADO COM RESSALVAS,
             raise NotFoundError(f"AI Agent com ID '{agent_id}' não foi encontrado.")
         return agent
 
-    def create_agent(self, body: AiAgentCreateRequest, actor_email: str = "willian.jesus@loft.com.br") -> AiAgentItem:
+    def create_agent(self, body: AiAgentCreateRequest, actor_email: str = "willian.jesus@olivelas.com.br") -> AiAgentItem:
         agents = self.list_agents()
         slug = body.name.lower().replace(" ", "-")
         if any(a.slug == slug for a in agents):
@@ -317,7 +317,7 @@ Emita o Relatório de Conformidade com Status (APROVADO, APROVADO COM RESSALVAS,
 
         return new_agent
 
-    def update_agent(self, agent_id: str, body: AiAgentUpdateRequest, actor_email: str = "willian.jesus@loft.com.br") -> AiAgentItem:
+    def update_agent(self, agent_id: str, body: AiAgentUpdateRequest, actor_email: str = "willian.jesus@olivelas.com.br") -> AiAgentItem:
         agents = self.list_agents()
         agent = self.get_agent(agent_id)
 
@@ -352,7 +352,7 @@ Emita o Relatório de Conformidade com Status (APROVADO, APROVADO COM RESSALVAS,
 
         return updated
 
-    def delete_agent(self, agent_id: str, actor_email: str = "willian.jesus@loft.com.br") -> None:
+    def delete_agent(self, agent_id: str, actor_email: str = "willian.jesus@olivelas.com.br") -> None:
         agents = self.list_agents()
         agent = self.get_agent(agent_id)
 
@@ -382,7 +382,7 @@ Emita o Relatório de Conformidade com Status (APROVADO, APROVADO COM RESSALVAS,
         self,
         agent_id: str,
         request: AiAgentExecuteRequest,
-        actor_email: str = "willian.jesus@loft.com.br",
+        actor_email: str = "willian.jesus@olivelas.com.br",
     ) -> AiAgentExecuteResponse:
         agent = self.get_agent(agent_id)
         

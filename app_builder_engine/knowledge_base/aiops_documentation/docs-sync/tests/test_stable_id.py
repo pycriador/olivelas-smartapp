@@ -25,7 +25,7 @@ def _write_readme(path: Path, heading: str) -> None:
 def _build_docs_root(tmp_path: Path) -> Path:
     docs_root = tmp_path / "docs" / "pt-BR"
     _write_readme(docs_root / "README.md", "Indice da documentacao")
-    _write_readme(docs_root / "aiops-apps" / "README.md", "AIOps Apps")
+    _write_readme(docs_root / "aiops-apps" / "README.md", "Olivelas Apps")
     return docs_root
 
 

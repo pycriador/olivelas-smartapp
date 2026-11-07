@@ -1,4 +1,4 @@
-# Organização dos projetos AIOps
+# Organização dos projetos Olivelas
 
 > Language: pt-BR | [English (EN)](../../en/aiops-apps/overview.md)
 >
@@ -10,7 +10,7 @@
 
 ## Modelo mental
 
-Os produtos AIOps de referência caem em dois formatos:
+Os produtos Olivelas de referência caem em dois formatos:
 
 1. **Apps web** — monorepo com frontend Vite/React na raiz + API Python em `backend/`, dois pipelines de deploy.
 2. **Bot Slack (AVA)** — processo Python único (`app.py`), Socket Mode, um pipeline; UI = Slack.
@@ -61,7 +61,7 @@ Os produtos AIOps de referência caem em dois formatos:
 - Domínio: base de conhecimento, Confluence, chat AI, surveys, analytics admin.
 - Auth: JumpCloud OAuth em `/api/auth`.
 
-### Loft Carteiras (`aiops-loft-carteira` → `aiops-loft-carteiras`)
+### Olivelas Carteiras (`aiops-loft-carteira` → `aiops-loft-carteiras`)
 
 - Front: TanStack Start; rotas autenticadas em `src/routes/_authenticated/`; webhooks Slack/WhatsApp sob `src/routes/api/public/`.
 - API: Flask blueprints `auth` (`/auth/v1`), `iam`, `integrations`, `public` (`/public/v1`), `rest` (`/rest/v1`).

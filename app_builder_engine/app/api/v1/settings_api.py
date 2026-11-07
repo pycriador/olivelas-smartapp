@@ -59,7 +59,7 @@ async def create_category(
     body: CategoryCreateRequest,
     claims: dict[str, Any] = Depends(get_current_user_claims),
 ):
-    actor_email = claims.get("email", "willian.jesus@loft.com.br")
+    actor_email = claims.get("email", "willian.jesus@olivelas.com.br")
     actor_role = claims.get("role", "Global Admin")
     res = settings_service.create_category(body, actor_email=actor_email, actor_role=actor_role)
     return ApiResponse(data=res)
@@ -71,7 +71,7 @@ async def update_category(
     body: CategoryUpdateRequest,
     claims: dict[str, Any] = Depends(get_current_user_claims),
 ):
-    actor_email = claims.get("email", "willian.jesus@loft.com.br")
+    actor_email = claims.get("email", "willian.jesus@olivelas.com.br")
     actor_role = claims.get("role", "Global Admin")
     res = settings_service.update_category(category_id, body, actor_email=actor_email, actor_role=actor_role)
     return ApiResponse(data=res)
@@ -82,7 +82,7 @@ async def delete_category(
     category_id: str,
     claims: dict[str, Any] = Depends(get_current_user_claims),
 ):
-    actor_email = claims.get("email", "willian.jesus@loft.com.br")
+    actor_email = claims.get("email", "willian.jesus@olivelas.com.br")
     actor_role = claims.get("role", "Global Admin")
     settings_service.delete_category(category_id, actor_email=actor_email, actor_role=actor_role)
     return ApiResponse(data={"message": f"Categoria '{category_id}' excluída com sucesso."})
@@ -99,6 +99,6 @@ async def update_rbac_settings(
     body: CategoryRbacSettings,
     claims: dict[str, Any] = Depends(get_current_user_claims),
 ):
-    actor_email = claims.get("email", "willian.jesus@loft.com.br")
+    actor_email = claims.get("email", "willian.jesus@olivelas.com.br")
     res = settings_service.update_rbac_settings(body, actor_email=actor_email)
     return ApiResponse(data=res)

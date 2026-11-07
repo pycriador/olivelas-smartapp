@@ -1,15 +1,15 @@
-# AIOps Confluence publish profiles (`docs-sync`)
+# Olivelas Confluence publish profiles (`docs-sync`)
 
 Reusable YAML configs for publishing Markdown packs from this repository into the
-**AIOps** Confluence space. Secrets stay in `.env` — never in these files.
+**Olivelas** Confluence space. Secrets stay in `.env` — never in these files.
 
 ## Targets (requested)
 
 | Profile | Pack | Confluence parent | URL |
 | --- | --- | --- | --- |
-| [`loft-infra.pt-BR.yaml`](loft-infra.pt-BR.yaml) | `docs/pt-BR/loft-infra` | **Infra Loft** `6090358809` | https://loftbr.atlassian.net/wiki/spaces/AIOps/pages/6090358809 |
-| [`aiops-apps.pt-BR.yaml`](aiops-apps.pt-BR.yaml) | `docs/pt-BR/aiops-apps` | **AIOps - Stack** `6091309071` | https://loftbr.atlassian.net/wiki/spaces/AIOps/pages/6091309071 |
-| [`documentacao-inicial.pt-BR.yaml`](documentacao-inicial.pt-BR.yaml) | `docs/pt-BR` (tree, excludes `aiops-apps/`) | **Documentação Inicial** `6086460456` | https://loftbr.atlassian.net/wiki/spaces/AIOps/folder/6086460456 |
+| [`loft-infra.pt-BR.yaml`](loft-infra.pt-BR.yaml) | `docs/pt-BR/loft-infra` | **Infra Olivelas** `6090358809` | https://loftbr.atlassian.net/wiki/spaces/Olivelas/pages/6090358809 |
+| [`aiops-apps.pt-BR.yaml`](aiops-apps.pt-BR.yaml) | `docs/pt-BR/aiops-apps` | **Olivelas - Stack** `6091309071` | https://loftbr.atlassian.net/wiki/spaces/Olivelas/pages/6091309071 |
+| [`documentacao-inicial.pt-BR.yaml`](documentacao-inicial.pt-BR.yaml) | `docs/pt-BR` (tree, excludes `aiops-apps/`) | **Documentação Inicial** `6086460456` | https://loftbr.atlassian.net/wiki/spaces/Olivelas/folder/6086460456 |
 
 `config.pt-BR.yaml` at the `docs-sync/` root mirrors **Documentação Inicial** for
 backward compatibility; prefer the files in this folder for new runs.
@@ -26,13 +26,13 @@ live target (found 2026-09-01; see `docs/pt-BR/changelog.md`).
 cd docs-sync
 set -a && source ../.env && set +a
 
-# Infra Loft pack
+# Infra Olivelas pack
 uv run docs-sync validate --config aiops-config/loft-infra.pt-BR.yaml
 uv run docs-sync plan --config aiops-config/loft-infra.pt-BR.yaml --changes-only
 uv run docs-sync sync --config aiops-config/loft-infra.pt-BR.yaml --force --relink
 uv run docs-sync audit --config aiops-config/loft-infra.pt-BR.yaml
 
-# AIOps apps stack pack
+# Olivelas apps stack pack
 uv run docs-sync sync --config aiops-config/aiops-apps.pt-BR.yaml --force --relink
 uv run docs-sync audit --config aiops-config/aiops-apps.pt-BR.yaml
 
@@ -45,9 +45,9 @@ uv run docs-sync flush --config aiops-config/aiops-apps.pt-BR.yaml --yes --resyn
 
 # Remove accidental junk titles in the space (protect pack parents)
 uv run docs-sync cleanup --config aiops-config/documentacao-inicial.pt-BR.yaml \
-  --title "AIOps Docs" --match prefix --dry-run
+  --title "Olivelas Docs" --match prefix --dry-run
 uv run docs-sync cleanup --config aiops-config/documentacao-inicial.pt-BR.yaml \
-  --title "AIOps Docs" --match prefix --yes \
+  --title "Olivelas Docs" --match prefix --yes \
   --protect 6086460456 --protect 6090358809 --protect 6091309071 --protect 6090391603
 ```
 
@@ -55,7 +55,7 @@ Each profile uses its own **state file** (gitignored) so incremental syncs do no
 collide across parents. Documentation `path` values are relative to this folder
 (`../../docs/pt-BR/...`).
 
-## Hub registry (3-level AIOps model)
+## Hub registry (3-level Olivelas model)
 
 [`hub-registry.yaml`](hub-registry.yaml) maps documentation levels to Markdown paths,
 `docs-sync` profiles, and app repositories. Used by the agent skill
@@ -67,7 +67,7 @@ collide across parents. Documentation `path` values are relative to this folder
 | 2 — Application | `docs/pt-BR/aiops-apps/{app}.md` | `make docs-sync-aiops-app APP=dataforge.md` |
 | 3 — Repository | App GitHub `README.md` | PR in app repo (not `docs-sync`) |
 
-CLI filter: `--only REF-AIOPS-APPS-008` or `--only dataforge.md` (includes ancestor index pages).
+CLI filter: `--only REF-OLIVELAS-APPS-008` or `--only dataforge.md` (includes ancestor index pages).
 
 **Slow `plan` / `sync`?** Scoped runs no longer call space-wide Confluence index warm (hundreds of API calls). Plans for pages already in the local state file compare content hashes offline (~seconds). First publish of a new subtree still checks title conflicts per page. Offline preview: `make docs-sync-aiops-team-status` or `plan --fake`.
 

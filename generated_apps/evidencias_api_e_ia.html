@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loft Apps Suite — Racional de Engenharia, Prompts Reais e Respostas da IA</title>
+  <title>Olivelas Apps Suite — Racional de Engenharia, Prompts Reais e Respostas da IA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -449,7 +449,7 @@
         <div class="block-group">
           <h3 class="block-title">🧠 1. Lógica Utilizada e Decisões de Arquitetura</h3>
           <div class="logic-explanation">
-            <strong>Problema de Negócio:</strong> Construir um portal editorial moderno, responsivo e em tempo real para comunicação de novidades de tecnologia e mercado da Loft, permitindo aos usuários ler matérias completas, buscar termos, salvar matérias favoritas e gerar sínteses executivas instantâneas.
+            <strong>Problema de Negócio:</strong> Construir um portal editorial moderno, responsivo e em tempo real para comunicação de novidades de tecnologia e mercado da Olivelas, permitindo aos usuários ler matérias completas, buscar termos, salvar matérias favoritas e gerar sínteses executivas instantâneas.
             <ul>
               <li><strong>Desacoplamento:</strong> O frontend consome exclusivamente a base de documentos do SQLite via <code>GET /api/v1/knowledge/docs</code> e realiza buscas com <code>GET /api/v1/knowledge/search?q={termo}</code>.</li>
               <li><strong>IA de Síntese:</strong> Ao clicar em <em>"⚡ Resumo com IA"</em>, a aplicação extrai o corpo do artigo e envia um prompt estruturado de sumarização para o AI Gateway (modelo Gemini 3.0 Flash), devolvendo 3 pontos-chave com métricas e insights de negócio.</li>
@@ -468,15 +468,15 @@
                 <button class="btn-copy" onclick="copySnippet(this)">Copiar</button>
               </div>
               <pre><code>[PAPEL / PERSONA]
-Você é o editor sênior de tecnologia e negócios da Loft.
+Você é o editor sênior de tecnologia e negócios da Olivelas.
 
 [TAREFA]
 Analise a matéria abaixo e gere um resumo executivo estruturado estritamente em 3 bullets de alto impacto em Português (Brasil).
 Destaque números, tecnologias e benefícios de negócio.
 
 [MATÉRIA PARA ANÁLISE]
-Título: Loft Lança Nova Plataforma de IA para Corretores e Imobiliárias
-Conteúdo: A Loft anunciou hoje a expansão de seus motores de inteligência artificial aplicados ao mercado imobiliário brasileiro. Com o novo sistema integrado ao AI Gateway, corretores parceiros conseguem avaliar a liquidez de venda de imóveis em segundos, reduzindo o tempo médio de negociação em mais de 35%. A arquitetura do sistema baseia-se em microsserviços modernos com FastAPI, validação estrita com Pydantic v2 e processamento em tempo real.</code></pre>
+Título: Olivelas Lança Nova Plataforma de IA para Corretores e Imobiliárias
+Conteúdo: A Olivelas anunciou hoje a expansão de seus motores de inteligência artificial aplicados ao mercado imobiliário brasileiro. Com o novo sistema integrado ao AI Gateway, corretores parceiros conseguem avaliar a liquidez de venda de imóveis em segundos, reduzindo o tempo médio de negociação em mais de 35%. A arquitetura do sistema baseia-se em microsserviços modernos com FastAPI, validação estrita com Pydantic v2 e processamento em tempo real.</code></pre>
             </div>
 
             <div class="code-card">
@@ -552,7 +552,7 @@ Conteúdo: A Loft anunciou hoje a expansão de seus motores de inteligência art
         <div class="block-group">
           <h3 class="block-title">🧠 1. Lógica Utilizada e Decisões de Arquitetura</h3>
           <div class="logic-explanation">
-            <strong>Problema de Negócio:</strong> Criar um assistente conversacional corporativo 24/7 capaz de responder dúvidas técnicas sobre produtos da Loft (Fiança Aluguel, Financiamento, Componentes Copan, Regras de Arquitetura) sem alucinar e citando as fontes oficiais.
+            <strong>Problema de Negócio:</strong> Criar um assistente conversacional corporativo 24/7 capaz de responder dúvidas técnicas sobre produtos da Olivelas (Fiança Aluguel, Financiamento, Componentes Copan, Regras de Arquitetura) sem alucinar e citando as fontes oficiais.
             <ul>
               <li><strong>Pipeline RAG (Retrieval-Augmented Generation):</strong> Antes de enviar o prompt ao LLM, o frontend faz uma consulta ao endpoint <code>GET /api/v1/knowledge/search?q={pergunta}</code>, recupera os trechos mais relevantes da documentação oficial e os injeta delimitados por <code>&lt;contexto&gt;...&lt;/contexto&gt;</code>.</li>
               <li><strong>Seletor Dinâmico de Modelos:</strong> O usuário pode escolher entre <code>gemini-3-flash-preview</code> (alta velocidade, suporte instantâneo) e <code>gemini-3.1-pro-preview</code> (raciocínio técnico aprofundado).</li>
@@ -571,18 +571,18 @@ Conteúdo: A Loft anunciou hoje a expansão de seus motores de inteligência art
                 <button class="btn-copy" onclick="copySnippet(this)">Copiar</button>
               </div>
               <pre><code>[SISTEMA & PERSONA]
-Você é o Assistente Virtual de Suporte Técnico e Engenharia da Loft.
+Você é o Assistente Virtual de Suporte Técnico e Engenharia da Olivelas.
 Responda de forma concisa, cordial e técnica em Português (Brasil).
 Utilize estritamente o contexto fornecido abaixo delimitado por <contexto>. Se a informação não constar no contexto, esclareça com transparência.
 
 <contexto>
-Documento: SDD Volume III - Loft Component Catalog & Services
+Documento: SDD Volume III - Olivelas Component Catalog & Services
 Módulo: Fiança Aluguel Digital (FastAPI v1)
-A esteira de garantia locatícia digital da Loft permite a emissão de fiança sem necessidade de fiador tradicional ou depósito caução. O tempo médio de resposta da esteira de análise de crédito automatizada é de 45 segundos, integrando birôs de crédito e validação de documentos via OCR inteligente. A taxa do serviço varia entre 8% e 12% do valor do aluguel.
+A esteira de garantia locatícia digital da Olivelas permite a emissão de fiança sem necessidade de fiador tradicional ou depósito caução. O tempo médio de resposta da esteira de análise de crédito automatizada é de 45 segundos, integrando birôs de crédito e validação de documentos via OCR inteligente. A taxa do serviço varia entre 8% e 12% do valor do aluguel.
 </contexto>
 
 <mensagem_usuario>
-Como funciona a Fiança Aluguel da Loft, qual o tempo de análise e quais as taxas cobradas?
+Como funciona a Fiança Aluguel da Olivelas, qual o tempo de análise e quais as taxas cobradas?
 </mensagem_usuario></code></pre>
             </div>
 
@@ -591,14 +591,14 @@ Como funciona a Fiança Aluguel da Loft, qual o tempo de análise e quais as tax
                 <span>RESPOSTA REAL GERADA PELA IA</span>
                 <button class="btn-copy" onclick="copySnippet(this)">Copiar</button>
               </div>
-              <pre><code>A **Fiança Aluguel da Loft** é uma solução de garantia locatícia 100% digital que substitui fiador tradicional e caução.
+              <pre><code>A **Fiança Aluguel da Olivelas** é uma solução de garantia locatícia 100% digital que substitui fiador tradicional e caução.
 
 📋 **Principais Características:**
 • ⏱️ **Tempo de Análise:** A aprovação do crédito ocorre em média em **45 segundos**, utilizando validação automatizada de documentos e análise preditiva.
 • 💳 **Taxas:** A taxa varia entre **8% e 12%** do valor mensal do aluguel, calculada conforme o perfil de risco do inquilino.
 • 🛡️ **Proteção:** Garante o recebimento integral do aluguel para o proprietário em caso de inadimplência.
 
-*(Fonte: Base Oficial Loft SDD Volume III — Fiança Aluguel Digital)*</code></pre>
+*(Fonte: Base Oficial Olivelas SDD Volume III — Fiança Aluguel Digital)*</code></pre>
             </div>
           </div>
         </div>
@@ -761,7 +761,7 @@ Como funciona a Fiança Aluguel da Loft, qual o tempo de análise e quais as tax
                 <button class="btn-copy" onclick="copySnippet(this)">Copiar</button>
               </div>
               <pre><code>[INSTRUÇÃO DE ENGENHARIA]
-Você é o algoritmo de inteligência preditiva e precificação imobiliária da Loft.
+Você é o algoritmo de inteligência preditiva e precificação imobiliária da Olivelas.
 Avalie o imóvel com as características abaixo e retorne um parecer estruturado estritamente em JSON com as chaves: "price_per_m2", "estimated_rent_monthly", "annual_rental_yield_pct", "liquidity_rating", "neighborhood_benchmark", "recommendation".
 
 [CARACTERÍSTICAS DO IMÓVEL]
@@ -847,7 +847,7 @@ IPTU: R$ 650,00/mês</code></pre>
         <div class="block-group">
           <h3 class="block-title">🧠 1. Lógica Utilizada e Decisões de Arquitetura</h3>
           <div class="logic-explanation">
-            <strong>Problema de Negócio:</strong> Construir uma base de conhecimento corporativa no estilo GitBook/Notion, consolidando os 6 pilares canônicos de IA da Loft (Prompt Engineering, Guardrails, RAG, Otimização de Tokens, Seleção de Modelos e Avaliação de Alucinação), integrada a um Copilot de IA para responder dúvidas de desenvolvedores.
+            <strong>Problema de Negócio:</strong> Construir uma base de conhecimento corporativa no estilo GitBook/Notion, consolidando os 6 pilares canônicos de IA da Olivelas (Prompt Engineering, Guardrails, RAG, Otimização de Tokens, Seleção de Modelos e Avaliação de Alucinação), integrada a um Copilot de IA para responder dúvidas de desenvolvedores.
             <ul>
               <li><strong>Renderizador Markdown com Syntax Highlighting:</strong> Converte Markdown em tempo real, suportando blocos de código com botão de cópia, caixas de alerta (<code>[!NOTE]</code>, <code>[!TIP]</code>, <code>[!WARNING]</code>) e tabela de conteúdo (*TOC*) gerada dinamicamente a partir das tags <code>&lt;h2&gt;</code> e <code>&lt;h3&gt;</code>.</li>
               <li><strong>AI Doc Copilot:</strong> O desenvolvedor pode abrir o Copilot lateral a qualquer momento e perguntar: <em>"Gere um exemplo de validação com Pydantic v2 para FastAPI"</em>. O Copilot envia o conteúdo do artigo atual + dúvida para o AI Gateway e devolve código pronto para produção.</li>
@@ -866,7 +866,7 @@ IPTU: R$ 650,00/mês</code></pre>
                 <button class="btn-copy" onclick="copySnippet(this)">Copiar</button>
               </div>
               <pre><code>[PAPEL / PERSONA]
-Você é o AI Wiki Copilot da Engenharia da Loft.
+Você é o AI Wiki Copilot da Engenharia da Olivelas.
 O desenvolvedor está consultando o guia técnico oficial de "Engenharia de Prompts e Tipagem Estrita".
 
 [DÚVIDA DO DESENVOLVEDOR]

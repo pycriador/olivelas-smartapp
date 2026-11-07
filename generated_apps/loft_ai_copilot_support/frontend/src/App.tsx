@@ -8,7 +8,7 @@ import { LandingPage } from './features/landing/LandingPage';
 import { ProposalsDashboard } from './features/proposals/ProposalsDashboard';
 
 export const App: React.FC = () => {
-  const appName = "Loft AI Copilot Support";
+  const appName = "Olivelas AI Copilot Support";
   const isChatbotApp = appName.toLowerCase().includes('chat') || appName.toLowerCase().includes('copilot') || appName.toLowerCase().includes('assistente');
   const [activeView, setActiveView] = useState<'chat' | 'landing' | 'dashboard'>(isChatbotApp ? 'chat' : 'landing');
 

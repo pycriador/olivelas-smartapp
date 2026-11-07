@@ -39,7 +39,7 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
         <button
           onClick={() => setSwitcherOpen(true)}
           className="p-2 rounded-lg text-[#627D98] hover:text-[#121619] hover:bg-[#F2F4F8] transition cursor-pointer"
-          title="Loft App Switcher (Menu Waffle 9-dots)"
+          title="Olivelas App Switcher (Menu Waffle 9-dots)"
         >
           <AppstoreOutlined className="text-lg" />
         </button>
@@ -113,7 +113,7 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
             </Avatar>
             <div className="hidden lg:flex flex-col text-left">
               <span className="text-xs font-semibold text-[#121619] leading-tight">Willian Jesus</span>
-              <span className="text-[11px] text-[#627D98] leading-tight">willian.jesus@loft.com.br</span>
+              <span className="text-[11px] text-[#627D98] leading-tight">willian.jesus@olivelas.com.br</span>
             </div>
           </div>
         </Dropdown>

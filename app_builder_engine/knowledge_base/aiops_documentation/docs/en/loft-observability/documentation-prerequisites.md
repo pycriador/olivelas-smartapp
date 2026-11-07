@@ -1,4 +1,4 @@
-# Documentation prerequisites — logs in Datadog (Loft)
+# Documentation prerequisites — logs in Datadog (Olivelas)
 
 > Language: EN | [Português (pt-BR)](../../pt-BR/loft-observability/documentation-prerequisites.md)
 >
@@ -8,19 +8,19 @@
 >
 > Authority: Informational
 
-Loft-specific gate for **operational documentation readiness**. This does **not** change the vendor-agnostic [observability-model.md](../observability-model.md) or [observability-platform-notes.md](../observability-platform-notes.md).
+Olivelas-specific gate for **operational documentation readiness**. This does **not** change the vendor-agnostic [observability-model.md](../observability-model.md) or [observability-platform-notes.md](../observability-platform-notes.md).
 
 ## When this applies
 
 | Context | Rule |
 | --- | --- |
-| Service running on **Loft EKS** with `web-server` chart | Applies |
+| Service running on **Olivelas EKS** with `web-server` chart | Applies |
 | Library, CLI, or non-Kubernetes workload | Document observability honestly; Datadog may be N/A with evidence |
-| Framework-only adoption (not Loft infra) | See generic template only |
+| Framework-only adoption (not Olivelas infra) | See generic template only |
 
 ## Prerequisite: logging
 
-Before treating operational documentation as **complete** for a Loft production service:
+Before treating operational documentation as **complete** for a Olivelas production service:
 
 1. Fill [templates/observability.md](../templates/observability.md) (or project equivalent under `operations/observability.md`).
 2. Set **Logging → Status** to one of:
@@ -36,7 +36,7 @@ If the org expects Datadog and the service does **not** yet ingest logs:
 
 ## What is required vs what can lag
 
-| Signal | Loft documentation gate | Notes |
+| Signal | Olivelas documentation gate | Notes |
 | --- | --- | --- |
 | **Logs** (structured, Datadog) | **Required** for readiness | Minimum for incident triage |
 | **Traces / APM** | Recommended; may be `Partial` + debt | See [application-instrumentation.md](application-instrumentation.md) |

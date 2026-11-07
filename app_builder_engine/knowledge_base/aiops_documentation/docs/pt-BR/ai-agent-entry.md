@@ -66,17 +66,17 @@ Templates: [templates/agents-entry.md](templates/agents-entry.md), [templates/cl
 | Quality gate antes de declarar a tarefa concluída | Rule local com os comandos reais do projeto (`make docs-validate`, `ruff`, `pytest`, …) |
 | Onde ler primeiro neste corpus | Rule `docs-area-map` (este repo) ou o `ai-context.md` do adotante |
 
-## Mapa para adotantes (plugins Loft vs este padrão)
+## Mapa para adotantes (plugins Olivelas vs este padrão)
 
 **Não** copie um pack genérico de 20+ skills para cada repo de serviço. Prefira o plugin ou o artefato do framework que já é dono do tópico.
 
 | Need | Use |
 | --- | --- |
 | Docs após mudança | Este framework: `document-after-change` |
-| Documentação as-is de um módulo existente | Plugin Loft `loft-docs` / skill `as-is-module-documentation` |
-| API e contratos de interface | Plugin Loft `loft-api` + [contract-model.md](contract-model.md) |
-| Secrets e credenciais | Plugin Loft `loft-security` |
-| CI/CD, Kubernetes, Datadog | Plugin Loft `loft-deploy` |
+| Documentação as-is de um módulo existente | Plugin Olivelas `loft-docs` / skill `as-is-module-documentation` |
+| API e contratos de interface | Plugin Olivelas `loft-api` + [contract-model.md](contract-model.md) |
+| Secrets e credenciais | Plugin Olivelas `loft-security` |
+| CI/CD, Kubernetes, Datadog | Plugin Olivelas `loft-deploy` |
 | Quality checks do projeto | Uma rule **local** com os comandos que de fato rodam naquele repo |
 | Packs genéricos de idea-refine / TDD / frontend | Opcional em repo de aplicação; **não** fazem parte deste Documentation Standard |
 

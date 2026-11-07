@@ -61,9 +61,9 @@ Evidence: [\_helpers.tpl DD block](https://github.com/loft-br/k8s-apps/blob/main
 
 ## Scheduling
 
-Enabled workloads receive toleration `karpenter.loft.com.br/datadog=enabled` so pods can run on nodes where the agent is scheduled.
+Enabled workloads receive toleration `karpenter.olivelas.com.br/datadog=enabled` so pods can run on nodes where the agent is scheduled.
 
-Non-production opt-in may add annotations `datadog.loft.com.br/enabled` and `datadog.loft.com.br/ttl`.
+Non-production opt-in may add annotations `datadog.olivelas.com.br/enabled` and `datadog.olivelas.com.br/ttl`.
 
 ## Pod annotations (log processing)
 
@@ -75,7 +75,7 @@ Prefer excluding noisy health-check lines over disabling log collection.
 
 | Avoid | Why |
 | --- | --- |
-| `DD_TAGS` on Helm values | Does not work on Loft clusters (legacy kustomize migration note) |
+| `DD_TAGS` on Helm values | Does not work on Olivelas clusters (legacy kustomize migration note) |
 | Duplicating `DD_SERVICE` / `DD_ENV` already injected | Drift risk |
 
 ## Explicit disable (exception)

@@ -139,7 +139,7 @@ class VersionSnapshot(BaseModel):
     version: str
     changelog: str = "Alteração de versão"
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
-    created_by: str = "willian.jesus@loft.com.br"
+    created_by: str = "willian.jesus@olivelas.com.br"
     snapshot_data: dict[str, Any] = Field(default_factory=dict)
 
 
@@ -155,7 +155,7 @@ class User(BaseModel):
 
 class AuditLog(BaseModel):
     id: str = Field(default_factory=lambda: f"aud_{uuid.uuid4().hex[:10]}")
-    actor: str = "willian.jesus@loft.com.br"
+    actor: str = "willian.jesus@olivelas.com.br"
     action: AuditAction | str
     resource: str
     resource_id: str
@@ -238,7 +238,7 @@ class Component(BaseModel):
     type: str = "Frontend"  # Frontend, Backend, Fullstack, Service
     version: str = "1.0.0"
     status: EntityLifecycleStatus = EntityLifecycleStatus.PUBLISHED
-    owner: str = "willian.jesus@loft.com.br"
+    owner: str = "willian.jesus@olivelas.com.br"
     tags: list[str] = Field(default_factory=list)
     dependencies: list[str] = Field(default_factory=list)
     rules: list[str] = Field(default_factory=list)
@@ -263,7 +263,7 @@ class Template(BaseModel):
     version: str = "1.0.0"
     category: str = "Application"
     status: EntityLifecycleStatus = EntityLifecycleStatus.PUBLISHED
-    owner: str = "willian.jesus@loft.com.br"
+    owner: str = "willian.jesus@olivelas.com.br"
     components: list[str] = Field(default_factory=list)
     modules: list[str] = Field(default_factory=list)
     rules: list[str] = Field(default_factory=list)
@@ -285,7 +285,7 @@ class Module(BaseModel):
     version: str = "1.0.0"
     category: str = "Core Domain"
     status: EntityLifecycleStatus = EntityLifecycleStatus.PUBLISHED
-    owner: str = "willian.jesus@loft.com.br"
+    owner: str = "willian.jesus@olivelas.com.br"
     components: list[str] = Field(default_factory=list)
     apis: list[str] = Field(default_factory=list)
     rules: list[str] = Field(default_factory=list)
@@ -330,7 +330,7 @@ class Architecture(BaseModel):
     slug: str = ""
     category: str = "Pattern"
     description: str
-    database: str = "PostgreSQL 16 (SQLAlchemy 2.0 + Alembic / AIOps Opsbase)"
+    database: str = "PostgreSQL 16 (SQLAlchemy 2.0 + Alembic / Olivelas Opsbase)"
     version: str = "1.0.0"
     characteristics: list[str] = Field(default_factory=list)
     recommended_for: list[str] = Field(default_factory=list)
@@ -379,7 +379,7 @@ class Blueprint(BaseModel):
     version: str = "1.0.0"
     status: BlueprintStatus = BlueprintStatus.DRAFT
     architecture_id: str = "arch_loft_standard_fullstack"
-    architecture_name: str = "Loft Standard Fullstack Architecture"
+    architecture_name: str = "Olivelas Standard Fullstack Architecture"
     features: list[str] = Field(default_factory=list)
     modules: list[str] = Field(default_factory=list)
     components: list[str] = Field(default_factory=list)
@@ -404,8 +404,8 @@ class Project(BaseModel):
     description: str
     domain: str = "Core Engineering"
     status: ProjectStatus = ProjectStatus.PLANNING
-    owner: str = "willian.jesus@loft.com.br"
-    architecture: str = "Loft Standard Fullstack Architecture"
+    owner: str = "willian.jesus@olivelas.com.br"
+    architecture: str = "Olivelas Standard Fullstack Architecture"
     architecture_id: str = "arch_loft_standard_fullstack"
     template_id: str | None = None
     version: str = "1.0.0"

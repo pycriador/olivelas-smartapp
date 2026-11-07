@@ -585,7 +585,7 @@ export const BlueprintEditModal: React.FC<BlueprintEditModalProps> = ({
                     <WorkshopEntitySelector
                       stepNumber={2}
                       title="Componentes Visuais do Design System Copan"
-                      subtitle="Selecione os componentes React certificados da Loft para a camada de apresentação"
+                      subtitle="Selecione os componentes React certificados da Olivelas para a camada de apresentação"
                       entityType="component"
                       items={components}
                       selectedIds={selectedCompIds}
@@ -627,7 +627,7 @@ export const BlueprintEditModal: React.FC<BlueprintEditModalProps> = ({
                   <div className="border-t border-loft-border pt-6">
                     <WorkshopEntitySelector
                       stepNumber={4}
-                      title="Golden Rules Mandatórias & Padrões Loft"
+                      title="Golden Rules Mandatórias & Padrões Olivelas"
                       subtitle="Regras arquiteturais, de segurança e qualidade validadas pelo compilador"
                       entityType="rule"
                       items={rules}

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Quickstart Script: 1-Click Generator for 'Loft CRM Customer 360'.
+Quickstart Script: 1-Click Generator for 'Olivelas CRM Customer 360'.
 Calls the App Builder Engine API to automatically scaffold the Customer 360 application.
 """
 from __future__ import annotations
@@ -17,18 +17,18 @@ from api_client.scaffolder import ApplicationScaffolder
 
 
 def main():
-    print("🚀 Gerando 'Loft CRM & Customer 360' 100% via API do App Builder Engine...")
+    print("🚀 Gerando 'Olivelas CRM & Customer 360' 100% via API do App Builder Engine...")
     
     api_url = os.getenv("APP_BUILDER_BASE_URL", "http://127.0.0.1:8000")
     client = AppBuilderClient(base_url=api_url)
 
-    app_name = "Loft CRM 360"
+    app_name = "Olivelas CRM 360"
     app_desc = "Plataforma de visualização e gestão de clientes enterprise, histórico de locações, contratos ativos e pontuação financeira."
     requirements = [
         "Visualização 360° do cliente",
         "Tabela de Clientes e Propostas com paginação canônica",
         "Painel de métricas com volume transacionado",
-        "Tokens Loft Brand Orange (#FF774A) e Copan Design System",
+        "Tokens Olivelas Brand Orange (#FF774A) e Copan Design System",
         "Backend FastAPI com SQLite e validação Pydantic v2",
     ]
 

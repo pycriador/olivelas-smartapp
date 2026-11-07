@@ -40,7 +40,7 @@ class ProjectService:
         self,
         name: str,
         description: str,
-        owner: str = "willian.jesus@loft.com.br",
+        owner: str = "willian.jesus@olivelas.com.br",
         architecture: str = "Modular Monolith",
         tags: list[str] | None = None,
     ) -> Project:
@@ -335,7 +335,7 @@ class BlueprintService:
     ) -> Blueprint:
         bp_id = f"bp_{uuid.uuid4().hex[:8]}"
         arch = db.architectures.get(architecture_id)
-        arch_name = arch.name if arch else "Loft Standard Fullstack Architecture"
+        arch_name = arch.name if arch else "Olivelas Standard Fullstack Architecture"
 
         bp = Blueprint(
             id=bp_id,

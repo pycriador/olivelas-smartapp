@@ -40,7 +40,7 @@ Same pattern exists for deep-insight and loft-carteiras APIs. Qualidade front is
 3. Open a PR on `kong-configs`; validate staging (pipeline comment with `Host` + `X-Kong-Gateway`) before merge.
 4. DNS: corp often auto-syncs after `gateways/*/corp/**` merge; external needs `infra-live` with `kong_accessibility=external` — [infra-live-route53.md](infra-live-route53.md).
 5. Align front bake + `CORS_ORIGINS` with final hosts.
-6. Human corp access: Infosec / [central.loft.com.br](https://central.loft.com.br) (JumpCloud) — independent of the route.
+6. Human corp access: Infosec / [central.olivelas.com.br](https://central.olivelas.com.br) (JumpCloud) — independent of the route.
 
 Optional SPA path: `gateways/cross-prod/internal/lovable/` — `[pending: when lovable vs Node SSR front]`.
 

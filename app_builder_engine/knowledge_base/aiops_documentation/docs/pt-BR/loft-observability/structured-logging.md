@@ -8,7 +8,7 @@
 >
 > Authority: Verified
 
-**Logs estruturados** são o sinal mínimo de observabilidade para documentação operacional Loft — [documentation-prerequisites.md](documentation-prerequisites.md).
+**Logs estruturados** são o sinal mínimo de observabilidade para documentação operacional Olivelas — [documentation-prerequisites.md](documentation-prerequisites.md).
 
 ## Requisitos
 
@@ -46,7 +46,7 @@ Algumas stacks também recebem `LOG_FORMAT=ndjson` e `LOG_LEVEL=info` por defaul
 
 Opt-in temporário fora de prod usa `datadog.ttl` (ex.: `7d`, default `eod` do chart para annotations).
 
-Retenção em produção segue políticas da conta Datadog org (`[pending: link da política de retenção de logs Loft]`).
+Retenção em produção segue políticas da conta Datadog org (`[pending: link da política de retenção de logs Olivelas]`).
 
 ## Health checks e ruído
 

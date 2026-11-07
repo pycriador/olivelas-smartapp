@@ -1,5 +1,5 @@
 ---
-id: REF-AIOPS-APPS-008
+id: REF-OLIVELAS-APPS-008
 title: "DataForge — plataforma de projetos e dados"
 status: "DRAFT"
 owner: "aiops"
@@ -19,7 +19,7 @@ review_date: "2026-11-24"
 
 > Prefere uma explicação em linguagem simples? Veja o [Guia](dataforge-guia.md).
 
-Documentação **as-is** de [loft-br/aiops-dataforge](https://github.com/loft-br/aiops-dataforge) — **nível 2** do catálogo AIOps.
+Documentação **as-is** de [loft-br/aiops-dataforge](https://github.com/loft-br/aiops-dataforge) — **nível 2** do catálogo Olivelas.
 
 ## Objetivo
 
@@ -27,13 +27,13 @@ Plataforma web para gestão de **projetos**, **arquivos**, comparação/reconcil
 
 ## Contexto
 
-Monorepo **app web** padrão AIOps: front TanStack Start na raiz + API Flask em `backend/`. Evidência: [overview.md](overview.md#dataforge-aiops-dataforge).
+Monorepo **app web** padrão Olivelas: front TanStack Start na raiz + API Flask em `backend/`. Evidência: [overview.md](overview.md#dataforge-aiops-dataforge).
 
 ## Usuários / áreas
 
 | Usuário / área | Necessidade |
 | --- | --- |
-| Squads internas Loft | Projetos de dados, upload e reconciliação |
+| Squads internas Olivelas | Projetos de dados, upload e reconciliação |
 | Admins | Service accounts, administração — **Inferred** |
 
 ## Impacto

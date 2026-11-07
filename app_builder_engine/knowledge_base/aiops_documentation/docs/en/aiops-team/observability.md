@@ -1,6 +1,6 @@
 ---
-id: REF-AIOPS-TEAM-010
-title: "AIOps — Observability"
+id: REF-OLIVELAS-TEAM-010
+title: "Olivelas — Observability"
 status: "DRAFT"
 owner: "aiops"
 updated: "2026-08-24"
@@ -15,13 +15,13 @@ review_date: "2026-11-24"
 >
 > Documentation Standard v1.0
 
-Observability practices for the AIOps team. **Full pack:** [../loft-observability/README.md](../loft-observability/README.md).
+Observability practices for the Olivelas team. **Full pack:** [../loft-observability/README.md](../loft-observability/README.md).
 
 ## Platform
 
 | Signal | Tool |
 | --- | --- |
-| Metrics, logs, traces | **Datadog** (Loft standard) |
+| Metrics, logs, traces | **Datadog** (Olivelas standard) |
 | Agent | Available on EKS nodes (`loft-infra-cloud`) |
 
 ## Per-service checklist

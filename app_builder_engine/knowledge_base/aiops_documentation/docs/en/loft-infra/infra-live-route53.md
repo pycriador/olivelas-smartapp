@@ -20,7 +20,7 @@ Browser → Route53 (infra-live)
 Templates: [dns-corp.terragrunt.hcl.example](examples/dns-corp.terragrunt.hcl.example), [dns-api.terragrunt.hcl.example](examples/dns-api.terragrunt.hcl.example).  
 Guide: [publish-guide.md](publish-guide.md).
 
-## AIOps records
+## Olivelas records
 
 Base: [`…/route53/records/loft-corp.com.br/`](https://github.com/loft-br/infra-live/tree/main/live/aws/infrastructure/production/_global/route53/records/loft-corp.com.br)
 

@@ -23,7 +23,7 @@ export const ChatbotPage: React.FC<ChatbotPageProps> = ({ appName }) => {
     {
       id: 'msg_welcome',
       sender: 'assistant',
-      text: 'Olá! Eu sou o Assistente Inteligente Loft Copan. Como posso ajudar você hoje com fiança locatícia, análise de crédito ou soluções imobiliárias?',
+      text: 'Olá! Eu sou o Assistente Inteligente Olivelas Copan. Como posso ajudar você hoje com fiança locatícia, análise de crédito ou soluções imobiliárias?',
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       suggestedActions: [
         'Como funciona a Fiança Aluguel?',
@@ -98,7 +98,7 @@ export const ChatbotPage: React.FC<ChatbotPageProps> = ({ appName }) => {
       title: 'Fiança Aluguel',
       desc: 'Como funciona a garantia locatícia sem fiador',
       icon: <SafetyCertificateOutlined className="text-[#F56738]" />,
-      query: 'Como funciona a Fiança Aluguel da Loft?',
+      query: 'Como funciona a Fiança Aluguel da Olivelas?',
     },
     {
       title: 'Documentação & KYC',
@@ -116,7 +116,7 @@ export const ChatbotPage: React.FC<ChatbotPageProps> = ({ appName }) => {
       title: 'Integração API',
       desc: 'Endpoints REST e webhooks para imobiliárias',
       icon: <ApiOutlined className="text-[#2B6CB0]" />,
-      query: 'Como integrar a API da Loft no meu sistema?',
+      query: 'Como integrar a API da Olivelas no meu sistema?',
     },
   ];
 
@@ -124,7 +124,7 @@ export const ChatbotPage: React.FC<ChatbotPageProps> = ({ appName }) => {
     <div className="max-w-5xl mx-auto space-y-4">
       <PageHeader
         title={`${appName} — AI Copilot Assistant`}
-        subtitle="Assistente cognitivo conversacional com tokens do Design System Loft Copan e inferência ágil."
+        subtitle="Assistente cognitivo conversacional com tokens do Design System Olivelas Copan e inferência ágil."
         badge={<Badge status="processing" color="#20A483" text="Copilot Ativo (Clean Architecture Mock)" />}
         actions={
           <Button
@@ -191,7 +191,7 @@ export const ChatbotPage: React.FC<ChatbotPageProps> = ({ appName }) => {
                       m.sender === 'user' ? 'text-[#CBD2D9]' : 'text-[#F56738]'
                     }`}
                   >
-                    {m.sender === 'user' ? 'Você' : 'Loft Copilot'}
+                    {m.sender === 'user' ? 'Você' : 'Olivelas Copilot'}
                   </span>
                   <span
                     className={`text-[10px] ${
@@ -232,7 +232,7 @@ export const ChatbotPage: React.FC<ChatbotPageProps> = ({ appName }) => {
               />
               <div className="bg-white border border-[#E1E9EF] rounded-2xl rounded-tl-none px-4 py-3 text-xs text-[#627D98] flex items-center gap-2 shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-[#F56738] animate-ping" />
-                <span>Loft Copilot digitando resposta...</span>
+                <span>Olivelas Copilot digitando resposta...</span>
               </div>
             </div>
           )}
@@ -251,7 +251,7 @@ export const ChatbotPage: React.FC<ChatbotPageProps> = ({ appName }) => {
                 handleSend();
               }
             }}
-            placeholder="Digite sua dúvida sobre fiança, contratos ou serviços Loft (pressione Enter para enviar)..."
+            placeholder="Digite sua dúvida sobre fiança, contratos ou serviços Olivelas (pressione Enter para enviar)..."
             autoSize={{ minRows: 1, maxRows: 3 }}
             className="resize-none rounded-xl border-[#CBD2D9] focus:border-[#F56738]"
             disabled={loading}

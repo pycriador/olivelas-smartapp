@@ -63,7 +63,7 @@ with:
   # … same aws-account / product / platforms / token …
 ```
 
-Deep Insight and Loft Carteira pin the action by commit SHA (`deploy/v1.7.4`) to avoid mutable-tag risk. Qualidade and DataForge use the `deploy/v1.8.0` tag.
+Deep Insight and Olivelas Carteira pin the action by commit SHA (`deploy/v1.7.4`) to avoid mutable-tag risk. Qualidade and DataForge use the `deploy/v1.8.0` tag.
 
 Observed effect: image lands in ECR; image tag is updated in `k8s-apps` for Argo CD sync. Full action internals: `[pending: actions/deploy source walkthrough]`.
 

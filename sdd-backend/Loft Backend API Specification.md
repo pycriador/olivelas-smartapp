@@ -96,7 +96,7 @@ O código deve implementar o contrato, não redefini-lo implicitamente.
 
 # 4. API Design Principles
 
-As APIs Loft devem priorizar:
+As APIs Olivelas devem priorizar:
 
 ```text
 Predictability
@@ -3090,7 +3090,7 @@ OpenAPI is inaccurate
 
 # 167. Golden API Standard
 
-Uma API Loft deve buscar:
+Uma API Olivelas deve buscar:
 
 ```text
 Predictable
@@ -3249,4 +3249,4 @@ Explicit side effects
 Explicit AI capabilities
 ```
 
-formam o contrato oficial da API Loft.
+formam o contrato oficial da API Olivelas.

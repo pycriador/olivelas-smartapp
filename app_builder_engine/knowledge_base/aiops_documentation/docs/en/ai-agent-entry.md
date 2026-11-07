@@ -66,17 +66,17 @@ Templates: [templates/agents-entry.md](templates/agents-entry.md), [templates/cl
 | Quality gate before declaring a task done | Local rule with the project's real commands (`make docs-validate`, `ruff`, `pytest`, …) |
 | Where to read first in this corpus | Rule `docs-area-map` (this repo) or the adopter's `ai-context.md` |
 
-## Adopter map (Loft plugins vs this standard)
+## Adopter map (Olivelas plugins vs this standard)
 
 Do **not** copy a generic 20+ skill pack into every service repo. Prefer the plugin or framework artifact that already owns the topic.
 
 | Need | Use |
 | --- | --- |
 | Docs after change | This framework: `document-after-change` |
-| As-is documentation of an existing module | Loft plugin `loft-docs` / skill `as-is-module-documentation` |
-| API and interface contracts | Loft plugin `loft-api` + [contract-model.md](contract-model.md) |
-| Secrets and credentials | Loft plugin `loft-security` |
-| CI/CD, Kubernetes, Datadog | Loft plugin `loft-deploy` |
+| As-is documentation of an existing module | Olivelas plugin `loft-docs` / skill `as-is-module-documentation` |
+| API and interface contracts | Olivelas plugin `loft-api` + [contract-model.md](contract-model.md) |
+| Secrets and credentials | Olivelas plugin `loft-security` |
+| CI/CD, Kubernetes, Datadog | Olivelas plugin `loft-deploy` |
 | Project quality checks | A **local** rule with the commands that actually run in that repo |
 | Generic idea-refine / TDD / frontend skill packs | Optional in an application repo; **not** part of this Documentation Standard |
 

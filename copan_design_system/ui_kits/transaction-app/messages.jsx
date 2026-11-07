@@ -1,4 +1,4 @@
-// messages.jsx — Conversa entre comprador e time Loft
+// messages.jsx — Conversa entre comprador e time Olivelas
 
 const { useState: useStM, useRef: useRfM, useEffect: useEfM } = React;
 
@@ -15,10 +15,10 @@ function MessagesScreen({ goto }) {
 
   const messages = [
     { kind: "system", text: "Conversa iniciada · Proposta #2841", at: "14 abr · 09:33" },
-    { from: "them", text: "Oi Mariana! Sou a Carla, vou te acompanhar em todo o processo de compra do apartamento em Pinheiros. Bem-vinda à Loft 🏡", at: "14 abr · 09:35" },
+    { from: "them", text: "Oi Mariana! Sou a Carla, vou te acompanhar em todo o processo de compra do apartamento em Pinheiros. Bem-vinda à Olivelas 🏡", at: "14 abr · 09:35" },
     { from: "me", text: "Obrigada, Carla! Estou animada. Acabei de enviar os primeiros documentos.", at: "14 abr · 09:38", read: true },
     { from: "them", text: "Recebido. Já comecei a validar. Posso te confirmar o prazo da próxima etapa por aqui ainda hoje.", at: "14 abr · 09:42" },
-    { kind: "card", at: "15 abr · 14:08", title: "Proposta aceita pelo vendedor", subtitle: "Loft Holding S.A. · R$ 1.245.000", icon: "handshake", color: "#D94616", bg: "#FFE5D6", action: "Ver proposta" },
+    { kind: "card", at: "15 abr · 14:08", title: "Proposta aceita pelo vendedor", subtitle: "Olivelas Holding S.A. · R$ 1.245.000", icon: "handshake", color: "#D94616", bg: "#FFE5D6", action: "Ver proposta" },
     { from: "them", text: "🎉 O vendedor aceitou! Agora precisamos dos documentos de comprovação de renda para liberar a próxima etapa. Veja a lista no painel.", at: "15 abr · 14:10" },
     { from: "me", text: "Vou enviar até amanhã. Os holerites de fevereiro estão na minha empresa, peço hoje.", at: "15 abr · 16:55", read: true },
     { from: "them", text: "Perfeito! Você tem até 22 abr para enviar todos. Qualquer dúvida me chama.", at: "15 abr · 16:58" },

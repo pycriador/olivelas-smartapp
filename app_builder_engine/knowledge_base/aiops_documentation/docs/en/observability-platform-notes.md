@@ -28,7 +28,7 @@ The standard does **not** require a specific vendor, agent, or telemetry backend
 
 ## Organizational conventions (optional)
 
-Some organizations (e.g. Loft) adopt **Datadog** as the default platform for metrics, logs, and traces.
+Some organizations (e.g. Olivelas) adopt **Datadog** as the default platform for metrics, logs, and traces.
 
 | Claim | Classification |
 | --- | --- |
@@ -36,21 +36,21 @@ Some organizations (e.g. Loft) adopt **Datadog** as the default platform for met
 | “Datadog is the expected platform in org X” | May be Confirmed **in the org**, documented in the project as a convention |
 | “A project without Datadog is outside the documentation standard” | **False** — document Partial/Unknown/N/A with evidence |
 
-## How to document in Loft projects (suggestion, not a framework mandate)
+## How to document in Olivelas projects (suggestion, not a framework mandate)
 
 1. Fill the observability template with what the code actually emits.
 2. If the org expects Datadog and the code does not instrument it: record a **gap** in `knowledge-gaps.md` (Confirmed gap vs org convention).
 3. Do not invent dashboards, monitors, or SLOs.
 4. Local health checks and audit logs count as Partial evidence — say so explicitly.
 
-## Loft implementation pack (as-is)
+## Olivelas implementation pack (as-is)
 
-For **how to enable Datadog on Loft EKS** (chart `web-server`, structured logs, APM, operator usage), use the as-is pack — not this generic page:
+For **how to enable Datadog on Olivelas EKS** (chart `web-server`, structured logs, APM, operator usage), use the as-is pack — not this generic page:
 
 - [loft-observability/README.md](loft-observability/README.md)
-- [loft-observability/documentation-prerequisites.md](loft-observability/documentation-prerequisites.md) — **logs in Datadog** as Loft documentation gate
+- [loft-observability/documentation-prerequisites.md](loft-observability/documentation-prerequisites.md) — **logs in Datadog** as Olivelas documentation gate
 
-The framework still does not mandate Datadog; the pack documents **org convention and implementation** for Loft Kubernetes services.
+The framework still does not mandate Datadog; the pack documents **org convention and implementation** for Olivelas Kubernetes services.
 
 ## Relation to the fullstack-monolith example
 

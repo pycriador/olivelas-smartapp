@@ -23,7 +23,7 @@ cp .env.example ../.env   # fill CONFLUENCE_* values — never commit .env
 | Variable | Meaning |
 | --- | --- |
 | `CONFLUENCE_URL` | Base URL (e.g. `https://loftbr.atlassian.net`) |
-| `CONFLUENCE_SPACE` | Space key (e.g. `AIOps`) |
+| `CONFLUENCE_SPACE` | Space key (e.g. `Olivelas`) |
 | `CONFLUENCE_USERNAME` | Atlassian account email |
 | `CONFLUENCE_API_TOKEN` | API token |
 | `CONFLUENCE_ROOT_PAGE_ID` | Optional default parent **page or folder** id |
@@ -78,7 +78,7 @@ uv run docs-sync validate --config config.pt-BR.yaml
 uv run docs-sync validate --config config.pt-BR.yaml \
   --docs ../docs/pt-BR/loft-infra
 
-# AIOps apps pack
+# Olivelas apps pack
 uv run docs-sync validate --config aiops-config/aiops-apps.pt-BR.yaml
 ```
 
@@ -246,20 +246,20 @@ uv run docs-sync flush --config config.pt-BR.yaml --dry-run --json
 ## 8. `cleanup` — trash junk by title (accidental dumps)
 
 Use when Confluence has leftover pages/folders from bad syncs (e.g. titles like
-`AIOps Docs · docs › pt-BR › …`). Matches by title, deletes deepest-first, and
+`Olivelas Docs · docs › pt-BR › …`). Matches by title, deletes deepest-first, and
 never walks non-matching branches (so Documentação Inicial stays untouched).
 
 Requires `--yes` (or `--dry-run`). `root_page_id` from config is always protected;
 add more ids with `--protect`.
 
 ```bash
-# Preview everything whose title starts with "AIOps Docs"
+# Preview everything whose title starts with "Olivelas Docs"
 uv run docs-sync cleanup --config config.pt-BR.yaml \
-  --title "AIOps Docs" --match prefix --dry-run
+  --title "Olivelas Docs" --match prefix --dry-run
 
 # Exact folder/page title
 uv run docs-sync cleanup --config config.pt-BR.yaml \
-  --title "AIOps Docs" --match exact --dry-run
+  --title "Olivelas Docs" --match exact --dry-run
 
 # Substring match
 uv run docs-sync cleanup --config config.pt-BR.yaml \
@@ -267,7 +267,7 @@ uv run docs-sync cleanup --config config.pt-BR.yaml \
 
 # Execute (protect legitimate folders)
 uv run docs-sync cleanup --config config.pt-BR.yaml \
-  --title "AIOps Docs" --match prefix --yes \
+  --title "Olivelas Docs" --match prefix --yes \
   --protect 6086460456 \
   --protect 6090391603 \
   --protect 6090358809 \
@@ -275,20 +275,20 @@ uv run docs-sync cleanup --config config.pt-BR.yaml \
 
 # Only walk under a specific parent
 uv run docs-sync cleanup --config config.pt-BR.yaml \
-  --title "AIOps Docs" --match prefix \
+  --title "Olivelas Docs" --match prefix \
   --from-parent 6085771665 --dry-run
 
 # Pages only (skip folders)
 uv run docs-sync cleanup --config config.pt-BR.yaml \
-  --title "AIOps Docs" --match prefix --pages-only --dry-run
+  --title "Olivelas Docs" --match prefix --pages-only --dry-run
 
 # Slower deletes to reduce HTTP 429
 uv run docs-sync cleanup --config config.pt-BR.yaml \
-  --title "AIOps Docs" --match prefix --yes --pause 0.5
+  --title "Olivelas Docs" --match prefix --yes --pause 0.5
 
 # JSON
 uv run docs-sync cleanup --config config.pt-BR.yaml \
-  --title "AIOps Docs" --match prefix --dry-run --json
+  --title "Olivelas Docs" --match prefix --dry-run --json
 ```
 
 | Flag | Effect |
@@ -336,9 +336,9 @@ uv run docs-sync sync --config config.pt-BR.yaml --force --relink
 
 ```bash
 uv run docs-sync cleanup --config config.pt-BR.yaml \
-  --title "AIOps Docs" --match prefix --dry-run
+  --title "Olivelas Docs" --match prefix --dry-run
 uv run docs-sync cleanup --config config.pt-BR.yaml \
-  --title "AIOps Docs" --match prefix --yes \
+  --title "Olivelas Docs" --match prefix --yes \
   --protect 6086460456 --protect 6090391603
 ```
 
@@ -348,15 +348,15 @@ uv run docs-sync cleanup --config config.pt-BR.yaml \
 
 | File | Purpose |
 | --- | --- |
-| [`aiops-config/`](aiops-config/) | **Reusable publish profiles** (Infra Loft, AIOps Stack, Documentação Inicial) |
+| [`aiops-config/`](aiops-config/) | **Reusable publish profiles** (Infra Olivelas, Olivelas Stack, Documentação Inicial) |
 | [`config.pt-BR.yaml`](config.pt-BR.yaml) | Alias for Documentação Inicial (`6086460456`) |
 | [`config.example.yaml`](config.example.yaml) | Generic template (copy to `docs-sync.yaml`) |
 | [`.env.example`](.env.example) | Env var names only |
 
 | Profile | Pack | Parent id |
 | --- | --- | --- |
-| `aiops-config/loft-infra.pt-BR.yaml` | `docs/pt-BR/loft-infra` | `6090358809` Infra Loft |
-| `aiops-config/aiops-apps.pt-BR.yaml` | `docs/pt-BR/aiops-apps` | `6091309071` AIOps - Stack |
+| `aiops-config/loft-infra.pt-BR.yaml` | `docs/pt-BR/loft-infra` | `6090358809` Infra Olivelas |
+| `aiops-config/aiops-apps.pt-BR.yaml` | `docs/pt-BR/aiops-apps` | `6091309071` Olivelas - Stack |
 | `aiops-config/documentacao-inicial.pt-BR.yaml` | `docs/pt-BR` | `6086460456` Documentação Inicial |
 
 See [`aiops-config/README.md`](aiops-config/README.md) for URLs and notes.
@@ -374,7 +374,7 @@ make docs-sync-pt-br-dry         # sync --dry-run
 make docs-sync-pt-br             # real sync
 make docs-sync-pt-br-audit       # audit
 make docs-sync-pt-br-repair      # sync --force --relink
-make docs-sync-pt-br-cleanup-dry # cleanup preview (AIOps Docs prefix)
+make docs-sync-pt-br-cleanup-dry # cleanup preview (Olivelas Docs prefix)
 ```
 
 Override config: `make docs-sync-validate DOCS_SYNC_CONFIG=aiops-config/loft-infra.pt-BR.yaml`

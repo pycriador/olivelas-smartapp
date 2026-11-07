@@ -12,9 +12,9 @@ This package is a **SUGGESTED / ILLUSTRATIVE** stack inspired by patterns from a
 
 This is **NOT**:
 
-- the AIOps Documentation Standard
+- the Olivelas Documentation Standard
 - the definitive guide on how to use the framework
-- a Loft platform mandate
+- a Olivelas platform mandate
 
 Technology choices (React SSR, Flask, external LLM provider, Slack Socket Mode, optional vector search, Vault, Helm-style values) are **example-only**. The Engineering Documentation Standard remains **technology-agnostic**.
 

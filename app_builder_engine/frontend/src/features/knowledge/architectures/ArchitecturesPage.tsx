@@ -200,7 +200,7 @@ export const ArchitecturesPage: React.FC = () => {
   return (
     <div className="flex flex-col gap-6">
       <PageHeader
-        title="Arquiteturas Padrão da Loft"
+        title="Arquiteturas Padrão da Olivelas"
         subtitle="Modelos estruturais certificados (Modular Monolith, Fullstack Layered, Event-Driven). CRUD completo e versionamento SemVer."
         breadcrumbs={[
           { title: 'Knowledge Base', href: '/knowledge' },

@@ -1,4 +1,4 @@
-# Padrões de Backend Loft
+# Padrões de Backend Olivelas
 
 ## ⚙️ Arquitetura em Camadas (FastAPI)
 

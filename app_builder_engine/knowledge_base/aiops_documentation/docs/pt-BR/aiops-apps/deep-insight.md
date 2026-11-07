@@ -1,5 +1,5 @@
 ---
-id: REF-AIOPS-APPS-009
+id: REF-OLIVELAS-APPS-009
 title: "Deep Insight — knowledge e AI studio"
 status: "DRAFT"
 owner: "aiops"
@@ -17,7 +17,7 @@ review_date: "2026-11-24"
 >
 > Authority: Verified
 
-Documentação **as-is** de [loft-br/aiops-deep-insight](https://github.com/loft-br/aiops-deep-insight) — **nível 2** do catálogo AIOps.
+Documentação **as-is** de [loft-br/aiops-deep-insight](https://github.com/loft-br/aiops-deep-insight) — **nível 2** do catálogo Olivelas.
 
 ## Objetivo
 
@@ -62,7 +62,7 @@ Browser → aiops-deep-insight.loft-corp.com.br
 | PostgreSQL | Persistência |
 | Google GenAI | Modelos AI — evidência `google-genai` |
 | Slack SDK | Bridge API |
-| Kong / Vault / Datadog | Padrão Loft |
+| Kong / Vault / Datadog | Padrão Olivelas |
 
 ## Stack (resumo)
 

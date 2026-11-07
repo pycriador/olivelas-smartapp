@@ -1,4 +1,4 @@
-# 👥 Loft IAM & Access Hub (App 3)
+# 👥 Olivelas IAM & Access Hub (App 3)
 
 Central moderna de gerenciamento de usuários, grupos, matriz de controle de acesso (RBAC) e trilha de auditoria universal sem banco de dados (in-memory / mock), conectada **100% à API** da plataforma App Builder Engine (`http://127.0.0.1:8000/api/v1`).
 

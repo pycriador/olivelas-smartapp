@@ -3,7 +3,7 @@
 
 const { useState: useStC, useEffect: useEfC } = React;
 
-// Loft logo
+// Olivelas logo
 function LoftLogo({ size = 24, color = "currentColor" }) {
   return (
     <svg width={size * 72/61} height={size} viewBox="0 0 72 61.411" fill={color} style={{display:"block"}}>

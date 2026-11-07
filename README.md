@@ -1,4 +1,4 @@
-# 🚀 Olivelas SmartApp — App Builder Engine & AIOps Platform
+# 🚀 Olivelas SmartApp — App Builder Engine & Olivelas Platform
 
 > **Plataforma de Engenharia de Software, Inteligência Arquitetural e Governança Orientada por IA (`olivelas-smartapp`)**  
 > Repositório oficial: `https://github.com/pycriador/olivelas-smartapp.git`  
@@ -305,7 +305,7 @@ JWT_SECRET_KEY=your-secure-random-jwt-secret-key-min-32-chars
 ENCRYPTION_KEY=your-secure-encryption-key-for-credentials-32b
 
 # Usuário e Senha Inicial para Seed Local
-DEFAULT_ADMIN_USER=admin@loft.com.br
+DEFAULT_ADMIN_USER=admin@olivelas.com.br
 DEFAULT_ADMIN_PASSWORD=your-secure-admin-password
 ```
 
@@ -317,7 +317,7 @@ DEFAULT_ADMIN_PASSWORD=your-secure-admin-password
 
 A plataforma disponibiliza uma API RESTful de primeira classe projetada especificamente para permitir que **Agentes Autônomos de Inteligência Artificial** (*Cursor, Claude Code, Antigravity*) se conectem, componham blueprints, criem projetos, configurem conexões de banco de dados e gerenciem versões com controle estrito de RBAC.
 
-> 📖 **Guia Completo e Especificação Detalhada**: Consulte [`docs/ai_agent_api_integration_guide.md`](file:///Users/willian.jesus/Downloads/aiops-quick-start-app/docs/ai_agent_api_integration_guide.md).
+> 📖 **Guia Completo e Especificação Detalhada**: Consulte [`docs/ai_agent_api_integration_guide.md`](docs/ai_agent_api_integration_guide.md).
 
 ### 🗺️ Ciclo de Vida da Integração (Roadmap em 7 Etapas)
 
@@ -354,7 +354,7 @@ from api_client import AppBuilderClient
 client = AppBuilderClient(base_url="http://127.0.0.1:8000")
 
 # 1. Login e obtenção de token JWT
-auth = client.auth.login("willian.jesus@loft.com.br", "admin_dev_pass")
+auth = client.auth.login("willian.jesus@olivelas.com.br", "admin_dev_pass")
 print(f"Token: {auth.access_token[:20]}... (Role: {auth.user.get('role')})")
 
 # 2. Composição de Blueprint via AI Gateway
@@ -378,24 +378,24 @@ print(f"Projeto registrado: {project.id} (Arquitetura: {project.architecture_id}
 
 ## 🔐 Contratos Canônicos de API, IAM, Segurança e Blueprints
 
-> 📖 **Relatório Completo de Resolução das 18 Lacunas (Gaps) da API**: Consulte [`docs/api_gaps_resolution_report.md`](file:///Users/willian.jesus/Downloads/aiops-quick-start-app/docs/api_gaps_resolution_report.md).
+> 📖 **Relatório Completo de Resolução das 18 Lacunas (Gaps) da API**: Consulte [`docs/api_gaps_resolution_report.md`](docs/api_gaps_resolution_report.md).
 
-A API do **Loft App Builder Engine (`localhost:8000`)** segue rigorosamente os contratos canônicos da plataforma:
+A API do **Olivelas App Builder Engine (`localhost:8000`)** segue rigorosamente os contratos canônicos da plataforma:
 
 1. **Autenticação JWT Obrigatória (`401 AUTHENTICATION_FAILED`)**:
    - Todas as rotas protegidas (`/api/v1/projects*`, `/api/v1/blueprints*`, `/api/v1/audit/logs`, `/api/v1/iam/auth/me`, `/api/v1/components*`, `/api/v1/modules*`, `/api/v1/rules*`, `/api/v1/specifications*`, `/api/v1/architectures*`, etc.) exigem `Authorization: Bearer <jwt_token>`.
    - Headers de identidade forjáveis (`X-User-Role`, `X-User-Email`) não são aceitos nem expostos no OpenAPI.
-   - Credenciais padrão sincronizadas com `.env` (`aiops_app_builder_user` / `aiops_app_builder_password` ou `LOFT_ADMIN_EMAIL` / `LOFT_ADMIN_PASSWORD`).
+   - Credenciais padrão sincronizadas com `.env` e primeiro cadastro automático como `Global Admin`.
 
 2. **Contrato IAM para Aplicações (`/api/v1/iam/contract`)**:
-   - **`GET /api/v1/iam/contract`**: Retorna a matriz oficial `role_permissions_matrix` (*Global Admin*, *Admin*, *Developer*, *Viewer*), `security_configuration` (TTL de Access Token 15min — `ACCESS_TOKEN_EXPIRE_MINUTES` em `app/core/security.py`, conforme Loft Backend Security Specification; Refresh Token 7d, algoritmo `HS256`, política de senha PBKDF2-HMAC-SHA256 / bcrypt, lockout e rate limit) e os endpoints de auto-cadastro e grupos.
+   - **`GET /api/v1/iam/contract`**: Retorna a matriz oficial `role_permissions_matrix` (*Global Admin*, *Admin*, *Developer*, *Viewer*), `security_configuration` (TTL de Access Token 15min — `ACCESS_TOKEN_EXPIRE_MINUTES` em `app/core/security.py`, conforme Olivelas Backend Security Specification; Refresh Token 7d, algoritmo `HS256`, política de senha Argon2id / SHA-256, lockout e rate limit) e os endpoints de auto-cadastro e grupos.
    - **`POST /api/v1/iam/auth/signup`** (`201 Created`): Auto-cadastro público de usuários com atribuição automática ao papel `Viewer` e grupo `grp_viewers`.
    - **`GET / POST / DELETE /api/v1/iam/groups/{group_id}/members`**: Gestão completa de membros de grupos (`POST` retorna `201 Created`).
    - **Lockout de Conta (`423 ACCOUNT_LOCKED`)**: Após 5 tentativas falhas consecutivas de login, a conta é bloqueada por 15 minutos e retorna HTTP `423 Locked` com `error.code = "ACCOUNT_LOCKED"`.
 
 3. **AI Blueprint Compose Determinístico e Validado (`POST /api/v1/ai/blueprints/compose`)**:
    - **Envelope Canônico**: Resposta envelopada em `{ "data": { ... }, "meta": { ... } }` (mantendo campos de topo por retrocompatibilidade).
-   - **Persistência Respeitada**: Requisitos contendo PostgreSQL / Opsbase selecionam `arch_loft_postgres_opsbase_fullstack` (`PostgreSQL 16 via AIOps Opsbase (SQLAlchemy 2.0 + Alembic)`) ou `arch_loft_standard_fullstack`, nunca arquiteturas stateless para aplicações com banco/login.
+   - **Persistência Respeitada**: Requisitos contendo PostgreSQL / Opsbase selecionam `arch_loft_postgres_opsbase_fullstack` (`PostgreSQL 16 via Olivelas Opsbase (SQLAlchemy 2.0 + Alembic)`) ou `arch_loft_standard_fullstack`, nunca arquiteturas stateless para aplicações com banco/login.
    - **Somente IDs Reais do Catálogo**: `identified_modules`, `identified_components` e `recommended_templates` contêm exclusivamente IDs reais do catálogo (`mod_*`, `cmp_*`, `tpl_*`) filtrados por domínio com `selection_rationale`, garantindo que `POST /api/v1/blueprints/validate-config` aprove com `0` erros (`status: "ready"`).
    - **Transparência de Status de IA**: Caso a chave do provedor LLM esteja indisponível ou inválida, a resposta expõe explicitamente `ai_status: "unavailable"` e `warnings[]`.
 
@@ -446,26 +446,27 @@ npm run build
 ## 📁 Estrutura do Repositório
 
 ```
-aiops-quick-start-app/
-├── README.md                              # Documentação principal da plataforma
+olivelas-smartapp/
+├── README.md                              # Documentação principal da plataforma Olivelas
 ├── start.sh                               # Script unificado de gerenciamento local (start/stop/status/logs)
+├── supabase/migrations/                   # Migrations SQL do schema isolado olivelas_smartapp no Supabase
+├── scripts/                               # Scripts CLI de gerenciamento de usuários e migrations no Supabase
 ├── docs/                                  # Relatórios técnicos e resolução de gaps de API
 │   └── api_gaps_resolution_report.md      # Histórico de auditoria e contratos da API
 ├── api_client/                            # SDK Python oficial para agentes e automações
-│   ├── client.py                          # Cliente principal AIOpsClient
+│   ├── client.py                          # Cliente principal OlivelasClient / AppBuilderClient
 │   ├── http_client.py                     # Wrapper HTTP tipado
 │   ├── models.py                          # Modelos de dados Pydantic
 │   └── services/                          # Serviços de catálogo, IA, auditoria e docs
 ├── app_builder_engine/                    # Núcleo da aplicação (Backend + Frontend)
 │   ├── pyproject.toml                     # Metadados do projeto Python
 │   ├── requirements.txt                   # Dependências Python do backend
-│   ├── app_builder.db                     # Banco de dados SQLite relacional
-│   ├── app/                               # Backend FastAPI
+│   ├── app/                               # Backend FastAPI conectado ao Supabase (olivelas_smartapp)
 │   │   ├── main.py                        # Ponto de entrada FastAPI e montagem de rotas
 │   │   ├── api/v1/                        # Rotas REST (knowledge, ai_gateway, catalog, rbac, etc.)
 │   │   ├── models/orm_models.py           # Modelos SQLAlchemy ORM
 │   │   ├── services/                      # Regras de negócio, busca, favoritos e IA
-│   │   ├── db/session.py                  # Conexão e inicialização do SQLite
+│   │   ├── db/session.py                  # Conexão PostgreSQL Supabase (schema olivelas_smartapp)
 │   │   └── static/dist/                   # Build de produção do frontend React
 │   ├── frontend/                          # Aplicação React 18 + Vite + Ant Design
 │   │   ├── src/
@@ -473,10 +474,10 @@ aiops-quick-start-app/
 │   │   │   ├── features/ai/               # AI Gateway, Blueprints e Agentes
 │   │   │   ├── features/catalog/          # Componentes, Módulos e Templates
 │   │   │   ├── features/settings/         # IAM, RBAC e Matriz de Permissões
-│   │   │   └── services/                  # Clientes HTTP Axios tipados
+│   │   │   └── services/                  # Clientes HTTP e Supabase Bridge
 │   │   ├── package.json                   # Dependências e scripts npm
 │   │   └── vite.config.ts                 # Configuração do Vite e proxy reverso
-│   └── knowledge_base/                    # Repositório de documentações técnicas
+│   └── knowledge_base/                    # Repositório de documentações técnicas Olivelas
 └── copan_design_system/                   # Especificações canônicas Copan
 ```
 
@@ -484,4 +485,4 @@ aiops-quick-start-app/
 
 ## 📄 Licença e Governança
 
-Desenvolvido e mantido sob as diretrizes de governança técnica e padrões de arquitetura da **Loft (loft-br)**.
+Desenvolvido e mantido sob as diretrizes de governança técnica e padrões de arquitetura da **Olivelas (`pycriador/olivelas-smartapp`)**.

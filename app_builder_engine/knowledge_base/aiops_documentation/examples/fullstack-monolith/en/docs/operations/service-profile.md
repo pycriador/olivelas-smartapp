@@ -37,7 +37,7 @@ version: "1.0"
 
 | Signal | Status |
 | --- | --- |
-| Metrics | Partial (illustrative; Datadog optional in Loft orgs — not required by the standard) |
+| Metrics | Partial (illustrative; Datadog optional in Olivelas orgs — not required by the standard) |
 | Logs | Partial |
 | Traces | Not Applicable (in this example) |
 | Health checks | Implemented (illustrative) |

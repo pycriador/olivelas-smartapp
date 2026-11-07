@@ -1,6 +1,6 @@
 ---
-id: REF-AIOPS-TEAM-009
-title: "AIOps — Security"
+id: REF-OLIVELAS-TEAM-009
+title: "Olivelas — Security"
 status: "DRAFT"
 owner: "aiops"
 updated: "2026-08-24"
@@ -15,7 +15,7 @@ review_date: "2026-11-24"
 >
 > Documentation Standard v1.0
 
-Cross-cutting security view for AIOps products. **Per-app detail:** [../aiops-apps/security.md](../aiops-apps/security.md).
+Cross-cutting security view for Olivelas products. **Per-app detail:** [../aiops-apps/security.md](../aiops-apps/security.md).
 
 ## Principles (Confirmed)
 

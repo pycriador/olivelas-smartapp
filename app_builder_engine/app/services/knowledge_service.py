@@ -59,7 +59,7 @@ class KnowledgeService:
                     key_points=doc.key_points or [],
                     tags=doc.tags or [],
                     content=doc.content or "",
-                    author=doc.author or "Loft Engineering",
+                    author=doc.author or "Olivelas Engineering",
                     version=doc.version or "1.0.0",
                     source_url=doc.source_url,
                     is_custom=doc.is_custom,
@@ -97,7 +97,7 @@ class KnowledgeService:
                         target_id="tech-leads",
                         target_name="Tech Leads Guild",
                         role="editor",
-                        created_by="willian.jesus@loft.com.br",
+                        created_by="willian.jesus@olivelas.com.br",
                     )
                 )
                 s.add(
@@ -108,7 +108,7 @@ class KnowledgeService:
                         target_id="ai-chapter",
                         target_name="AI Engineering Chapter",
                         role="editor",
-                        created_by="willian.jesus@loft.com.br",
+                        created_by="willian.jesus@olivelas.com.br",
                     )
                 )
                 s.commit()
@@ -189,7 +189,7 @@ class KnowledgeService:
                 shares=share_items,
             )
 
-    def create_document(self, req: KnowledgeDocumentCreate, author_email: str = "willian.jesus@loft.com.br") -> KnowledgeDocumentDetail:
+    def create_document(self, req: KnowledgeDocumentCreate, author_email: str = "willian.jesus@olivelas.com.br") -> KnowledgeDocumentDetail:
         doc_id = f"doc_{uuid.uuid4().hex[:8]}"
         now = datetime.now(timezone.utc)
 
@@ -261,7 +261,7 @@ class KnowledgeService:
         self,
         doc_id: str,
         req: KnowledgeDocShareCreate,
-        author_email: str = "willian.jesus@loft.com.br",
+        author_email: str = "willian.jesus@olivelas.com.br",
     ) -> KnowledgeDocShareItem:
         with SessionLocal() as s:
             doc = s.get(KnowledgeDocumentModel, doc_id)
@@ -364,7 +364,7 @@ class KnowledgeService:
     async def import_from_confluence(
         self,
         req: ConfluenceImportRequest,
-        author_email: str = "willian.jesus@loft.com.br",
+        author_email: str = "willian.jesus@olivelas.com.br",
     ) -> KnowledgeDocumentDetail:
         space_key = req.space_key.upper()
         title = f"Confluence: Espaço {space_key} (Importação via API)"
@@ -379,7 +379,7 @@ class KnowledgeService:
 Esta documentação foi importada do Confluence corporativo e convertida para Markdown canônico.
 
 ### Políticas Operacionais
-- Conformidade com as Golden Rules Loft
+- Conformidade com as Golden Rules Olivelas
 - Padrões de arquitetura corporativa
 - Especificações e contratos de integração
 """
@@ -397,7 +397,7 @@ Esta documentação foi importada do Confluence corporativo e convertida para Ma
     async def import_from_github(
         self,
         req: GitHubImportRequest,
-        author_email: str = "willian.jesus@loft.com.br",
+        author_email: str = "willian.jesus@olivelas.com.br",
     ) -> KnowledgeDocumentDetail:
         clean_repo = req.repo_url.rstrip("/").split("/")[-1]
         title = f"GitHub: {clean_repo} ({req.branch})"
@@ -425,7 +425,7 @@ O repositório `{clean_repo}` fornece documentação técnica sincronizada via G
     def import_raw_doc(
         self,
         req: RawDocImportRequest,
-        author_email: str = "willian.jesus@loft.com.br",
+        author_email: str = "willian.jesus@olivelas.com.br",
     ) -> KnowledgeDocumentDetail:
         create_req = KnowledgeDocumentCreate(
             title=req.title,
@@ -497,7 +497,7 @@ O repositório `{clean_repo}` fornece documentação técnica sincronizada via G
         return results[:limit]
 
     def sync_aiops_documentation(self) -> dict[str, Any]:
-        """Trigger re-scan and database upsert of all docs from loft-br/aiops-documentation."""
+        """Trigger re-scan and database upsert of all docs from pycriador/olivelas-smartapp."""
         self.loader._documents.clear()
         self.loader._load_all()
 
@@ -509,7 +509,7 @@ O repositório `{clean_repo}` fornece documentação técnica sincronizada via G
             "synced": True,
             "total_documents": total_in_db,
             "synced_count": total_synced,
-            "source": "https://github.com/loft-br/aiops-documentation",
+            "source": "https://github.com/pycriador/olivelas-smartapp",
             "timestamp": datetime.now(timezone.utc).isoformat(),
         }
 

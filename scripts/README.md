@@ -1,6 +1,6 @@
 # 🛠️ Scripts de Automação & Geração de Aplicações
 
-> Scripts executáveis para interagir com o **Loft App Builder Engine** e criar aplicações completas de forma 100% automática.
+> Scripts executáveis para interagir com o **Olivelas App Builder Engine** e criar aplicações completas de forma 100% automática.
 
 ---
 
@@ -15,7 +15,7 @@ python3 scripts/generate_app.py
 
 # Modo 100% Automático via CLI flags
 python3 scripts/generate_app.py \
-  --name "Loft Fiança Aluguel" \
+  --name "Olivelas Fiança Aluguel" \
   --description "Esteira de garantia locatícia e esteira de risco de crédito" \
   --features "Autenticação JWT" "Tabela de Propostas" "Score de Risco" "App Switcher Copan" \
   --output-dir "generated_apps/loft-fianca-aluguel" \
@@ -25,7 +25,7 @@ python3 scripts/generate_app.py \
 ---
 
 ### 2. `quickstart_fianca_app.py`
-Gerador em 1 comando para a aplicação canônica **Loft Fiança Aluguel**:
+Gerador em 1 comando para a aplicação canônica **Olivelas Fiança Aluguel**:
 
 ```bash
 python3 scripts/quickstart_fianca_app.py
@@ -34,7 +34,7 @@ python3 scripts/quickstart_fianca_app.py
 ---
 
 ### 3. `quickstart_crm_app.py`
-Gerador em 1 comando para a aplicação **Loft CRM & Customer 360**:
+Gerador em 1 comando para a aplicação **Olivelas CRM & Customer 360**:
 
 ```bash
 python3 scripts/quickstart_crm_app.py

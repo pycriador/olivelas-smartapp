@@ -1,8 +1,8 @@
 {
   "type": "blueprint",
   "blueprint_id": "bp_1cfb1b9a",
-  "application_name": "Loft AI Copilot Support",
-  "architecture": "Loft Institutional Landing Page & Static Showcase Architecture",
+  "application_name": "Olivelas AI Copilot Support",
+  "architecture": "Olivelas Institutional Landing Page & Static Showcase Architecture",
   "matched_features": [
     "chatbot com ia",
     "hist\u00f3rico de mensagens",
@@ -308,8 +308,8 @@
     }
   ],
   "raw_blueprint": {
-    "project": "Loft AI Copilot Support",
-    "architecture": "Loft Institutional Landing Page & Static Showcase Architecture",
+    "project": "Olivelas AI Copilot Support",
+    "architecture": "Olivelas Institutional Landing Page & Static Showcase Architecture",
     "architecture_id": "arch_static_landing_page",
     "is_static": true,
     "database": "None (Stateless / In-Memory)",

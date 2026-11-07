@@ -57,7 +57,7 @@ Teams need to import CSV/XLSX, type columns, apply rules, export outputs, store 
 | Auth | JWT + API tokens + service accounts | Proposed (example only) |
 | Files | Drive-like adapter; S3 as Proposed stub | Proposed (example only) |
 | API runtime | Gunicorn / container | Proposed (example only) |
-| Observability | Health + audit; Datadog optional in Loft orgs | Proposed (example only) |
+| Observability | Health + audit; Datadog optional in Olivelas orgs | Proposed (example only) |
 
 > If your project uses Kotlin, Node, legacy PHP, or another stack: **ignore this table** and document your real stack with correct Classification.
 

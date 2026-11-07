@@ -21,28 +21,28 @@ Changelog canônico deste Documentation Standard. Política: [changelog-policy.m
 
 ## 2026-09-01
 
-- Summary: Publicado o piloto de guias humanizados (hub do time + DataForge) e preenchida a lacuna do pack **AIOps - Stack**, que faltava DataForge/Deep Insight/Loft Carteiras/Qualidade. Descoberto e corrigido no processo: o Confluence exige **título único por espaço** (não por página-pai), então uma página não pode existir simultaneamente sob "Documentação Inicial" e sob "AIOps - Stack" com o mesmo título. As 5 páginas afetadas foram movidas para o pai correto; `documentacao-inicial.pt-BR.yaml` agora exclui `aiops-apps/` (`exclude_globs`); `hub-registry.yaml`, `Makefile` (`docs-sync-aiops-app*`) e `docs-sync/aiops-config/README.md` atualizados para não tentarem mais publicar apps nos dois pacotes.
+- Summary: Publicado o piloto de guias humanizados (hub do time + DataForge) e preenchida a lacuna do pack **Olivelas - Stack**, que faltava DataForge/Deep Insight/Olivelas Carteiras/Qualidade. Descoberto e corrigido no processo: o Confluence exige **título único por espaço** (não por página-pai), então uma página não pode existir simultaneamente sob "Documentação Inicial" e sob "Olivelas - Stack" com o mesmo título. As 5 páginas afetadas foram movidas para o pai correto; `documentacao-inicial.pt-BR.yaml` agora exclui `aiops-apps/` (`exclude_globs`); `hub-registry.yaml`, `Makefile` (`docs-sync-aiops-app*`) e `docs-sync/aiops-config/README.md` atualizados para não tentarem mais publicar apps nos dois pacotes.
 - Resources:
   - `docs-sync/aiops-config/documentacao-inicial.pt-BR.yaml` (`exclude_globs`)
   - `docs-sync/aiops-config/hub-registry.yaml` (`application.sync_profiles`, `agent_workflow.sync_app`)
   - `docs-sync/aiops-config/README.md`
   - `Makefile` (`docs-sync-aiops-app-plan`, `docs-sync-aiops-app`)
-- Impact: pack AIOps - Stack completo (12 páginas); futuras publicações de apps não tentam mais duplicar título e falhar com erro 400 do Confluence
+- Impact: pack Olivelas - Stack completo (12 páginas); futuras publicações de apps não tentam mais duplicar título e falhar com erro 400 do Confluence
 - See: `docs-sync/aiops-config/hub-registry.yaml`
 
 ## 2026-08-31
 
-- Summary: Piloto de **guias em linguagem simples** para o hub AIOps — páginas irmãs, no mesmo diretório da página técnica, para leitores não técnicos no Confluence (hub do time e app DataForge). Hatnotes de 1 linha nas páginas técnicas apontam para o guia; guias apontam de volta para a especificação. Guias não entram na cadeia de leitura obrigatória de `ai-context.md`, preservando o consumo de token de agentes de IA. Registrado em `hub-registry.yaml` (`human_guide`).
+- Summary: Piloto de **guias em linguagem simples** para o hub Olivelas — páginas irmãs, no mesmo diretório da página técnica, para leitores não técnicos no Confluence (hub do time e app DataForge). Hatnotes de 1 linha nas páginas técnicas apontam para o guia; guias apontam de volta para a especificação. Guias não entram na cadeia de leitura obrigatória de `ai-context.md`, preservando o consumo de token de agentes de IA. Registrado em `hub-registry.yaml` (`human_guide`).
 - Resources:
   - [aiops-team/README-guia.md](aiops-team/README-guia.md)
   - [aiops-apps/dataforge-guia.md](aiops-apps/dataforge-guia.md)
   - `docs-sync/aiops-config/hub-registry.yaml` (`human_guides`)
-- Impact: leitores não técnicos do Confluence AIOps (negócio, novos membros, suporte); nenhuma mudança na fonte de verdade técnica
+- Impact: leitores não técnicos do Confluence Olivelas (negócio, novos membros, suporte); nenhuma mudança na fonte de verdade técnica
 - See: [aiops-team/README-guia.md](aiops-team/README-guia.md)
 
 ## 2026-08-24
 
-- Summary: Hub **AIOps em 3 níveis** — pasta `aiops-team/` (nível 1), páginas por app em `aiops-apps/` (nível 2), registro `hub-registry.yaml`, skill `sync-aiops-hub`, flag CLI `--only`, targets Make scoped, piloto nível 3 DataForge.
+- Summary: Hub **Olivelas em 3 níveis** — pasta `aiops-team/` (nível 1), páginas por app em `aiops-apps/` (nível 2), registro `hub-registry.yaml`, skill `sync-aiops-hub`, flag CLI `--only`, targets Make scoped, piloto nível 3 DataForge.
 - Resources:
   - [aiops-team/README.md](aiops-team/README.md)
   - [aiops-team/documentation-model.md](aiops-team/documentation-model.md)
@@ -57,19 +57,19 @@ Changelog canônico deste Documentation Standard. Política: [changelog-policy.m
   - [loft-infra/examples/README.md](loft-infra/examples/README.md)
   - [loft-infra/README.md](loft-infra/README.md)
   - [loft-infra/checklist-novo-servico.md](loft-infra/checklist-novo-servico.md)
-- Impact: times AIOps que publicam novos apps no modelo Cross Prod
+- Impact: times Olivelas que publicam novos apps no modelo Cross Prod
 - See: [loft-infra/publish-guide.md](loft-infra/publish-guide.md)
 
 ## 2026-08-19
 
-- Summary: Novo pack **as-is Loft** `loft-observability/` (EN + pt-BR): Datadog no EKS (chart `web-server`), logs JSON estruturados, receitas APM por stack, guia operacional, verificação pós-deploy e **logs no Datadog** como pré-requisito documental Loft. Integrado ao checklist `loft-infra`, `observability-platform-notes` (apenas pointer), índice de docs, manifest, area map e perfil `docs-sync` loft-infra (segundo root path).
+- Summary: Novo pack **as-is Olivelas** `loft-observability/` (EN + pt-BR): Datadog no EKS (chart `web-server`), logs JSON estruturados, receitas APM por stack, guia operacional, verificação pós-deploy e **logs no Datadog** como pré-requisito documental Olivelas. Integrado ao checklist `loft-infra`, `observability-platform-notes` (apenas pointer), índice de docs, manifest, area map e perfil `docs-sync` loft-infra (segundo root path).
 - Resources:
   - [loft-observability/README.md](loft-observability/README.md)
   - [loft-observability/documentation-prerequisites.md](loft-observability/documentation-prerequisites.md)
   - [loft-infra/checklist-novo-servico.md](loft-infra/checklist-novo-servico.md)
   - [observability-platform-notes.md](observability-platform-notes.md)
   - [docs-sync/aiops-config/loft-infra.pt-BR.yaml](../../docs-sync/aiops-config/loft-infra.pt-BR.yaml)
-- Impact: autores de serviços EKS Loft, operadores e consumidores da documentação AIOps
+- Impact: autores de serviços EKS Olivelas, operadores e consumidores da documentação Olivelas
 - See: [loft-observability/README.md](loft-observability/README.md)
 
 ## 2026-08-17

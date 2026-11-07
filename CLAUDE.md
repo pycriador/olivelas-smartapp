@@ -1,15 +1,15 @@
-# CLAUDE.md — Padrão Loft (Frontend + Backend)
+# CLAUDE.md — Padrão Olivelas (Frontend + Backend)
 
-Este arquivo consolida os volumes de padronização Loft — **Frontend** (`Frontend/`) e **Backend** (`Backend/`) — em regras diretas para desenvolvimento assistido por IA neste projeto. Em caso de dúvida ou conflito, consulte os documentos originais — este arquivo é um resumo operacional, não substitui o conteúdo integral.
+Este arquivo consolida os volumes de padronização Olivelas — **Frontend** (`Frontend/`) e **Backend** (`Backend/`) — em regras diretas para desenvolvimento assistido por IA neste projeto. Em caso de dúvida ou conflito, consulte os documentos originais — este arquivo é um resumo operacional, não substitui o conteúdo integral.
 
 ## Documentos e hierarquia
 
 ```
 Frontend/
-  Volume I   — Loft Design System — Foundation & UI Guidelines   (como parecer)
-  Volume II  — Loft Frontend Foundation — Guia Inicial           (como construir)
+  Volume I   — Olivelas Design System — Foundation & UI Guidelines   (como parecer)
+  Volume II  — Olivelas Frontend Foundation — Guia Inicial           (como construir)
   Volume III — Loft Component Catalog                            (o que reutilizar)
-  Volume IV  — Loft Frontend Specification (FSD)                  (o que construir)
+  Volume IV  — Olivelas Frontend Specification (FSD)                  (o que construir)
 
 Backend/
   Loft Backend Foundation                (Vol. I  — stack/arquitetura)
@@ -33,13 +33,13 @@ A especificação funcional (FSD no frontend; contratos/domínio enviados para o
 ## Princípio central
 
 ```
-Copan ('@loft/react-loft' + '@loft/tokens-loft' + '@loft/react-icons') = Loft UI
+Copan ('@loft/react-loft' + '@loft/tokens-loft' + '@loft/react-icons') = Olivelas UI
 Biblioteca de componentes mandatória — não uma referência visual a copiar.
 ```
 
 Toda UI deve importar componentes reais de `@loft/react-loft` e tokens de `@loft/tokens-loft`. Nunca introduzir uma biblioteca de UI genérica (Ant Design, MUI, Chakra, Bootstrap, styled-components) sem justificativa arquitetural explícita — e mesmo assim, nunca em substituição ao Copan nos componentes que ele já cobre.
 
-Os pacotes `@loft/*` são privados e exigem um `NPM_TOKEN` com acesso ao escopo `@loft` configurado no `.npmrc` do projeto (`//registry.npmjs.org/:_authToken=${NPM_TOKEN}`) — esperado para qualquer aplicação padrão Loft, já que são construídas e rodadas por times internos.
+Os pacotes `@loft/*` são privados e exigem um `NPM_TOKEN` com acesso ao escopo `@loft` configurado no `.npmrc` do projeto (`//registry.npmjs.org/:_authToken=${NPM_TOKEN}`) — esperado para qualquer aplicação padrão Olivelas, já que são construídas e rodadas por times internos.
 
 ## Stack oficial
 
@@ -80,15 +80,15 @@ Os pacotes `@loft/*` são privados e exigem um `NPM_TOKEN` com acesso ao escopo 
 - Prioridade de estilo: **token Copan (`@loft/tokens-loft`) → prop de componente Copan → CSS local (somente quando o Copan não cobre)**.
 - Componentes customizados só quando o Copan não resolve e há necessidade recorrente de domínio — documentar Purpose/Props/States/Variants/Interactions/Accessibility/Responsive, e compor a partir de primitivas Copan (`Flex`, `Grid`/`GridItem`, `Typography`, etc.), nunca HTML cru estilizado à mão para o que o Copan já cobre.
 
-## Loft Component Catalog (frontend)
+## Olivelas Component Catalog (frontend)
 
 Regra de ouro antes de criar qualquer componente:
 
 ```
 1. Existe no Copan (@loft/react-loft)? → use-o
-2. Existe no Loft Component Catalog?   → use-o (composto a partir de primitivas Copan)
+2. Existe no Olivelas Component Catalog?   → use-o (composto a partir de primitivas Copan)
 3. Pode ser composto com existentes?   → componha
-4. É necessidade recorrente (2+ contextos, comportamento estável)? → crie componente Loft
+4. É necessidade recorrente (2+ contextos, comportamento estável)? → crie componente Olivelas
 5. Caso contrário                      → mantenha local ao produto/feature
 ```
 
@@ -101,16 +101,16 @@ Componentes Tier 1 (Foundation): `PageHeader`, `PageContainer`, `LoadingState`, 
 
 ### App Switcher (menu de 9 pontos / "waffle")
 
-Padrão de navegação entre produtos Loft, acionado pelo ícone de 9 pontos no header, ao lado do breadcrumb. Detalhes visuais que fazem parte do contrato deste componente (não são incidentais):
+Padrão de navegação entre produtos Olivelas, acionado pelo ícone de 9 pontos no header, ao lado do breadcrumb. Detalhes visuais que fazem parte do contrato deste componente (não são incidentais):
 
 - O painel (`Produtos e Soluções`) é **`position: fixed`** ancorado no canto esquerdo da viewport (`left: 0`, abaixo do header) — nunca posicionado relativo ao próprio botão trigger. Isso garante que ele sempre cubra a sidebar do produto por completo, independente de onde o ícone fique no header (ex: depois de um breadcrumb longo).
-- Grid principal (produtos "grandes": Fiança Aluguel, Sites, Adm Imóveis, CRM, Financiamento Imobiliário, Portal Loft): título em **verde de marca** `#0B6B4F` (mesmo tom usado no gradiente do hero do produto atual) — não usar `text.primary`. Produto atual recebe fundo verde-claro (`#EAF9EF`/borda `#B7E9C6`) + ícone de check.
-- Grid secundário (links utilitários: Qualifica Leads, Clube Loft, CredSign, Assistente Loft, Selo de tecnologia Loft): cada item é um **pill com borda fina** (`border: 1px solid` neutral-100), título em `text.primary` (não verde), com marcador à esquerda em formato de **"chave"**: círculo oco laranja (`#FF774A`, ~9px, borda 1.5px) + traço sólido saindo do lado direito (~7×2px) — não usar um círculo cheio nem a cor `info`.
+- Grid principal (produtos "grandes": Fiança Aluguel, Sites, Adm Imóveis, CRM, Financiamento Imobiliário, Portal Olivelas): título em **verde de marca** `#0B6B4F` (mesmo tom usado no gradiente do hero do produto atual) — não usar `text.primary`. Produto atual recebe fundo verde-claro (`#EAF9EF`/borda `#B7E9C6`) + ícone de check.
+- Grid secundário (links utilitários: Qualifica Leads, Clube Olivelas, CredSign, Assistente Olivelas, Selo de tecnologia Olivelas): cada item é um **pill com borda fina** (`border: 1px solid` neutral-100), título em `text.primary` (não verde), com marcador à esquerda em formato de **"chave"**: círculo oco laranja (`#FF774A`, ~9px, borda 1.5px) + traço sólido saindo do lado direito (~7×2px) — não usar um círculo cheio nem a cor `info`.
 - Cards do grid principal são propositalmente **retangulares/achatados** (proporção largura:altura ≈ 2.5:1), não quadrados — padding vertical bem menor que o horizontal.
 
 ### Modais, Overlays e Contenção de Rolagem
 
-- **Centralização Obrigatória (`centered={true}`)**: Todo `Modal` no padrão Loft deve ser explicitamente centralizado na viewport.
+- **Centralização Obrigatória (`centered={true}`)**: Todo `Modal` no padrão Olivelas deve ser explicitamente centralizado na viewport.
 - **Contenção Estrita de Rolagem Interna**: O scroll deve ocorrer exclusivamente dentro do corpo do modal (`styles={{ body: { maxHeight: 'calc(85vh - 140px)', overflowY: 'auto' } }}`), eliminando qualquer vazamento de barra de rolagem para a janela principal (`window/body`).
 - **Larguras Padronizadas**: `520px` (confirmação/alerta), `800px` (formulários médios, `EntityVersionModal`), `900px` (SDD Viewers, editores de markdown/código).
 
@@ -118,7 +118,7 @@ Padrão de navegação entre produtos Loft, acionado pelo ícone de 9 pontos no 
 
 Para interfaces de composição e edição de recursos estruturais (ex: `/workshop`, blueprints, catálogos):
 - **Header Contextual**: Breadcrumb, Status Tag e botões de ação fixos no topo (Salvar Rascunho, Validar, Publicar, Cancelar).
-- **Card de Pré-carregamento Inteligente (Pre-fill)**: Duplo seletor (Template Canônico Loft vs Blueprint Existente) para preenchimento rápido de arquiteturas, módulos, componentes e Golden Rules.
+- **Card de Pré-carregamento Inteligente (Pre-fill)**: Duplo seletor (Template Canônico Olivelas vs Blueprint Existente) para preenchimento rápido de arquiteturas, módulos, componentes e Golden Rules.
 - **Obrigatoriedade e Validação Lateral**: Nome e Descrição com validação obrigatória visual; painel lateral de conformidade em tempo real (`POST /blueprints/validate-config`) com bloqueio de publicação preventiva se houver violação de Golden Rules críticas.
 
 ### 20 Padrões Canônicos de Telas Enterprise para Blueprints
@@ -137,8 +137,8 @@ Para interfaces de composição e edição de recursos estruturais (ex: `/worksh
 12. **Portal de Admissão & Onboarding RH** (`/hr/onboarding`): Admissão digital de colaboradores e trilha de aculturamento.
 13. **Gestão de Ativos Corporativos & ITSM** (`/it/assets`): Controle patrimonial de TI e licenças de software em nuvem.
 14. **Portal do Desenvolvedor & API Marketplace** (`/dev/api-portal`): Documentação interativa OpenAPI v3, chaves de API e webhooks.
-15. **Portal Loft Fiança Aluguel** (`/partner/guarantee`): Menu 9 pontos waffle, hero card verde Loft e contratação de fiança.
-16. **Loft Engineering & Backoffice** (`/admin/backoffice`): Administração de catálogos técnicos e governança RBAC.
+15. **Portal Olivelas Fiança Aluguel** (`/partner/guarantee`): Menu 9 pontos waffle, hero card verde Olivelas e contratação de fiança.
+16. **Olivelas Engineering & Backoffice** (`/admin/backoffice`): Administração de catálogos técnicos e governança RBAC.
 17. **Fintech & Checkout Imobiliário** (`/fintech/checkout`): Pagamentos Pix/Boleto/Cartão e split financeiro instantâneo.
 18. **Analytics & Performance BI Dashboard** (`/analytics/bi`): KPIs em tempo real, volumetria transacional e gráficos executivos.
 19. **CRM de Renegociação & Mesa de Acordos** (`/crm/renegotiation`): Mesa amigável de cobrança e acordos de quitação.
@@ -441,7 +441,7 @@ IA (quando aplicável) → provider abstraction (nunca SDK direto), structured o
 Contrato      → frontend consome exatamente o que a API Specification define; nada inventado de ambos os lados
 Segurança     → autorização real no backend; frontend/UI nunca é mecanismo de autorização
 Estados       → loading/empty/no-results/error/permission-denied/not-found tratados nas duas pontas
-Reuso         → Copan/Loft Catalog (frontend) e Component Catalog (backend) verificados antes de criar algo novo
+Reuso         → Copan/Olivelas Catalog (frontend) e Component Catalog (backend) verificados antes de criar algo novo
 IA            → nunca dependência direta de provider; nunca fonte de verdade para autorização/regra de negócio/cálculo crítico
 Observabilidade→ request_id propagado ponta a ponta, erros de API nunca expostos brutos na UI
 Testes        → unit/component/E2E no frontend; unit/integration/API/security no backend

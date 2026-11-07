@@ -1,5 +1,5 @@
 # Publish full docs/pt-BR tree → Confluence folder "Documentação Inicial"
-# Parent: https://loftbr.atlassian.net/wiki/spaces/AIOps/folder/6086460456
+# Parent: https://loftbr.atlassian.net/wiki/spaces/Olivelas/folder/6086460456
 #
 #   set -a && source ../.env && set +a
 #   uv run docs-sync sync --config aiops-config/documentacao-inicial.pt-BR.yaml --changes-only --relink
@@ -10,7 +10,7 @@
 
 project:
   name: "aiops-documentation-pt-BR"
-  repository_url: "https://github.com/loft-br/aiops-documentation"
+  repository_url: "https://github.com/pycriador/olivelas-smartapp"
 
 confluence:
   url: "${CONFLUENCE_URL}"

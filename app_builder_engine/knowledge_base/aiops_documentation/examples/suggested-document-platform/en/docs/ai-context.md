@@ -56,6 +56,6 @@ Northstar is a fictional document-intelligence platform: SSR BFF + Flask API + d
 
 ## Out of scope for agents
 
-- Treating this tree as normative for the AIOps Documentation Standard
+- Treating this tree as normative for the Olivelas Documentation Standard
 - Copying the illustrative stack into production without org review
 - Using fictional names as if they were real services

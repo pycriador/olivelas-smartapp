@@ -22,7 +22,7 @@ type: "project-overview"
 
 This document belongs to a **SUGGESTED / ILLUSTRATIVE** example inspired by patterns from an **isolated reference project** (document intelligence / RAG / SSR BFF / Flask / Slack worker / scheduler / PostgreSQL).
 
-It is **NOT** the AIOps Documentation Standard, **NOT** the definitive guide on how to use the framework, and **NOT** a Loft platform mandate. The technology choices below are **example-only**.
+It is **NOT** the Olivelas Documentation Standard, **NOT** the definitive guide on how to use the framework, and **NOT** a Olivelas platform mandate. The technology choices below are **example-only**.
 
 **Fictional product:** Northstar Document Platform. Placeholders only (`https://docs.example.com`, `secrets/path/example`).
 

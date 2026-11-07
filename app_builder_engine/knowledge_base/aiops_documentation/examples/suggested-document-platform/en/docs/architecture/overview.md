@@ -18,7 +18,7 @@ type: "architecture"
 >
 > Documentation Standard v1.0
 >
-> **SUGGESTED / ILLUSTRATIVE** — **NOT** the AIOps Documentation Standard · **NOT** a platform mandate.
+> **SUGGESTED / ILLUSTRATIVE** — **NOT** the Olivelas Documentation Standard · **NOT** a platform mandate.
 
 ## Summary
 

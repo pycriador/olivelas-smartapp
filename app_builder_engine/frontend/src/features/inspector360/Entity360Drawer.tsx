@@ -563,7 +563,7 @@ export const Entity360Drawer: React.FC = () => {
               <div className="space-y-4 pt-1">
                 {(data.associated_rules || []).length === 0 ? (
                   <div className="p-6 bg-[#FAFBFD] border border-loft-border rounded-lg text-center text-sm text-loft-muted italic">
-                    Nenhuma regra específica associada. Segue diretrizes globais da Loft.
+                    Nenhuma regra específica associada. Segue diretrizes globais da Olivelas.
                   </div>
                 ) : (
                   <List

@@ -1,13 +1,13 @@
 ---
-id: REF-AIOPS-TEAM-012
-title: "AIOps — Plain-language guide"
+id: REF-OLIVELAS-TEAM-012
+title: "Olivelas — Plain-language guide"
 status: "DRAFT"
 owner: "aiops"
 updated: "2026-08-31"
 review_date: "2026-11-30"
 ---
 
-# AIOps, in plain language
+# Olivelas, in plain language
 
 > Language: EN | [Português (pt-BR)](../../pt-BR/aiops-team/README-guia.md)
 >
@@ -17,9 +17,9 @@ review_date: "2026-11-30"
 
 > Looking for the full technical material (tables, standards, reference links)? See the [team hub](README.md).
 
-## What the AIOps team is
+## What the Olivelas team is
 
-AIOps is the team that builds and maintains Loft's internal data and productivity applications — things like project platforms, data reconciliation, and quality tooling that other squads use day to day. It isn't the team that runs infrastructure itself (that's a separate platform team); AIOps builds products **on top of** that infrastructure.
+Olivelas is the team that builds and maintains Olivelas's internal data and productivity applications — things like project platforms, data reconciliation, and quality tooling that other squads use day to day. It isn't the team that runs infrastructure itself (that's a separate platform team); Olivelas builds products **on top of** that infrastructure.
 
 ## Who this hub is for
 
@@ -31,7 +31,7 @@ This Confluence space exists for three audiences:
 
 ## Why it matters
 
-AIOps applications (cataloged in [applications.md](applications.md)) serve internal Loft squads every day. When one of these systems goes down, the impact lands on whoever depends on it to close reconciliations, look up projects, or validate data quality — that's why we keep public documentation of "what each thing is" and "who to talk to," on top of the purely technical material.
+Olivelas applications (cataloged in [applications.md](applications.md)) serve internal Olivelas squads every day. When one of these systems goes down, the impact lands on whoever depends on it to close reconciliations, look up projects, or validate data quality — that's why we keep public documentation of "what each thing is" and "who to talk to," on top of the purely technical material.
 
 ## How the content is organized
 

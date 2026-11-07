@@ -1,4 +1,4 @@
-# Overview — publishing AIOps apps
+# Overview — publishing Olivelas apps
 
 > Language: EN | [Português (pt-BR)](../../pt-BR/loft-infra/overview.md)
 >

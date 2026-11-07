@@ -901,7 +901,7 @@ class CatalogManagementService:
         project_id: str | None = None,
     ) -> Blueprint:
         arch = db.architectures.get(architecture_id) or (list(db.architectures.values())[0] if db.architectures else None)
-        arch_name = arch.name if arch else "Loft Standard Fullstack (Vite React 19 + FastAPI / SQLite)"
+        arch_name = arch.name if arch else "Olivelas Standard Fullstack (Vite React 19 + FastAPI / SQLite)"
 
         selected_modules = set(module_ids or [])
         selected_components = set(component_ids or [])
@@ -938,7 +938,7 @@ class CatalogManagementService:
 │   ├── app/core/ (security, config, logging)
 │   ├── app/api/v1/ ({', '.join(sorted(selected_modules)) or 'routers'})
 │   └── app/services/
-└── frontend/ (Loft Copan Standard)
+└── frontend/ (Olivelas Copan Standard)
     ├── src/components/ ({', '.join(sorted(selected_components)) or 'Copan UI'})
     └── src/pages/"""
 

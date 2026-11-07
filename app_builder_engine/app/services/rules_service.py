@@ -76,7 +76,7 @@ class RulesService:
                     rule_title="Proibição de Dependências Privadas do Copan",
                     severity=RuleSeverity.CRITICAL,
                     message="Importação detectada de pacotes privados '@loft/*'.",
-                    recommendation="Utilize Ant Design + Loft Tokens + Loft Conventions.",
+                    recommendation="Utilize Ant Design + Olivelas Tokens + Olivelas Conventions.",
                 )
             )
 

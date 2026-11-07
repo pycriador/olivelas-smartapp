@@ -524,7 +524,7 @@ def build_parser() -> argparse.ArgumentParser:
         "cleanup",
         help=(
             "Delete Confluence pages/folders by title match "
-            "(e.g. accidental 'AIOps Docs · …' dumps)"
+            "(e.g. accidental 'Olivelas Docs · …' dumps)"
         ),
     )
     add_common(p_cleanup)

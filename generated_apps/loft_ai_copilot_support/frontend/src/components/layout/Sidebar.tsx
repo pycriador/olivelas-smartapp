@@ -81,7 +81,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeView, onViewChange }) =>
           </span>
         </div>
         <div className="mt-1 text-[11px] text-[#829AB1]">
-          Loft Design Tokens enforced
+          Olivelas Design Tokens enforced
         </div>
       </div>
     </aside>

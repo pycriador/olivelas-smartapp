@@ -72,7 +72,7 @@ class ValidateConfigRequest(BaseModel):
     specification_ids: list[str] = Field(default_factory=list)
     ui_library: str | None = Field(
         default=None,
-        description="Stack/biblioteca de UI declarada no projeto (ex.: 'copan', 'antd', 'mui', 'tailwind'). O Copan ('@loft/react-loft') é mandatório para toda aplicação padrão Loft — declarar outra biblioteca não rebaixa a severidade das regras Copan, apenas é citado no diagnóstico para orientar a migração.",
+        description="Stack/biblioteca de UI declarada no projeto (ex.: 'copan', 'antd', 'mui', 'tailwind'). O Copan ('@loft/react-loft') é mandatório para toda aplicação padrão Olivelas — declarar outra biblioteca não rebaixa a severidade das regras Copan, apenas é citado no diagnóstico para orientar a migração.",
     )
     dependencies: list[str] | dict[str, Any] | None = Field(
         default=None,
@@ -216,7 +216,7 @@ async def validate_config(body: ValidateConfigRequest, claims: dict[str, Any] = 
         de stack/tokens (`validation_scope = "code_and_manifest_audited"`).
       - As regras de UI do Copan (`rul_copan_01_brand_orange`, `rul_copan_02_tokens_only`, `rul_copan_07_component_library_mandatory`)
         são **sempre `CRITICAL`** quando há componentes de frontend (`can_publish = false`, HTTP 422) — declarar `ui_library`
-        diferente de Copan (ex.: `'antd'`) não rebaixa mais a severidade; o Copan é mandatório para toda aplicação padrão Loft.
+        diferente de Copan (ex.: `'antd'`) não rebaixa mais a severidade; o Copan é mandatório para toda aplicação padrão Olivelas.
     """
     result = blueprint_validation_service.validate_blueprint_configuration(
         architecture_id=body.architecture_id,

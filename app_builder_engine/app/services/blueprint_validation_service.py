@@ -287,7 +287,7 @@ class BlueprintValidationService:
 
         # Check architecture required rules. Copan UI rules are CRITICAL unconditionally —
         # declaring a different 'ui_library' no longer downgrades them, since Copan is
-        # mandatory for every Loft standard application (rul_copan_07), not an optional style.
+        # mandatory for every Olivelas standard application (rul_copan_07), not an optional style.
         if arch and arch.rules:
             for req_r in arch.rules:
                 if req_r not in active_rules and req_r in db.rules:
@@ -302,7 +302,7 @@ class BlueprintValidationService:
                                 f"A arquitetura '{arch.name}' exige a Golden Rule '{rule_name}' ({req_r}). "
                                 + (
                                     f"O projeto declarou 'ui_library={detected_ui_lib}', mas o Copan ('@loft/react-loft') "
-                                    "é obrigatório para toda aplicação padrão Loft — não há exceção por biblioteca declarada."
+                                    "é obrigatório para toda aplicação padrão Olivelas — não há exceção por biblioteca declarada."
                                     if _is_copan_ui_rule(req_r) and has_explicit_non_copan_ui
                                     else ""
                                 )
@@ -360,7 +360,7 @@ class BlueprintValidationService:
                     category="RULE",
                     message=(
                         f"Componentes visuais exigem a Golden Rule 'Biblioteca de Componentes Obrigatória: Copan' ({copan_rule_id}). "
-                        "O Copan ('@loft/react-loft' + '@loft/tokens-loft') é mandatório para toda aplicação padrão Loft — "
+                        "O Copan ('@loft/react-loft' + '@loft/tokens-loft') é mandatório para toda aplicação padrão Olivelas — "
                         "não existe mais uma opção de declarar outra 'ui_library' (ex.: 'antd') para dispensar esta regra."
                         + (f" (ui_library declarada: '{detected_ui_lib}')" if has_explicit_non_copan_ui else "")
                     ),
@@ -457,7 +457,7 @@ class BlueprintValidationService:
                     code="MISSING_SECURITY_RULE",
                     severity=ValidationSeverity.CRITICAL,
                     category="RULE",
-                    message="Módulos de backend/segurança exigem a Golden Rule de Envelope e Tratamento de Erros da Loft.",
+                    message="Módulos de backend/segurança exigem a Golden Rule de Envelope e Tratamento de Erros da Olivelas.",
                     resource_id=sec_rule_id,
                     resource_type="rule",
                     recommended_action=RecommendedAction(
@@ -496,7 +496,7 @@ class BlueprintValidationService:
                     code="RECOMMENDED_SPEC_MISSING",
                     severity=ValidationSeverity.INFO,
                     category="SPECIFICATION",
-                    message="Recomenda-se associar uma especificação de engenharia (SDD) para conformidade com a arquitetura Loft.",
+                    message="Recomenda-se associar uma especificação de engenharia (SDD) para conformidade com a arquitetura Olivelas.",
                     resource_id=be_spec_id,
                     resource_type="specification",
                     recommended_action=RecommendedAction(

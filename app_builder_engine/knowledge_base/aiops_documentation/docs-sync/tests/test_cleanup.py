@@ -6,8 +6,8 @@ from docs_sync.confluence import FakeConfluenceClient
 
 def _seed_space(client: FakeConfluenceClient) -> None:
     home = client.create_page(
-        title="AIOps",
-        space_key="AIOps",
+        title="Olivelas",
+        space_key="Olivelas",
         body_storage="",
         parent_id=None,
         labels=[],
@@ -17,7 +17,7 @@ def _seed_space(client: FakeConfluenceClient) -> None:
 
     docs_inicial = client.create_page(
         title="Documentação Inicial",
-        space_key="AIOps",
+        space_key="Olivelas",
         body_storage="",
         parent_id=home.page_id,
         labels=[],
@@ -26,7 +26,7 @@ def _seed_space(client: FakeConfluenceClient) -> None:
     )
     client.create_page(
         title="Índice da documentação",
-        space_key="AIOps",
+        space_key="Olivelas",
         body_storage="<p>index</p>",
         parent_id=docs_inicial.page_id,
         labels=[],
@@ -34,16 +34,16 @@ def _seed_space(client: FakeConfluenceClient) -> None:
     )
 
     junk_parent = client.create_page(
-        title="AIOps Docs · docs › pt-BR › templates",
-        space_key="AIOps",
+        title="Olivelas Docs · docs › pt-BR › templates",
+        space_key="Olivelas",
         body_storage="",
         parent_id=home.page_id,
         labels=[],
         properties={},
     )
     client.create_page(
-        title="AIOps Docs · docs › pt-BR › templates › alert",
-        space_key="AIOps",
+        title="Olivelas Docs · docs › pt-BR › templates › alert",
+        space_key="Olivelas",
         body_storage="<p>junk</p>",
         parent_id=junk_parent.page_id,
         labels=[],
@@ -51,8 +51,8 @@ def _seed_space(client: FakeConfluenceClient) -> None:
     )
     # Orphan not under homepage tree
     client.create_page(
-        title="AIOps Docs · docs › en › rollback",
-        space_key="AIOps",
+        title="Olivelas Docs · docs › en › rollback",
+        space_key="Olivelas",
         body_storage="<p>orphan</p>",
         parent_id=None,
         labels=[],
@@ -72,16 +72,16 @@ def test_collect_prefix_skips_legitimate_tree():
 
     matches = collect_title_matches(
         client,
-        space_key="AIOps",
-        title="AIOps Docs",
+        space_key="Olivelas",
+        title="Olivelas Docs",
         match="prefix",
         protected_ids=protected,
     )
     titles = {m.title for m in matches}
     assert "Documentação Inicial" not in titles
     assert "Índice da documentação" not in titles
-    assert "AIOps Docs · docs › pt-BR › templates › alert" in titles
-    assert "AIOps Docs · docs › en › rollback" in titles
+    assert "Olivelas Docs · docs › pt-BR › templates › alert" in titles
+    assert "Olivelas Docs · docs › en › rollback" in titles
     # deepest first
     assert matches[0].depth >= matches[-1].depth
 
@@ -92,8 +92,8 @@ def test_cleanup_dry_run_does_not_delete():
     before = len(client.pages)
     report = run_cleanup(
         client,
-        space_key="AIOps",
-        title="AIOps Docs",
+        space_key="Olivelas",
+        title="Olivelas Docs",
         match="prefix",
         protected_ids={client.homepage_id},
         dry_run=True,
@@ -114,8 +114,8 @@ def test_cleanup_deletes_matches_and_keeps_protected():
 
     report = run_cleanup(
         client,
-        space_key="AIOps",
-        title="AIOps Docs",
+        space_key="Olivelas",
+        title="Olivelas Docs",
         match="prefix",
         protected_ids=protected,
         dry_run=False,
@@ -126,16 +126,16 @@ def test_cleanup_deletes_matches_and_keeps_protected():
     remaining_titles = {p.title for p in client.pages.values()}
     assert "Documentação Inicial" in remaining_titles
     assert "Índice da documentação" in remaining_titles
-    assert "AIOps" in remaining_titles
-    assert not any(t.startswith("AIOps Docs") for t in remaining_titles)
+    assert "Olivelas" in remaining_titles
+    assert not any(t.startswith("Olivelas Docs") for t in remaining_titles)
 
 
 def test_exact_match_only():
     client = FakeConfluenceClient()
     _seed_space(client)
     client.create_page(
-        title="AIOps Docs",
-        space_key="AIOps",
+        title="Olivelas Docs",
+        space_key="Olivelas",
         body_storage="",
         parent_id=client.homepage_id,
         labels=[],
@@ -144,10 +144,10 @@ def test_exact_match_only():
     )
     matches = collect_title_matches(
         client,
-        space_key="AIOps",
-        title="AIOps Docs",
+        space_key="Olivelas",
+        title="Olivelas Docs",
         match="exact",
         protected_ids={client.homepage_id},
     )
     assert len(matches) == 1
-    assert matches[0].title == "AIOps Docs"
+    assert matches[0].title == "Olivelas Docs"

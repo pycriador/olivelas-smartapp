@@ -1,6 +1,6 @@
 # 📦 App Builder Engine Python SDK (`api_client`)
 
-> SDK Python oficial e cliente de integração para a plataforma **Loft App Builder Engine**.  
+> SDK Python oficial e cliente de integração para a plataforma **Olivelas App Builder Engine**.  
 > Permite compor blueprints de arquitetura via IA, consultar catálogos de componentes Copan, validar regras de engenharia e scaffoldar aplicações fullstack de forma 100% automatizada.
 
 ---
@@ -34,7 +34,7 @@ print(health)
 # Login seguro com retorno de JWT Bearer Token via variáveis de ambiente
 import os
 login = client.auth.login(
-    username_or_email=os.getenv("LOFT_ADMIN_USER", "admin@loft.com.br"),
+    username_or_email=os.getenv("LOFT_ADMIN_USER", "admin@olivelas.com.br"),
     password=os.getenv("LOFT_ADMIN_PASSWORD", "")
 )
 print(f"Token ativo: {login.access_token}")
@@ -50,7 +50,7 @@ print(f"Token ativo: {login.access_token}")
 # - Contratos REST de API
 # - Checklist de segurança
 blueprint = client.ai.compose_blueprint(
-    name="Loft Fiança Aluguel",
+    name="Olivelas Fiança Aluguel",
     description="Portal de esteira de garantia locatícia e análise de crédito",
     requirements=[
         "Autenticação JWT com RBAC",
@@ -79,7 +79,7 @@ relations = client.catalog.get_relations_360("component", "cmp_fe_data_table")
 ### 5. Registro de Projetos & Blueprints
 ```python
 project = client.projects.create_project(
-    name="Loft Fiança Aluguel",
+    name="Olivelas Fiança Aluguel",
     description="Portal de esteira de garantia locatícia",
     template_id="tpl_loft_credit_risk_engine",
 )
@@ -93,7 +93,7 @@ from api_client.scaffolder import ApplicationScaffolder
 scaffolder = ApplicationScaffolder(target_dir="./meu-novo-app")
 resultado = scaffolder.scaffold(
     blueprint=blueprint,
-    app_name="Loft Fiança Aluguel"
+    app_name="Olivelas Fiança Aluguel"
 )
 print(f"{resultado['files_created_count']} arquivos criados com sucesso!")
 ```

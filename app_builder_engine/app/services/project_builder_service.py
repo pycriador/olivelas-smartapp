@@ -157,13 +157,13 @@ class ProjectBuilderService:
 
         # 7. Implementation Steps
         implementation_steps = [
-            "1. Setup de pastas seguindo o padrão oficial Loft (backend/app e frontend/src).",
+            "1. Setup de pastas seguindo o padrão oficial Olivelas (backend/app e frontend/src).",
             "2. Configuração de variáveis de ambiente com Pydantic Settings no backend e .env (prefixo VITE_) no frontend.",
             "3. Criação de modelos SQLAlchemy 2.x assíncronos e migrations com Alembic.",
             "4. Criação dos schemas Pydantic v2 (Create, Update, Response) para os contratos de API.",
             "5. Implementação dos repositories e application services com isolamento multi-tenant.",
             "6. Implementação dos routers FastAPI REST com injeção de dependência.",
-            "7. Setup do tema Ant Design com tokens de marca Loft (#FF774A) e ConfigProvider.",
+            "7. Setup do tema Ant Design com tokens de marca Olivelas (#FF774A) e ConfigProvider.",
             "8. Implementação dos componentes Tier 1 (PageHeader, DataTable, FilterBar) e telas com os 7 estados obrigatórios.",
             "9. Execução da suíte de testes (Pytest no backend, Vitest no frontend) e validação de regras.",
         ]
@@ -181,7 +181,7 @@ Você é o engenheiro responsável por construir a aplicação **{req.project_na
 - **Autenticação:** {'Sim (JWT + Argon2id)' if req.has_authentication else 'Não'}
 
 ## REGRAS DE OURO OBRIGATÓRIAS (NÃO VIOLE):
-1. **Frontend:** NUNCA importar pacotes `@loft/*` ou Copan. Use Ant Design + Loft Tokens (#FF774A).
+1. **Frontend:** NUNCA importar pacotes `@loft/*` ou Copan. Use Ant Design + Olivelas Tokens (#FF774A).
 2. **Server State:** Use exclusivamente TanStack Query no frontend. Nunca faça `fetch` dentro de `useEffect`.
 3. **Backend:** FastAPI + SQLAlchemy 2.x async. NUNCA coloque regras de negócio ou SQL dentro dos Routers.
 4. **Segurança:** Zero Trust. NUNCA confie em `tenant_id` vindo do cliente.
@@ -221,7 +221,7 @@ Siga rigorosamente a estrutura de pastas e os contratos de API fornecidos no Blu
         return ProjectBlueprintResponse(
             project_name=req.project_name,
             target_type=req.target_type,
-            summary=f"Blueprint técnico para {req.project_name} baseado no padrão de engenharia Loft.",
+            summary=f"Blueprint técnico para {req.project_name} baseado no padrão de engenharia Olivelas.",
             architecture=arch,
             folder_tree=folder_tree,
             required_frontend_components=[

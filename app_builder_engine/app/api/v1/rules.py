@@ -26,7 +26,7 @@ async def list_rules(
     severity: RuleSeverity | None = None,
     service: RulesService = Depends(get_rules_service),
 ):
-    """List architectural and security rules defined across the Loft SDDs."""
+    """List architectural and security rules defined across the Olivelas SDDs."""
     rules = service.list_rules(category=category, severity=severity)
     return PaginatedResponse(
         data=rules,
@@ -53,7 +53,7 @@ async def validate_code(
     body: RuleValidationRequest,
     service: RulesService = Depends(get_rules_service),
 ):
-    """Validate a code snippet or architectural decision against Loft Golden Rules."""
+    """Validate a code snippet or architectural decision against Olivelas Golden Rules."""
     return service.validate_code_or_decision(
         text=body.code_or_decision,
         category=body.category,

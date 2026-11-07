@@ -43,7 +43,7 @@ async def update_gateway_policy(
 ):
     """Updates AI Gateway routing, fallback, and caching policies."""
     rbac_service.require_permission("ai.gateway:manage", user_role=claims.get("role"))
-    actor = claims.get("email", "willian.jesus@loft.com.br")
+    actor = claims.get("email", "willian.jesus@olivelas.com.br")
     updated = ai_gateway_service.update_policy(body.model_dump(), actor_email=actor)
     return ApiResponse(data=updated)
 
@@ -75,6 +75,6 @@ async def execute_prompt_gateway(
 ):
     """Executes a prompt through the AI Gateway with safety, fallback, and caching."""
     rbac_service.require_permission("ai.gateway:execute", user_role=claims.get("role"))
-    actor = claims.get("email", "willian.jesus@loft.com.br")
+    actor = claims.get("email", "willian.jesus@olivelas.com.br")
     result = await ai_gateway_service.execute_prompt(body, actor_email=actor)
     return ApiResponse(data=result)

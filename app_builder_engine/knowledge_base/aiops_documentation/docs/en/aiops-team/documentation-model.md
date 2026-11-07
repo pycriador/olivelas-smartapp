@@ -1,13 +1,13 @@
 ---
-id: REF-AIOPS-TEAM-002
-title: "AIOps documentation model — 3 levels"
+id: REF-OLIVELAS-TEAM-002
+title: "Olivelas documentation model — 3 levels"
 status: "DRAFT"
 owner: "aiops"
 updated: "2026-08-24"
 review_date: "2026-11-24"
 ---
 
-# AIOps documentation model — 3 levels
+# Olivelas documentation model — 3 levels
 
 > Language: EN | [Português (pt-BR)](../../pt-BR/aiops-team/documentation-model.md)
 >
@@ -15,11 +15,11 @@ review_date: "2026-11-24"
 >
 > Documentation Standard v1.0
 
-Defines where each type of AIOps knowledge is written and how to publish to Confluence via `docs-sync`.
+Defines where each type of Olivelas knowledge is written and how to publish to Confluence via `docs-sync`.
 
 ## Levels
 
-### Level 1 — AIOps / Team
+### Level 1 — Olivelas / Team
 
 **Location:** `docs/{lang}/aiops-team/`
 
@@ -33,7 +33,7 @@ Cross-squad content: identity, responsibilities, product catalog, working standa
 
 One page per product with: goal, context, users, impact, summarized architecture, integrations, and **blob links** to technical docs in the app repo.
 
-**Publish:** two Confluence profiles when applicable — tree under [Documentação Inicial](https://loftbr.atlassian.net/wiki/spaces/AIOps/folder/6086460456) and [AIOps - Stack](https://loftbr.atlassian.net/wiki/spaces/AIOps/pages/6091309071) pack.
+**Publish:** two Confluence profiles when applicable — tree under [Documentação Inicial](https://loftbr.atlassian.net/wiki/spaces/Olivelas/folder/6086460456) and [Olivelas - Stack](https://loftbr.atlassian.net/wiki/spaces/Olivelas/pages/6091309071) pack.
 
 ### Level 3 — Repository / README
 
@@ -57,6 +57,6 @@ Skill: [`.cursor/skills/sync-aiops-hub/SKILL.md`](../../../.cursor/skills/sync-a
 | Surface | Role |
 | --- | --- |
 | GitHub / local checkout | Source of truth (Markdown) |
-| Confluence AIOps | Published view (`docs-sync`, one-way) |
+| Confluence Olivelas | Published view (`docs-sync`, one-way) |
 
 Full policy: [publishing-surfaces.md](../publishing-surfaces.md).

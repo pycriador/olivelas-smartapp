@@ -25,7 +25,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
     {
       icon: <AppstoreOutlined style={{ fontSize: 28, color: '#FF774A' }} />,
       title: 'Catálogo Canônico 360°',
-      description: '180 componentes reais (80 frontend e 100 backend) indexados diretamente da base de código da Loft com preview, contratos de props e rastreabilidade.',
+      description: '180 componentes reais (80 frontend e 100 backend) indexados diretamente da base de código da Olivelas com preview, contratos de props e rastreabilidade.',
     },
     {
       icon: <ThunderboltOutlined style={{ fontSize: 28, color: '#FF774A' }} />,
@@ -44,7 +44,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
     },
     {
       icon: <ApiOutlined style={{ fontSize: 28, color: '#722ED1' }} />,
-      title: 'Loft AI Gateway',
+      title: 'Olivelas AI Gateway',
       description: 'Camada de integração para Agentes de IA consultarem o catálogo, proporem blueprints validados e gerarem código aderente às diretrizes.',
     },
     {
@@ -57,8 +57,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
   const faqs = [
     {
       key: '1',
-      label: 'O que é o Loft App Builder Engine?',
-      children: 'É a plataforma central de engenharia e governança da Loft para composição, validação e orquestração de aplicações web utilizando componentes do Design System Copan e especificações SDD.',
+      label: 'O que é o Olivelas App Builder Engine?',
+      children: 'É a plataforma central de engenharia e governança da Olivelas para composição, validação e orquestração de aplicações web utilizando componentes do Design System Copan e especificações SDD.',
     },
     {
       key: '2',
@@ -68,7 +68,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
     {
       key: '3',
       label: 'Quais componentes estão disponíveis no catálogo?',
-      children: 'O catálogo conta com todos os componentes canônicos da Loft (PageContainer, DataTable, FilterBar, StatusTag, KPIWidget, AppSwitcher, etc.) e serviços de backend padronizados.',
+      children: 'O catálogo conta com todos os componentes canônicos da Olivelas (PageContainer, DataTable, FilterBar, StatusTag, KPIWidget, AppSwitcher, etc.) e serviços de backend padronizados.',
     },
   ];
 
@@ -103,11 +103,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
               fontSize: 18,
             }}
           >
-            L
+            O
           </div>
           <div>
             <Text strong style={{ fontSize: 16, color: '#1F2937' }}>
-              Loft App Builder
+              Olivelas App Builder
             </Text>
             <Tag color="orange" style={{ marginLeft: 8, fontSize: 11, borderRadius: 10 }}>
               v1.0 Canônica
@@ -159,7 +159,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
           🚀 Plataforma Oficial de Engenharia & Design System Copan
         </Tag>
         <Title level={1} style={{ fontSize: 44, fontWeight: 800, color: '#111827', maxWidth: 850, margin: '0 auto 20px' }}>
-          Construa, Valide e Governe Aplicações Loft com Alta Velocidade
+          Construa, Valide e Governe Aplicações Olivelas com Alta Velocidade
         </Title>
         <Paragraph style={{ fontSize: 18, color: '#4B5563', maxWidth: 700, margin: '0 auto 36px', lineHeight: 1.6 }}>
           Ecossistema fullstack com 180 componentes canônicos, motor determinístico de blueprints, segurança IAM empresarial e conformidade com as diretrizes do SDD.
@@ -269,7 +269,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
         </Space>
         <div>
           <Text style={{ color: '#6B7280', fontSize: 13 }}>
-            © 2026 Loft Inc. — Plataforma de Engenharia e Composição Arquitetural. Todos os direitos reservados.
+            © 2026 Olivelas Inc. — Plataforma de Engenharia e Composição Arquitetural. Todos os direitos reservados.
           </Text>
         </div>
       </div>

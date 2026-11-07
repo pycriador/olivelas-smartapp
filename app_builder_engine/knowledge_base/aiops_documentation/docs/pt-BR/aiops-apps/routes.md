@@ -84,7 +84,7 @@ Front (react-router):
 
 ---
 
-## Loft Carteiras — API
+## Olivelas Carteiras — API
 
 | Prefix | Exemplos |
 | --- | --- |

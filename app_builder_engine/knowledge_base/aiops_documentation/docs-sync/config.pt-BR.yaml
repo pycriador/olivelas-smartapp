@@ -1,8 +1,8 @@
-# Publish docs/pt-BR into Confluence space AIOps under folder "Documentação Inicial".
+# Publish docs/pt-BR into Confluence space Olivelas under folder "Documentação Inicial".
 # Secrets MUST come from environment variables — never commit tokens.
 #
 # Parent folder:
-#   https://loftbr.atlassian.net/wiki/spaces/AIOps/folder/6086460456
+#   https://loftbr.atlassian.net/wiki/spaces/Olivelas/folder/6086460456
 #
 # Usage:
 #   set -a && source ../.env && set +a
@@ -16,7 +16,7 @@
 
 project:
   name: "aiops-documentation-pt-BR"
-  repository_url: "https://github.com/loft-br/aiops-documentation"
+  repository_url: "https://github.com/pycriador/olivelas-smartapp"
 
 confluence:
   url: "${CONFLUENCE_URL}"

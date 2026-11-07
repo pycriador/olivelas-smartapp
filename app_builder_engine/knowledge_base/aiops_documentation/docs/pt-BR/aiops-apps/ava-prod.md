@@ -8,7 +8,7 @@
 >
 > Authority: Verified
 
-Documentação **as-is** do app [loft-br/ava-prod](https://github.com/loft-br/ava-prod) no catálogo AIOps. Evidência cruzada com a documentação do próprio repo (`docs/` em `ava-prod`) e com código/`pyproject.toml`/`Dockerfile`/workflow.
+Documentação **as-is** do app [loft-br/ava-prod](https://github.com/loft-br/ava-prod) no catálogo Olivelas. Evidência cruzada com a documentação do próprio repo (`docs/` em `ava-prod`) e com código/`pyproject.toml`/`Dockerfile`/workflow.
 
 ## O que é
 
@@ -45,7 +45,7 @@ ava-prod/
 └── docs/                          # documentação as-is do próprio produto
 ```
 
-## Deploy (padrão Loft)
+## Deploy (padrão Olivelas)
 
 | Campo | Valor |
 | --- | --- |

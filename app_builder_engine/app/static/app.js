@@ -1,5 +1,5 @@
 /**
- * App Builder Engine — Frontend Application Controller (Loft Copan Portal Standard)
+ * App Builder Engine — Frontend Application Controller (Olivelas Copan Portal Standard)
  * Features: Core Catalog, 360° Building Blocks Inspector, Interactive Blueprint Workshop & CRUD
  */
 
@@ -22,8 +22,8 @@ const state = {
   current360Data: null,
   // Blueprint Workshop State
   workshop: {
-    name: 'Loft Partner Portal',
-    description: 'Portal de relacionamento com corretores e imobiliárias parceiras da Loft.',
+    name: 'Olivelas Partner Portal',
+    description: 'Portal de relacionamento com corretores e imobiliárias parceiras da Olivelas.',
     architectureId: 'arch_loft_standard_fullstack',
     projectId: '',
     selectedModules: ['mod_layout_navigation', 'mod_data_table_filtering'],
@@ -722,7 +722,7 @@ async function renderBlueprintWorkshopView(container) {
             <div>
               <label class="block text-xs font-semibold text-[#121619] mb-1">Arquitetura Alvo</label>
               <select id="workshop-app-arch" onchange="state.workshop.architectureId = this.value; updateWorkshopLivePreview();" class="w-full px-3 py-2 rounded-lg bg-white border border-[#E1E9EF] text-xs text-[#121619] focus:outline-none focus:border-[#F56738] shadow-2xs">
-                <option value="arch-modular-monolith" selected>Modular Monolith (Recomendado Loft)</option>
+                <option value="arch-modular-monolith" selected>Modular Monolith (Recomendado Olivelas)</option>
                 <option value="arch-layered-api">Layered Architecture (FastAPI + React Copan)</option>
                 <option value="arch-event-driven">Event Driven</option>
                 <option value="arch-microservices">Microservices</option>
@@ -884,7 +884,7 @@ function updateWorkshopLivePreview() {
       <div class="space-y-1">
         <div class="p-1.5 rounded bg-[#E8F5F0] text-[#115644] text-[10px] border border-[#A2DEC9] flex items-center gap-1.5 font-medium">
           <i data-lucide="shield-check" class="w-3.5 h-3.5 text-[#20A483]"></i>
-          <span>Copan Design System (Loft UI Inter + #F56738)</span>
+          <span>Copan Design System (Olivelas UI Inter + #F56738)</span>
         </div>
         <div class="p-1.5 rounded bg-[#E8F5F0] text-[#115644] text-[10px] border border-[#A2DEC9] flex items-center gap-1.5 font-medium">
           <i data-lucide="shield-check" class="w-3.5 h-3.5 text-[#20A483]"></i>
@@ -1480,7 +1480,7 @@ async function renderTemplatesView(container) {
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2">
       <div>
         <h1 class="text-2xl font-bold text-[#121619] tracking-tight">Catálogo de Templates</h1>
-        <p class="text-xs text-[#697077] mt-0.5">Composições arquiteturais reutilizáveis para scaffolding de aplicações Loft.</p>
+        <p class="text-xs text-[#697077] mt-0.5">Composições arquiteturais reutilizáveis para scaffolding de aplicações Olivelas.</p>
       </div>
       <button onclick="openCreateTemplateModal()" class="btn-copan-primary px-4 py-2 text-xs flex items-center gap-1.5 shadow-sm font-semibold">
         <i data-lucide="plus" class="w-4 h-4"></i>
@@ -1536,7 +1536,7 @@ async function renderRulesView(container) {
   container.innerHTML = `
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2">
       <div>
-        <h1 class="text-2xl font-bold text-[#121619] tracking-tight">Rules Engine & Golden Rules da Loft</h1>
+        <h1 class="text-2xl font-bold text-[#121619] tracking-tight">Rules Engine & Golden Rules da Olivelas</h1>
         <p class="text-xs text-[#697077] mt-0.5">Regras mandatórias de arquitetura, Copan Design System e segurança aplicadas aos agentes.</p>
       </div>
       <button onclick="openCreateRuleModal()" class="btn-copan-primary px-4 py-2 text-xs flex items-center gap-1.5 shadow-sm font-semibold">
@@ -1605,7 +1605,7 @@ async function renderSpecificationsView(container) {
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2">
       <div>
         <h1 class="text-2xl font-bold text-[#121619] tracking-tight">Software Design Documents (SDDs)</h1>
-        <p class="text-xs text-[#697077] mt-0.5">Especificações canônicas indexadas da Loft para consulta e contextualização de IA.</p>
+        <p class="text-xs text-[#697077] mt-0.5">Especificações canônicas indexadas da Olivelas para consulta e contextualização de IA.</p>
       </div>
       <button onclick="openCreateSpecModal()" class="btn-copan-primary px-4 py-2 text-xs flex items-center gap-1.5 shadow-sm font-semibold">
         <i data-lucide="plus" class="w-4 h-4"></i>
@@ -1852,7 +1852,7 @@ function renderAIApiAccessView(container) {
         { method: 'POST', path: '/api/v1/blueprints/build', desc: 'Construção direta e personalizada de Blueprint a partir de blocos selecionados.' },
         { method: 'GET', path: '/api/v1/relations/{type}/{id}', desc: 'Grafo 360° de conhecimento e relacionamentos de qualquer building block.' },
         { method: 'GET', path: '/api/v1/components', desc: 'Lista de componentes Copan de UI e Backend com dependências e regras.' },
-        { method: 'GET', path: '/api/v1/rules', desc: 'Catálogo de Golden Rules de arquitetura, Copan e segurança da Loft.' },
+        { method: 'GET', path: '/api/v1/rules', desc: 'Catálogo de Golden Rules de arquitetura, Copan e segurança da Olivelas.' },
         { method: 'GET', path: '/api/v1/architectures', desc: 'Padrões de arquitetura e estruturas de pastas recomendadas.' },
         { method: 'GET', path: '/api/v1/specifications', desc: 'Resumo e índice de todas as especificações técnicas (SDDs).' },
         { method: 'POST', path: '/api/v1/search', desc: 'Busca unificada em toda a base de conhecimento e catálogos.' },
@@ -2344,7 +2344,7 @@ function openCreateTemplateModal() {
 }
 
 function openCreateSpecModal() {
-  showToast('Especificações são sincronizadas automaticamente a partir dos arquivos SDD da Loft.', 'info');
+  showToast('Especificações são sincronizadas automaticamente a partir dos arquivos SDD da Olivelas.', 'info');
 }
 
 // ---------------------------------------------------------------------------

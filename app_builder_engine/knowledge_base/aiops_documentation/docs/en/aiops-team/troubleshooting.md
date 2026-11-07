@@ -1,6 +1,6 @@
 ---
-id: REF-AIOPS-TEAM-011
-title: "AIOps — Troubleshooting"
+id: REF-OLIVELAS-TEAM-011
+title: "Olivelas — Troubleshooting"
 status: "DRAFT"
 owner: "aiops"
 updated: "2026-08-24"
@@ -15,7 +15,7 @@ review_date: "2026-11-24"
 >
 > Documentation Standard v1.0
 
-Cross-cutting runbook for incidents and common issues in AIOps services. **App-specific troubleshooting** lives in each repository README (level 3).
+Cross-cutting runbook for incidents and common issues in Olivelas services. **App-specific troubleshooting** lives in each repository README (level 3).
 
 ## General flow
 
@@ -53,7 +53,7 @@ Datadog alert / user report
 | DataForge | [dataforge.md](../aiops-apps/dataforge.md) | [README](https://github.com/loft-br/aiops-dataforge/blob/main/README.md) |
 | Deep Insight | [deep-insight.md](../aiops-apps/deep-insight.md) | [README](https://github.com/loft-br/aiops-deep-insight/blob/main/README.md) |
 | Qualidade | [qualidade-loft.md](../aiops-apps/qualidade-loft.md) | [README](https://github.com/loft-br/qualidade-loft/blob/main/README.md) |
-| Loft Carteiras | [loft-carteiras.md](../aiops-apps/loft-carteiras.md) | [README](https://github.com/loft-br/aiops-loft-carteira/blob/main/README.md) |
+| Olivelas Carteiras | [loft-carteiras.md](../aiops-apps/loft-carteiras.md) | [README](https://github.com/loft-br/aiops-loft-carteira/blob/main/README.md) |
 | AVA | [ava-prod.md](../aiops-apps/ava-prod.md) | [README](https://github.com/loft-br/ava-prod/blob/main/README.md) |
 
 ## Related

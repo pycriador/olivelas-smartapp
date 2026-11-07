@@ -1,17 +1,17 @@
 ---
 name: sync-aiops-hub
 description: >-
-  On-demand update and Confluence publish for the AIOps 3-level documentation
+  On-demand update and Confluence publish for the Olivelas 3-level documentation
   hub (team / application / repository). Reads hub-registry.yaml, edits Markdown
   in aiops-documentation for levels 1–2, opens PRs in app repos for level 3 READMEs,
-  and runs scoped docs-sync. Use when the user asks to update the AIOps team hub,
-  sync an app page to Confluence, refresh level-3 README links, or run the AIOps
+  and runs scoped docs-sync. Use when the user asks to update the Olivelas team hub,
+  sync an app page to Confluence, refresh level-3 README links, or run the Olivelas
   documentation model workflow.
 ---
 
-# Sync AIOps Hub (3 levels)
+# Sync Olivelas Hub (3 levels)
 
-On-demand workflow for the AIOps documentation model. **Markdown in this repo is SoT** for levels 1–2; **app repo README is SoT** for level 3.
+On-demand workflow for the Olivelas documentation model. **Markdown in this repo is SoT** for levels 1–2; **app repo README is SoT** for level 3.
 
 ## Before starting
 
@@ -66,7 +66,7 @@ cd docs-sync && set -a && source ../.env && set +a
 uv run docs-sync sync --config aiops-config/documentacao-inicial.pt-BR.yaml \
   --docs ../../docs/pt-BR/aiops-team --changes-only --relink
 uv run docs-sync sync --config aiops-config/aiops-apps.pt-BR.yaml \
-  --only REF-AIOPS-APPS-008 --changes-only --relink
+  --only REF-OLIVELAS-APPS-008 --changes-only --relink
 ```
 
 ## Level 3 workflow

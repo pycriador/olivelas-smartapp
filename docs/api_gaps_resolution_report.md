@@ -1,14 +1,14 @@
-# Relatório de Resolução das Lacunas de API e Catálogo — Loft App Builder Engine
+# Relatório de Resolução das Lacunas de API e Catálogo — Olivelas App Builder Engine
 
 **Data de Atualização:** 19 de Outubro de 2026  
-**Serviço Alvo:** Loft App Builder Engine (`http://127.0.0.1:8000`)  
+**Serviço Alvo:** Olivelas App Builder Engine (`http://127.0.0.1:8000`)  
 **Status Global:** ✅ 18 / 18 Lacunas Resolvidas e Verificadas Automatizadamente
 
 ---
 
 ## 1. Visão Geral
 
-Este documento registra a resolução técnica de todas as 18 lacunas identificadas durante a construção de aplicações reais utilizando as APIs do **Loft App Builder Engine**. Cada item detalha o comportamento anterior, a solução arquitetural implementada, os contratos de API resultantes e os arquivos atualizados.
+Este documento registra a resolução técnica de todas as 18 lacunas identificadas durante a construção de aplicações reais utilizando as APIs do **Olivelas App Builder Engine**. Cada item detalha o comportamento anterior, a solução arquitetural implementada, os contratos de API resultantes e os arquivos atualizados.
 
 ---
 
@@ -21,10 +21,10 @@ Este documento registra a resolução técnica de todas as 18 lacunas identifica
   - Requisições sem header `Authorization`, com `Bearer` vazio ou com JWT malformado/expirado/revogado retornam imediatamente **HTTP `401 Unauthorized`** com `error.code = "AUTHENTICATION_FAILED"`.
   - Os headers `X-User-Role` e `X-User-Email` foram completamente eliminados dos endpoints e do schema `/openapi.json`.
 
-### Gap 2 — Respeito aos Requisitos de Persistência (PostgreSQL / AIOps Opsbase) no Compose
+### Gap 2 — Respeito aos Requisitos de Persistência (PostgreSQL / Olivelas Opsbase) no Compose
 - **Problema Anterior:** `POST /api/v1/ai/blueprints/compose` selecionava `arch_static_landing_page` (`database: "None (Stateless / In-Memory)"`) mesmo quando os requisitos exigiam login seguro, cadastro de usuários e PostgreSQL via Opsbase.
 - **Solução Implementada:**
-  - O motor de composição (`AICompositionService`) analisa requisitos de persistência (`postgresql`, `postgres`, `opsbase`, `banco de dados`, `crud`, `login`, `usuarios`, `autenticacao`, `jwt`, `rbac`) e seleciona deterministicamente `arch_loft_postgres_opsbase_fullstack` (`PostgreSQL 16 via AIOps Opsbase (SQLAlchemy 2.0 + Alembic)`) ou `arch_loft_standard_fullstack`.
+  - O motor de composição (`AICompositionService`) analisa requisitos de persistência (`postgresql`, `postgres`, `opsbase`, `banco de dados`, `crud`, `login`, `usuarios`, `autenticacao`, `jwt`, `rbac`) e seleciona deterministicamente `arch_loft_postgres_opsbase_fullstack` (`PostgreSQL 16 via Olivelas Opsbase (SQLAlchemy 2.0 + Alembic)`) ou `arch_loft_standard_fullstack`.
   - Arquiteturas stateless (`arch_static_landing_page`) só são escolhidas quando os requisitos pedem explicitamente uma página institucional estática sem banco de dados e sem autenticação.
 
 ### Gap 3 — Alinhamento entre `compose` e `validate-config` (Zero `MODULE_NOT_FOUND`)
@@ -53,7 +53,7 @@ Este documento registra a resolução técnica de todas as 18 lacunas identifica
 ### Gap 7 — Arquitetura Canônica React + FastAPI + PostgreSQL Alinhada com a Spec Backend
 - **Problema Anterior:** `arch_loft_standard_fullstack` declarava SQLite enquanto `spec_be_loft_backend_foundation` exigia PostgreSQL + SQLAlchemy + Alembic.
 - **Solução Implementada:**
-  - `arch_loft_standard_fullstack` foi atualizado para `PostgreSQL 16 (SQLAlchemy 2.0 + Alembic / AIOps Opsbase)` e foi adicionada a arquitetura dedicada `arch_loft_postgres_opsbase_fullstack`, garantindo consistência total com `spec_be_loft_backend_foundation`.
+  - `arch_loft_standard_fullstack` foi atualizado para `PostgreSQL 16 (SQLAlchemy 2.0 + Alembic / Olivelas Opsbase)` e foi adicionada a arquitetura dedicada `arch_loft_postgres_opsbase_fullstack`, garantindo consistência total com `spec_be_loft_backend_foundation`.
 
 ### Gap 8 — Golden Rules Acionáveis (`json_schema`, `error_codes_table` e `examples`)
 - **Problema Anterior:** `rul_loft_be_api_envelope` e `rul_loft_be_error_codes` tinham `examples: null` e não traziam JSON Schema nem tabela estruturada de códigos de erro.
@@ -63,7 +63,7 @@ Este documento registra a resolução técnica de todas as 18 lacunas identifica
 ### Gap 9 — Valores Concretos na Especificação de Segurança (`spec_be_loft_backend_security_specification`)
 - **Problema Anterior:** Faltavam valores explícitos de TTL de tokens, algoritmo JWT, política de senha, rate limit, lockout e armazenamento de token no browser.
 - **Solução Implementada:**
-  - A especificação `spec_be_loft_backend_security_specification` inclui a seção canônica **Security Configuration** com todos os valores explícitos adotados pela Loft.
+  - A especificação `spec_be_loft_backend_security_specification` inclui a seção canônica **Security Configuration** com todos os valores explícitos adotados pela Olivelas.
 
 ### Gap 10 — Contrato IAM para Aplicações (`/api/v1/iam/contract`), Auto-Cadastro (`/signup`) e Membros de Grupos
 - **Problema Anterior:** Não havia matriz publicada de papel → permissões para aplicações clientes, nem endpoint público de auto-cadastro ou endpoints de membros de grupos.
@@ -169,7 +169,7 @@ Este documento registra a resolução técnica de todas as 18 lacunas identifica
 - **Solução Implementada:**
   - Adicionado `claims: dict[str, Any] = Depends(get_current_user_claims)` e a checagem `rbac_service.require_permission("ai.gateway:execute", user_role=claims.get("role"))` ao endpoint `POST /api/v1/ai/execute`.
   - Adicionada a mesma chamada de auditoria usada por `/gateway/execute` (`ai_gateway_service._record_log(...)`), registrando prompt, resposta, provedor, modelo, latência, status (`SUCCESS`/`ERROR`) e ator (`claims["email"]`) tanto em caso de sucesso quanto de falha do provedor de IA — essa trilha fica visível em `GET /api/v1/ai/gateway/logs` e na tabela `audit_logs`.
-  - **Validação ao vivo:** `POST /api/v1/ai/execute` sem header → `HTTP 401` (`AUTHENTICATION_FAILED`); com token válido → requisição autenticada e autorizada com sucesso (o provedor Gemini retornou `403` por política de rede do sandbox, não relacionado à auth), e o registro de auditoria correspondente (`actor: willian.jesus@loft.com.br`, `status: ERROR`) apareceu imediatamente em `GET /api/v1/ai/gateway/logs`.
+  - **Validação ao vivo:** `POST /api/v1/ai/execute` sem header → `HTTP 401` (`AUTHENTICATION_FAILED`); com token válido → requisição autenticada e autorizada com sucesso (o provedor Gemini retornou `403` por política de rede do sandbox, não relacionado à auth), e o registro de auditoria correspondente (`actor: willian.jesus@olivelas.com.br`, `status: ERROR`) apareceu imediatamente em `GET /api/v1/ai/gateway/logs`.
 
 ### S4 — TTL do Access Token Inconsistente Entre Código e Documentação (e uma Terceira Divergência em Runtime)
 - **Problema Observado:** `POST /api/v1/iam/login` retornava `expires_in: 900` (15 min) em teste ao vivo; `app/core/security.py` definia `ACCESS_TOKEN_EXPIRE_MINUTES = 60` (1h); e `GET /api/v1/iam/contract` + `README.md` documentavam `24h`. Três valores diferentes para o mesmo conceito.

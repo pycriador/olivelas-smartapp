@@ -71,7 +71,7 @@ async def create_agent(
 ):
     """Creates a new AI agent."""
     rbac_service.require_permission("ai.agents:create", user_role=claims.get("role"))
-    actor = claims.get("email", "willian.jesus@loft.com.br")
+    actor = claims.get("email", "willian.jesus@olivelas.com.br")
     created = ai_agent_service.create_agent(body, actor_email=actor)
     return ApiResponse(data=created)
 
@@ -84,7 +84,7 @@ async def update_agent(
 ):
     """Updates an existing AI agent."""
     rbac_service.require_permission("ai.agents:edit", user_role=claims.get("role"))
-    actor = claims.get("email", "willian.jesus@loft.com.br")
+    actor = claims.get("email", "willian.jesus@olivelas.com.br")
     updated = ai_agent_service.update_agent(agent_id, body, actor_email=actor)
     return ApiResponse(data=updated)
 
@@ -96,7 +96,7 @@ async def delete_agent(
 ):
     """Deletes an AI agent from the catalog."""
     rbac_service.require_permission("ai.agents:delete", user_role=claims.get("role"))
-    actor = claims.get("email", "willian.jesus@loft.com.br")
+    actor = claims.get("email", "willian.jesus@olivelas.com.br")
     ai_agent_service.delete_agent(agent_id, actor_email=actor)
     return None
 
@@ -109,6 +109,6 @@ async def execute_agent(
 ):
     """Executes a cognitive engineering task through the specified AI agent."""
     rbac_service.require_permission("ai.agents:execute", user_role=claims.get("role"))
-    actor = claims.get("email", "willian.jesus@loft.com.br")
+    actor = claims.get("email", "willian.jesus@olivelas.com.br")
     result = await ai_agent_service.execute_agent(agent_id, body, actor_email=actor)
     return ApiResponse(data=result)

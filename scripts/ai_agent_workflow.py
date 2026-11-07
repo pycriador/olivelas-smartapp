@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Loft App Builder Engine — AI Agent Integration Workflow (Python)
+Olivelas App Builder Engine — AI Agent Integration Workflow (Python)
 -----------------------------------------------------------------
 Comprehensive end-to-end integration script demonstrating how an autonomous AI Agent
 connects via REST API, obtains & manages JWT tokens, inspects building blocks,
@@ -24,7 +24,7 @@ except ImportError:
 
 
 class AIAgentClient:
-    """Enterprise AI Agent API Client for Loft App Builder Engine."""
+    """Enterprise AI Agent API Client for Olivelas App Builder Engine."""
 
     def __init__(self, base_url: Optional[str] = None):
         self.base_url = (base_url or os.getenv("APP_BUILDER_BASE_URL", "http://127.0.0.1:8000")).rstrip("/")
@@ -37,7 +37,7 @@ class AIAgentClient:
         headers = {
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "User-Agent": "Loft-AIAgent-Worker/1.0",
+            "User-Agent": "Olivelas-AIAgent-Worker/1.0",
         }
         if self.access_token:
             headers["Authorization"] = f"Bearer {self.access_token}"
@@ -52,7 +52,7 @@ class AIAgentClient:
 
     def authenticate(self, username_or_email: Optional[str] = None, password: Optional[str] = None) -> Dict[str, Any]:
         """Step 2: Authenticate and obtain JWT Access & Refresh Tokens."""
-        username_or_email = username_or_email or os.getenv("LOFT_ADMIN_USER", "willian.jesus@loft.com.br")
+        username_or_email = username_or_email or os.getenv("LOFT_ADMIN_USER", "willian.jesus@olivelas.com.br")
         password = password or os.getenv("LOFT_ADMIN_PASSWORD") or os.getenv("DEFAULT_ADMIN_PASSWORD", "admin_dev_pass")
 
         url = f"{self.api_v1}/iam/login"
@@ -173,7 +173,7 @@ class AIAgentClient:
 
 def run_ai_agent_pipeline():
     print("=" * 80)
-    print(" 🤖 LOFT APP BUILDER ENGINE — WORKFLOW DE INTEGRAÇÃO DE AGENTE DE IA")
+    print(" 🤖 OLIVELAS APP BUILDER ENGINE — WORKFLOW DE INTEGRAÇÃO DE AGENTE DE IA")
     print("=" * 80)
 
     client = AIAgentClient()
@@ -213,7 +213,7 @@ def run_ai_agent_pipeline():
         "Golden Rules de segurança e envelope de API padronizado",
     ]
     blueprint = client.compose_blueprint(
-        name="Loft Portal Imobiliário com PostgreSQL",
+        name="Olivelas Portal Imobiliário com PostgreSQL",
         description="Aplicação corporativa com banco relacional e esteira de crédito",
         requirements=requirements,
     )

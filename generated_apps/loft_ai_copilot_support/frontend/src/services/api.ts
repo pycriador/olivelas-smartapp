@@ -46,7 +46,7 @@ export const chatApi = {
       return res.data.data;
     } catch (e) {
       return {
-        reply: `Olá! Sou o Assistente Copilot Loft. Entendi sua mensagem sobre "${message}". No momento estou operando em modo mock autônomo. Posso te ajudar com Fiança Aluguel, documentação, ou suporte técnico!`,
+        reply: `Olá! Sou o Assistente Copilot Olivelas. Entendi sua mensagem sobre "${message}". No momento estou operando em modo mock autônomo. Posso te ajudar com Fiança Aluguel, documentação, ou suporte técnico!`,
         sender: 'assistant',
         intent: 'fallback_mock',
         confidence: 0.95,

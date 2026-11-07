@@ -284,7 +284,7 @@ export const UsersManagementPage: React.FC = () => {
               type="text"
               danger
               icon={<DeleteOutlined />}
-              disabled={record.email === 'willian.jesus@loft.com.br'}
+              disabled={record.email === 'willian.jesus@olivelas.com.br'}
             />
           </Popconfirm>
         </Space>
@@ -399,7 +399,7 @@ export const UsersManagementPage: React.FC = () => {
             <Input placeholder="ex: ana.silva" />
           </Form.Item>
           <Form.Item name="email" label="E-mail Corporativo" rules={[{ required: true, type: 'email', message: 'Insira um e-mail válido' }]}>
-            <Input placeholder="ex: ana.silva@loft.com.br" />
+            <Input placeholder="ex: ana.silva@olivelas.com.br" />
           </Form.Item>
           <Form.Item name="password" label="Senha Inicial" rules={[{ required: true, min: 8, message: 'Mínimo de 8 caracteres' }]}>
             <Input.Password placeholder="••••••••••••" />

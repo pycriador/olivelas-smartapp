@@ -23,7 +23,7 @@ async def list_components(
     search: str | None = Query(None, description="Filter components by name or description"),
     service: CatalogService = Depends(get_catalog_service),
 ):
-    """List reusable components from the Loft Component Catalog."""
+    """List reusable components from the Olivelas Component Catalog."""
     comps = service.list_components(layer=layer, category=category, search=search)
     return PaginatedResponse(
         data=comps,

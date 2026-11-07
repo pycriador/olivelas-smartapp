@@ -19,13 +19,13 @@ Browser → DNS (Route53 / infra-live)
        → <service>.cross.loft-prod.io (k8s ingress)
 ```
 
-## Onde ficam os records AIOps
+## Onde ficam os records Olivelas
 
 Base observada:
 
 [`live/aws/infrastructure/production/_global/route53/records/loft-corp.com.br/`](https://github.com/loft-br/infra-live/tree/main/live/aws/infrastructure/production/_global/route53/records/loft-corp.com.br)
 
-Cada hostname é uma pasta com `terragrunt.hcl`. Records AIOps presentes no tree:
+Cada hostname é uma pasta com `terragrunt.hcl`. Records Olivelas presentes no tree:
 
 | Pasta (FQDN) | `record_name` | `kong_accessibility` |
 | --- | --- | --- |
@@ -42,7 +42,7 @@ Não há pasta `aiops-qualidade-api.loft-corp.com.br` nesse diretório — coere
 
 ## Blueprint e CNAME
 
-Componente Terragrunt: `route53/kong-record` (versão observada nos records AIOps: **`4.2.1`**).  
+Componente Terragrunt: `route53/kong-record` (versão observada nos records Olivelas: **`4.2.1`**).  
 Fonte do blueprint: [`blueprints/aws/route53/kong-record`](https://github.com/loft-br/infra-live/tree/main/blueprints/aws/route53/kong-record).
 
 O blueprint cria um **CNAME** (TTL 300) cujo target é:
@@ -51,7 +51,7 @@ O blueprint cria um **CNAME** (TTL 300) cujo target é:
 kong-{kong_accessibility}.{aws_account}.loft-{env}.io
 ```
 
-Para os records AIOps observados:
+Para os records Olivelas observados:
 
 - `aws_account = "infrastructure"`
 - `environment = "production"` → mapeado para `prod`
@@ -119,7 +119,7 @@ Sem DNS apontando para o Kong certo, o host `*.loft-corp.com.br` não funciona �
 Templates: [dns-corp.terragrunt.hcl.example](../../en/loft-infra/examples/dns-corp.terragrunt.hcl.example), [dns-api.terragrunt.hcl.example](../../en/loft-infra/examples/dns-api.terragrunt.hcl.example).  
 Guia: [publish-guide.md](publish-guide.md).
 
-## Outros recursos AIOps em `infra-live` (fora de DNS)
+## Outros recursos Olivelas em `infra-live` (fora de DNS)
 
 Há também IaC sob contas AWS (ex.: `live/aws/cross/production/…`, RDS em `live/aws/infrastructure/production/us-east-1/aiops/…`). Escopo desta página: **DNS corp**. Detalhe de RDS/S3 por app: `[pending: inventário completo cross/aiops no infra-live]`.
 

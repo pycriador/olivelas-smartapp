@@ -8,7 +8,7 @@
 >
 > Authority: Informational
 
-Practical guide for engineers and operators triaging Loft services on EKS. Org URL: `[pending: Loft Datadog organization URL]`.
+Practical guide for engineers and operators triaging Olivelas services on EKS. Org URL: `[pending: Olivelas Datadog organization URL]`.
 
 ## Before you start
 
@@ -69,7 +69,7 @@ For each production service, expect (or plan) a dashboard covering:
 
 Saturation (CPU/memory) may come from infrastructure metrics.
 
-`[pending: standard Loft service dashboard template ID]`
+`[pending: standard Olivelas service dashboard template ID]`
 
 ## 5. Monitors and alerts
 

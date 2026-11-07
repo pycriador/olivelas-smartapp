@@ -1,5 +1,5 @@
 /**
- * Loft IAM & Access Hub — 100% Connected to App Builder Engine API (localhost:8000)
+ * Olivelas IAM & Access Hub — 100% Connected to App Builder Engine API (localhost:8000)
  */
 const API_BASE = 'http://127.0.0.1:8000/api/v1';
 
@@ -170,11 +170,11 @@ async function fetchUsers() {
 
 function loadMockUsers() {
   state.users = [
-    { id: 'usr_001', name: 'Willian Jesus', email: 'willian.jesus@loft.com.br', role: 'Global Admin', status: 'Active', groups: ['Administradores', 'Engenharia'], last_login: 'Hoje, 20:30' },
-    { id: 'usr_002', name: 'Camila Rocha', email: 'camila.rocha@loft.com.br', role: 'Admin', status: 'Active', groups: ['Produto', 'Squad Fiança'], last_login: 'Hoje, 18:45' },
-    { id: 'usr_003', name: 'Gabriel Santos', email: 'gabriel.santos@loft.com.br', role: 'Editor', status: 'Active', groups: ['Engenharia'], last_login: 'Ontem' },
-    { id: 'usr_004', name: 'Mariana Lima', email: 'mariana.lima@loft.com.br', role: 'Viewer', status: 'Active', groups: ['Operações'], last_login: '08/09/2026' },
-    { id: 'usr_005', name: 'Roberto Mendes', email: 'roberto.mendes@loft.com.br', role: 'Editor', status: 'Inactive', groups: ['Comercial'], last_login: '01/09/2026' },
+    { id: 'usr_001', name: 'Willian Jesus', email: 'willian.jesus@olivelas.com.br', role: 'Global Admin', status: 'Active', groups: ['Administradores', 'Engenharia'], last_login: 'Hoje, 20:30' },
+    { id: 'usr_002', name: 'Camila Rocha', email: 'camila.rocha@olivelas.com.br', role: 'Admin', status: 'Active', groups: ['Produto', 'Squad Fiança'], last_login: 'Hoje, 18:45' },
+    { id: 'usr_003', name: 'Gabriel Santos', email: 'gabriel.santos@olivelas.com.br', role: 'Editor', status: 'Active', groups: ['Engenharia'], last_login: 'Ontem' },
+    { id: 'usr_004', name: 'Mariana Lima', email: 'mariana.lima@olivelas.com.br', role: 'Viewer', status: 'Active', groups: ['Operações'], last_login: '08/09/2026' },
+    { id: 'usr_005', name: 'Roberto Mendes', email: 'roberto.mendes@olivelas.com.br', role: 'Editor', status: 'Inactive', groups: ['Comercial'], last_login: '01/09/2026' },
   ];
 }
 
@@ -457,9 +457,9 @@ async function fetchAuditLogs() {
 
 function loadMockAuditLogs() {
   state.auditLogs = [
-    { timestamp: 'Hoje, 20:46:12', actor: 'willian.jesus@loft.com.br', action: 'IAM_USER_AUTHENTICATE', resource: 'iam/login', status: 'SUCCESS' },
-    { timestamp: 'Hoje, 20:44:02', actor: 'willian.jesus@loft.com.br', action: 'AI_GATEWAY_EXECUTE', resource: 'gemini-3-flash-preview', status: 'SUCCESS' },
-    { timestamp: 'Hoje, 20:30:15', actor: 'camila.rocha@loft.com.br', action: 'PERMISSION_TOGGLE', resource: 'blueprints:create', status: 'SUCCESS' },
+    { timestamp: 'Hoje, 20:46:12', actor: 'willian.jesus@olivelas.com.br', action: 'IAM_USER_AUTHENTICATE', resource: 'iam/login', status: 'SUCCESS' },
+    { timestamp: 'Hoje, 20:44:02', actor: 'willian.jesus@olivelas.com.br', action: 'AI_GATEWAY_EXECUTE', resource: 'gemini-3-flash-preview', status: 'SUCCESS' },
+    { timestamp: 'Hoje, 20:30:15', actor: 'camila.rocha@olivelas.com.br', action: 'PERMISSION_TOGGLE', resource: 'blueprints:create', status: 'SUCCESS' },
     { timestamp: 'Hoje, 19:15:20', actor: 'system_daemon', action: 'SEED_DATABASE_CANONICAL', resource: 'app_builder.db', status: 'SUCCESS' },
   ];
 }
@@ -470,7 +470,7 @@ function renderAuditLogs() {
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td><span style="color:#6B7280;font-size:12px;">${log.timestamp || log.created_at || 'Recente'}</span></td>
-      <td><strong>${log.actor || log.user_email || 'willian.jesus@loft.com.br'}</strong></td>
+      <td><strong>${log.actor || log.user_email || 'willian.jesus@olivelas.com.br'}</strong></td>
       <td><code>${log.action || log.event || 'API_CALL'}</code></td>
       <td>${log.resource || log.endpoint || '/api/v1/iam'}</td>
       <td><span class="status-badge active">${log.status || 'SUCCESS'}</span></td>

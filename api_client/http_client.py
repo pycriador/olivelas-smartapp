@@ -1,7 +1,7 @@
 """
 Robust HTTP Client Transport for App Builder Engine API.
 Uses Python standard library (urllib) for zero external dependencies,
-with transparent JSON encoding/decoding, retries, and Loft envelope unwrapping.
+with transparent JSON encoding/decoding, retries, and Olivelas envelope unwrapping.
 """
 from __future__ import annotations
 import json
@@ -115,7 +115,7 @@ class HttpClient:
                         return resp_body
 
                     if unwrap_data and isinstance(parsed_json, dict) and "data" in parsed_json:
-                        # Standard Loft ApiResponse / ApiListResponse wrapper
+                        # Standard Olivelas ApiResponse / ApiListResponse wrapper
                         return parsed_json["data"]
                     return parsed_json
 

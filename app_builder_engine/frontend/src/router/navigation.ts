@@ -11,9 +11,9 @@ export interface RouteConfig {
 }
 
 export const ROUTES: RouteConfig[] = [
-  { path: '/', view: 'landing', title: 'Loft App Builder' },
-  { path: '/landing', view: 'landing', title: 'Loft App Builder' },
-  { path: '/login', view: 'login', title: 'Login — Loft App Builder' },
+  { path: '/', view: 'landing', title: 'Olivelas App Builder' },
+  { path: '/landing', view: 'landing', title: 'Olivelas App Builder' },
+  { path: '/login', view: 'login', title: 'Login — Olivelas App Builder' },
   { path: '/dashboard', view: 'dashboard', title: 'Dashboard' },
   { path: '/workshop', view: 'workshop', title: 'Blueprint Studio' },
   { path: '/projects', view: 'projects', title: 'Projetos' },

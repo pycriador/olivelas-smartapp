@@ -71,7 +71,7 @@ export const AppSwitcher: React.FC<AppSwitcherProps> = ({ isOpen, onClose }) => 
       title={
         <div className="flex items-center gap-2 pb-2 border-b border-[#E1E9EF]">
           <AppstoreOutlined className="text-[#F56738] text-lg" />
-          <span className="font-bold text-base text-[#121619]">Ecossistema de Aplicações Loft</span>
+          <span className="font-bold text-base text-[#121619]">Ecossistema de Aplicações Olivelas</span>
         </div>
       }
     >

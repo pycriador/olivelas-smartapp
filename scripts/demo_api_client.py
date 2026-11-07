@@ -33,7 +33,7 @@ def main():
     # 2. Authentication (IAM)
     print("\n2️⃣  [IAM & Authentication]")
     try:
-        admin_user = os.getenv("LOFT_ADMIN_USER", "admin@loft.com.br")
+        admin_user = os.getenv("LOFT_ADMIN_USER", "admin@olivelas.com.br")
         admin_pass = os.getenv("LOFT_ADMIN_PASSWORD") or os.getenv("DEFAULT_ADMIN_PASSWORD", "admin_dev_pass")
         login_res = client.auth.login(admin_user, admin_pass)
         print(f"   ✅ Login efetuado com sucesso!")

@@ -161,19 +161,19 @@ async def get_user(user_id: str, claims: dict[str, Any] = Depends(get_current_us
 
 @router.post("/users", response_model=ApiResponse[UserResponse], status_code=status.HTTP_201_CREATED)
 async def create_user(body: UserCreateRequest, claims: dict[str, Any] = Depends(get_current_user_claims)):
-    res = iam_service.create_user(body, actor_email=claims.get("email", "system@loft.com.br"))
+    res = iam_service.create_user(body, actor_email=claims.get("email", "system@olivelas.com.br"))
     return ApiResponse(data=res)
 
 
 @router.put("/users/{user_id}", response_model=ApiResponse[UserResponse])
 async def update_user(user_id: str, body: UserUpdateRequest, claims: dict[str, Any] = Depends(get_current_user_claims)):
-    res = iam_service.update_user(user_id, body, actor_email=claims.get("email", "system@loft.com.br"))
+    res = iam_service.update_user(user_id, body, actor_email=claims.get("email", "system@olivelas.com.br"))
     return ApiResponse(data=res)
 
 
 @router.delete("/users/{user_id}", response_model=ApiResponse[dict[str, str]])
 async def delete_user(user_id: str, claims: dict[str, Any] = Depends(get_current_user_claims)):
-    iam_service.delete_user(user_id, actor_email=claims.get("email", "system@loft.com.br"))
+    iam_service.delete_user(user_id, actor_email=claims.get("email", "system@olivelas.com.br"))
     return ApiResponse(data={"message": f"Usuário {user_id} excluído com sucesso."})
 
 
@@ -187,14 +187,14 @@ async def admin_reset_password(
         user_id=user_id,
         new_password=body.new_password,
         force_change=body.force_change_on_login,
-        actor_email=claims.get("email", "system@loft.com.br"),
+        actor_email=claims.get("email", "system@olivelas.com.br"),
     )
     return ApiResponse(data={"message": "Senha resetada pelo administrador com sucesso."})
 
 
 @router.post("/users/{user_id}/unlock", response_model=ApiResponse[dict[str, str]])
 async def unlock_user(user_id: str, claims: dict[str, Any] = Depends(get_current_user_claims)):
-    iam_service.unlock_user(user_id, actor_email=claims.get("email", "system@loft.com.br"))
+    iam_service.unlock_user(user_id, actor_email=claims.get("email", "system@olivelas.com.br"))
     return ApiResponse(data={"message": "Usuário desbloqueado com sucesso."})
 
 
@@ -232,25 +232,25 @@ async def get_group(group_id: str, claims: dict[str, Any] = Depends(get_current_
 
 @router.post("/groups", response_model=ApiResponse[GroupResponse], status_code=status.HTTP_201_CREATED)
 async def create_group(body: GroupCreateRequest, claims: dict[str, Any] = Depends(get_current_user_claims)):
-    res = iam_service.create_group(body, actor_email=claims.get("email", "system@loft.com.br"))
+    res = iam_service.create_group(body, actor_email=claims.get("email", "system@olivelas.com.br"))
     return ApiResponse(data=res)
 
 
 @router.put("/groups/{group_id}", response_model=ApiResponse[GroupResponse])
 async def update_group(group_id: str, body: GroupUpdateRequest, claims: dict[str, Any] = Depends(get_current_user_claims)):
-    res = iam_service.update_group(group_id, body, actor_email=claims.get("email", "system@loft.com.br"))
+    res = iam_service.update_group(group_id, body, actor_email=claims.get("email", "system@olivelas.com.br"))
     return ApiResponse(data=res)
 
 
 @router.delete("/groups/{group_id}", response_model=ApiResponse[dict[str, str]])
 async def delete_group(group_id: str, claims: dict[str, Any] = Depends(get_current_user_claims)):
-    iam_service.delete_group(group_id, actor_email=claims.get("email", "system@loft.com.br"))
+    iam_service.delete_group(group_id, actor_email=claims.get("email", "system@olivelas.com.br"))
     return ApiResponse(data={"message": f"Grupo {group_id} excluído com sucesso."})
 
 
 @router.post("/groups/{group_id}/duplicate", response_model=ApiResponse[GroupResponse])
 async def duplicate_group(group_id: str, claims: dict[str, Any] = Depends(get_current_user_claims)):
-    res = iam_service.duplicate_group(group_id, actor_email=claims.get("email", "system@loft.com.br"))
+    res = iam_service.duplicate_group(group_id, actor_email=claims.get("email", "system@olivelas.com.br"))
     return ApiResponse(data=res)
 
 
@@ -275,7 +275,7 @@ async def add_group_member(
     res = iam_service.add_group_member(
         group_id=group_id,
         user_id=body.user_id,
-        actor_email=claims.get("email", "system@loft.com.br"),
+        actor_email=claims.get("email", "system@olivelas.com.br"),
     )
     return ApiResponse(data=res)
 
@@ -289,7 +289,7 @@ async def remove_group_member(
     res = iam_service.remove_group_member(
         group_id=group_id,
         user_id=user_id,
-        actor_email=claims.get("email", "system@loft.com.br"),
+        actor_email=claims.get("email", "system@olivelas.com.br"),
     )
     return ApiResponse(data=res)
 
@@ -333,19 +333,19 @@ async def get_role(role_id: str, claims: dict[str, Any] = Depends(get_current_us
 
 @router.post("/roles", response_model=ApiResponse[IamRoleResponse], status_code=status.HTTP_201_CREATED)
 async def create_role(body: IamRoleCreateRequest, claims: dict[str, Any] = Depends(get_current_user_claims)):
-    res = iam_service.create_role(body, actor_email=claims.get("email", "system@loft.com.br"))
+    res = iam_service.create_role(body, actor_email=claims.get("email", "system@olivelas.com.br"))
     return ApiResponse(data=res)
 
 
 @router.put("/roles/{role_id}", response_model=ApiResponse[IamRoleResponse])
 async def update_role(role_id: str, body: IamRoleUpdateRequest, claims: dict[str, Any] = Depends(get_current_user_claims)):
-    res = iam_service.update_role(role_id, body, actor_email=claims.get("email", "system@loft.com.br"))
+    res = iam_service.update_role(role_id, body, actor_email=claims.get("email", "system@olivelas.com.br"))
     return ApiResponse(data=res)
 
 
 @router.delete("/roles/{role_id}", response_model=ApiResponse[dict[str, str]])
 async def delete_role(role_id: str, claims: dict[str, Any] = Depends(get_current_user_claims)):
-    iam_service.delete_role(role_id, actor_email=claims.get("email", "system@loft.com.br"))
+    iam_service.delete_role(role_id, actor_email=claims.get("email", "system@olivelas.com.br"))
     return ApiResponse(data={"message": f"Role {role_id} excluída com sucesso."})
 
 
@@ -363,21 +363,21 @@ async def list_permissions(claims: dict[str, Any] = Depends(get_current_user_cla
 
 @router.post("/permissions", response_model=ApiResponse[PermissionResponse], status_code=status.HTTP_201_CREATED)
 async def create_permission(body: PermissionCreateRequest, claims: dict[str, Any] = Depends(get_current_user_claims)):
-    actor_email = claims.get("email", "system@loft.com.br")
+    actor_email = claims.get("email", "system@olivelas.com.br")
     res = iam_service.create_permission(body, actor_email=actor_email)
     return ApiResponse(data=res)
 
 
 @router.put("/permissions/{permission_id}", response_model=ApiResponse[PermissionResponse])
 async def update_permission(permission_id: str, body: PermissionUpdateRequest, claims: dict[str, Any] = Depends(get_current_user_claims)):
-    actor_email = claims.get("email", "system@loft.com.br")
+    actor_email = claims.get("email", "system@olivelas.com.br")
     res = iam_service.update_permission(permission_id, body, actor_email=actor_email)
     return ApiResponse(data=res)
 
 
 @router.delete("/permissions/{permission_id}", response_model=ApiResponse[dict[str, str]])
 async def delete_permission(permission_id: str, claims: dict[str, Any] = Depends(get_current_user_claims)):
-    actor_email = claims.get("email", "system@loft.com.br")
+    actor_email = claims.get("email", "system@olivelas.com.br")
     iam_service.delete_permission(permission_id, actor_email=actor_email)
     return ApiResponse(data={"message": f"Permissão {permission_id} excluída com sucesso."})
 
@@ -388,7 +388,7 @@ async def toggle_role_permission(
     body: PermissionToggleRequest,
     claims: dict[str, Any] = Depends(get_current_user_claims),
 ):
-    actor_email = claims.get("email", "system@loft.com.br")
+    actor_email = claims.get("email", "system@olivelas.com.br")
     iam_service.toggle_role_permission(permission_id, body.role_name, body.granted, actor_email=actor_email)
     return ApiResponse(data={"message": f"Permissão {permission_id} para role {body.role_name} atualizada com sucesso."})
 
@@ -467,13 +467,13 @@ async def list_sessions(
 
 @router.delete("/sessions/{session_id}", response_model=ApiResponse[dict[str, str]])
 async def terminate_session(session_id: str, claims: dict[str, Any] = Depends(get_current_user_claims)):
-    iam_service.terminate_session(session_id, actor_email=claims.get("email", "system@loft.com.br"))
+    iam_service.terminate_session(session_id, actor_email=claims.get("email", "system@olivelas.com.br"))
     return ApiResponse(data={"message": "Sessão encerrada com sucesso."})
 
 
 @router.delete("/sessions/user/{user_id}/terminate-all", response_model=ApiResponse[dict[str, str]])
 async def terminate_all_user_sessions(user_id: str, claims: dict[str, Any] = Depends(get_current_user_claims)):
-    iam_service.terminate_all_user_sessions(user_id, actor_email=claims.get("email", "system@loft.com.br"))
+    iam_service.terminate_all_user_sessions(user_id, actor_email=claims.get("email", "system@olivelas.com.br"))
     return ApiResponse(data={"message": "Todas as sessões ativas do usuário foram encerradas."})
 
 
@@ -518,7 +518,7 @@ async def create_invitation(body: InvitationCreateRequest, claims: dict[str, Any
     inv = iam_service.create_invitation(
         body,
         actor_id=claims.get("sub", "usr_admin01"),
-        actor_email=claims.get("email", "system@loft.com.br"),
+        actor_email=claims.get("email", "system@olivelas.com.br"),
     )
     return ApiResponse(data=inv)
 
@@ -526,7 +526,7 @@ async def create_invitation(body: InvitationCreateRequest, claims: dict[str, Any
 @router.post("/invitations/{invitation_id}/cancel", response_model=ApiResponse[dict[str, str]])
 @router.delete("/invitations/{invitation_id}", response_model=ApiResponse[dict[str, str]])
 async def cancel_invitation(invitation_id: str, claims: dict[str, Any] = Depends(get_current_user_claims)):
-    iam_service.cancel_invitation(invitation_id, actor_email=claims.get("email", "system@loft.com.br"))
+    iam_service.cancel_invitation(invitation_id, actor_email=claims.get("email", "system@olivelas.com.br"))
     return ApiResponse(data={"message": "Convite cancelado."})
 
 
@@ -571,14 +571,14 @@ async def create_share(body: ShareCreateRequest, claims: dict[str, Any] = Depend
     share = iam_service.create_share(
         body,
         actor_id=claims.get("sub", "usr_admin01"),
-        actor_email=claims.get("email", "system@loft.com.br"),
+        actor_email=claims.get("email", "system@olivelas.com.br"),
     )
     return ApiResponse(data=share)
 
 
 @router.delete("/shares/{share_id}", response_model=ApiResponse[dict[str, str]])
 async def delete_share(share_id: str, claims: dict[str, Any] = Depends(get_current_user_claims)):
-    iam_service.delete_share(share_id, actor_email=claims.get("email", "system@loft.com.br"))
+    iam_service.delete_share(share_id, actor_email=claims.get("email", "system@olivelas.com.br"))
     return ApiResponse(data={"message": "Compartilhamento removido."})
 
 

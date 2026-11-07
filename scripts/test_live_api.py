@@ -24,7 +24,7 @@ def api_get(endpoint: str) -> dict[str, Any]:
         "User-Agent": "LiveApiTester/1.0",
         "Accept": "application/json",
         "X-User-Role": "admin",
-        "X-User-Email": "admin@loft.com.br"
+        "X-User-Email": "admin@olivelas.com.br"
     }
     if AUTH_TOKEN:
         headers["Authorization"] = f"Bearer {AUTH_TOKEN}"
@@ -49,7 +49,7 @@ def api_post(endpoint: str, payload: dict[str, Any]) -> dict[str, Any]:
         "Content-Type": "application/json",
         "Accept": "application/json",
         "X-User-Role": "admin",
-        "X-User-Email": "admin@loft.com.br"
+        "X-User-Email": "admin@olivelas.com.br"
     }
     if AUTH_TOKEN:
         headers["Authorization"] = f"Bearer {AUTH_TOKEN}"
@@ -74,7 +74,7 @@ def banner(title: str):
 def run_tests():
     # 0. AUTHENTICATION VIA REAL JWT
     banner("0. AUTENTICAÇÃO REAL VIA JWT (/api/v1/iam/login)")
-    admin_user = os.getenv("LOFT_ADMIN_USER", "admin@loft.com.br")
+    admin_user = os.getenv("LOFT_ADMIN_USER", "admin@olivelas.com.br")
     admin_password = os.getenv("LOFT_ADMIN_PASSWORD") or os.getenv("DEFAULT_ADMIN_PASSWORD", "admin_dev_pass")
     login_res = api_post("/iam/login", {"username_or_email": admin_user, "password": admin_password})
     user_data = login_res.get("data", {}).get("user", {})

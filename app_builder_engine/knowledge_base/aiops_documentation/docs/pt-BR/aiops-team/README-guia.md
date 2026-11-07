@@ -1,13 +1,13 @@
 ---
-id: REF-AIOPS-TEAM-012
-title: "AIOps — Guia em linguagem simples"
+id: REF-OLIVELAS-TEAM-012
+title: "Olivelas — Guia em linguagem simples"
 status: "DRAFT"
 owner: "aiops"
 updated: "2026-08-31"
 review_date: "2026-11-30"
 ---
 
-# AIOps, em linguagem simples
+# Olivelas, em linguagem simples
 
 > Language: pt-BR | [English (EN)](../../en/aiops-team/README-guide.md)
 >
@@ -17,9 +17,7 @@ review_date: "2026-11-30"
 
 > Prefere o material técnico completo (tabelas, padrões, links de referência)? Veja o [hub do time](README.md).
 
-## O que é o time AIOps
-
-AIOps é o time que constrói e mantém as aplicações internas de dados e produtividade da Loft — coisas como plataformas de projetos, reconciliação de dados e ferramentas de qualidade que outras squads usam no dia a dia. Não é o time que cuida da infraestrutura em si (isso é de outro time de plataforma); AIOps é quem constrói produtos **sobre** essa infraestrutura.
+## O que é o time Olivelas é o time que constrói e mantém as aplicações internas de dados e produtividade da Olivelas — coisas como plataformas de projetos, reconciliação de dados e ferramentas de qualidade que outras squads usam no dia a dia. Não é o time que cuida da infraestrutura em si (isso é de outro time de plataforma); Olivelas é quem constrói produtos **sobre** essa infraestrutura.
 
 ## Para quem serve este hub
 
@@ -31,7 +29,7 @@ Este espaço no Confluence existe para três públicos:
 
 ## Por que isso importa
 
-As aplicações do AIOps (catalogadas em [applications.md](applications.md)) atendem squads internas da Loft diariamente. Quando um desses sistemas fica indisponível, o impacto é sentido por quem depende dele para fechar reconciliações, consultar projetos ou validar qualidade de dados — por isso mantemos documentação pública de "o que é cada coisa" e "para quem falar" além do material puramente técnico.
+As aplicações do Olivelas (catalogadas em [applications.md](applications.md)) atendem squads internas da Olivelas diariamente. Quando um desses sistemas fica indisponível, o impacto é sentido por quem depende dele para fechar reconciliações, consultar projetos ou validar qualidade de dados — por isso mantemos documentação pública de "o que é cada coisa" e "para quem falar" além do material puramente técnico.
 
 ## Como o conteúdo está organizado
 

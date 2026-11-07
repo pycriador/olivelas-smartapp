@@ -11,7 +11,7 @@
 ## Repositório e cluster
 
 - Repo: [loft-br/k8s-apps](https://github.com/loft-br/k8s-apps)
-- Cluster / ambiente observado para AIOps: **`clusters/cross-prod`**
+- Cluster / ambiente observado para Olivelas: **`clusters/cross-prod`**
 
 ## Árvore de diretórios (exemplo DataForge)
 
@@ -29,7 +29,7 @@ clusters/cross-prod/
             └── values.yaml
 ```
 
-### Outros apps AIOps no mesmo cluster
+### Outros apps Olivelas no mesmo cluster
 
 | Pasta em `deployments/` | Application |
 | --- | --- |
@@ -80,7 +80,7 @@ spec:
 
 ## `values.yaml` — contrato `application.*`
 
-Campos recorrentes nos values de DataForge / Deep Insight / Loft Carteiras:
+Campos recorrentes nos values de DataForge / Deep Insight / Olivelas Carteiras:
 
 | Campo | Significado observado |
 | --- | --- |
@@ -98,7 +98,7 @@ Campos recorrentes nos values de DataForge / Deep Insight / Loft Carteiras:
 | `replicaCount` / `rollingUpdate` | Rolling deploy |
 | `ingress.enabled` / `className` | `true` / **`kong`** |
 | `autoscaling` | HPA CPU (KEDA off nos exemplos) |
-| `podAnnotations.loft.com.br/source-repository` | Repo GitHub de origem |
+| `podAnnotations.olivelas.com.br/source-repository` | Repo GitHub de origem |
 
 ### Exemplo — API DataForge (trechos)
 
@@ -138,7 +138,7 @@ autoscaling:
   maxReplicas: 4
   targetCPUUtilizationPercentage: 80
 podAnnotations:
-  loft.com.br/source-repository: aiops-dataforge
+  olivelas.com.br/source-repository: aiops-dataforge
 ```
 
 ### Exemplo — front DataForge
@@ -152,7 +152,7 @@ podAnnotations:
 | App / serviço | Diferença relevante |
 | --- | --- |
 | Deep Insight API | `team: squad-infosec`; Vault path `ai-ops/aiops-deep-insight-api/secrets`; `replicaCount: 1` |
-| Loft Carteiras front | Probes `/health/live` e `/health/ready`; HPA `minReplicas: 0` |
+| Olivelas Carteiras front | Probes `/health/live` e `/health/ready`; HPA `minReplicas: 0` |
 | Qualidade | Deployment root `aiops-qualidade` (repo app: `qualidade-loft`) |
 
 ## Segredos

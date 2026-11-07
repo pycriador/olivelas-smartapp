@@ -431,7 +431,7 @@ class AiProviderService:
                     "temperature": 0.2,
                     "max_output_tokens": 4096,
                     "top_p": 0.95,
-                    "system_instruction": "Você é o assistente técnico de arquitetura e engenharia de software da Loft, especialista em Copan Design System e FSD.",
+                    "system_instruction": "Você é o assistente técnico de arquitetura e engenharia de software da Olivelas, especialista em Copan Design System e FSD.",
                     "is_default": True,
                     "status": "unconfigured",
                     "last_tested_at": None,
@@ -450,7 +450,7 @@ class AiProviderService:
                     "temperature": 0.2,
                     "max_output_tokens": 4096,
                     "top_p": 1.0,
-                    "system_instruction": "Assistente técnico da Loft.",
+                    "system_instruction": "Assistente técnico da Olivelas.",
                     "is_default": False,
                     "status": "unconfigured",
                     "last_tested_at": None,
@@ -469,7 +469,7 @@ class AiProviderService:
                     "temperature": 0.2,
                     "max_output_tokens": 4096,
                     "top_p": 1.0,
-                    "system_instruction": "Assistente técnico da Loft.",
+                    "system_instruction": "Assistente técnico da Olivelas.",
                     "is_default": False,
                     "status": "unconfigured",
                     "last_tested_at": None,
@@ -488,7 +488,7 @@ class AiProviderService:
                     "temperature": 0.2,
                     "max_output_tokens": 4096,
                     "top_p": 1.0,
-                    "system_instruction": "Assistente técnico da Loft.",
+                    "system_instruction": "Assistente técnico da Olivelas.",
                     "is_default": False,
                     "status": "unconfigured",
                     "last_tested_at": None,
@@ -507,7 +507,7 @@ class AiProviderService:
                     "temperature": 0.2,
                     "max_output_tokens": 4096,
                     "top_p": 1.0,
-                    "system_instruction": "Assistente técnico da Loft.",
+                    "system_instruction": "Assistente técnico da Olivelas.",
                     "is_default": False,
                     "status": "unconfigured",
                     "last_tested_at": None,
@@ -526,7 +526,7 @@ class AiProviderService:
                     "temperature": 0.2,
                     "max_output_tokens": 4096,
                     "top_p": 1.0,
-                    "system_instruction": "Assistente técnico da Loft.",
+                    "system_instruction": "Assistente técnico da Olivelas.",
                     "is_default": False,
                     "status": "unconfigured",
                     "last_tested_at": None,
@@ -534,19 +534,19 @@ class AiProviderService:
                 },
                 {
                     "id": "loft-vllm-custom",
-                    "name": "Loft Internal vLLM Gateway",
+                    "name": "Olivelas Internal vLLM Gateway",
                     "provider_type": "custom",
                     "enabled": False,
                     "is_custom": True,
                     "api_key": "",
-                    "base_url": "https://ai-gateway.internal.loft.com.br/v1",
+                    "base_url": "https://ai-gateway.internal.olivelas.com.br/v1",
                     "default_model": "deepseek-coder-v2",
                     "available_models": [
                         {
                             "id": "deepseek-coder-v2",
                             "name": "DeepSeek Coder V2 (Internal Cluster)",
                             "provider": "custom",
-                            "description": "Cluster interno privado da Loft para geração de código e arquitetura sem egress externo",
+                            "description": "Cluster interno privado da Olivelas para geração de código e arquitetura sem egress externo",
                             "context_window": 64000,
                             "recommended": True,
                             "is_multimodal": False,
@@ -555,7 +555,7 @@ class AiProviderService:
                     "temperature": 0.2,
                     "max_output_tokens": 4096,
                     "top_p": 1.0,
-                    "system_instruction": "Assistente técnico interno da Loft.",
+                    "system_instruction": "Assistente técnico interno da Olivelas.",
                     "is_default": False,
                     "status": "unconfigured",
                     "last_tested_at": None,
@@ -648,7 +648,7 @@ class AiProviderService:
             log_prompts=raw.get("log_prompts", True),
         )
 
-    def update_settings(self, payload: AiProviderUpdateRequest, actor: str = "willian.jesus@loft.com.br") -> MultiProviderSettings:
+    def update_settings(self, payload: AiProviderUpdateRequest, actor: str = "willian.jesus@olivelas.com.br") -> MultiProviderSettings:
         """Updates provider settings in SQLite, preserving unmasked keys if masked ones were sent."""
         with get_db_session() as session:
             row = session.scalar(select(SystemStateModel).where(SystemStateModel.key == SYSTEM_STATE_AI_KEY))
@@ -720,7 +720,7 @@ class AiProviderService:
 
         return self.get_masked_settings()
 
-    def create_custom_provider(self, req: AiCustomProviderCreateRequest, actor: str = "willian.jesus@loft.com.br") -> AiProviderConfigItem:
+    def create_custom_provider(self, req: AiCustomProviderCreateRequest, actor: str = "willian.jesus@olivelas.com.br") -> AiProviderConfigItem:
         """Adds a new custom OpenAI-compatible provider to SQLite."""
         with get_db_session() as session:
             row = session.scalar(select(SystemStateModel).where(SystemStateModel.key == SYSTEM_STATE_AI_KEY))
@@ -791,7 +791,7 @@ class AiProviderService:
             masked_item["api_key"] = mask_api_key(masked_item.get("api_key", ""))
             return AiProviderConfigItem.model_validate(masked_item)
 
-    def update_provider_by_id(self, provider_id: str, req: AiCustomProviderUpdateRequest, actor: str = "willian.jesus@loft.com.br") -> AiProviderConfigItem:
+    def update_provider_by_id(self, provider_id: str, req: AiCustomProviderUpdateRequest, actor: str = "willian.jesus@olivelas.com.br") -> AiProviderConfigItem:
         """Updates specific parameters of any provider in SQLite."""
         with get_db_session() as session:
             row = session.scalar(select(SystemStateModel).where(SystemStateModel.key == SYSTEM_STATE_AI_KEY))
@@ -852,7 +852,7 @@ class AiProviderService:
             masked_item["api_key"] = mask_api_key(masked_item.get("api_key", ""))
             return AiProviderConfigItem.model_validate(masked_item)
 
-    def delete_provider_by_id(self, provider_id: str, actor: str = "willian.jesus@loft.com.br") -> dict[str, str]:
+    def delete_provider_by_id(self, provider_id: str, actor: str = "willian.jesus@olivelas.com.br") -> dict[str, str]:
         """Deletes a custom provider or resets a built-in provider in SQLite."""
         with get_db_session() as session:
             row = session.scalar(select(SystemStateModel).where(SystemStateModel.key == SYSTEM_STATE_AI_KEY))
@@ -930,7 +930,7 @@ class AiProviderService:
                 "contents": [
                     {
                         "role": "user",
-                        "parts": [{"text": "Responda apenas 'OK' em uma palavra para teste de conexão da Loft."}]
+                        "parts": [{"text": "Responda apenas 'OK' em uma palavra para teste de conexão da Olivelas."}]
                     }
                 ],
                 "generationConfig": {

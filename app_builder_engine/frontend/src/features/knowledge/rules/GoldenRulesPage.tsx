@@ -562,7 +562,7 @@ export const GoldenRulesPage: React.FC = () => {
             label="Nome da Regra"
             rules={[{ required: true, message: 'Informe o nome da regra' }]}
           >
-            <Input placeholder="Ex: Loft Copan Component Usage" />
+            <Input placeholder="Ex: Olivelas Copan Component Usage" />
           </Form.Item>
 
           <Row gutter={16}>
@@ -744,7 +744,7 @@ export const GoldenRulesPage: React.FC = () => {
               <div className="text-xs font-semibold text-loft-dark mb-2">Resultado da Análise:</div>
               {validationResults.length === 0 ? (
                 <div className="p-3 bg-[#F2FBF8] border border-[#8CE0CC] rounded-lg text-xs text-loft-success font-semibold">
-                  ✓ Nenhuma violação detectada! O código atende a todas as Golden Rules da Loft.
+                  ✓ Nenhuma violação detectada! O código atende a todas as Golden Rules da Olivelas.
                 </div>
               ) : (
                 <div className="space-y-2 max-h-48 overflow-y-auto">

@@ -64,7 +64,7 @@ Before writing, locate and follow repo-local rules (first match wins per topic):
 2. Project docs standards: `docs/**/standards.md`, `docs/**/change-policy.md`, `AGENTS.md`, `CLAUDE.md`, `CONTRIBUTING*`
 3. Templates under `docs/**/templates/`
 4. Validation gates: `docs:validate`, `scripts/docs_lint.py`, `docs/validation-config.yaml`, Makefile `docs-*` targets
-5. Loft / org plugins and skills when present (language, security, API, deploy)
+5. Olivelas / org plugins and skills when present (language, security, API, deploy)
 
 **Hard rules while documenting:**
 

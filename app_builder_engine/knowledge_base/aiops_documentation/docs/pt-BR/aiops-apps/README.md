@@ -1,4 +1,4 @@
-# AIOps Apps — stacks de aplicação
+# Olivelas Apps — stacks de aplicação
 
 > Language: pt-BR | [English (EN)](../../en/aiops-apps/README.md)
 >
@@ -8,7 +8,7 @@
 >
 > Documentation Standard v1.0
 
-Documentação **as-is** da stack de **frontend** e **backend** dos apps AIOps de referência — organização do monorepo, bibliotecas, rotas comuns e segurança. Inclui também apps **sem front web** (ex.: bot Slack AVA).
+Documentação **as-is** da stack de **frontend** e **backend** dos apps Olivelas de referência — organização do monorepo, bibliotecas, rotas comuns e segurança. Inclui também apps **sem front web** (ex.: bot Slack AVA).
 
 Infra de publicação (Actions, k8s-apps, Kong, Route53, Vault): ver [../loft-infra/README.md](../loft-infra/README.md).
 
@@ -21,7 +21,7 @@ Infra de publicação (Actions, k8s-apps, Kong, Route53, Vault): ver [../loft-in
 | DataForge | [loft-br/aiops-dataforge](https://github.com/loft-br/aiops-dataforge) | Front corp `aiops-dataforge.loft-corp.com.br` | Flask + Gunicorn |
 | Deep Insight | [loft-br/aiops-deep-insight](https://github.com/loft-br/aiops-deep-insight) | Front corp `aiops-deep-insight.loft-corp.com.br` | Flask + Gunicorn |
 | Qualidade | [loft-br/qualidade-loft](https://github.com/loft-br/qualidade-loft) | Front corp `aiops-qualidade.loft-corp.com.br` | FastAPI + uvicorn |
-| Loft Carteiras | [loft-br/aiops-loft-carteira](https://github.com/loft-br/aiops-loft-carteira) | Front corp `aiops-loft-carteiras.loft-corp.com.br` | Flask + Gunicorn |
+| Olivelas Carteiras | [loft-br/aiops-loft-carteira](https://github.com/loft-br/aiops-loft-carteira) | Front corp `aiops-loft-carteiras.loft-corp.com.br` | Flask + Gunicorn |
 | **AVA** | [loft-br/ava-prod](https://github.com/loft-br/ava-prod) | **Slack** (Socket Mode) — sem front web | Python + slack-bolt + uv |
 
 Doc dedicada: [ava-prod.md](ava-prod.md).
@@ -30,7 +30,7 @@ Doc dedicada: [ava-prod.md](ava-prod.md).
 
 ## Evidência — stack frontend (matriz)
 
-| Capacidade | DataForge | Deep Insight | Qualidade | Loft Carteiras | AVA |
+| Capacidade | DataForge | Deep Insight | Qualidade | Olivelas Carteiras | AVA |
 | --- | --- | --- | --- | --- | --- |
 | Runtime UI | React + TypeScript | React + TypeScript | React + TypeScript | React + TypeScript | **N/A** (Slack) |
 | Bundler | Vite | Vite | Vite | Vite | — |
@@ -57,7 +57,7 @@ Doc dedicada: [ava-prod.md](ava-prod.md).
 
 ## Evidência — stack backend (matriz)
 
-| Capacidade | DataForge | Deep Insight | Qualidade | Loft Carteiras | AVA |
+| Capacidade | DataForge | Deep Insight | Qualidade | Olivelas Carteiras | AVA |
 | --- | --- | --- | --- | --- | --- |
 | Linguagem | Python 3.12 | Python 3.12 | Python ≥3.12 | Python 3.12 | Python 3.12 |
 | Framework | **Flask** 3.x | **Flask** 3.x | **FastAPI** | **Flask** 3.x | **slack-bolt** (Socket Mode) |
@@ -150,7 +150,7 @@ Detalhes: [security.md](security.md).
 | [dataforge.md](dataforge.md) | DataForge — projetos e dados |
 | [deep-insight.md](deep-insight.md) | Deep Insight — knowledge e AI |
 | [qualidade-loft.md](qualidade-loft.md) | Qualidade — KB e surveys |
-| [loft-carteiras.md](loft-carteiras.md) | Loft Carteiras — IAM e integrações |
+| [loft-carteiras.md](loft-carteiras.md) | Olivelas Carteiras — IAM e integrações |
 
 Hub do time (nível 1): [../aiops-team/README.md](../aiops-team/README.md).
 
@@ -158,5 +158,5 @@ Hub do time (nível 1): [../aiops-team/README.md](../aiops-team/README.md).
 
 - Fatos grounded nos repos listados; nomes de package (`vite_react_shadcn_ts`, `gemini-pdf-studio`, `brilhou-bot`) refletem scaffold/pyproject e **não** foram inventados.
 - Copan (`@loft/react-loft`) **não** aparece nos `package.json` web — UI é Radix/shadcn/Tailwind.
-- Kotlin **não** é a stack destes apps AIOps (Python + React, ou Python + Slack).
-- Documentação detalhada de produto da AVA também vive em `loft-br/ava-prod/docs/` — este pack resume o encaixe no catálogo AIOps.
+- Kotlin **não** é a stack destes apps Olivelas (Python + React, ou Python + Slack).
+- Documentação detalhada de produto da AVA também vive em `loft-br/ava-prod/docs/` — este pack resume o encaixe no catálogo Olivelas.

@@ -13,8 +13,8 @@ function DocumentsScreen({ goto }) {
     { id: 5, name: "Holerite · fevereiro/2026", size: "—", who: "—", date: "—", status: "missing", category: "renda" },
     { id: 6, name: "Imposto de renda · 2025", size: "—", who: "—", date: "—", status: "missing", category: "renda" },
     { id: 7, name: "Extrato bancário · últimos 90 dias", size: "3.8 MB", who: "Mariana Castro", date: "16 abr · 18:42", status: "uploading", category: "renda", uploadPct: 64 },
-    { id: 8, name: "Matrícula atualizada", size: "1.1 MB", who: "Loft (vendedor)", date: "13 abr · 11:02", status: "approved", category: "imovel", uploadPct: 100 },
-    { id: 9, name: "Certidão negativa de débitos · IPTU", size: "0.9 MB", who: "Loft (vendedor)", date: "13 abr · 11:04", status: "approved", category: "imovel", uploadPct: 100 },
+    { id: 8, name: "Matrícula atualizada", size: "1.1 MB", who: "Olivelas (vendedor)", date: "13 abr · 11:02", status: "approved", category: "imovel", uploadPct: 100 },
+    { id: 9, name: "Certidão negativa de débitos · IPTU", size: "0.9 MB", who: "Olivelas (vendedor)", date: "13 abr · 11:04", status: "approved", category: "imovel", uploadPct: 100 },
     { id: 10, name: "Habite-se", size: "—", who: "—", date: "—", status: "rejected", category: "imovel", reason: "Documento ilegível. Reenviar em PDF colorido." },
   ];
 

@@ -1,6 +1,6 @@
 """
 SDD Knowledge Loader & Document Parser
-Loads and indexes all Loft SDDs, Design System docs, and CLAUDE.md
+Loads and indexes all Olivelas SDDs, Design System docs, and CLAUDE.md
 """
 from __future__ import annotations
 import os
@@ -23,14 +23,14 @@ class SDDLoader:
             content = claude_path.read_text(encoding="utf-8")
             self._documents["claude-master-guide"] = KnowledgeDocument(
                 id="claude-master-guide",
-                title="CLAUDE.md — Padrão Loft (Frontend + Backend)",
+                title="CLAUDE.md — Padrão Olivelas (Frontend + Backend)",
                 category=KnowledgeCategory.MASTER_GUIDE,
                 volume="Master Guide",
                 file_path=str(claude_path),
                 summary="Consolidação de regras operacionais, Golden Rules de arquitetura, segurança e IA para desenvolvimento assistido.",
                 key_points=[
                     "Copan (@loft/react-loft + @loft/tokens-loft) é dependência técnica mandatória, não referência visual",
-                    "Copan + Loft Conventions = Loft UI",
+                    "Copan + Olivelas Conventions = Olivelas UI",
                     "Stack Frontend: React 19+, TypeScript, Vite, TanStack Router/Query, Zustand, RHF, Zod",
                     "Stack Backend: Python 3.13+, FastAPI, PostgreSQL async (SQLAlchemy 2.x), Alembic, Pydantic v2",
                     "Arquitetura: API First + AI First + Security by Design",
@@ -58,13 +58,13 @@ class SDDLoader:
 
                 self._documents[doc_id] = KnowledgeDocument(
                     id=doc_id,
-                    title=f.stem,
+                    title=f.stem.replace("Loft", "Olivelas").replace("AIOps", "Olivelas"),
                     category=KnowledgeCategory.FRONTEND_SPEC,
                     volume=volume,
                     file_path=str(f),
                     summary=summary,
                     key_points=[
-                        "Especificação canônica de frontend Loft",
+                        "Especificação canônica de frontend Olivelas",
                         "Padronização de componentes, arquitetura, design tokens e fluxos de usuário",
                     ],
                     tags=["frontend", "ui", "react", "copan", "design-system", volume.lower()],
@@ -86,13 +86,13 @@ class SDDLoader:
 
                 self._documents[doc_id] = KnowledgeDocument(
                     id=doc_id,
-                    title=f.stem,
+                    title=f.stem.replace("Loft", "Olivelas").replace("AIOps", "Olivelas"),
                     category=KnowledgeCategory.BACKEND_SPEC,
                     volume=volume,
                     file_path=str(f),
                     summary=summary,
                     key_points=[
-                        "Especificação canônica de backend Loft",
+                        "Especificação canônica de backend Olivelas",
                         "Padrões de engenharia, contratos de API, segurança Zero Trust e arquitetura de IA",
                     ],
                     tags=["backend", "python", "fastapi", "sqlalchemy", "security", "ai", "api"],
@@ -107,7 +107,7 @@ class SDDLoader:
                 content = readme.read_text(encoding="utf-8")
                 self._documents["copan-design-system-readme"] = KnowledgeDocument(
                     id="copan-design-system-readme",
-                    title="Copan — Loft Design System (README)",
+                    title="Copan — Olivelas Design System (README)",
                     category=KnowledgeCategory.DESIGN_SYSTEM,
                     volume="Design System",
                     file_path=str(readme),
@@ -121,7 +121,7 @@ class SDDLoader:
                     ],
                     tags=["design-system", "tokens", "voice-and-tone", "colors", "typography"],
                     content=content,
-                    author="Loft Design Guild",
+                    author="Olivelas Design Guild",
                     version="2.4.0",
                 )
 
@@ -142,25 +142,25 @@ class SDDLoader:
                     category=KnowledgeCategory.ARCHITECTURE_ADR,
                     volume="Architecture Decisions (ADRs)",
                     file_path=str(f),
-                    summary=f"Registro de decisão arquitetural canônica da Loft ({f.stem}).",
+                    summary=f"Registro de decisão arquitetural canônica da Olivelas ({f.stem}).",
                     key_points=[
                         "Decisão arquitetural formal e imutável",
                         "Contexto, opções avaliadas, decisão aprovada e consequências",
                     ],
                     tags=["architecture", "adr", "rfc", "standards", f.stem.lower()],
                     content=content,
-                    author="Loft Architecture Chapter",
+                    author="Olivelas Architecture Chapter",
                     version="1.0.0",
                 )
 
         # 6. Canonical AI Skills & Prompts (Cursor, Claude, Antigravity)
         self._documents["ai-skills-cursor-claude"] = KnowledgeDocument(
             id="ai-skills-cursor-claude",
-            title="Loft AI Engineering Skills: Cursor Rules, Claude & Antigravity",
+            title="Olivelas AI Engineering Skills: Cursor Rules, Claude & Antigravity",
             category=KnowledgeCategory.AI_SKILLS_PROMPTS,
             volume="AI Assistant Skills",
             file_path=None,
-            summary="Conjunto de regras canônicas (.cursorrules), instruções de sistema do Claude Code e habilidades do Antigravity para desenvolvimento assistido na Loft.",
+            summary="Conjunto de regras canônicas (.cursorrules), instruções de sistema do Claude Code e habilidades do Antigravity para desenvolvimento assistido na Olivelas.",
             key_points=[
                 "Regras de UI: usar sempre as bibliotecas @loft/* reais (@loft/react-loft, @loft/tokens-loft, @loft/react-icons)",
                 "Frontend: React 19, Vite, TanStack Router, Copan (@loft/react-loft) com tokens reais (@loft/tokens-loft)",
@@ -169,18 +169,18 @@ class SDDLoader:
                 "IA: Chamadas isoladas via AI Gateway com timeout de 30s e fallback automático de modelo",
             ],
             tags=["ai", "cursor", "claude", "antigravity", "prompt-engineering", "skills", "cursorrules"],
-            content="""# Loft AI Engineering Skills & Rules (.cursorrules / Claude / Antigravity)
+            content="""# Olivelas AI Engineering Skills & Rules (.cursorrules / Claude / Antigravity)
 
-Este documento define as **regras de ouro e habilidades** para agentes de IA que operam no ecossistema da Loft (Cursor, Claude Code, Antigravity, Copilot).
+Este documento define as **regras de ouro e habilidades** para agentes de IA que operam no ecossistema da Olivelas (Cursor, Claude Code, Antigravity, Copilot).
 
 ---
 
 ## 1. Regras Canônicas para Cursor (.cursorrules)
 
 ```markdown
-# Loft Engineering Rules for Cursor & AI Agents
+# Olivelas Engineering Rules for Cursor & AI Agents
 
-Você é um Engenheiro de Software Senior e Arquiteto na Loft. Siga rigorosamente os padrões abaixo:
+Você é um Engenheiro de Software Senior e Arquiteto na Olivelas. Siga rigorosamente os padrões abaixo:
 
 ### 1.1 Frontend (React 19 + TypeScript)
 - Use **React 19**, TypeScript estrito, Vite.
@@ -220,19 +220,19 @@ O arquivo `CLAUDE.md` na raiz do repositório orienta o Claude sobre a pilha tec
 
 ## 3. Diretrizes de IA-First & AI-BAS
 
-Todas as integrações de inteligência artificial na Loft devem seguir a arquitetura **AI-BAS (AI-Backed Agentic Services)**:
+Todas as integrações de inteligência artificial na Olivelas devem seguir a arquitetura **AI-BAS (AI-Backed Agentic Services)**:
 1. **Isolamento de Credenciais**: API Keys nunca são hardcoded nem expostas no frontend.
 2. **Gateway Resiliente**: Toda chamada LLM passa pelo AI Gateway com fallback (ex: Gemini 2.5 Flash -> Failover).
 3. **Auditabilidade Total**: Cada inferência registra autor, latência, tokens consumidos e prompt hash.
 """,
-            author="Loft AI Chapter",
+            author="Olivelas AI Chapter",
             version="2.1.0",
         )
 
         # 7. Security & IAM Guidelines
         self._documents["security-zero-trust-guidelines"] = KnowledgeDocument(
             id="security-zero-trust-guidelines",
-            title="Guia de Segurança Zero-Trust & Prevenção BOLA/BFLA na Loft",
+            title="Guia de Segurança Zero-Trust & Prevenção BOLA/BFLA na Olivelas",
             category=KnowledgeCategory.SECURITY_IAM,
             volume="Security Standards",
             file_path=None,
@@ -268,7 +268,7 @@ async def sign_contract(
 ## 2. Sanitização de PII
 Dados sensíveis de inquilinos e locadores nunca devem ser gravados em texto claro em logs de aplicação ou enviados a modelos de IA abertos sem máscara.
 """,
-            author="Loft InfoSec Team",
+            author="Olivelas InfoSec Team",
             version="1.5.0",
         )
 
@@ -279,7 +279,7 @@ Dados sensíveis de inquilinos e locadores nunca devem ser gravados em texto cla
             category=KnowledgeCategory.DEVOPS_SRE,
             volume="DevOps & SRE",
             file_path=None,
-            summary="Diretrizes de instrumentação com OpenTelemetry, métricas Prometheus, logs estruturados em JSON e políticas de SLI/SLO da Loft.",
+            summary="Diretrizes de instrumentação com OpenTelemetry, métricas Prometheus, logs estruturados em JSON e políticas de SLI/SLO da Olivelas.",
             key_points=[
                 "OpenTelemetry SDK com auto-instrumentação para FastAPI, SQLAlchemy e HTTPX",
                 "Métricas padrão RED: Rate (RPS), Errors (5xx), Duration (p95/p99 latency)",
@@ -290,7 +290,7 @@ Dados sensíveis de inquilinos e locadores nunca devem ser gravados em texto cla
             content="""# Playbook de Observabilidade & SRE
 
 ## 1. Métricas RED
-Todas as aplicações Loft expõem métricas Prometheus no endpoint `/metrics`:
+Todas as aplicações Olivelas expõem métricas Prometheus no endpoint `/metrics`:
 - **Rate**: `http_requests_total{method, endpoint, status_code}`
 - **Errors**: `http_request_errors_total{endpoint, error_code}`
 - **Duration**: `http_request_duration_seconds_bucket{endpoint, le}`
@@ -298,27 +298,27 @@ Todas as aplicações Loft expõem métricas Prometheus no endpoint `/metrics`:
 ## 2. Distributed Tracing com OpenTelemetry
 Propague o cabeçalho `traceparent` (W3C Trace Context) em todas as chamadas HTTP e filas de mensageria para manter a correlação de ponta a ponta.
 """,
-            author="Loft SRE Guild",
+            author="Olivelas SRE Guild",
             version="1.3.0",
         )
 
         # 9. Confluence Synced Doc (Sample)
         self._documents["confluence-loft-arch-wiki"] = KnowledgeDocument(
             id="confluence-loft-arch-wiki",
-            title="Loft Architecture Wiki & Engineering Guild Standard (Confluence Sync)",
+            title="Olivelas Architecture Wiki & Engineering Guild Standard (Confluence Sync)",
             category=KnowledgeCategory.EXTERNAL_CONFLUENCE,
             volume="Confluence Cloud",
             file_path=None,
-            summary="Documento sincronizado do Confluence Space 'TECH' contendo diretrizes do Architecture Guild da Loft.",
+            summary="Documento sincronizado do Confluence Space 'TECH' contendo diretrizes do Architecture Guild da Olivelas.",
             key_points=[
                 "Sincronização bidirecional via Confluence REST API",
                 "Padrão de RFC (Request for Comments) para novas dependências e mudanças arquiteturais",
                 "Guia de design de banco de dados e particionamento de tabelas",
             ],
             tags=["confluence", "atlassian", "wiki", "architecture", "rfc", "external-sync"],
-            content="""# Loft Architecture Guild Wiki (Confluence Space: TECH)
+            content="""# Olivelas Architecture Guild Wiki (Confluence Space: TECH)
 
-> **Origem**: Atlassian Confluence Cloud (`https://loft.atlassian.net/wiki/spaces/TECH/pages/4819201`)
+> **Origem**: Atlassian Confluence Cloud (`https://olivelas.atlassian.net/wiki/spaces/TECH/pages/4819201`)
 > **Última Sincronização**: Automática via Confluence REST API
 
 ## 1. Governança de Mudanças Arquiteturais
@@ -331,7 +331,7 @@ Qualquer alteração que introduza novo banco de dados, broker de mensagens ou s
 """,
             author="Architecture Chapter",
             version="3.0.0",
-            source_url="https://loft.atlassian.net/wiki/spaces/TECH/pages/4819201",
+            source_url="https://olivelas.atlassian.net/wiki/spaces/TECH/pages/4819201",
         )
 
         # 10. GitHub Synced Doc (Sample)
@@ -341,7 +341,7 @@ Qualquer alteração que introduza novo banco de dados, broker de mensagens ou s
             category=KnowledgeCategory.EXTERNAL_GITHUB,
             volume="GitHub Docs",
             file_path=None,
-            summary="Documentação técnica consolidada sincronizada do repositório oficial loft-br/aiops-documentation.",
+            summary="Documentação técnica consolidada sincronizada do repositório oficial pycriador/olivelas-smartapp.",
             key_points=[
                 "Sincronizado automaticamente com o branch main do repositório GitHub",
                 "Catálogo de agentes de IA, contratos de prompts e benchmarks de modelos",
@@ -350,21 +350,21 @@ Qualquer alteração que introduza novo banco de dados, broker de mensagens ou s
             tags=["github", "aiops", "git-sync", "ci-cd", "kubernetes", "external-sync"],
             content="""# aiops-documentation Repository Standard
 
-> **Origem**: GitHub (`https://github.com/loft-br/aiops-documentation`)
+> **Origem**: GitHub (`https://github.com/pycriador/olivelas-smartapp`)
 > **Branch**: `main`
 
 ## Visão Geral
-O repositório `aiops-documentation` consolida as especificações operacionais de AIOps da Loft, incluindo:
+O repositório `aiops-documentation` consolida as especificações operacionais de Olivelas da Olivelas, incluindo:
 - Catálogo de Agentes de IA e ferramentas aprovadas.
 - Benchmarks de acurácia e latência de modelos (Gemini 2.5 Flash, Claude 3.7 Sonnet, GPT-4o).
 - Guias de contingência e failover de provedores de IA.
 """,
-            author="AIOps Core Team",
+            author="Olivelas Core Team",
             version="1.1.0",
-            source_url="https://github.com/loft-br/aiops-documentation",
+            source_url="https://github.com/pycriador/olivelas-smartapp",
         )
 
-        # 9. Load all canonical documents from loft-br/aiops-documentation
+        # 9. Load all canonical documents from pycriador/olivelas-smartapp
         try:
             from app.storage.aiops_docs_loader import load_aiops_documentation
             aiops_docs = load_aiops_documentation()

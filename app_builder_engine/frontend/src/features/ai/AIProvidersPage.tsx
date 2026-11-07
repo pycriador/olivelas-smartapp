@@ -551,7 +551,7 @@ export const AIProvidersPage: React.FC = () => {
                             <div className="flex items-center justify-between">
                               <span className="font-semibold text-sm text-loft-dark">{m.name}</span>
                               <div className="flex gap-1">
-                                {m.recommended && <Tag color="#FF774A">Padrão Loft</Tag>}
+                                {m.recommended && <Tag color="#FF774A">Padrão Olivelas</Tag>}
                                 <Tag color="blue">{m.context_window >= 1000000 ? `${m.context_window / 1000000}M tokens` : `${m.context_window / 1000}k tokens`}</Tag>
                               </div>
                             </div>
@@ -978,9 +978,9 @@ export const AIProvidersPage: React.FC = () => {
           <Form.Item
             name="name"
             label="Nome do Provedor"
-            rules={[{ required: true, message: 'Informe um nome descritivo (ex: DeepSeek API, LiteLLM Loft)' }]}
+            rules={[{ required: true, message: 'Informe um nome descritivo (ex: DeepSeek API, LiteLLM Olivelas)' }]}
           >
-            <Input placeholder="Ex: Loft Internal Gateway / DeepSeek R1" />
+            <Input placeholder="Ex: Olivelas Internal Gateway / DeepSeek R1" />
           </Form.Item>
 
           <Row gutter={16}>

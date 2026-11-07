@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Loft App Builder Engine — AI Agent Integration Workflow (Node.js)
+ * Olivelas App Builder Engine — AI Agent Integration Workflow (Node.js)
  * -----------------------------------------------------------------
  * Comprehensive end-to-end integration script demonstrating how an autonomous AI Agent
  * connects via REST API, obtains & manages JWT tokens, inspects building blocks,
@@ -26,7 +26,7 @@ class AIAgentClientNode {
     const headers = {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
-      'User-Agent': 'Loft-AIAgent-Node/1.0',
+      'User-Agent': 'Olivelas-AIAgent-Node/1.0',
     };
     if (this.accessToken) {
       headers['Authorization'] = `Bearer ${this.accessToken}`;
@@ -44,7 +44,7 @@ class AIAgentClientNode {
   }
 
   async authenticate(usernameOrEmail, password) {
-    const user = usernameOrEmail || process.env.LOFT_ADMIN_USER || 'willian.jesus@loft.com.br';
+    const user = usernameOrEmail || process.env.LOFT_ADMIN_USER || 'willian.jesus@olivelas.com.br';
     const pass = password || process.env.LOFT_ADMIN_PASSWORD || process.env.DEFAULT_ADMIN_PASSWORD || 'admin_dev_pass';
 
     const res = await fetch(`${this.apiV1}/iam/login`, {
@@ -191,7 +191,7 @@ class AIAgentClientNode {
 
 async function run() {
   console.log('='.repeat(80));
-  console.log(' 🤖 LOFT APP BUILDER ENGINE — WORKFLOW DE INTEGRAÇÃO DE AGENTE DE IA (NODE.JS)');
+  console.log(' 🤖 OLIVELAS APP BUILDER ENGINE — WORKFLOW DE INTEGRAÇÃO DE AGENTE DE IA (NODE.JS)');
   console.log('='.repeat(80));
 
   const client = new AIAgentClientNode();
@@ -231,7 +231,7 @@ async function run() {
     'Golden Rules de segurança e envelope de API padronizado',
   ];
   const blueprint = await client.composeBlueprint(
-    'Loft Portal Imobiliário Node.js Client',
+    'Olivelas Portal Imobiliário Node.js Client',
     'Aplicação corporativa criada via Node.js AI Agent Client',
     requirements
   );

@@ -1,6 +1,6 @@
 ---
-id: REF-AIOPS-TEAM-005
-title: "AIOps — Aplicações e soluções"
+id: REF-OLIVELAS-TEAM-005
+title: "Olivelas — Aplicações e soluções"
 status: "DRAFT"
 owner: "aiops"
 updated: "2026-08-24"
@@ -15,7 +15,7 @@ review_date: "2026-11-24"
 >
 > Documentation Standard v1.0
 
-Catálogo de produtos AIOps — **nível 2** em [`../aiops-apps/`](../aiops-apps/README.md); **nível 3** nos repositórios GitHub.
+Catálogo de produtos Olivelas — **nível 2** em [`../aiops-apps/`](../aiops-apps/README.md); **nível 3** nos repositórios GitHub.
 
 ## Apps web
 
@@ -24,7 +24,7 @@ Catálogo de produtos AIOps — **nível 2** em [`../aiops-apps/`](../aiops-apps
 | DataForge | [dataforge.md](../aiops-apps/dataforge.md) | [loft-br/aiops-dataforge](https://github.com/loft-br/aiops-dataforge) | `aiops-dataforge.loft-corp.com.br` |
 | Deep Insight | [deep-insight.md](../aiops-apps/deep-insight.md) | [loft-br/aiops-deep-insight](https://github.com/loft-br/aiops-deep-insight) | `aiops-deep-insight.loft-corp.com.br` |
 | Qualidade | [qualidade-loft.md](../aiops-apps/qualidade-loft.md) | [loft-br/qualidade-loft](https://github.com/loft-br/qualidade-loft) | `aiops-qualidade.loft-corp.com.br` |
-| Loft Carteiras | [loft-carteiras.md](../aiops-apps/loft-carteiras.md) | [loft-br/aiops-loft-carteira](https://github.com/loft-br/aiops-loft-carteira) | `aiops-loft-carteiras.loft-corp.com.br` |
+| Olivelas Carteiras | [loft-carteiras.md](../aiops-apps/loft-carteiras.md) | [loft-br/aiops-loft-carteira](https://github.com/loft-br/aiops-loft-carteira) | `aiops-loft-carteiras.loft-corp.com.br` |
 
 ## Bot Slack
 

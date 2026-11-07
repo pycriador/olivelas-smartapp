@@ -1,4 +1,4 @@
-# Infra Loft atual (AIOps)
+# Infra Olivelas atual (Olivelas)
 
 > Language: pt-BR | [English (EN)](../../en/loft-infra/README.md)
 >
@@ -8,7 +8,7 @@
 >
 > Documentation Standard v1.0
 
-Documentação **as-is** da forma como os apps AIOps da Loft são publicados hoje: GitHub Actions → ECR → `k8s-apps` (Argo CD + chart `web-server`) → Kong → DNS (`infra-live`) + secrets (Vault).
+Documentação **as-is** da forma como os apps Olivelas da Olivelas são publicados hoje: GitHub Actions → ECR → `k8s-apps` (Argo CD + chart `web-server`) → Kong → DNS (`infra-live`) + secrets (Vault).
 
 Stacks de **frontend/backend** (libs, rotas, segurança): ver pasta irmã [../aiops-apps/README.md](../aiops-apps/README.md).
 

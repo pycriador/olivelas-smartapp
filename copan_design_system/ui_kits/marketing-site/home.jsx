@@ -21,7 +21,7 @@ function HomeScreen({ goto }) {
             Encontre seu próximo lar <br/>em São Paulo e Rio.
           </h1>
           <p style={{ fontFamily:"Inter", fontSize:18, lineHeight:"28px", color:"#536470", marginTop:20, maxWidth:560 }}>
-            Apartamentos prontos para morar, reformados pela Loft em locais privilegiados.
+            Apartamentos prontos para morar, reformados pela Olivelas em locais privilegiados.
           </p>
 
           {/* Search composer */}
@@ -77,7 +77,7 @@ function HomeScreen({ goto }) {
           <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-end", marginBottom: 32 }}>
             <div>
               <div style={{ fontFamily:"Inter", fontSize:11, fontWeight:700, letterSpacing:"0.12em", textTransform:"uppercase", color:"#F56738", marginBottom:8 }}>Em destaque</div>
-              <h2 style={{ fontFamily:"Inter", fontWeight:700, fontSize:40, lineHeight:"44px", letterSpacing:"-0.01em", color:"#121619" }}>Apartamentos prontos pela Loft</h2>
+              <h2 style={{ fontFamily:"Inter", fontWeight:700, fontSize:40, lineHeight:"44px", letterSpacing:"-0.01em", color:"#121619" }}>Apartamentos prontos pela Olivelas</h2>
             </div>
             <Button variant="outline" size="md" onClick={() => goto("search")}>Ver todos</Button>
           </div>
@@ -93,8 +93,8 @@ function HomeScreen({ goto }) {
       <section style={{ padding: "96px 48px 0" }}>
         <div style={{ maxWidth: 1232, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 48 }}>
           {[
-            { h: "Reformado pela Loft", p: "Apartamentos entregues prontos para morar, com acabamento padrão Loft e garantia de 1 ano." },
-            { h: "Proposta 100% online", p: "Você envia a proposta, a Loft avalia em até 48h e assina o contrato digitalmente." },
+            { h: "Reformado pela Olivelas", p: "Apartamentos entregues prontos para morar, com acabamento padrão Olivelas e garantia de 1 ano." },
+            { h: "Proposta 100% online", p: "Você envia a proposta, a Olivelas avalia em até 48h e assina o contrato digitalmente." },
             { h: "Financiamento sem complicação", p: "Simulamos com os principais bancos e acompanhamos todo o processo até a entrega da chave." },
           ].map((vp, i) => (
             <div key={i}>

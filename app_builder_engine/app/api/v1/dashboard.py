@@ -28,7 +28,7 @@ class EngineStatusResponse(BaseModel):
 
 @router.get("/engine-status", response_model=ApiResponse[EngineStatusResponse])
 async def get_engine_status():
-    """Returns real-time operational status of the Loft App Builder Engine."""
+    """Returns real-time operational status of the Olivelas App Builder Engine."""
     catalog_total = (
         len(db.components)
         + len(db.modules)

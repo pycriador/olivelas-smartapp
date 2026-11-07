@@ -1,4 +1,4 @@
-# 🏠 Loft Imóveis Exclusivos (App 4)
+# 🏠 Olivelas Imóveis Exclusivos (App 4)
 
 Página moderna de imóveis para venda com fotos de alta qualidade, mapa interativo, galeria de imagens, simulador de crédito e avaliação imobiliária com inteligência artificial, conectada **100% à API** da plataforma App Builder Engine (`http://127.0.0.1:8000/api/v1`).
 

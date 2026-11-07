@@ -59,7 +59,7 @@
 
   /**
    * "Ver todos" toggles the extra product items hidden inside the
-   * waffle panel, matching the Loft pattern of a progressive-disclosure
+   * waffle panel, matching the Olivelas pattern of a progressive-disclosure
    * product grid.
    */
   var verTodosBtn = document.getElementById('verTodosBtn');

@@ -1,5 +1,5 @@
 ---
-title: "Nome da aplicação — doc AIOps"
+title: "Nome da aplicação — doc Olivelas"
 status: "DRAFT"
 owner: "aiops"
 updated: "YYYY-MM-DD"
@@ -16,7 +16,7 @@ review_date: "YYYY-MM-DD"
 >
 > Authority: Verified
 
-Documentação **as-is** de [loft-br/REPO_NAME](https://github.com/loft-br/REPO_NAME) no catálogo AIOps — **nível 2**. Detalhe técnico nível 3 vive no README do repositório da app.
+Documentação **as-is** de [loft-br/REPO_NAME](https://github.com/loft-br/REPO_NAME) no catálogo Olivelas — **nível 2**. Detalhe técnico nível 3 vive no README do repositório da app.
 
 ## Objetivo
 
@@ -77,7 +77,7 @@ Repo: [loft-br/REPO_NAME](https://github.com/loft-br/REPO_NAME).
 | Backend | [backend/README](https://github.com/loft-br/REPO_NAME/blob/main/backend/README.md) |
 | Pasta docs | [docs/](https://github.com/loft-br/REPO_NAME/tree/main/docs) |
 
-## Deploy (padrão Loft)
+## Deploy (padrão Olivelas)
 
 | Campo | Valor |
 | --- | --- |

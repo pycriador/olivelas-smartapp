@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Loft Design System — tokens
+   Olivelas Design System — tokens
    ========================================================================== */
 :root {
   --font-family: 'Inter', Arial, sans-serif;
@@ -311,8 +311,8 @@ svg { display: block; }
 }
 .product-mini:hover { background: var(--neutral-50); border-color: var(--border-strong); text-decoration: none; }
 /* "Key" marker: a hollow orange circle with a short solid bar coming out
-   of its right side, matching the Loft app-switcher's secondary/utility
-   links (Qualifica Leads, Clube Loft, CredSign, ...). */
+   of its right side, matching the Olivelas app-switcher's secondary/utility
+   links (Qualifica Leads, Clube Olivelas, CredSign, ...). */
 .product-mini__icon {
   position: relative;
   width: 15px;

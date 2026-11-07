@@ -1,4 +1,4 @@
-# Checklist de verificação — Datadog (Loft)
+# Checklist de verificação — Datadog (Olivelas)
 
 > Language: pt-BR | [English (EN)](../../en/loft-observability/verification-checklist.md)
 >
@@ -8,7 +8,7 @@
 >
 > Authority: Informational
 
-Execute após deploy ou mudança de observabilidade em serviço Loft na EKS. Complementa [../loft-infra/checklist-novo-servico.md](../loft-infra/checklist-novo-servico.md).
+Execute após deploy ou mudança de observabilidade em serviço Olivelas na EKS. Complementa [../loft-infra/checklist-novo-servico.md](../loft-infra/checklist-novo-servico.md).
 
 ## Kubernetes / chart
 
@@ -41,7 +41,7 @@ Execute após deploy ou mudança de observabilidade em serviço Loft na EKS. Com
 - [ ] Monitors críticos com link de runbook ou debt registrada
 - [ ] On-call conhece nome do serviço e env no Datadog
 
-## Gate documental (Loft)
+## Gate documental (Olivelas)
 
 - [ ] [documentation-prerequisites.md](documentation-prerequisites.md) atendido para produção
 - [ ] Links de evidência (URLs blob GitHub) na doc de observabilidade do projeto

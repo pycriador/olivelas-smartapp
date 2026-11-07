@@ -1,6 +1,6 @@
 ---
-id: REF-AIOPS-TEAM-008
-title: "AIOps — Padrões técnicos"
+id: REF-OLIVELAS-TEAM-008
+title: "Olivelas — Padrões técnicos"
 status: "DRAFT"
 owner: "aiops"
 updated: "2026-08-24"
@@ -15,7 +15,7 @@ review_date: "2026-11-24"
 >
 > Documentation Standard v1.0
 
-Pointers para padrões que o time AIOps segue ao desenvolver e publicar serviços.
+Pointers para padrões que o time Olivelas segue ao desenvolver e publicar serviços.
 
 ## Aplicação
 
@@ -24,7 +24,7 @@ Pointers para padrões que o time AIOps segue ao desenvolver e publicar serviço
 | Organização monorepo | [../aiops-apps/overview.md](../aiops-apps/overview.md) |
 | Rotas e health | [../aiops-apps/routes.md](../aiops-apps/routes.md) |
 | Segurança de apps | [../aiops-apps/security.md](../aiops-apps/security.md) |
-| APIs REST | Loft API plugin (paths em inglês, JSON, erros em inglês) |
+| APIs REST | Olivelas API plugin (paths em inglês, JSON, erros em inglês) |
 
 ## Infra e publicação
 
@@ -37,7 +37,7 @@ Pointers para padrões que o time AIOps segue ao desenvolver e publicar serviço
 | Vault secrets | [../loft-infra/vault-secrets.md](../loft-infra/vault-secrets.md) |
 | Novo serviço | [../loft-infra/checklist-novo-servico.md](../loft-infra/checklist-novo-servico.md) |
 
-## Convenções AIOps (deploy)
+## Convenções Olivelas (deploy)
 
 | Campo | Valor típico |
 | --- | --- |
@@ -54,7 +54,7 @@ Pointers para padrões que o time AIOps segue ao desenvolver e publicar serviço
 | --- | --- |
 | Padrão de docs | [../standards.md](../standards.md) |
 | Duas superfícies (GitHub + Confluence) | [../publishing-surfaces.md](../publishing-surfaces.md) |
-| Modelo 3 níveis AIOps | [documentation-model.md](documentation-model.md) |
+| Modelo 3 níveis Olivelas | [documentation-model.md](documentation-model.md) |
 
 ## Relacionados
 

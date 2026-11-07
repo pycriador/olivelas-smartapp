@@ -37,7 +37,7 @@ version: "1.0"
 
 | Signal | Status |
 | --- | --- |
-| Metrics | Partial (ilustrativo; Datadog opcional em orgs Loft — não exigido pelo padrão) |
+| Metrics | Partial (ilustrativo; Datadog opcional em orgs Olivelas — não exigido pelo padrão) |
 | Logs | Partial |
 | Traces | Not Applicable (neste exemplo) |
 | Health checks | Implemented (ilustrativo) |

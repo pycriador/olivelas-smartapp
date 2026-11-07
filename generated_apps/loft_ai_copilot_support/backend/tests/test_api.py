@@ -20,7 +20,7 @@ def test_create_proposal():
     payload = {
         "title": "Proposta Teste Pytest",
         "client_name": "Ana Paula",
-        "client_email": "ana.paula@loft.com.br",
+        "client_email": "ana.paula@olivelas.com.br",
         "client_document": "345.678.901-23",
         "amount": 2900.0,
         "category": "Garantia Locatícia",

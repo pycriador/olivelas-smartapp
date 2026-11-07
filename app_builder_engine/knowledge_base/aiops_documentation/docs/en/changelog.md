@@ -21,28 +21,28 @@ Canonical changelog for this Documentation Standard. Policy: [changelog-policy.m
 
 ## 2026-09-01
 
-- Summary: Published the humanized-guides pilot (team hub + DataForge) and filled the **AIOps - Stack** pack gap, which was missing DataForge/Deep Insight/Loft Carteiras/Qualidade. Discovered and fixed along the way: Confluence enforces **page-title uniqueness per space**, not per parent page, so a page cannot exist under both "Documentação Inicial" and "AIOps - Stack" with the same title. The 5 affected pages were moved to their correct parent; `documentacao-inicial.pt-BR.yaml` now excludes `aiops-apps/` (`exclude_globs`); `hub-registry.yaml`, `Makefile` (`docs-sync-aiops-app*`), and `docs-sync/aiops-config/README.md` updated so app pages are no longer targeted at both packs.
+- Summary: Published the humanized-guides pilot (team hub + DataForge) and filled the **Olivelas - Stack** pack gap, which was missing DataForge/Deep Insight/Olivelas Carteiras/Qualidade. Discovered and fixed along the way: Confluence enforces **page-title uniqueness per space**, not per parent page, so a page cannot exist under both "Documentação Inicial" and "Olivelas - Stack" with the same title. The 5 affected pages were moved to their correct parent; `documentacao-inicial.pt-BR.yaml` now excludes `aiops-apps/` (`exclude_globs`); `hub-registry.yaml`, `Makefile` (`docs-sync-aiops-app*`), and `docs-sync/aiops-config/README.md` updated so app pages are no longer targeted at both packs.
 - Resources:
   - `docs-sync/aiops-config/documentacao-inicial.pt-BR.yaml` (`exclude_globs`)
   - `docs-sync/aiops-config/hub-registry.yaml` (`application.sync_profiles`, `agent_workflow.sync_app`)
   - `docs-sync/aiops-config/README.md`
   - `Makefile` (`docs-sync-aiops-app-plan`, `docs-sync-aiops-app`)
-- Impact: AIOps - Stack pack complete (12 pages); future app publishes no longer attempt a duplicate title and fail with a Confluence 400
+- Impact: Olivelas - Stack pack complete (12 pages); future app publishes no longer attempt a duplicate title and fail with a Confluence 400
 - See: `docs-sync/aiops-config/hub-registry.yaml`
 
 ## 2026-08-31
 
-- Summary: Pilot of **plain-language guides** for the AIOps hub — sibling pages, in the same folder as the technical page, for non-technical Confluence readers (team hub and DataForge app). One-line hatnotes on technical pages point to the guide; guides link back to the specification. Guides are not part of `ai-context.md`'s required reading chain, keeping AI agent token usage unaffected. Tracked in `hub-registry.yaml` (`human_guide`).
+- Summary: Pilot of **plain-language guides** for the Olivelas hub — sibling pages, in the same folder as the technical page, for non-technical Confluence readers (team hub and DataForge app). One-line hatnotes on technical pages point to the guide; guides link back to the specification. Guides are not part of `ai-context.md`'s required reading chain, keeping AI agent token usage unaffected. Tracked in `hub-registry.yaml` (`human_guide`).
 - Resources:
   - [aiops-team/README-guide.md](aiops-team/README-guide.md)
   - [aiops-apps/dataforge-guide.md](aiops-apps/dataforge-guide.md)
   - `docs-sync/aiops-config/hub-registry.yaml` (`human_guides`)
-- Impact: non-technical readers of the AIOps Confluence space (business, new joiners, support); no change to the technical source of truth
+- Impact: non-technical readers of the Olivelas Confluence space (business, new joiners, support); no change to the technical source of truth
 - See: [aiops-team/README-guide.md](aiops-team/README-guide.md)
 
 ## 2026-08-24
 
-- Summary: **AIOps 3-level hub** — `aiops-team/` folder (level 1), per-app pages in `aiops-apps/` (level 2), `hub-registry.yaml`, `sync-aiops-hub` skill, CLI `--only` flag, scoped Make targets, DataForge level-3 pilot.
+- Summary: **Olivelas 3-level hub** — `aiops-team/` folder (level 1), per-app pages in `aiops-apps/` (level 2), `hub-registry.yaml`, `sync-aiops-hub` skill, CLI `--only` flag, scoped Make targets, DataForge level-3 pilot.
 - Resources:
   - [aiops-team/README.md](aiops-team/README.md)
   - [aiops-team/documentation-model.md](aiops-team/documentation-model.md)
@@ -57,19 +57,19 @@ Canonical changelog for this Documentation Standard. Policy: [changelog-policy.m
   - [loft-infra/examples/README.md](loft-infra/examples/README.md)
   - [loft-infra/README.md](loft-infra/README.md)
   - [loft-infra/checklist-novo-servico.md](loft-infra/checklist-novo-servico.md)
-- Impact: AIOps teams publishing new apps on the Cross Prod model
+- Impact: Olivelas teams publishing new apps on the Cross Prod model
 - See: [loft-infra/publish-guide.md](loft-infra/publish-guide.md)
 
 ## 2026-08-19
 
-- Summary: New **Loft as-is** pack `loft-observability/` (EN + pt-BR): Datadog on EKS (`web-server` chart), structured JSON logs, application APM recipes, operator usage guide, post-deploy verification, and **logs in Datadog** as a Loft documentation prerequisite. Integrated with `loft-infra` checklist, `observability-platform-notes` (pointer only), docs index, manifest, area map, and `docs-sync` loft-infra profile (second root path).
+- Summary: New **Olivelas as-is** pack `loft-observability/` (EN + pt-BR): Datadog on EKS (`web-server` chart), structured JSON logs, application APM recipes, operator usage guide, post-deploy verification, and **logs in Datadog** as a Olivelas documentation prerequisite. Integrated with `loft-infra` checklist, `observability-platform-notes` (pointer only), docs index, manifest, area map, and `docs-sync` loft-infra profile (second root path).
 - Resources:
   - [loft-observability/README.md](loft-observability/README.md)
   - [loft-observability/documentation-prerequisites.md](loft-observability/documentation-prerequisites.md)
   - [loft-infra/checklist-novo-servico.md](loft-infra/checklist-novo-servico.md)
   - [observability-platform-notes.md](observability-platform-notes.md)
   - [docs-sync/aiops-config/loft-infra.pt-BR.yaml](../../docs-sync/aiops-config/loft-infra.pt-BR.yaml)
-- Impact: Loft EKS service authors, operators, and AIOps documentation consumers
+- Impact: Olivelas EKS service authors, operators, and Olivelas documentation consumers
 - See: [loft-observability/README.md](loft-observability/README.md)
 
 ## 2026-08-17

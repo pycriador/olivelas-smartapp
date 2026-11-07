@@ -89,7 +89,7 @@ class ApplicationScaffolder:
         if isinstance(blueprint, ProjectBlueprintResponse):
             bp_dict = blueprint.data or {}
             name = app_name or blueprint.project_name
-            desc = description or bp_dict.get("description", "Aplicações corporativas Loft")
+            desc = description or bp_dict.get("description", "Aplicações corporativas Olivelas")
             api_contracts = blueprint.api_contracts
             frontend_components = blueprint.frontend_components
             backend_components = blueprint.backend_components
@@ -114,7 +114,7 @@ class ApplicationScaffolder:
         else:
             bp_dict = blueprint
             name = app_name or bp_dict.get("name") or bp_dict.get("project_name") or "LoftApp"
-            desc = description or bp_dict.get("description", "Aplicações corporativas Loft")
+            desc = description or bp_dict.get("description", "Aplicações corporativas Olivelas")
             api_contracts = bp_dict.get("api_contracts", [])
             frontend_components = bp_dict.get("frontend_components", [])
             backend_components = bp_dict.get("backend_components", [])
@@ -168,12 +168,12 @@ class ApplicationScaffolder:
         content = f"""# 🏢 {name}
 
 > {desc}  
-> Desenvolvido e governado através do **Loft App Builder Engine** e **Copan Design System**.
+> Desenvolvido e governado através do **Olivelas App Builder Engine** e **Copan Design System**.
 
 ---
 
 ## 🛠️ Stack Tecnológica & Arquitetura
-- **Design System:** Copan Design System (Ant Design v5 + Loft Brand Tokens `#F56738`)
+- **Design System:** Copan Design System (Ant Design v5 + Olivelas Brand Tokens `#F56738`)
 - **Frontend:** React 19 + TypeScript + Vite + Tailwind CSS + TanStack Query
 - **Backend:** FastAPI (Python 3.11+) + Pydantic v2 + SQLite / SQLAlchemy 2.x
 - **Governança:** Zero Trust, RBAC, Rate Limiting, Audit Trail e Contratos OpenAPI
@@ -251,7 +251,7 @@ services:
         content = """#!/usr/bin/env bash
 set -e
 
-echo "🚀 Iniciando ambiente de desenvolvimento Loft..."
+echo "🚀 Iniciando ambiente de desenvolvimento Olivelas..."
 
 # 1. Setup Backend
 if [ -d "backend" ]; then
@@ -486,7 +486,7 @@ def create_access_token(subject: str | Any, expires_delta: Optional[timedelta] =
 async def get_current_user(credentials: Optional[HTTPAuthorizationCredentials] = Depends(security_scheme)) -> dict:
     if not credentials:
         # Development fallback
-        return {"sub": "usr_dev01", "email": "dev@loft.com.br", "role": "Global Admin", "name": "Desenvolvedor Loft"}
+        return {"sub": "usr_dev01", "email": "dev@olivelas.com.br", "role": "Global Admin", "name": "Desenvolvedor Olivelas"}
     token = credentials.credentials
     try:
         payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
@@ -508,7 +508,7 @@ class InMemoryDatabase:
         self.proposals = [
             {
                 "id": "prop_loft_01",
-                "title": "Apresentação Loft Soluções Imobiliárias",
+                "title": "Apresentação Olivelas Soluções Imobiliárias",
                 "client_name": "Mariana Santos",
                 "client_email": "mariana.santos@exemplo.com",
                 "client_document": "234.567.890-12",
@@ -659,7 +659,7 @@ class ApiListResponse(BaseModel, Generic[T]):
 class ProposalBase(BaseModel):
     title: str = Field(..., example="Locação Apto Copan 42B")
     client_name: str = Field(..., example="Willian Jesus")
-    client_email: str = Field(..., example="willian.jesus@loft.com.br")
+    client_email: str = Field(..., example="willian.jesus@olivelas.com.br")
     client_document: str = Field(..., example="123.456.789-00")
     amount: float = Field(..., gt=0, example=3500.0)
     category: str = Field(default="Garantia Locatícia")
@@ -694,7 +694,7 @@ class LoginResponse(BaseModel):
     user: dict
 
 class ChatMessageRequest(BaseModel):
-    message: str = Field(..., example="Como funciona a garantia de fiança da Loft?")
+    message: str = Field(..., example="Como funciona a garantia de fiança da Olivelas?")
     history: Optional[List[dict]] = Field(default_factory=list)
 
 class ChatMessageResponse(BaseModel):
@@ -934,7 +934,7 @@ router = APIRouter(prefix="/chat", tags=["Chatbot & AI Copilot"])
 KNOWLEDGE_BASE = [
     {
         "keywords": ["fiança", "fianca", "garantia", "aluguel", "locação", "locacao"],
-        "reply": "A Fiança Aluguel Loft substitui fiador e caução com aprovação 100% digital em até 15 minutos. Cobre inadimplência de aluguel, condomínio, IPTU e danos ao imóvel com segurança jurídica integral.",
+        "reply": "A Fiança Aluguel Olivelas substitui fiador e caução com aprovação 100% digital em até 15 minutos. Cobre inadimplência de aluguel, condomínio, IPTU e danos ao imóvel com segurança jurídica integral.",
         "intent": "fianca_aluguel",
         "actions": ["Simular taxa de fiança", "Ver documentos necessários", "Falar com consultor"]
     },
@@ -946,7 +946,7 @@ KNOWLEDGE_BASE = [
     },
     {
         "keywords": ["api", "integrar", "integracao", "integração", "desenvolvedor", "webhook", "endpoint"],
-        "reply": "A Loft disponibiliza API REST e Webhooks para imobiliárias e parceiros emitirem garantias diretamente em seus CRMs ou ERPs com autenticação JWT e contratos OpenAPI 3.1.",
+        "reply": "A Olivelas disponibiliza API REST e Webhooks para imobiliárias e parceiros emitirem garantias diretamente em seus CRMs ou ERPs com autenticação JWT e contratos OpenAPI 3.1.",
         "intent": "api_developer",
         "actions": ["Acessar Swagger API", "Gerar API Key", "Ver documentação técnica"]
     },
@@ -972,7 +972,7 @@ def send_chat_message(payload: ChatMessageRequest):
         intent = matched["intent"]
         actions = matched["actions"]
     else:
-        reply_text = f"Olá! Sou o Assistente Inteligente Loft Copan. Recebi sua mensagem: '{payload.message}'. Posso te ajudar com contratação de Fiança Aluguel, análise de crédito, envio de propostas ou integração com nossa API."
+        reply_text = f"Olá! Sou o Assistente Inteligente Olivelas Copan. Recebi sua mensagem: '{payload.message}'. Posso te ajudar com contratação de Fiança Aluguel, análise de crédito, envio de propostas ou integração com nossa API."
         intent = "general_support"
         actions = ["Como funciona a Fiança?", "Quais documentos preciso?", "Falar com suporte humano"]
 
@@ -1009,7 +1009,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="{name}",
-    description="API stateless desenvolvida e orquestrada via Loft App Builder Engine.",
+    description="API stateless desenvolvida e orquestrada via Olivelas App Builder Engine.",
     version="1.0.0",
     lifespan=lifespan,
 )
@@ -1057,7 +1057,7 @@ async def lifespan(app: FastAPI):
         if db.query(ProposalModel).count() == 0:
             p1 = ProposalModel(
                 id="prop_loft_01",
-                title="Locação Residencial Jardins - Loft Fiança",
+                title="Locação Residencial Jardins - Olivelas Fiança",
                 client_name="Mariana Santos",
                 client_email="mariana.santos@exemplo.com",
                 client_document="234.567.890-12",
@@ -1085,7 +1085,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="{name}",
-    description="API canônica desenvolvida e orquestrada via Loft App Builder Engine.",
+    description="API canônica desenvolvida e orquestrada via Olivelas App Builder Engine.",
     version="1.0.0",
     lifespan=lifespan,
 )
@@ -1136,7 +1136,7 @@ def test_create_proposal():
     payload = {
         "title": "Proposta Teste Pytest",
         "client_name": "Ana Paula",
-        "client_email": "ana.paula@loft.com.br",
+        "client_email": "ana.paula@olivelas.com.br",
         "client_document": "345.678.901-23",
         "amount": 2900.0,
         "category": "Garantia Locatícia",
@@ -1179,7 +1179,7 @@ def test_create_proposal():
     payload = {
         "title": "Proposta Teste Pytest",
         "client_name": "Ana Paula",
-        "client_email": "ana.paula@loft.com.br",
+        "client_email": "ana.paula@olivelas.com.br",
         "client_document": "345.678.901-23",
         "amount": 2900.0,
         "category": "Garantia Locatícia",
@@ -1321,9 +1321,9 @@ export default defineConfig({
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="https://assets.loft.com.br/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="https://assets.olivelas.com.br/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{name} — Loft Engineering</title>
+    <title>{name} — Olivelas Engineering</title>
   </head>
   <body class="bg-[#F2F4F8] text-[#121619] antialiased">
     <div id="root"></div>
@@ -1335,7 +1335,7 @@ export default defineConfig({
 
         # frontend/src/theme/colors.ts
         colors_ts = """export const colors = {
-  primary: '#F56738', // Loft Brand Orange (Copan)
+  primary: '#F56738', // Olivelas Brand Orange (Copan)
   primaryHover: '#D94616',
   primaryActive: '#B83207',
   primaryBg: '#FFF2EC',
@@ -1586,7 +1586,7 @@ export const chatApi = {
       return res.data.data;
     } catch (e) {
       return {
-        reply: `Olá! Sou o Assistente Copilot Loft. Entendi sua mensagem sobre "${message}". No momento estou operando em modo mock autônomo. Posso te ajudar com Fiança Aluguel, documentação, ou suporte técnico!`,
+        reply: `Olá! Sou o Assistente Copilot Olivelas. Entendi sua mensagem sobre "${message}". No momento estou operando em modo mock autônomo. Posso te ajudar com Fiança Aluguel, documentação, ou suporte técnico!`,
         sender: 'assistant',
         intent: 'fallback_mock',
         confidence: 0.95,
@@ -1672,7 +1672,7 @@ export const AppSwitcher: React.FC<AppSwitcherProps> = ({ isOpen, onClose }) => 
       title={
         <div className="flex items-center gap-2 pb-2 border-b border-[#E1E9EF]">
           <AppstoreOutlined className="text-[#F56738] text-lg" />
-          <span className="font-bold text-base text-[#121619]">Ecossistema de Aplicações Loft</span>
+          <span className="font-bold text-base text-[#121619]">Ecossistema de Aplicações Olivelas</span>
         </div>
       }
     >
@@ -1742,7 +1742,7 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
         <button
           onClick={() => setSwitcherOpen(true)}
           className="p-2 rounded-lg text-[#627D98] hover:text-[#121619] hover:bg-[#F2F4F8] transition cursor-pointer"
-          title="Loft App Switcher (Menu Waffle 9-dots)"
+          title="Olivelas App Switcher (Menu Waffle 9-dots)"
         >
           <AppstoreOutlined className="text-lg" />
         </button>
@@ -1816,7 +1816,7 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
             </Avatar>
             <div className="hidden lg:flex flex-col text-left">
               <span className="text-xs font-semibold text-[#121619] leading-tight">Willian Jesus</span>
-              <span className="text-[11px] text-[#627D98] leading-tight">willian.jesus@loft.com.br</span>
+              <span className="text-[11px] text-[#627D98] leading-tight">willian.jesus@olivelas.com.br</span>
             </div>
           </div>
         </Dropdown>
@@ -1911,7 +1911,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeView, onViewChange }) =>
           </span>
         </div>
         <div className="mt-1 text-[11px] text-[#829AB1]">
-          Loft Design Tokens enforced
+          Olivelas Design Tokens enforced
         </div>
       </div>
     </aside>
@@ -2105,10 +2105,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ appName, onExploreDash
     <div className="space-y-8 max-w-7xl mx-auto">
       <PageHeader
         title={appName}
-        subtitle="Apresentação institucional completa de produtos, garantias e soluções digitais Loft."
+        subtitle="Apresentação institucional completa de produtos, garantias e soluções digitais Olivelas."
         badge={
           <span className="bg-[#FFF2EC] text-[#F56738] border border-[#FDC4B2] text-xs font-bold px-2.5 py-1 rounded-full">
-            Loft Copan Design System
+            Olivelas Copan Design System
           </span>
         }
         actions={
@@ -2138,7 +2138,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ appName, onExploreDash
             Tecnologia e Segurança para <span className="text-[#F56738]">Transformar</span> o Mercado Imobiliário
           </h1>
           <p className="text-base md:text-lg text-[#627D98] leading-relaxed">
-            Oferecemos uma suíte completa de produtos integrados para locação, análise de crédito, CRM e repasses financeiros com a confiabilidade e padrão de qualidade Loft.
+            Oferecemos uma suíte completa de produtos integrados para locação, análise de crédito, CRM e repasses financeiros com a confiabilidade e padrão de qualidade Olivelas.
           </p>
           <div className="pt-2 flex flex-wrap items-center gap-4">
             <Button
@@ -2213,7 +2213,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ appName, onExploreDash
       <div className="space-y-4">
         <div>
           <h2 className="text-xl font-bold text-[#121619]">Soluções em Destaque</h2>
-          <p className="text-sm text-[#627D98]">Conheça os produtos do ecossistema Loft projetados para maximizar a sua operação.</p>
+          <p className="text-sm text-[#627D98]">Conheça os produtos do ecossistema Olivelas projetados para maximizar a sua operação.</p>
         </div>
 
         <Row gutter={[16, 16]}>
@@ -2696,7 +2696,7 @@ export const ChatbotPage: React.FC<ChatbotPageProps> = ({ appName }) => {
     {
       id: 'msg_welcome',
       sender: 'assistant',
-      text: 'Olá! Eu sou o Assistente Inteligente Loft Copan. Como posso ajudar você hoje com fiança locatícia, análise de crédito ou soluções imobiliárias?',
+      text: 'Olá! Eu sou o Assistente Inteligente Olivelas Copan. Como posso ajudar você hoje com fiança locatícia, análise de crédito ou soluções imobiliárias?',
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       suggestedActions: [
         'Como funciona a Fiança Aluguel?',
@@ -2771,7 +2771,7 @@ export const ChatbotPage: React.FC<ChatbotPageProps> = ({ appName }) => {
       title: 'Fiança Aluguel',
       desc: 'Como funciona a garantia locatícia sem fiador',
       icon: <SafetyCertificateOutlined className="text-[#F56738]" />,
-      query: 'Como funciona a Fiança Aluguel da Loft?',
+      query: 'Como funciona a Fiança Aluguel da Olivelas?',
     },
     {
       title: 'Documentação & KYC',
@@ -2789,7 +2789,7 @@ export const ChatbotPage: React.FC<ChatbotPageProps> = ({ appName }) => {
       title: 'Integração API',
       desc: 'Endpoints REST e webhooks para imobiliárias',
       icon: <ApiOutlined className="text-[#2B6CB0]" />,
-      query: 'Como integrar a API da Loft no meu sistema?',
+      query: 'Como integrar a API da Olivelas no meu sistema?',
     },
   ];
 
@@ -2797,7 +2797,7 @@ export const ChatbotPage: React.FC<ChatbotPageProps> = ({ appName }) => {
     <div className="max-w-5xl mx-auto space-y-4">
       <PageHeader
         title={`${appName} — AI Copilot Assistant`}
-        subtitle="Assistente cognitivo conversacional com tokens do Design System Loft Copan e inferência ágil."
+        subtitle="Assistente cognitivo conversacional com tokens do Design System Olivelas Copan e inferência ágil."
         badge={<Badge status="processing" color="#20A483" text="Copilot Ativo (Clean Architecture Mock)" />}
         actions={
           <Button
@@ -2864,7 +2864,7 @@ export const ChatbotPage: React.FC<ChatbotPageProps> = ({ appName }) => {
                       m.sender === 'user' ? 'text-[#CBD2D9]' : 'text-[#F56738]'
                     }`}
                   >
-                    {m.sender === 'user' ? 'Você' : 'Loft Copilot'}
+                    {m.sender === 'user' ? 'Você' : 'Olivelas Copilot'}
                   </span>
                   <span
                     className={`text-[10px] ${
@@ -2905,7 +2905,7 @@ export const ChatbotPage: React.FC<ChatbotPageProps> = ({ appName }) => {
               />
               <div className="bg-white border border-[#E1E9EF] rounded-2xl rounded-tl-none px-4 py-3 text-xs text-[#627D98] flex items-center gap-2 shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-[#F56738] animate-ping" />
-                <span>Loft Copilot digitando resposta...</span>
+                <span>Olivelas Copilot digitando resposta...</span>
               </div>
             </div>
           )}
@@ -2924,7 +2924,7 @@ export const ChatbotPage: React.FC<ChatbotPageProps> = ({ appName }) => {
                 handleSend();
               }
             }}
-            placeholder="Digite sua dúvida sobre fiança, contratos ou serviços Loft (pressione Enter para enviar)..."
+            placeholder="Digite sua dúvida sobre fiança, contratos ou serviços Olivelas (pressione Enter para enviar)..."
             autoSize={{ minRows: 1, maxRows: 3 }}
             className="resize-none rounded-xl border-[#CBD2D9] focus:border-[#F56738]"
             disabled={loading}

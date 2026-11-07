@@ -11,7 +11,7 @@ class ApplicationMetaInput:
     name: str
     description: str = ""
     domain: str = "Real Estate Fintech"
-    owner: str = "Loft Engineering Guild"
+    owner: str = "Olivelas Engineering Guild"
     target_type: str = "fullstack"
     framework_frontend: str = "React 19 (Ant Design)"
     framework_backend: str = "FastAPI (SQLAlchemy 2.0)"
@@ -97,7 +97,7 @@ class AICompositionResponse:
             data.get("architecture")
             or raw_bp.get("architecture")
             or data.get("architecture_name")
-            or "Loft Standard Fullstack"
+            or "Olivelas Standard Fullstack"
         )
 
         return cls(
@@ -157,7 +157,7 @@ class ProjectBlueprintResponse:
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> ProjectBlueprintResponse:
         return cls(
-            project_name=data.get("project_name", "Loft App"),
+            project_name=data.get("project_name", "Olivelas App"),
             target_type=data.get("target_type", "fullstack"),
             architecture=data.get("architecture", {}),
             folder_structure=data.get("folder_structure", []),
@@ -179,7 +179,7 @@ class ProjectCreate:
     slug: Optional[str] = None
     template_id: Optional[str] = None
     architecture_id: Optional[str] = None
-    owner: str = "Loft Engineering Guild"
+    owner: str = "Olivelas Engineering Guild"
     tags: List[str] = field(default_factory=list)
     repository_url: Optional[str] = None
 

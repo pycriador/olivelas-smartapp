@@ -18,7 +18,7 @@ Injeção de env no Kubernetes ([k8s-datadog-enablement.md](k8s-datadog-enableme
 | **TypeScript / Node** | JSON (`pino` preferido) | `import "dd-trace/init"` primeiro | `dd-trace` / `hot-shots` |
 | **Python** | logging JSON + trace ids | wrapper `ddtrace-run` | DogStatsD `datadog` |
 
-Apps AIOps de referência hoje são sobretudo **Python (Flask/FastAPI)** e **Node (SSR)** — [../aiops-apps/backend-stack.md](../aiops-apps/backend-stack.md).
+Apps Olivelas de referência hoje são sobretudo **Python (Flask/FastAPI)** e **Node (SSR)** — [../aiops-apps/backend-stack.md](../aiops-apps/backend-stack.md).
 
 ## Kotlin / JVM
 
@@ -65,7 +65,7 @@ Deep Insight usa Express SSR em `server/` — mesma regra de init no topo do ent
 3. Logs: JSON via `structlog` ou stdlib `logging`; bind `dd.trace_id` e `dd.span_id` quando necessário.
 4. Métricas custom: biblioteca DogStatsD `datadog`.
 
-### Gap as-is (AIOps DataForge)
+### Gap as-is (Olivelas DataForge)
 
 Entrypoint observado usa `gunicorn` sem `ddtrace-run`:
 
@@ -75,7 +75,7 @@ Trate APM como **Partial** ou **Not Documented** até instrumentar e verificar.
 
 ## Frontend (React / Vite)
 
-RUM no browser está fora deste pack salvo adoção explícita de Datadog RUM (`[pending: padrão Loft de RUM frontend]`). SSR Node segue a seção TypeScript/Node acima.
+RUM no browser está fora deste pack salvo adoção explícita de Datadog RUM (`[pending: padrão Olivelas de RUM frontend]`). SSR Node segue a seção TypeScript/Node acima.
 
 ## Verificação
 

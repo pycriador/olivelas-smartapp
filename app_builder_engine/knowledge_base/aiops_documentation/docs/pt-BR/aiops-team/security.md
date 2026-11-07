@@ -1,6 +1,6 @@
 ---
-id: REF-AIOPS-TEAM-009
-title: "AIOps — Segurança"
+id: REF-OLIVELAS-TEAM-009
+title: "Olivelas — Segurança"
 status: "DRAFT"
 owner: "aiops"
 updated: "2026-08-24"
@@ -15,7 +15,7 @@ review_date: "2026-11-24"
 >
 > Documentation Standard v1.0
 
-Visão transversal de segurança dos produtos AIOps. **Detalhe por app:** [../aiops-apps/security.md](../aiops-apps/security.md).
+Visão transversal de segurança dos produtos Olivelas. **Detalhe por app:** [../aiops-apps/security.md](../aiops-apps/security.md).
 
 ## Princípios (Confirmed)
 

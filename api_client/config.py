@@ -21,12 +21,12 @@ class ApiClientConfig:
         default_factory=lambda: os.getenv("APP_BUILDER_AUTH_TOKEN", None)
     )
     actor_email: str = field(
-        default_factory=lambda: os.getenv("APP_BUILDER_ACTOR_EMAIL", "willian.jesus@loft.com.br")
+        default_factory=lambda: os.getenv("APP_BUILDER_ACTOR_EMAIL", "willian.jesus@olivelas.com.br")
     )
     actor_role: str = field(
         default_factory=lambda: os.getenv("APP_BUILDER_ACTOR_ROLE", "Global Admin")
     )
-    user_agent: str = "Loft-AppBuilderClient/1.0.0 (Python)"
+    user_agent: str = "Olivelas-AppBuilderClient/1.0.0 (Python)"
     verify_ssl: bool = True
 
     @property

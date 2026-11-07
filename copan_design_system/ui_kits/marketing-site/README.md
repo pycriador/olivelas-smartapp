@@ -1,6 +1,6 @@
-# Loft Marketing Site — UI Kit
+# Olivelas Marketing Site — UI Kit
 
-Click-through recreation of Loft's browse/search surface (`loft.com.br`), built against the Copan foundations.
+Click-through recreation of Olivelas's browse/search surface (`olivelas.com.br`), built against the Copan foundations.
 
 ## Screens
 
@@ -20,7 +20,7 @@ Open `index.html` directly in a browser or through a static server. The screen s
 
 ## Caveats
 
-- Photography is represented by duotone gradient placeholders — swap for real Loft imagery when wired into production.
+- Photography is represented by duotone gradient placeholders — swap for real Olivelas imagery when wired into production.
 - The map peek is a stylized SVG; the real product uses Google Maps.
 - All content is static; search and filters do not actually mutate results — they drive visual states only.
-- Icons are from Lucide (CDN); substitute the production Loft icon font when available.
+- Icons are from Lucide (CDN); substitute the production Olivelas icon font when available.

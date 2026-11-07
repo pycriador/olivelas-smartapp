@@ -47,7 +47,7 @@ class ProjectsService:
             "name": name,
             "description": description or "",
             "domain": domain,
-            "owner": owner or self.http.config.actor_email or "willian.jesus@loft.com.br",
+            "owner": owner or self.http.config.actor_email or "willian.jesus@olivelas.com.br",
             "architecture": architecture,
             "architecture_id": architecture_id or "arch-modular-monolith",
             "tags": tags or ["loft-app", "automated-scaffold"],

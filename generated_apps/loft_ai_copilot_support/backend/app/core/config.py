@@ -2,7 +2,7 @@ from pydantic_settings import BaseSettings
 from typing import List
 
 class Settings(BaseSettings):
-    PROJECT_NAME: str = "Loft AI Copilot Support"
+    PROJECT_NAME: str = "Olivelas AI Copilot Support"
     API_V1_STR: str = "/api/v1"
     SECRET_KEY: str = "loft-secret-key-change-in-production-2026"
     ALGORITHM: str = "HS256"

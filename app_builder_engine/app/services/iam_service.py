@@ -605,7 +605,7 @@ class IamService:
                 permissions=perms,
             )
 
-    def create_user(self, body: UserCreateRequest, actor_email: str = "system@loft.com.br") -> UserResponse:
+    def create_user(self, body: UserCreateRequest, actor_email: str = "system@olivelas.com.br") -> UserResponse:
         with self.get_session() as db:
             existing = db.scalar(
                 select(UserModel).where(
@@ -673,7 +673,7 @@ class IamService:
             db.commit()
             return self.get_user(user_id)
 
-    def update_user(self, user_id: str, body: UserUpdateRequest, actor_email: str = "system@loft.com.br") -> UserResponse:
+    def update_user(self, user_id: str, body: UserUpdateRequest, actor_email: str = "system@olivelas.com.br") -> UserResponse:
         with self.get_session() as db:
             u = db.get(UserModel, user_id)
             if not u:
@@ -712,12 +712,12 @@ class IamService:
             db.commit()
             return self.get_user(user_id)
 
-    def delete_user(self, user_id: str, actor_email: str = "system@loft.com.br") -> None:
+    def delete_user(self, user_id: str, actor_email: str = "system@olivelas.com.br") -> None:
         with self.get_session() as db:
             u = db.get(UserModel, user_id)
             if not u:
                 raise HTTPException(status_code=404, detail="Usuário não encontrado.")
-            if u.role == "Global Admin" and u.email == "willian.jesus@loft.com.br":
+            if u.role == "Global Admin" and u.email == "willian.jesus@olivelas.com.br":
                 raise HTTPException(status_code=400, detail="O Administrador Global do Sistema não pode ser removido.")
 
             db.execute(delete(UserGroupModel).where(UserGroupModel.user_id == user_id))
@@ -726,7 +726,7 @@ class IamService:
             self.log_audit(db, "USER_DELETE", "User", user_id, actor_email, actor_email, "SUCCESS", {"email": u.email})
             db.commit()
 
-    def admin_reset_password(self, user_id: str, new_password: str, force_change: bool = True, actor_email: str = "system@loft.com.br") -> None:
+    def admin_reset_password(self, user_id: str, new_password: str, force_change: bool = True, actor_email: str = "system@olivelas.com.br") -> None:
         with self.get_session() as db:
             u = db.get(UserModel, user_id)
             if not u:
@@ -741,7 +741,7 @@ class IamService:
             self.log_audit(db, "USER_ADMIN_RESET_PASSWORD", "User", user_id, actor_email, actor_email, "SUCCESS", {"force_change": force_change})
             db.commit()
 
-    def unlock_user(self, user_id: str, actor_email: str = "system@loft.com.br") -> None:
+    def unlock_user(self, user_id: str, actor_email: str = "system@olivelas.com.br") -> None:
         with self.get_session() as db:
             u = db.get(UserModel, user_id)
             if not u:
@@ -808,7 +808,7 @@ class IamService:
                 roles=r_names,
             )
 
-    def create_group(self, body: GroupCreateRequest, actor_email: str = "system@loft.com.br") -> GroupResponse:
+    def create_group(self, body: GroupCreateRequest, actor_email: str = "system@olivelas.com.br") -> GroupResponse:
         with self.get_session() as db:
             gid = f"grp_{uuid.uuid4().hex[:12]}"
             slug = body.name.lower().replace(" ", "-")
@@ -833,7 +833,7 @@ class IamService:
             db.commit()
             return self.get_group(gid)
 
-    def update_group(self, group_id: str, body: GroupUpdateRequest, actor_email: str = "system@loft.com.br") -> GroupResponse:
+    def update_group(self, group_id: str, body: GroupUpdateRequest, actor_email: str = "system@olivelas.com.br") -> GroupResponse:
         with self.get_session() as db:
             g = db.get(GroupModel, group_id)
             if not g:
@@ -861,7 +861,7 @@ class IamService:
             db.commit()
             return self.get_group(group_id)
 
-    def delete_group(self, group_id: str, actor_email: str = "system@loft.com.br") -> None:
+    def delete_group(self, group_id: str, actor_email: str = "system@olivelas.com.br") -> None:
         with self.get_session() as db:
             g = db.get(GroupModel, group_id)
             if not g:
@@ -875,7 +875,7 @@ class IamService:
             self.log_audit(db, "GROUP_DELETE", "Group", group_id, actor_email, actor_email, "SUCCESS", {"name": g.name})
             db.commit()
 
-    def duplicate_group(self, group_id: str, actor_email: str = "system@loft.com.br") -> GroupResponse:
+    def duplicate_group(self, group_id: str, actor_email: str = "system@olivelas.com.br") -> GroupResponse:
         with self.get_session() as db:
             g = db.get(GroupModel, group_id)
             if not g:
@@ -913,7 +913,7 @@ class IamService:
                 raise HTTPException(status_code=404, detail="Grupo não encontrado.")
         return self.list_users(group_id=group_id)
 
-    def add_group_member(self, group_id: str, user_id: str, actor_email: str = "system@loft.com.br") -> dict[str, Any]:
+    def add_group_member(self, group_id: str, user_id: str, actor_email: str = "system@olivelas.com.br") -> dict[str, Any]:
         with self.get_session() as db:
             g = db.get(GroupModel, group_id)
             if not g:
@@ -954,7 +954,7 @@ class IamService:
                 "status": "added",
             }
 
-    def remove_group_member(self, group_id: str, user_id: str, actor_email: str = "system@loft.com.br") -> dict[str, Any]:
+    def remove_group_member(self, group_id: str, user_id: str, actor_email: str = "system@olivelas.com.br") -> dict[str, Any]:
         with self.get_session() as db:
             g = db.get(GroupModel, group_id)
             if not g:
@@ -1150,7 +1150,7 @@ class IamService:
                 permissions=p_codes,
             )
 
-    def create_role(self, body: IamRoleCreateRequest, actor_email: str = "system@loft.com.br") -> IamRoleResponse:
+    def create_role(self, body: IamRoleCreateRequest, actor_email: str = "system@olivelas.com.br") -> IamRoleResponse:
         with self.get_session() as db:
             rid = f"rol_{uuid.uuid4().hex[:12]}"
             slug = body.name.lower().replace(" ", "-")
@@ -1175,7 +1175,7 @@ class IamService:
             db.commit()
             return self.get_role(rid)
 
-    def update_role(self, role_id: str, body: IamRoleUpdateRequest, actor_email: str = "system@loft.com.br") -> IamRoleResponse:
+    def update_role(self, role_id: str, body: IamRoleUpdateRequest, actor_email: str = "system@olivelas.com.br") -> IamRoleResponse:
         with self.get_session() as db:
             r = db.get(IamRoleModel, role_id)
             if not r:
@@ -1203,7 +1203,7 @@ class IamService:
             db.commit()
             return self.get_role(role_id)
 
-    def delete_role(self, role_id: str, actor_email: str = "system@loft.com.br") -> None:
+    def delete_role(self, role_id: str, actor_email: str = "system@olivelas.com.br") -> None:
         with self.get_session() as db:
             r = db.get(IamRoleModel, role_id)
             if not r:
@@ -1236,7 +1236,7 @@ class IamService:
                 for p in perms
             ]
 
-    def create_permission(self, body: PermissionCreateRequest, actor_email: str = "system@loft.com.br") -> PermissionResponse:
+    def create_permission(self, body: PermissionCreateRequest, actor_email: str = "system@olivelas.com.br") -> PermissionResponse:
         with self.get_session() as db:
             existing = db.scalar(select(PermissionModel).where(PermissionModel.code == body.code))
             if existing:
@@ -1271,7 +1271,7 @@ class IamService:
                 created_at=new_perm.created_at,
             )
 
-    def update_permission(self, permission_id: str, body: PermissionUpdateRequest, actor_email: str = "system@loft.com.br") -> PermissionResponse:
+    def update_permission(self, permission_id: str, body: PermissionUpdateRequest, actor_email: str = "system@olivelas.com.br") -> PermissionResponse:
         with self.get_session() as db:
             p = db.get(PermissionModel, permission_id)
             if not p:
@@ -1298,7 +1298,7 @@ class IamService:
                 created_at=p.created_at,
             )
 
-    def delete_permission(self, permission_id: str, actor_email: str = "system@loft.com.br") -> None:
+    def delete_permission(self, permission_id: str, actor_email: str = "system@olivelas.com.br") -> None:
         with self.get_session() as db:
             p = db.get(PermissionModel, permission_id)
             if not p:
@@ -1309,7 +1309,7 @@ class IamService:
             self.log_audit(db, "PERMISSION_DELETE", "Permission", permission_id, actor_email, actor_email, "SUCCESS", {"code": p.code})
             db.commit()
 
-    def toggle_role_permission(self, permission_id: str, role_name: str, granted: bool, actor_email: str = "system@loft.com.br") -> None:
+    def toggle_role_permission(self, permission_id: str, role_name: str, granted: bool, actor_email: str = "system@olivelas.com.br") -> None:
         with self.get_session() as db:
             p = db.get(PermissionModel, permission_id)
             if not p:
@@ -1408,7 +1408,7 @@ class IamService:
                 )
             return res
 
-    def terminate_session(self, session_id: str, actor_email: str = "system@loft.com.br") -> None:
+    def terminate_session(self, session_id: str, actor_email: str = "system@olivelas.com.br") -> None:
         with self.get_session() as db:
             sess = db.get(SessionModel, session_id)
             if not sess:
@@ -1430,7 +1430,7 @@ class IamService:
             self.log_audit(db, "SESSION_TERMINATE", "Session", session_id, actor_email, actor_email, "SUCCESS", {"session_id": session_id})
             db.commit()
 
-    def terminate_all_user_sessions(self, user_id: str, actor_email: str = "system@loft.com.br") -> None:
+    def terminate_all_user_sessions(self, user_id: str, actor_email: str = "system@olivelas.com.br") -> None:
         with self.get_session() as db:
             sessions = db.scalars(select(SessionModel).where(SessionModel.user_id == user_id, SessionModel.is_active == True)).all()
             for s in sessions:

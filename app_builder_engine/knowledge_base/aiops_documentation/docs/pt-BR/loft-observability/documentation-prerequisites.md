@@ -1,4 +1,4 @@
-# Pré-requisitos documentais — logs no Datadog (Loft)
+# Pré-requisitos documentais — logs no Datadog (Olivelas)
 
 > Language: pt-BR | [English (EN)](../../en/loft-observability/documentation-prerequisites.md)
 >
@@ -8,19 +8,19 @@
 >
 > Authority: Informational
 
-Gate **Loft-specific** para **readiness de documentação operacional**. **Não** altera o [observability-model.md](../observability-model.md) vendor-agnostic nem [observability-platform-notes.md](../observability-platform-notes.md).
+Gate **Olivelas-specific** para **readiness de documentação operacional**. **Não** altera o [observability-model.md](../observability-model.md) vendor-agnostic nem [observability-platform-notes.md](../observability-platform-notes.md).
 
 ## Quando se aplica
 
 | Contexto | Regra |
 | --- | --- |
-| Serviço na **EKS Loft** com chart `web-server` | Aplica |
+| Serviço na **EKS Olivelas** com chart `web-server` | Aplica |
 | Biblioteca, CLI ou workload fora de Kubernetes | Documente observabilidade com honestidade; Datadog pode ser N/A com evidência |
-| Adoção só do framework (sem infra Loft) | Use apenas o template genérico |
+| Adoção só do framework (sem infra Olivelas) | Use apenas o template genérico |
 
 ## Pré-requisito: logging
 
-Antes de considerar a documentação operacional **completa** para um serviço Loft em produção:
+Antes de considerar a documentação operacional **completa** para um serviço Olivelas em produção:
 
 1. Preencha [templates/observability.md](../templates/observability.md) (ou equivalente em `operations/observability.md`).
 2. Defina **Logging → Status** como:
@@ -36,7 +36,7 @@ Se a org espera Datadog e o serviço **ainda não** ingere logs:
 
 ## O que é obrigatório vs o que pode ficar para depois
 
-| Sinal | Gate documental Loft | Notas |
+| Sinal | Gate documental Olivelas | Notas |
 | --- | --- | --- |
 | **Logs** (estruturados, Datadog) | **Obrigatório** para readiness | Mínimo para triagem de incidente |
 | **Traces / APM** | Recomendado; pode ser `Partial` + debt | Ver [application-instrumentation.md](application-instrumentation.md) |

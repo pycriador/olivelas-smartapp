@@ -1,4 +1,4 @@
-# AIOps Documentation Standard
+# Olivelas Documentation Standard
 
 > Language: EN | [Português (pt-BR)](README.pt-BR.md)
 >
@@ -55,14 +55,14 @@ Use this section to find packs and hubs quickly. The full category inventory is 
 
 **When the docs tree changes** (add, rename, move, or remove a category/pack under `docs/`), update this index **and** the language READMEs in the same PR. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-### As-is Loft packs (most consulted)
+### As-is Olivelas packs (most consulted)
 
-These packs describe **current Loft AIOps practice**, grounded in real repositories. They are separate from the generic documentation framework.
+These packs describe **current Olivelas practice**, grounded in real repositories. They are separate from the generic documentation framework.
 
 | Pack | Summary | Entry |
 | --- | --- | --- |
-| **Loft infra (AIOps)** | Publish path today: GitHub Actions → ECR → `k8s-apps` (Argo CD) → Kong → Route53 (`infra-live`) + Vault secrets | [docs/en/loft-infra/README.md](docs/en/loft-infra/README.md) |
-| **AIOps Apps** | Frontend/backend stacks of reference AIOps apps (monorepo layout, libs, routes, security) plus AVA Slack bot | [docs/en/aiops-apps/README.md](docs/en/aiops-apps/README.md) |
+| **Olivelas infra (Olivelas)** | Publish path today: GitHub Actions → ECR → `k8s-apps` (Argo CD) → Kong → Route53 (`infra-live`) + Vault secrets | [docs/en/loft-infra/README.md](docs/en/loft-infra/README.md) |
+| **Olivelas Apps** | Frontend/backend stacks of reference Olivelas apps (monorepo layout, libs, routes, security) plus AVA Slack bot | [docs/en/aiops-apps/README.md](docs/en/aiops-apps/README.md) |
 
 #### `loft-infra` — documents
 
@@ -186,7 +186,7 @@ Publishing that local documentation to **Confluence** is **optional**. When you 
 │   ├── validation-config.yaml
 │   ├── en/                   # English standard + as-is packs
 │   │   ├── loft-infra/       # As-is: publish path (Actions, k8s-apps, Kong, …)
-│   │   ├── aiops-apps/       # As-is: AIOps front/back stacks
+│   │   ├── aiops-apps/       # As-is: Olivelas front/back stacks
 │   │   └── …                 # methodology, templates, categories
 │   └── pt-BR/                # Portuguese mirror (same layout)
 └── examples/
@@ -320,8 +320,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) / [CONTRIBUTING.pt-BR.md](CONTRIBUTING.pt
 | Document | Description |
 | --- | --- |
 | [docs/README.md](docs/README.md) | Language chooser |
-| [docs/en/loft-infra/README.md](docs/en/loft-infra/README.md) | As-is Loft AIOps publish path |
-| [docs/en/aiops-apps/README.md](docs/en/aiops-apps/README.md) | As-is AIOps application stacks |
+| [docs/en/loft-infra/README.md](docs/en/loft-infra/README.md) | As-is Olivelas publish path |
+| [docs/en/aiops-apps/README.md](docs/en/aiops-apps/README.md) | As-is Olivelas application stacks |
 | [docs/en/principles.md](docs/en/principles.md) | Documentation principles |
 | [docs/en/lifecycle.md](docs/en/lifecycle.md) | Documentation lifecycle |
 | [docs/en/architecture-model.md](docs/en/architecture-model.md) | Architecture methodology |

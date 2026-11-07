@@ -1,4 +1,4 @@
-# AIOps backend stack
+# Olivelas backend stack
 
 > Language: EN | [Português (pt-BR)](../../pt-BR/aiops-apps/backend-stack.md)
 >
@@ -10,7 +10,7 @@
 
 ## Families
 
-**A — Flask + Gunicorn:** DataForge, Deep Insight, Loft Carteiras — SQLAlchemy, CORS, JWT, PostgreSQL drivers; Deep Insight adds Gemini/PDF/OCR/Slack; Carteiras uses `/auth/v1` + `/rest/v1` + `/public/v1`.
+**A — Flask + Gunicorn:** DataForge, Deep Insight, Olivelas Carteiras — SQLAlchemy, CORS, JWT, PostgreSQL drivers; Deep Insight adds Gemini/PDF/OCR/Slack; Carteiras uses `/auth/v1` + `/rest/v1` + `/public/v1`.
 
 **B — FastAPI + uvicorn + uv:** Qualidade — async SQLAlchemy/asyncpg, pydantic-settings, python-jose, JumpCloud OAuth routers under `/api/*`.
 

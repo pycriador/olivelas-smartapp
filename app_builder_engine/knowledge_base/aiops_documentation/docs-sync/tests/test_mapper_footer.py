@@ -17,7 +17,7 @@ def test_github_source_link_uses_blob_and_git_relative_path(tmp_path: Path):
     config = AppConfig(
         project=ProjectConfig(
             name="demo",
-            repository_url="https://github.com/loft-br/aiops-documentation",
+            repository_url="https://github.com/pycriador/olivelas-smartapp",
         ),
         documentation=DocumentationConfig(path=str(docs), language="pt-BR"),
         sync=SyncConfig(include_footer=True),
@@ -34,7 +34,7 @@ def test_github_source_link_uses_blob_and_git_relative_path(tmp_path: Path):
     display, url = mapper._github_source_link(doc)
     assert "kong-gateway.md" in display
     assert url.startswith(
-        "https://github.com/loft-br/aiops-documentation/blob/main/"
+        "https://github.com/pycriador/olivelas-smartapp/blob/main/"
     )
     assert url.endswith("kong-gateway.md")
     assert "/blob/main/" in url
@@ -48,7 +48,7 @@ def test_footer_contains_github_blob_link(tmp_path: Path):
     config = AppConfig(
         project=ProjectConfig(
             name="demo",
-            repository_url="https://github.com/loft-br/aiops-documentation",
+            repository_url="https://github.com/pycriador/olivelas-smartapp",
         ),
         documentation=DocumentationConfig(path=str(docs), language="pt-BR"),
         sync=SyncConfig(include_footer=True),

@@ -20,7 +20,7 @@ import type { RoleName } from '@/types/domain.types';
 
 export const Header: React.FC = () => {
   const { toggleCommandPalette, currentRole, setCurrentRole } = useUIStore();
-  const [currentUserEmail, setCurrentUserEmail] = useState<string>('willian.jesus@loft.com.br');
+  const [currentUserEmail, setCurrentUserEmail] = useState<string>('willian.jesus@olivelas.com.br');
   const [isAppSwitcherOpen, setIsAppSwitcherOpen] = useState<boolean>(false);
 
   useEffect(() => {
@@ -120,7 +120,7 @@ export const Header: React.FC = () => {
           className={`p-2 rounded-lg transition ${
             isAppSwitcherOpen ? 'bg-[#FFEDE6] text-loft-orange' : 'text-loft-muted hover:bg-loft-bg hover:text-loft-dark'
           }`}
-          title="Loft App Switcher (Menu Waffle)"
+          title="Olivelas App Switcher (Menu Waffle)"
         >
           <AppstoreOutlined className="text-lg" />
         </button>
@@ -136,10 +136,10 @@ export const Header: React.FC = () => {
             className="flex items-center gap-2 cursor-pointer select-none"
             onClick={() => navigateTo('/dashboard')}
           >
-            <span className="text-xl font-black text-loft-dark tracking-tight">loft</span>
+            <span className="text-xl font-black text-loft-dark tracking-tight">olivelas</span>
             <div className="w-1.5 h-1.5 rounded-full bg-loft-orange" />
             <span className="font-semibold text-sm text-[#334E68] tracking-normal">
-              App Builder Engine
+              SmartApp Engine
             </span>
           </div>
 

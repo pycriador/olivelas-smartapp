@@ -24,7 +24,7 @@ class ApiListResponse(BaseModel, Generic[T]):
 class ProposalBase(BaseModel):
     title: str = Field(..., example="Locação Apto Copan 42B")
     client_name: str = Field(..., example="Willian Jesus")
-    client_email: str = Field(..., example="willian.jesus@loft.com.br")
+    client_email: str = Field(..., example="willian.jesus@olivelas.com.br")
     client_document: str = Field(..., example="123.456.789-00")
     amount: float = Field(..., gt=0, example=3500.0)
     category: str = Field(default="Garantia Locatícia")
@@ -59,7 +59,7 @@ class LoginResponse(BaseModel):
     user: dict
 
 class ChatMessageRequest(BaseModel):
-    message: str = Field(..., example="Como funciona a garantia de fiança da Loft?")
+    message: str = Field(..., example="Como funciona a garantia de fiança da Olivelas?")
     history: Optional[List[dict]] = Field(default_factory=list)
 
 class ChatMessageResponse(BaseModel):

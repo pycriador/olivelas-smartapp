@@ -1,4 +1,4 @@
-# AIOps documentation hub registry — maps 3 levels to Markdown paths and docs-sync profiles.
+# Olivelas documentation hub registry — maps 3 levels to Markdown paths and docs-sync profiles.
 # Used by agents (sync-aiops-hub skill) for scoped validate/plan/sync.
 #
 # Secrets stay in .env — never in this file.
@@ -8,7 +8,7 @@ updated: "2026-08-24"
 
 levels:
   team:
-    description: "Level 1 — AIOps squad hub (who we are, standards, catalog pointers)"
+    description: "Level 1 — Olivelas squad hub (who we are, standards, catalog pointers)"
     docs_root: "docs/pt-BR/aiops-team"
     docs_root_en: "docs/en/aiops-team"
     sync_profile: "aiops-config/documentacao-inicial.pt-BR.yaml"
@@ -17,12 +17,12 @@ levels:
     make_targets:
       plan: "docs-sync-aiops-team-plan"
       sync: "docs-sync-aiops-team"
-    stable_id_prefix: "REF-AIOPS-TEAM-"
+    stable_id_prefix: "REF-OLIVELAS-TEAM-"
     human_guide:
       description: "Plain-language companion page, sibling file in the same folder (no separate Confluence parent)"
       page: "README-guia.md"
       page_en: "README-guide.md"
-      stable_id: "REF-AIOPS-TEAM-012"
+      stable_id: "REF-OLIVELAS-TEAM-012"
 
   application:
     description: "Level 2 — one page per product in aiops-apps/"
@@ -32,7 +32,7 @@ levels:
       - profile: "aiops-config/aiops-apps.pt-BR.yaml"
         confluence_parent_id: "6091309071"
         note: >
-          Single live target — AIOps - Stack pack. Confluence enforces
+          Single live target — Olivelas - Stack pack. Confluence enforces
           page-title uniqueness per SPACE, not per parent, so these pages
           cannot also exist under Documentação Inicial (6086460456);
           documentacao-inicial.pt-BR.yaml excludes aiops-apps/ for this
@@ -42,31 +42,31 @@ levels:
     apps:
       - id: dataforge
         page: "dataforge.md"
-        stable_id: "REF-AIOPS-APPS-008"
+        stable_id: "REF-OLIVELAS-APPS-008"
         repo: "loft-br/aiops-dataforge"
         namespace: "aiops-dataforge"
         human_guide:
           page: "dataforge-guia.md"
           page_en: "dataforge-guide.md"
-          stable_id: "REF-AIOPS-APPS-012"
+          stable_id: "REF-OLIVELAS-APPS-012"
       - id: deep-insight
         page: "deep-insight.md"
-        stable_id: "REF-AIOPS-APPS-009"
+        stable_id: "REF-OLIVELAS-APPS-009"
         repo: "loft-br/aiops-deep-insight"
         namespace: "aiops-deep-insight"
       - id: qualidade
         page: "qualidade-loft.md"
-        stable_id: "REF-AIOPS-APPS-010"
+        stable_id: "REF-OLIVELAS-APPS-010"
         repo: "loft-br/qualidade-loft"
         namespace: "aiops-qualidade"
       - id: loft-carteiras
         page: "loft-carteiras.md"
-        stable_id: "REF-AIOPS-APPS-011"
+        stable_id: "REF-OLIVELAS-APPS-011"
         repo: "loft-br/aiops-loft-carteira"
         namespace: "aiops-loft-carteiras"
       - id: ava
         page: "ava-prod.md"
-        stable_id: "REF-AIOPS-APPS-007"
+        stable_id: "REF-OLIVELAS-APPS-007"
         repo: "loft-br/ava-prod"
         namespace: "ava-prod"
 

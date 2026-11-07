@@ -12,9 +12,9 @@ Este pacote é uma stack **SUGERIDA / ILUSTRATIVA**, inspirada em padrões de um
 
 Isto **NÃO** é:
 
-- o Padrão de Documentação AIOps
+- o Padrão de Documentação Olivelas
 - o guia definitivo de uso do framework
-- um mandato de plataforma Loft
+- um mandato de plataforma Olivelas
 
 Escolhas de tecnologia (React SSR, Flask, provedor LLM externo, Slack Socket Mode, busca vetorial opcional, Vault, values estilo Helm) são **apenas exemplo**. O Padrão de Documentação de Engenharia permanece **agnóstico de tecnologia**.
 

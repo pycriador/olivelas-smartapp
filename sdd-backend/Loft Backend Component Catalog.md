@@ -2991,7 +2991,7 @@ Durante code review:
 
 # 181. Golden Component Set
 
-Todo backend Loft deve considerar como baseline:
+Todo backend Olivelas deve considerar como baseline:
 
 ```text
 Core
@@ -3314,7 +3314,7 @@ Only then
 Create
 ```
 
-O backend Loft deve evoluir através de componentes pequenos, explícitos, testáveis e observáveis.
+O backend Olivelas deve evoluir através de componentes pequenos, explícitos, testáveis e observáveis.
 
 A arquitetura deve ser suficientemente padronizada para que diferentes equipes e agentes de IA produzam código compatível entre si, mas suficientemente flexível para que o domínio continue determinando a solução.
 
@@ -3322,7 +3322,7 @@ A arquitetura deve ser suficientemente padronizada para que diferentes equipes e
 
 # 191. Final Component Standard
 
-Todo componente Loft deve buscar:
+Todo componente Olivelas deve buscar:
 
 ```text
 Small

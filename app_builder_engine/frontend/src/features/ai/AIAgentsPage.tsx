@@ -122,7 +122,7 @@ Endpoints:
    - Header: Authorization: Bearer <jwt_token>
    - Sem validação de permissão granular 'iam:impersonate'.
 
-Por favor audite e forneça o plano de remediação estrito conforme a política de segurança da Loft.`,
+Por favor audite e forneça o plano de remediação estrito conforme a política de segurança da Olivelas.`,
   },
   test_contracts: {
     label: '🧪 Testing SDD: Geração de PyTest Suites & Contrato OpenAPI 3.1',
@@ -140,13 +140,13 @@ Requisitos:
 3. Definição do contrato OpenAPI 3.1 completo com schemas Pydantic e exemplos JSON.`,
   },
   golden_rules: {
-    label: '👑 Architecture SDD: Validação contra Golden Rules da Loft',
+    label: '👑 Architecture SDD: Validação contra Golden Rules da Olivelas',
     contextType: 'blueprint',
     input: `Proposta de Arquitetura de Microsserviço:
-Nome: Loft Finance & Split Service
+Nome: Olivelas Finance & Split Service
 Comunicação:
 - Consome eventos 'RentalLeaseSigned' via Apache Kafka com SemVer v2.
-- Acesso direto ao banco de dados PostgreSQL do serviço 'Loft Auth' para consultar dados do locatário (Cross-Database Join).
+- Acesso direto ao banco de dados PostgreSQL do serviço 'Olivelas Auth' para consultar dados do locatário (Cross-Database Join).
 - Endpoints REST com mutação sem cabeçalho Idempotency-Key.
 - Tracing OpenTelemetry parcial configurado apenas na camada HTTP.
 
@@ -166,7 +166,7 @@ const ICON_OPTIONS = [
 ];
 
 const COLOR_OPTIONS = [
-  { label: 'Laranja Loft', value: '#FF774A' },
+  { label: 'Laranja Olivelas', value: '#FF774A' },
   { label: 'Verde Floresta', value: '#0B6B4F' },
   { label: 'Azul Corporativo', value: '#1677FF' },
   { label: 'Roxo Deep', value: '#722ED1' },
@@ -603,7 +603,7 @@ export const AIAgentsPage: React.FC = () => {
             {/* Quick SDD Presets Picker */}
             <div className="p-3 bg-[#F0F4F8] rounded-lg border border-[#D9E2EC]">
               <div className="text-[11px] font-bold text-loft-dark mb-1.5 flex items-center justify-between">
-                <span>⚡ Exemplos Canônicos SDD Loft (Frontend / Backend):</span>
+                <span>⚡ Exemplos Canônicos SDD Olivelas (Frontend / Backend):</span>
                 <span className="text-[10px] text-loft-muted font-normal">Clique para carregar no editor</span>
               </div>
               <div className="flex flex-wrap gap-1.5">
@@ -665,7 +665,7 @@ export const AIAgentsPage: React.FC = () => {
                     setInputText(SDD_EXAMPLES.golden_rules.input);
                   }}
                 >
-                  👑 Golden Rules Loft
+                  👑 Golden Rules Olivelas
                 </Button>
               </div>
             </div>
@@ -828,7 +828,7 @@ export const AIAgentsPage: React.FC = () => {
           >
             <Input.TextArea
               rows={4}
-              placeholder="Você é o especialista em migração de banco de dados da Loft..."
+              placeholder="Você é o especialista em migração de banco de dados da Olivelas..."
             />
           </Form.Item>
 

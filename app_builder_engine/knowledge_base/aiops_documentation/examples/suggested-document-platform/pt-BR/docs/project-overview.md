@@ -22,7 +22,7 @@ type: "project-overview"
 
 Este documento pertence a um exemplo **SUGERIDO / ILUSTRATIVO**, inspirado em padrões de um **projeto isolado de referência** (inteligência documental / RAG / SSR BFF / Flask / worker Slack / scheduler / PostgreSQL).
 
-**NÃO** é o Padrão de Documentação AIOps, **NÃO** é o guia definitivo de uso do framework e **NÃO** é um mandato de plataforma Loft. As escolhas de tecnologia abaixo são **apenas exemplo**.
+**NÃO** é o Padrão de Documentação Olivelas, **NÃO** é o guia definitivo de uso do framework e **NÃO** é um mandato de plataforma Olivelas. As escolhas de tecnologia abaixo são **apenas exemplo**.
 
 **Produto fictício:** Northstar Document Platform. Apenas placeholders (`https://docs.example.com`, `secrets/path/example`).
 

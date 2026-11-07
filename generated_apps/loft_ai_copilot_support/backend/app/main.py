@@ -16,8 +16,8 @@ async def lifespan(app: FastAPI):
     yield
 
 app = FastAPI(
-    title="Loft AI Copilot Support",
-    description="API stateless desenvolvida e orquestrada via Loft App Builder Engine.",
+    title="Olivelas AI Copilot Support",
+    description="API stateless desenvolvida e orquestrada via Olivelas App Builder Engine.",
     version="1.0.0",
     lifespan=lifespan,
 )
@@ -40,4 +40,4 @@ app.include_router(chat_router, prefix=settings.API_V1_STR)
 
 @app.get("/health", tags=["Health"])
 def health_check():
-    return {"status": "healthy", "service": "Loft AI Copilot Support", "version": "1.0.0", "mode": "stateless-landing-page"}
+    return {"status": "healthy", "service": "Olivelas AI Copilot Support", "version": "1.0.0", "mode": "stateless-landing-page"}

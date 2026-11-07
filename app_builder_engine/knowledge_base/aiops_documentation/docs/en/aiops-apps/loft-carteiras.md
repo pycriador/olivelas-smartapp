@@ -1,13 +1,13 @@
 ---
-id: REF-AIOPS-APPS-011
-title: "Loft Carteiras — IAM and integrations"
+id: REF-OLIVELAS-APPS-011
+title: "Olivelas Carteiras — IAM and integrations"
 status: "DRAFT"
 owner: "aiops"
 updated: "2026-08-24"
 review_date: "2026-11-24"
 ---
 
-# Loft Carteiras
+# Olivelas Carteiras
 
 > Language: EN | [Português (pt-BR)](../../pt-BR/aiops-apps/loft-carteiras.md)
 >
@@ -21,7 +21,7 @@ review_date: "2026-11-24"
 
 ## Goal
 
-Web app for **IAM**, **integrations** (Slack/WhatsApp webhooks), public and authenticated REST APIs — Loft carteiras domain.
+Web app for **IAM**, **integrations** (Slack/WhatsApp webhooks), public and authenticated REST APIs — Olivelas carteiras domain.
 
 ## Context
 
@@ -62,7 +62,7 @@ Browser / Webhooks → aiops-loft-carteiras.loft-corp.com.br
 | --- | --- |
 | PostgreSQL | Flask-SQLAlchemy |
 | Slack / WhatsApp | Public webhooks |
-| Kong / Vault / Datadog | Loft standard |
+| Kong / Vault / Datadog | Olivelas standard |
 
 ## Stack (summary)
 

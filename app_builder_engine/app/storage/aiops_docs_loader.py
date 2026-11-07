@@ -1,7 +1,7 @@
 """
-AIOps Documentation Synchronizer & Full Indexer
-Loads and indexes official Loft engineering guidelines, skills, ADRs,
-security standards, runbooks, and architectures from loft-br/aiops-documentation.
+Olivelas Documentation Synchronizer & Full Indexer
+Loads and indexes official Olivelas engineering guidelines, skills, ADRs,
+security standards, runbooks, and architectures from pycriador/olivelas-smartapp.
 """
 from __future__ import annotations
 import os
@@ -56,8 +56,8 @@ def extract_title_and_summary(content: str, default_title: str) -> tuple[str, st
 
     if not key_points:
         key_points = [
-            f"Diretriz oficial de engenharia Loft: {title}",
-            "Padrão aplicável a todos os serviços e agentes de IA da Loft",
+            f"Diretriz oficial de engenharia Olivelas: {title}",
+            "Padrão aplicável a todos os serviços e agentes de IA da Olivelas",
             "Em conformidade com as diretrizes de segurança, qualidade e observabilidade",
         ]
 
@@ -114,10 +114,10 @@ def load_aiops_documentation() -> list[KnowledgeDocument]:
                         summary=summary,
                         content=content,
                         tags=["cursor", "ai-rules", "aiops-documentation", "prompting"],
-                        author="Loft AI Chapter",
+                        author="Olivelas AI Chapter",
                         version="1.0.0",
                         key_points=key_points,
-                        source_url="https://github.com/loft-br/aiops-documentation/tree/main/.cursor/rules",
+                        source_url="https://github.com/pycriador/olivelas-smartapp/tree/main/.cursor/rules",
                     )
                 )
                 seen_ids.add(doc_id)
@@ -142,10 +142,10 @@ def load_aiops_documentation() -> list[KnowledgeDocument]:
                                 summary=summary,
                                 content=content,
                                 tags=["claude-code", "skills", "aiops-documentation", "automation"],
-                                author="Loft AI Chapter",
+                                author="Olivelas AI Chapter",
                                 version="1.0.0",
                                 key_points=key_points,
-                                source_url="https://github.com/loft-br/aiops-documentation/tree/main/.claude/skills",
+                                source_url="https://github.com/pycriador/olivelas-smartapp/tree/main/.claude/skills",
                             )
                         )
                         seen_ids.add(doc_id)
@@ -154,9 +154,9 @@ def load_aiops_documentation() -> list[KnowledgeDocument]:
 
     # Priority 3: Root standards (CLAUDE.md, AGENTS.md, README.pt-BR.md, CONTRIBUTING.pt-BR.md)
     root_files = [
-        ("AGENTS.md", KnowledgeCategory.AI_SKILLS_PROMPTS, "Loft Agents Standard & Governance"),
-        ("README.pt-BR.md", KnowledgeCategory.MASTER_GUIDE, "AIOps Documentation Hub — Visão Geral & Filosofia"),
-        ("CONTRIBUTING.pt-BR.md", KnowledgeCategory.MASTER_GUIDE, "Guia de Contribuição de Documentação Técnica Loft"),
+        ("AGENTS.md", KnowledgeCategory.AI_SKILLS_PROMPTS, "Olivelas Agents Standard & Governance"),
+        ("README.pt-BR.md", KnowledgeCategory.MASTER_GUIDE, "Olivelas Documentation Hub — Visão Geral & Filosofia"),
+        ("CONTRIBUTING.pt-BR.md", KnowledgeCategory.MASTER_GUIDE, "Guia de Contribuição de Documentação Técnica Olivelas"),
     ]
 
     for fname, cat, fallback_title in root_files:
@@ -174,10 +174,10 @@ def load_aiops_documentation() -> list[KnowledgeDocument]:
                         summary=summary,
                         content=content,
                         tags=["loft-standard", "aiops", "governance"],
-                        author="Loft Engineering Core",
+                        author="Olivelas Engineering Core",
                         version="2.0.0",
                         key_points=key_points,
-                        source_url="https://github.com/loft-br/aiops-documentation",
+                        source_url="https://github.com/pycriador/olivelas-smartapp",
                     )
                 )
                 seen_ids.add(doc_id)
@@ -219,10 +219,10 @@ def load_aiops_documentation() -> list[KnowledgeDocument]:
                                 summary=summary,
                                 content=content,
                                 tags=tags,
-                                author="Loft Architecture & Operations",
+                                author="Olivelas Architecture & Operations",
                                 version="1.0.0",
                                 key_points=key_points,
-                                source_url=f"https://github.com/loft-br/aiops-documentation/blob/main/docs/pt-BR/{rel_path}",
+                                source_url=f"https://github.com/pycriador/olivelas-smartapp/blob/main/docs/pt-BR/{rel_path}",
                             )
                         )
                         seen_ids.add(doc_id)
@@ -256,10 +256,10 @@ def load_aiops_documentation() -> list[KnowledgeDocument]:
                                 summary=summary,
                                 content=content,
                                 tags=["example-architecture", "reference-implementation", category.value],
-                                author="Loft Platform Team",
+                                author="Olivelas Platform Team",
                                 version="1.0.0",
                                 key_points=key_points,
-                                source_url=f"https://github.com/loft-br/aiops-documentation/blob/main/examples/suggested-document-platform/pt-BR/docs/{rel_path}",
+                                source_url=f"https://github.com/pycriador/olivelas-smartapp/blob/main/examples/suggested-document-platform/pt-BR/docs/{rel_path}",
                             )
                         )
                         seen_ids.add(doc_id)

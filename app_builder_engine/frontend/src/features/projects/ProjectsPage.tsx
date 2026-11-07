@@ -245,7 +245,7 @@ export const ProjectsPage: React.FC = () => {
         name: editingProject.name,
         description: editingProject.description,
         domain: editingProject.domain,
-        owner: editingProject.owner || 'willian.jesus@loft.com.br',
+        owner: editingProject.owner || 'willian.jesus@olivelas.com.br',
         status: editingProject.status,
         version: (editingProject as any).version || '1.0.0',
         architecture_id: editingProject.architecture_id || editingProject.architecture,
@@ -482,7 +482,7 @@ export const ProjectsPage: React.FC = () => {
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Projetos & Aplicações da Loft"
+        title="Projetos & Aplicações da Olivelas"
         subtitle="Catálogo completo de aplicações corporativas e soluções autônomas geradas por IA (generated_apps). Conexão direta às APIs, governança de Blueprints e controle de releases estilo GitHub."
         breadcrumbs={[
           { title: 'Workspaces', href: '/projects' },
@@ -669,7 +669,7 @@ export const ProjectsPage: React.FC = () => {
                         <div>
                           <div className="flex items-center gap-1.5 flex-wrap">
                             <Tag color="orange" className="font-semibold text-[11px] m-0">
-                              {p.domain || 'Loft App'}
+                              {p.domain || 'Olivelas App'}
                             </Tag>
                             <Tag color="green" className="font-semibold text-[10px] m-0">
                               Live Demo
@@ -1165,7 +1165,7 @@ export const ProjectsPage: React.FC = () => {
                           label={<span className="font-semibold text-loft-dark">Nome do Projeto</span>}
                           rules={[{ required: true, message: 'Informe o nome do projeto' }]}
                         >
-                          <Input placeholder="Ex: Loft Partner Portal" size="large" />
+                          <Input placeholder="Ex: Olivelas Partner Portal" size="large" />
                         </Form.Item>
                       </Col>
                       <Col span={10}>
@@ -1196,7 +1196,7 @@ export const ProjectsPage: React.FC = () => {
                           name="owner"
                           label={<span className="font-semibold text-loft-dark">Tech Lead / Squad Owner</span>}
                         >
-                          <Input placeholder="willian.jesus@loft.com.br" />
+                          <Input placeholder="willian.jesus@olivelas.com.br" />
                         </Form.Item>
                       </Col>
                       <Col span={6}>

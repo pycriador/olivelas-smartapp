@@ -17,7 +17,7 @@
 
 # 1. Objetivo
 
-O Loft Backend AI Specification — AI-BAS define o padrão oficial para projetar, implementar, operar, testar, observar e governar funcionalidades de Inteligência Artificial dentro dos backends Loft.
+O Loft Backend AI Specification — AI-BAS define o padrão oficial para projetar, implementar, operar, testar, observar e governar funcionalidades de Inteligência Artificial dentro dos backends Olivelas.
 
 O objetivo é permitir que aplicações utilizem:
 

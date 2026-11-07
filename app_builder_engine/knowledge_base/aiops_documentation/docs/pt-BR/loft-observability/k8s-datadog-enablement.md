@@ -61,9 +61,9 @@ Evidência: [bloco DD em `_helpers.tpl`](https://github.com/loft-br/k8s-apps/blo
 
 ## Scheduling
 
-Workloads habilitados recebem toleration `karpenter.loft.com.br/datadog=enabled` para rodar em nodes com agent.
+Workloads habilitados recebem toleration `karpenter.olivelas.com.br/datadog=enabled` para rodar em nodes com agent.
 
-Opt-in fora de prod pode adicionar annotations `datadog.loft.com.br/enabled` e `datadog.loft.com.br/ttl`.
+Opt-in fora de prod pode adicionar annotations `datadog.olivelas.com.br/enabled` e `datadog.olivelas.com.br/ttl`.
 
 ## Annotations de pod (processamento de logs)
 
@@ -75,7 +75,7 @@ Prefira excluir ruído de health check a desligar coleta de logs.
 
 | Evite | Motivo |
 | --- | --- |
-| `DD_TAGS` em values Helm | Não funciona nos clusters Loft (nota de migração kustomize) |
+| `DD_TAGS` em values Helm | Não funciona nos clusters Olivelas (nota de migração kustomize) |
 | Duplicar `DD_SERVICE` / `DD_ENV` já injetados | Risco de drift |
 
 ## Desabilitar explicitamente (exceção)

@@ -1,4 +1,4 @@
-# 🤖 Loft AI Support Chatbot (App 2)
+# 🤖 Olivelas AI Support Chatbot (App 2)
 
 Aplicação conversacional inteligente de suporte técnico e operacional conectada **100% à API** da plataforma App Builder Engine (`http://127.0.0.1:8000/api/v1`).
 
