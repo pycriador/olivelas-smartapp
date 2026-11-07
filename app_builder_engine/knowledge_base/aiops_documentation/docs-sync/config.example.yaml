@@ -1,0 +1,47 @@
+# Example configuration for docs-sync.
+# Copy to docs-sync.yaml (or use config.pt-BR.yaml) and adjust.
+# Secrets MUST come from environment variables — never commit tokens.
+
+project:
+  name: "aiops-documentation"
+  repository_url: "https://github.com/loft-br/aiops-documentation"
+
+confluence:
+  url: "${CONFLUENCE_URL}"
+  space: "${CONFLUENCE_SPACE}"
+  username: "${CONFLUENCE_USERNAME}"
+  api_token: "${CONFLUENCE_API_TOKEN}"
+  # cloud (default) | datacenter — selects API adapter
+  api_profile: "cloud"
+  root_page: "Engineering Documentation Standard"
+  # Parent page OR folder id in the target space (required for nested publish)
+  # root_page_id: "6085345351"
+  # Or export CONFLUENCE_ROOT_PAGE_ID
+
+documentation:
+  # Sync one language tree at a time (or pass --docs PATH on the CLI).
+  path: "../docs/en"
+  language: "en"
+  # Multiple folders (optional). CLI --docs overrides path + paths.
+  # paths:
+  #   - "../docs/en/architecture"
+  #   - "../docs/en/runbooks"
+  # include_globs:
+  #   - "architecture/**"
+  exclude_globs:
+    - "**/generated/**"
+    - "**/.git/**"
+  index_filenames:
+    - "README.md"
+    - "index.md"
+
+sync:
+  dry_run: false
+  create_missing: true
+  update_existing: true
+  archive_removed: false
+  include_footer: true
+  managed_by: "docs-sync"
+  labels:
+    - "documentation"
+    - "managed-by-docs-sync"

@@ -1,0 +1,15 @@
+export const typography = {
+  fontFamily: 'Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+  fontFamilyCode: '"JetBrains Mono", "SF Mono", Menlo, Monaco, Consolas, monospace',
+  fontSizeBase: 14,
+  fontSizeHeading1: 24,
+  fontSizeHeading2: 20,
+  fontSizeHeading3: 16,
+  fontSizeHeading4: 14,
+  fontSizeSm: 12,
+  fontWeightNormal: 400,
+  fontWeightMedium: 500,
+  fontWeightSemiBold: 600,
+  fontWeightBold: 700,
+  lineHeightBase: 1.5,
+};

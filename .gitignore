@@ -1,0 +1,86 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node / Frontend
+node_modules/
+dist/
+dist-pages/
+app_builder_engine/frontend/dist-pages/
+build/
+.npm
+.vite/
+*.log
+
+# Python / Backend
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+!app_builder_engine/frontend/src/lib/
+!app_builder_engine/frontend/src/lib/**
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing & Linters
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+# IDE
+.vscode/
+.idea/
+
+# Database files (Strictly ignored)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm
+app_builder.db
+app_builder_engine/app_builder.db
+
+# Secrets, Environment & Credentials
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+credentials.json
+service_account.json
+.backend_port
+logs/
+.pids/

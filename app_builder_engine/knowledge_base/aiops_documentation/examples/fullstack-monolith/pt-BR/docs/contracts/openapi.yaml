@@ -1,0 +1,20 @@
+openapi: "3.1.0"
+info:
+  title: SheetLedger API (Fictional Illustrative Stub)
+  version: "0.0.0-example"
+  description: >
+    FICTIONAL stub for the fullstack-monolith documentation example.
+    Not a real service. Not the framework standard. Not production OpenAPI.
+paths:
+  /health:
+    get:
+      summary: Liveness/readiness style health (illustrative)
+      responses:
+        "200":
+          description: OK
+  /api/v1/projects:
+    get:
+      summary: List projects (illustrative)
+      responses:
+        "200":
+          description: OK

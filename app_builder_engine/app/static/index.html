@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full antialiased">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>App Builder Engine — Loft Copan Platform</title>
+  
+  <!-- Inter & JetBrains Mono Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            copan: {
+              orange: '#F56738',
+              orangeHover: '#D94616',
+              orangeLight: '#FFF2EC',
+              dark: '#121619',
+              slateBg: '#F2F4F8',
+              slateBorder: '#E1E9EF',
+              muted: '#697077',
+              body: '#5A6A75',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body class="h-full flex flex-col overflow-hidden select-none font-sans bg-[#F2F4F8] text-[#121619]">
+
+  <!-- LOFT PORTAL HEADER -->
+  <header class="h-16 border-b border-[#E1E9EF] bg-white px-6 flex items-center justify-between shrink-0 z-30 shadow-sm">
+    <div class="flex items-center gap-4">
+      <!-- Loft Brand Logo -->
+      <div class="flex items-center gap-3">
+        <a href="/" class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-[#F56738] flex items-center justify-center text-white font-bold shadow-sm">
+            <i data-lucide="layers" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-base tracking-tight text-[#121619]">App Builder Engine</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#FFF2EC] text-[#F56738] border border-[#FFD9C7]">Copan v1.0</span>
+            </div>
+            <p class="text-[11px] text-[#697077] hidden sm:block">Plataforma de Engenharia e IA da Loft</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Portal Switcher / Waffle Menu -->
+      <button onclick="showToast('Portal Loft: Plataforma Central de Engenharia', 'info')" class="p-1.5 rounded-lg text-[#697077] hover:text-[#121619] hover:bg-[#F2F4F8] transition-colors ml-2" title="Portal Apps">
+        <i data-lucide="grid" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <!-- Search Command Bar & User Profile -->
+    <div class="flex items-center gap-4">
+      <!-- Search Trigger (⌘K) -->
+      <button onclick="openCommandPalette()" class="flex items-center gap-3 px-3.5 py-2 rounded-lg bg-[#F2F4F8] border border-[#E1E9EF] text-[#697077] hover:text-[#121619] hover:border-[#CBD5E1] transition-all text-xs w-72 justify-between">
+        <div class="flex items-center gap-2">
+          <i data-lucide="search" class="w-4 h-4 text-[#878D96]"></i>
+          <span>Buscar na base técnica...</span>
+        </div>
+        <kbd class="px-1.5 py-0.5 text-[10px] bg-white text-[#5A6A75] rounded border border-[#E1E9EF] font-mono shadow-xs">⌘K</kbd>
+      </button>
+
+      <!-- Active User Profile with Copan Mascot -->
+      <div class="flex items-center gap-3 pl-4 border-l border-[#E1E9EF]">
+        <img src="/static/assets/copan-avatar.png" alt="Copan Mascot" class="w-8 h-8 rounded-full border border-[#E1E9EF] bg-white p-0.5" />
+        <div class="hidden md:block text-left">
+          <div class="text-xs font-semibold text-[#121619]">Willian Jesus</div>
+          <div class="text-[11px] text-[#697077]">Principal Engineer</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN APP CONTAINER -->
+  <div class="flex-1 flex overflow-hidden">
+    
+    <!-- SIDEBAR NAVIGATION -->
+    <aside id="sidebar" class="w-64 border-r border-[#E1E9EF] bg-white flex flex-col shrink-0 overflow-y-auto py-4 px-3 text-xs">
+      
+      <!-- NAV GROUP: GENERAL -->
+      <div class="mb-4">
+        <div class="px-3 pb-1.5 text-[10px] font-bold tracking-wider text-[#878D96] uppercase">Geral</div>
+        <nav class="space-y-1">
+          <button onclick="navigateTo('dashboard')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[#5A6A75] hover:bg-[#F2F4F8] hover:text-[#121619] transition-all active-nav" data-target="dashboard">
+            <i data-lucide="layout-dashboard" class="w-4 h-4 text-[#F56738]"></i>
+            <span class="font-medium">Dashboard</span>
+          </button>
+          <button onclick="navigateTo('projects')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[#5A6A75] hover:bg-[#F2F4F8] hover:text-[#121619] transition-all" data-target="projects">
+            <i data-lucide="folder-kanban" class="w-4 h-4"></i>
+            <span class="font-medium">Projetos</span>
+            <span id="badge-projects" class="ml-auto text-[10px] bg-[#F2F4F8] px-2 py-0.5 rounded-full text-[#697077] font-medium border border-[#E1E9EF]">3</span>
+          </button>
+          <button onclick="navigateTo('blueprints')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[#5A6A75] hover:bg-[#F2F4F8] hover:text-[#121619] transition-all" data-target="blueprints">
+            <i data-lucide="file-code-2" class="w-4 h-4"></i>
+            <span class="font-medium">Blueprints</span>
+            <span id="badge-blueprints" class="ml-auto text-[10px] bg-[#F2F4F8] px-2 py-0.5 rounded-full text-[#697077] font-medium border border-[#E1E9EF]">1</span>
+          </button>
+        </nav>
+      </div>
+
+      <!-- NAV GROUP: ENGINEERING WORKSPACE -->
+      <div class="mb-4">
+        <div class="px-3 pb-1.5 text-[10px] font-bold tracking-wider text-[#878D96] uppercase">Workspace de Engenharia</div>
+        <nav class="space-y-1">
+          <button onclick="navigateTo('workspace-blueprint-builder')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[#5A6A75] hover:bg-[#F2F4F8] hover:text-[#121619] transition-all" data-target="workspace-blueprint-builder">
+            <i data-lucide="hammer" class="w-4 h-4 text-[#F56738]"></i>
+            <span class="font-medium">Blueprint Workshop</span>
+            <span class="ml-auto text-[9px] bg-[#FFF2EC] border border-[#FFD9C7] px-1.5 py-0.5 rounded-full text-[#F56738] font-bold">Studio</span>
+          </button>
+        </nav>
+      </div>
+
+      <!-- NAV GROUP: CATALOG -->
+      <div class="mb-4">
+        <div class="px-3 pb-1.5 text-[10px] font-bold tracking-wider text-[#878D96] uppercase">Catálogo de Building Blocks</div>
+        <nav class="space-y-1">
+          <button onclick="navigateTo('catalog-components')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[#5A6A75] hover:bg-[#F2F4F8] hover:text-[#121619] transition-all" data-target="catalog-components">
+            <i data-lucide="boxes" class="w-4 h-4"></i>
+            <span class="font-medium">Componentes Copan</span>
+            <span id="badge-components" class="ml-auto text-[10px] bg-[#F2F4F8] px-2 py-0.5 rounded-full text-[#697077] font-medium border border-[#E1E9EF]">8</span>
+          </button>
+          <button onclick="navigateTo('catalog-modules')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[#5A6A75] hover:bg-[#F2F4F8] hover:text-[#121619] transition-all" data-target="catalog-modules">
+            <i data-lucide="package" class="w-4 h-4"></i>
+            <span class="font-medium">Módulos</span>
+          </button>
+          <button onclick="navigateTo('catalog-templates')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[#5A6A75] hover:bg-[#F2F4F8] hover:text-[#121619] transition-all" data-target="catalog-templates">
+            <i data-lucide="layout-template" class="w-4 h-4"></i>
+            <span class="font-medium">Templates</span>
+          </button>
+          <button onclick="navigateTo('catalog-integrations')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[#878D96] hover:bg-[#F2F4F8] transition-all" data-target="catalog-integrations">
+            <i data-lucide="cable" class="w-4 h-4"></i>
+            <span class="font-medium">Integrações</span>
+            <span class="ml-auto text-[9px] bg-[#F2F4F8] border border-[#E1E9EF] px-1.5 py-0.2 rounded-full text-[#878D96]">Em breve</span>
+          </button>
+        </nav>
+      </div>
+
+      <!-- NAV GROUP: KNOWLEDGE -->
+      <div class="mb-4">
+        <div class="px-3 pb-1.5 text-[10px] font-bold tracking-wider text-[#878D96] uppercase">Conhecimento & SDDs</div>
+        <nav class="space-y-1">
+          <button onclick="navigateTo('knowledge-specifications')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[#5A6A75] hover:bg-[#F2F4F8] hover:text-[#121619] transition-all" data-target="knowledge-specifications">
+            <i data-lucide="book-open" class="w-4 h-4"></i>
+            <span class="font-medium">Especificações (SDDs)</span>
+            <span id="badge-specs" class="ml-auto text-[10px] bg-[#F2F4F8] px-2 py-0.5 rounded-full text-[#697077] font-medium border border-[#E1E9EF]">5</span>
+          </button>
+          <button onclick="navigateTo('knowledge-rules')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[#5A6A75] hover:bg-[#F2F4F8] hover:text-[#121619] transition-all" data-target="knowledge-rules">
+            <i data-lucide="shield-check" class="w-4 h-4 text-[#115644]"></i>
+            <span class="font-medium">Golden Rules</span>
+            <span id="badge-rules" class="ml-auto text-[10px] bg-[#F2F4F8] px-2 py-0.5 rounded-full text-[#697077] font-medium border border-[#E1E9EF]">9</span>
+          </button>
+          <button onclick="navigateTo('knowledge-architectures')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[#5A6A75] hover:bg-[#F2F4F8] hover:text-[#121619] transition-all" data-target="knowledge-architectures">
+            <i data-lucide="network" class="w-4 h-4"></i>
+            <span class="font-medium">Arquiteturas</span>
+          </button>
+        </nav>
+      </div>
+
+      <!-- NAV GROUP: AI AGENTS -->
+      <div class="mb-4">
+        <div class="px-3 pb-1.5 text-[10px] font-bold tracking-wider text-[#878D96] uppercase">Agentes de IA</div>
+        <nav class="space-y-1">
+          <button onclick="navigateTo('ai-composer')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[#5A6A75] hover:bg-[#F2F4F8] hover:text-[#121619] transition-all" data-target="ai-composer">
+            <i data-lucide="bot" class="w-4 h-4 text-[#F56738]"></i>
+            <span class="font-medium">Simulador de Blueprint</span>
+          </button>
+          <button onclick="navigateTo('ai-api-access')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[#5A6A75] hover:bg-[#F2F4F8] hover:text-[#121619] transition-all" data-target="ai-api-access">
+            <i data-lucide="key" class="w-4 h-4"></i>
+            <span class="font-medium">Contratos de API</span>
+          </button>
+        </nav>
+      </div>
+
+      <!-- NAV GROUP: GOVERNANCE -->
+      <div class="mt-auto pt-3 border-t border-[#E1E9EF]">
+        <div class="px-3 pb-1 text-[10px] font-bold tracking-wider text-[#878D96] uppercase">Governança</div>
+        <nav class="space-y-1">
+          <button onclick="navigateTo('admin-audit')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[#5A6A75] hover:bg-[#F2F4F8] hover:text-[#121619] transition-all" data-target="admin-audit">
+            <i data-lucide="clipboard-list" class="w-4 h-4"></i>
+            <span class="font-medium">Trilha de Auditoria</span>
+          </button>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- CONTENT WRAPPER -->
+    <main class="flex-1 flex flex-col bg-[#F2F4F8] overflow-y-auto relative">
+      
+      <!-- BREADCRUMBS BAR -->
+      <div class="h-11 border-b border-[#E1E9EF] px-8 flex items-center justify-between text-xs text-[#697077] shrink-0 bg-white/60 backdrop-blur-xs">
+        <div class="flex items-center gap-2" id="breadcrumb-container">
+          <span class="text-[#878D96]">Loft Portal</span>
+          <span>/</span>
+          <span class="text-[#121619] font-medium" id="breadcrumb-active">Dashboard</span>
+        </div>
+        <div class="flex items-center gap-2 text-[11px] text-[#115644] font-medium">
+          <span class="w-2 h-2 rounded-full bg-[#20A483]"></span>
+          <span>Engine Online (Copan Design System Ativo)</span>
+        </div>
+      </div>
+
+      <!-- MAIN VIEWPORT CONTAINER -->
+      <div id="view-container" class="p-8 max-w-7xl w-full mx-auto space-y-6">
+        <!-- Views are dynamically injected here -->
+      </div>
+    </main>
+  </div>
+
+  <!-- COMMAND PALETTE MODAL (CMD + K) -->
+  <div id="command-palette-modal" class="fixed inset-0 z-50 bg-[#121619]/40 backdrop-blur-xs hidden flex items-start justify-center pt-24 p-4">
+    <div class="bg-white border border-[#E1E9EF] rounded-xl max-w-2xl w-full shadow-2xl overflow-hidden flex flex-col">
+      <div class="p-3.5 border-b border-[#E1E9EF] flex items-center gap-3">
+        <i data-lucide="search" class="w-5 h-5 text-[#878D96]"></i>
+        <input id="command-input" type="text" placeholder="Buscar projetos, componentes, regras, especificações..." class="w-full bg-transparent text-sm text-[#121619] placeholder-[#878D96] focus:outline-none" oninput="handleCommandSearch(this.value)" />
+        <kbd class="px-2 py-0.5 text-[10px] bg-[#F2F4F8] text-[#697077] rounded border border-[#E1E9EF] font-mono">ESC</kbd>
+      </div>
+      <div id="command-results" class="max-h-80 overflow-y-auto p-2 space-y-1">
+        <div class="p-4 text-center text-xs text-[#697077]">Digite para buscar qualquer recurso da plataforma...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GENERIC MODAL CONTAINER -->
+  <div id="generic-modal" class="fixed inset-0 z-50 bg-[#121619]/40 backdrop-blur-xs hidden flex items-center justify-center p-4">
+    <div id="generic-modal-content" class="bg-white border border-[#E1E9EF] rounded-xl max-w-4xl w-full shadow-2xl p-6 relative max-h-[90vh] overflow-y-auto">
+      <!-- Injected modal content -->
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-50 space-y-2 pointer-events-none"></div>
+
+  <!-- APPLICATION JAVASCRIPT -->
+  <script src="/static/app.js"></script>
+</body>
+</html>

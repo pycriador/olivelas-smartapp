@@ -1,0 +1,19 @@
+# Documentation Standard v1.0 — language chooser for documentation manifests
+# Paths are relative to docs/
+standard: "Documentation Standard v1.0"
+updated: "2026-08-07"
+purpose: |
+  Machine-readable pointer to per-language manifests.
+  Not a search engine, RAG index, or embedding store.
+languages:
+  - id: en
+    name: English
+    manifest: en/manifest.yaml
+    index: en/README.md
+    ai_entry: en/ai-context.md
+  - id: pt-BR
+    name: Português (Brasil)
+    manifest: pt-BR/manifest.yaml
+    index: pt-BR/README.md
+    ai_entry: pt-BR/ai-context.md
+default_language: en

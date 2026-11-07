@@ -1,0 +1,714 @@
+# Documentation manifest (paths relative to docs/pt-BR/)
+# Documentation Standard v1.0 — sample entries for key AI-ready standard docs
+standard: "Documentation Standard v1.0"
+root: "."
+updated: "2026-08-17"
+documents:
+  - id: CTX-AI-001
+    path: ai-context.md
+    title: Contexto de IA
+    type: Context
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Authoritative
+    tags: [ai-ready, entry]
+  - id: REF-AI-READY-001
+    path: ai-ready-model.md
+    title: Modelo de documentação AI-Ready
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Authoritative
+    tags: [ai-ready]
+  - id: REF-MACHINE-001
+    path: machine-readable.md
+    title: Documentação machine-readable
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Verified
+  - id: REF-META-001
+    path: document-metadata.md
+    title: Metadados de documento
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Authoritative
+  - id: REF-ID-001
+    path: document-identity.md
+    title: Identidade de documento
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Authoritative
+  - id: REF-TYPES-001
+    path: document-types.md
+    title: Tipos de documento
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Authoritative
+  - id: REF-SOT-001
+    path: source-of-truth.md
+    title: Fonte da verdade
+    type: Reference
+    status: REVIEW
+    owner: documentation-standard
+    updated: 2026-08-17
+    authority: Authoritative
+  - id: REF-PUB-SURFACES-001
+    path: publishing-surfaces.md
+    title: Superfícies de publicação (GitHub e Confluence)
+    type: Reference
+    status: DRAFT
+    owner: documentation-standard
+    updated: 2026-08-17
+    authority: Informational
+    tags: [confluence, github, links]
+  - id: REF-AUTH-001
+    path: authority-levels.md
+    title: Níveis de autoridade
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Authoritative
+  - id: REF-EVID-001
+    path: evidence-model.md
+    title: Modelo de evidência
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Authoritative
+  - id: REF-EVID-REF-001
+    path: evidence-references.md
+    title: Referências de evidência
+    type: Reference
+    status: REVIEW
+    owner: documentation-standard
+    updated: 2026-08-17
+    authority: Authoritative
+  - id: REF-CLAIM-001
+    path: claims.md
+    title: Claims
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Verified
+  - id: REF-CONF-001
+    path: confidence-model.md
+    title: Modelo de confidence
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Authoritative
+  - id: REF-GRAPH-001
+    path: documentation-graph.md
+    title: Grafo de documentação
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Verified
+  - id: REF-REL-001
+    path: document-relationships.md
+    title: Relacionamentos entre documentos
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Authoritative
+  - id: REF-DRIFT-001
+    path: documentation-drift.md
+    title: Drift de documentação
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Authoritative
+    related: [stale-documentation, architecture-drift, contract-drift, operational-drift, security-drift]
+  - id: REF-NAV-001
+    path: ai-navigation.md
+    title: Navegação da IA
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Authoritative
+  - id: REF-ANSWER-001
+    path: ai-answering-rules.md
+    title: Regras de resposta da IA
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Authoritative
+  - id: REF-SAFE-001
+    path: ai-context-safety.md
+    title: Segurança de contexto da IA
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Authoritative
+  - id: REF-BOUND-001
+    path: ai-task-boundaries.md
+    title: Limites de tarefa da IA
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Authoritative
+  - id: REF-CHECK-001
+    path: ai-ready-checklist.md
+    title: Checklist AI-Ready
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Verified
+  - id: REF-GLOSS-001
+    path: glossary.md
+    title: Glossário de documentação AI-Ready
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Reference
+
+  - id: GOV-001
+    path: governance.md
+    title: Governança da Documentação
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Authoritative
+    tags: [governance]
+  - id: GOV-AUTO-001
+    path: automation.md
+    title: Automação da Documentação
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Authoritative
+    tags: [governance, automation]
+  - id: GOV-VAL-001
+    path: validation-rules.md
+    title: Registro de Regras de Validação
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Authoritative
+  - id: GOV-GATE-001
+    path: quality-gates.md
+    title: Quality Gates da Documentação
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Authoritative
+  - id: GOV-EXC-001
+    path: exceptions.md
+    title: Exceções da Documentação
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Authoritative
+  - id: GOV-CMD-001
+    path: automation-commands.md
+    title: Comandos de Automação
+    type: Reference
+    status: ACCEPTED
+    owner: documentation-standard
+    updated: 2026-08-07
+    authority: Verified
+  - id: REF-ADOPT-001
+    path: adoption-path.md
+    title: Caminho de adoção
+    type: Reference
+    status: REVIEW
+    owner: documentation-standard
+    updated: 2026-08-13
+    authority: Informational
+    tags: [adoption]
+  - id: REF-AI-ENTRY-001
+    path: ai-agent-entry.md
+    title: Arquivos de entrada de agentes de IA
+    type: Reference
+    status: DRAFT
+    owner: documentation-standard
+    updated: 2026-08-13
+    authority: Informational
+    tags: [ai-ready, agents]
+  - id: TPL-AGENTS-001
+    path: templates/agents-entry.md
+    title: Template — entrada AGENTS.md
+    type: Template
+    status: DRAFT
+    owner: documentation-standard
+    updated: 2026-08-13
+    authority: Informational
+    tags: [templates, agents]
+  - id: TPL-CLAUDE-001
+    path: templates/claude-entry.md
+    title: Template — entrada CLAUDE.md
+    type: Template
+    status: DRAFT
+    owner: documentation-standard
+    updated: 2026-08-13
+    authority: Informational
+    tags: [templates, agents]
+  - id: REF-CHANGELOG-001
+    path: changelog.md
+    title: Changelog da documentação
+    type: Reference
+    status: DRAFT
+    owner: documentation-standard
+    updated: 2026-08-13
+    authority: Informational
+    tags: [governance]
+  - id: REF-MIGRATE-FLAT-001
+    path: flat-docs-migration.md
+    title: Migração de documentação flat
+    type: Reference
+    status: DRAFT
+    owner: documentation-standard
+    updated: 2026-08-10
+    authority: Informational
+    tags: [adoption, migration]
+  - id: REF-OBS-PLATFORM-001
+    path: observability-platform-notes.md
+    title: Notas de plataforma de observabilidade
+    type: Reference
+    status: DRAFT
+    owner: documentation-standard
+    updated: 2026-08-10
+    authority: Informational
+    tags: [observability, adoption]
+  - id: TPL-DEPLOY-001
+    path: templates/deployment.md
+    title: Template — Visão de deploy
+    type: Template
+    status: DRAFT
+    owner: documentation-standard
+    updated: 2026-08-10
+    authority: Informational
+    tags: [templates]
+  - id: TPL-FLAGS-001
+    path: templates/feature-flags.md
+    title: Template — Feature flags
+    type: Template
+    status: DRAFT
+    owner: documentation-standard
+    updated: 2026-08-10
+    authority: Informational
+    tags: [templates]
+  - id: TPL-DATA-001
+    path: templates/data-model.md
+    title: Template — Modelo de dados
+    type: Template
+    status: DRAFT
+    owner: documentation-standard
+    updated: 2026-08-10
+    authority: Informational
+    tags: [templates]
+  - id: TPL-WORKER-001
+    path: templates/worker.md
+    title: Template — Worker
+    type: Template
+    status: DRAFT
+    owner: documentation-standard
+    updated: 2026-08-10
+    authority: Informational
+    tags: [templates]
+  - id: TPL-BFF-001
+    path: templates/bff.md
+    title: Template — BFF
+    type: Template
+    status: DRAFT
+    owner: documentation-standard
+    updated: 2026-08-10
+    authority: Informational
+    tags: [templates]
+  - id: REF-LOFT-INFRA-001
+    path: loft-infra/README.md
+    title: Infra Loft atual (AIOps)
+    type: Reference
+    status: ACCEPTED
+    owner: aiops
+    updated: 2026-08-11
+    authority: Verified
+    tags: [loft-infra, aiops]
+  - id: REF-LOFT-INFRA-002
+    path: loft-infra/overview.md
+    title: Visão geral — publicação de apps AIOps
+    type: Reference
+    status: ACCEPTED
+    owner: aiops
+    updated: 2026-08-11
+    authority: Verified
+    tags: [loft-infra, aiops]
+  - id: REF-LOFT-INFRA-003
+    path: loft-infra/github-actions-deploy.md
+    title: GitHub Actions — deploy para produção
+    type: Reference
+    status: ACCEPTED
+    owner: aiops
+    updated: 2026-08-11
+    authority: Verified
+    tags: [loft-infra, aiops, cicd]
+  - id: REF-LOFT-INFRA-004
+    path: loft-infra/k8s-apps.md
+    title: k8s-apps — configuração Kubernetes / Argo CD
+    type: Reference
+    status: ACCEPTED
+    owner: aiops
+    updated: 2026-08-11
+    authority: Verified
+    tags: [loft-infra, aiops, kubernetes]
+  - id: REF-LOFT-INFRA-005
+    path: loft-infra/kong-gateway.md
+    title: Kong — exposição corp e external
+    type: Reference
+    status: ACCEPTED
+    owner: aiops
+    updated: 2026-08-11
+    authority: Verified
+    tags: [loft-infra, aiops, kong]
+  - id: REF-LOFT-INFRA-006
+    path: loft-infra/dockerfiles.md
+    title: Dockerfiles — padrões e exemplos AIOps
+    type: Reference
+    status: ACCEPTED
+    owner: aiops
+    updated: 2026-08-11
+    authority: Verified
+    tags: [loft-infra, aiops, docker]
+  - id: REF-LOFT-INFRA-007
+    path: loft-infra/checklist-novo-servico.md
+    title: Checklist — publicar um serviço AIOps
+    type: Reference
+    status: ACCEPTED
+    owner: aiops
+    updated: 2026-08-11
+    authority: Informational
+    tags: [loft-infra, aiops, checklist]
+  - id: REF-LOFT-INFRA-008
+    path: loft-infra/infra-live-route53.md
+    title: infra-live — DNS Route53 (loft-corp.com.br)
+    type: Reference
+    status: ACCEPTED
+    owner: aiops
+    updated: 2026-08-11
+    authority: Verified
+    tags: [loft-infra, aiops, dns, infra-live]
+  - id: REF-LOFT-INFRA-009
+    path: loft-infra/vault-secrets.md
+    title: Vault — configuração de secrets nos apps AIOps
+    type: Reference
+    status: ACCEPTED
+    owner: aiops
+    updated: 2026-08-11
+    authority: Verified
+    tags: [loft-infra, aiops, vault, secrets]
+  - id: REF-LOFT-INFRA-010
+    path: loft-infra/publish-guide.md
+    title: Guia de publicação — apps AIOps na infra Loft
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-24
+    authority: Informational
+    tags: [loft-infra, aiops, publish, runbook]
+  - id: REF-LOFT-INFRA-011
+    path: loft-infra/examples/README.md
+    title: Exemplos — publicação na infra Loft
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-24
+    authority: Informational
+    tags: [loft-infra, aiops, examples, templates]
+  - id: REF-LOFT-OBS-001
+    path: loft-observability/README.md
+    title: Observabilidade Loft — Datadog (as-is)
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-19
+    review_date: 2026-11-19
+    tags: [loft-observability, datadog, aiops]
+  - id: REF-LOFT-OBS-002
+    path: loft-observability/overview.md
+    title: Visão geral — Datadog no EKS Loft
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-19
+    review_date: 2026-11-19
+    tags: [loft-observability, datadog, aiops]
+  - id: REF-LOFT-OBS-003
+    path: loft-observability/documentation-prerequisites.md
+    title: Pré-requisitos documentais — logs no Datadog
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-19
+    review_date: 2026-11-19
+    tags: [loft-observability, datadog, aiops, logging]
+  - id: REF-LOFT-OBS-004
+    path: loft-observability/k8s-datadog-enablement.md
+    title: Kubernetes — habilitação Datadog (chart web-server)
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-19
+    review_date: 2026-11-19
+    tags: [loft-observability, datadog, kubernetes, aiops]
+  - id: REF-LOFT-OBS-005
+    path: loft-observability/application-instrumentation.md
+    title: Instrumentação de aplicação — Datadog APM
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-19
+    review_date: 2026-11-19
+    tags: [loft-observability, datadog, aiops, apm]
+  - id: REF-LOFT-OBS-006
+    path: loft-observability/structured-logging.md
+    title: Logs estruturados para Datadog
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-19
+    review_date: 2026-11-19
+    tags: [loft-observability, datadog, logging, aiops]
+  - id: REF-LOFT-OBS-007
+    path: loft-observability/datadog-usage-guide.md
+    title: Guia de uso Datadog (operadores)
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-19
+    review_date: 2026-11-19
+    tags: [loft-observability, datadog, aiops]
+  - id: REF-LOFT-OBS-008
+    path: loft-observability/verification-checklist.md
+    title: Checklist de verificação — Datadog pós-deploy
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-19
+    review_date: 2026-11-19
+    tags: [loft-observability, datadog, aiops, checklist]
+  - id: REF-AIOPS-APPS-001
+    path: aiops-apps/README.md
+    title: AIOps Apps — stacks de aplicação
+    type: Reference
+    status: ACCEPTED
+    owner: aiops
+    updated: 2026-08-11
+    authority: Verified
+    tags: [aiops-apps, frontend, backend]
+  - id: REF-AIOPS-APPS-002
+    path: aiops-apps/overview.md
+    title: Organização dos projetos AIOps
+    type: Reference
+    status: ACCEPTED
+    owner: aiops
+    updated: 2026-08-11
+    authority: Verified
+    tags: [aiops-apps]
+  - id: REF-AIOPS-APPS-003
+    path: aiops-apps/frontend-stack.md
+    title: Stack frontend AIOps
+    type: Reference
+    status: ACCEPTED
+    owner: aiops
+    updated: 2026-08-11
+    authority: Verified
+    tags: [aiops-apps, frontend]
+  - id: REF-AIOPS-APPS-004
+    path: aiops-apps/backend-stack.md
+    title: Stack backend AIOps
+    type: Reference
+    status: ACCEPTED
+    owner: aiops
+    updated: 2026-08-11
+    authority: Verified
+    tags: [aiops-apps, backend]
+  - id: REF-AIOPS-APPS-005
+    path: aiops-apps/routes.md
+    title: Rotas comuns — API e frontend
+    type: Reference
+    status: ACCEPTED
+    owner: aiops
+    updated: 2026-08-11
+    authority: Verified
+    tags: [aiops-apps, routes]
+  - id: REF-AIOPS-APPS-006
+    path: aiops-apps/security.md
+    title: Segurança nas apps AIOps
+    type: Reference
+    status: ACCEPTED
+    owner: aiops
+    updated: 2026-08-11
+    authority: Verified
+    tags: [aiops-apps, security]
+  - id: REF-AIOPS-APPS-007
+    path: aiops-apps/ava-prod.md
+    title: AVA — bot Slack de reconhecimento e feedback
+    type: Reference
+    status: ACCEPTED
+    owner: aiops
+    updated: 2026-08-11
+    authority: Verified
+    tags: [aiops-apps, ava, slack]
+  - id: REF-AIOPS-APPS-008
+    path: aiops-apps/dataforge.md
+    title: DataForge — plataforma de projetos e dados
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-24
+    review_date: 2026-11-24
+    tags: [aiops-apps, dataforge]
+  - id: REF-AIOPS-APPS-009
+    path: aiops-apps/deep-insight.md
+    title: Deep Insight — knowledge e AI studio
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-24
+    review_date: 2026-11-24
+    tags: [aiops-apps, deep-insight]
+  - id: REF-AIOPS-APPS-010
+    path: aiops-apps/qualidade-loft.md
+    title: Qualidade — base de conhecimento e surveys
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-24
+    review_date: 2026-11-24
+    tags: [aiops-apps, qualidade]
+  - id: REF-AIOPS-APPS-011
+    path: aiops-apps/loft-carteiras.md
+    title: Loft Carteiras — IAM e integrações
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-24
+    review_date: 2026-11-24
+    tags: [aiops-apps, loft-carteiras]
+  - id: REF-AIOPS-TEAM-001
+    path: aiops-team/README.md
+    title: AIOps — Time
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-24
+    review_date: 2026-11-24
+    tags: [aiops-team]
+  - id: REF-AIOPS-TEAM-002
+    path: aiops-team/documentation-model.md
+    title: Modelo de documentação AIOps — 3 níveis
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-24
+    review_date: 2026-11-24
+    tags: [aiops-team, publishing]
+  - id: REF-AIOPS-TEAM-003
+    path: aiops-team/who-we-are.md
+    title: AIOps — Quem somos
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-24
+    review_date: 2026-11-24
+    tags: [aiops-team]
+  - id: REF-AIOPS-TEAM-004
+    path: aiops-team/responsibilities.md
+    title: AIOps — Responsabilidades
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-24
+    review_date: 2026-11-24
+    tags: [aiops-team]
+  - id: REF-AIOPS-TEAM-005
+    path: aiops-team/applications.md
+    title: AIOps — Aplicações e soluções
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-24
+    review_date: 2026-11-24
+    tags: [aiops-team, aiops-apps]
+  - id: REF-AIOPS-TEAM-006
+    path: aiops-team/stacks.md
+    title: AIOps — Stacks utilizadas
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-24
+    review_date: 2026-11-24
+    tags: [aiops-team]
+  - id: REF-AIOPS-TEAM-007
+    path: aiops-team/ways-of-working.md
+    title: AIOps — Forma de trabalho
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-24
+    review_date: 2026-11-24
+    tags: [aiops-team]
+  - id: REF-AIOPS-TEAM-008
+    path: aiops-team/technical-standards.md
+    title: AIOps — Padrões técnicos
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-24
+    review_date: 2026-11-24
+    tags: [aiops-team]
+  - id: REF-AIOPS-TEAM-009
+    path: aiops-team/security.md
+    title: AIOps — Segurança
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-24
+    review_date: 2026-11-24
+    tags: [aiops-team, security]
+  - id: REF-AIOPS-TEAM-010
+    path: aiops-team/observability.md
+    title: AIOps — Observabilidade
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-24
+    review_date: 2026-11-24
+    tags: [aiops-team, observability]
+  - id: REF-AIOPS-TEAM-011
+    path: aiops-team/troubleshooting.md
+    title: AIOps — Troubleshooting
+    type: Reference
+    status: DRAFT
+    owner: aiops
+    updated: 2026-08-24
+    review_date: 2026-11-24
+    tags: [aiops-team, runbook]

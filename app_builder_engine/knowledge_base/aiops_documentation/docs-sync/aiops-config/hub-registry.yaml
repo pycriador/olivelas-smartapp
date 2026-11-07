@@ -1,0 +1,147 @@
+# AIOps documentation hub registry — maps 3 levels to Markdown paths and docs-sync profiles.
+# Used by agents (sync-aiops-hub skill) for scoped validate/plan/sync.
+#
+# Secrets stay in .env — never in this file.
+
+version: 1
+updated: "2026-08-24"
+
+levels:
+  team:
+    description: "Level 1 — AIOps squad hub (who we are, standards, catalog pointers)"
+    docs_root: "docs/pt-BR/aiops-team"
+    docs_root_en: "docs/en/aiops-team"
+    sync_profile: "aiops-config/documentacao-inicial.pt-BR.yaml"
+    confluence_parent_id: "6086460456"
+    confluence_parent_name: "Documentação Inicial"
+    make_targets:
+      plan: "docs-sync-aiops-team-plan"
+      sync: "docs-sync-aiops-team"
+    stable_id_prefix: "REF-AIOPS-TEAM-"
+    human_guide:
+      description: "Plain-language companion page, sibling file in the same folder (no separate Confluence parent)"
+      page: "README-guia.md"
+      page_en: "README-guide.md"
+      stable_id: "REF-AIOPS-TEAM-012"
+
+  application:
+    description: "Level 2 — one page per product in aiops-apps/"
+    docs_root: "docs/pt-BR/aiops-apps"
+    docs_root_en: "docs/en/aiops-apps"
+    sync_profiles:
+      - profile: "aiops-config/aiops-apps.pt-BR.yaml"
+        confluence_parent_id: "6091309071"
+        note: >
+          Single live target — AIOps - Stack pack. Confluence enforces
+          page-title uniqueness per SPACE, not per parent, so these pages
+          cannot also exist under Documentação Inicial (6086460456);
+          documentacao-inicial.pt-BR.yaml excludes aiops-apps/ for this
+          reason (found 2026-09-01 while publishing the humanized guides
+          pilot — see docs/pt-BR/changelog.md).
+    make_target_template: "docs-sync-aiops-app APP={app_id}"
+    apps:
+      - id: dataforge
+        page: "dataforge.md"
+        stable_id: "REF-AIOPS-APPS-008"
+        repo: "loft-br/aiops-dataforge"
+        namespace: "aiops-dataforge"
+        human_guide:
+          page: "dataforge-guia.md"
+          page_en: "dataforge-guide.md"
+          stable_id: "REF-AIOPS-APPS-012"
+      - id: deep-insight
+        page: "deep-insight.md"
+        stable_id: "REF-AIOPS-APPS-009"
+        repo: "loft-br/aiops-deep-insight"
+        namespace: "aiops-deep-insight"
+      - id: qualidade
+        page: "qualidade-loft.md"
+        stable_id: "REF-AIOPS-APPS-010"
+        repo: "loft-br/qualidade-loft"
+        namespace: "aiops-qualidade"
+      - id: loft-carteiras
+        page: "loft-carteiras.md"
+        stable_id: "REF-AIOPS-APPS-011"
+        repo: "loft-br/aiops-loft-carteira"
+        namespace: "aiops-loft-carteiras"
+      - id: ava
+        page: "ava-prod.md"
+        stable_id: "REF-AIOPS-APPS-007"
+        repo: "loft-br/ava-prod"
+        namespace: "ava-prod"
+
+  repository:
+    description: "Level 3 — README and docs/ in each app GitHub repo (not docs-sync)"
+    readme_sections:
+      - how_to_run
+      - code_structure
+      - dependencies
+      - configuration
+      - apis
+      - schemas
+      - tests
+      - implementation_notes
+      - troubleshooting
+    apps:
+      - id: dataforge
+        repo: "loft-br/aiops-dataforge"
+        default_branch: main
+        readme: "README.md"
+        extra_docs:
+          - "backend/README.md"
+          - "backend/requirements.txt"
+        workflows: ".github/workflows/"
+        pilot: true
+      - id: deep-insight
+        repo: "loft-br/aiops-deep-insight"
+        default_branch: main
+        readme: "README.md"
+        extra_docs:
+          - "backend/README.md"
+          - "knowledge/README.md"
+      - id: qualidade
+        repo: "loft-br/qualidade-loft"
+        default_branch: main
+        readme: "README.md"
+        extra_docs:
+          - "backend/README.md"
+          - "backend/pyproject.toml"
+      - id: loft-carteiras
+        repo: "loft-br/aiops-loft-carteira"
+        default_branch: main
+        readme: "README.md"
+        extra_docs:
+          - "backend/README.md"
+          - "front_slack/README.md"
+      - id: ava
+        repo: "loft-br/ava-prod"
+        default_branch: main
+        readme: "README.md"
+        extra_docs:
+          - "docs/README.md"
+          - "pyproject.toml"
+
+agent_workflow:
+  validate_repo: "make docs-validate"
+  sync_team: |
+    cd docs-sync && uv run docs-sync validate --config aiops-config/documentacao-inicial.pt-BR.yaml \
+      --docs ../../docs/pt-BR/aiops-team
+    uv run docs-sync sync --config aiops-config/documentacao-inicial.pt-BR.yaml \
+      --docs ../../docs/pt-BR/aiops-team --changes-only --relink
+  sync_app: |
+    cd docs-sync && uv run docs-sync sync --config aiops-config/aiops-apps.pt-BR.yaml \
+      --only {page} --changes-only --relink
+  level3: "Open PR in app repo; then update level-2 blob links in aiops-documentation"
+
+human_guides:
+  description: >
+    Plain-language companion pages for team/app hubs, for Confluence readers who are
+    not technical (business stakeholders, new joiners, support). Each guide is a
+    sibling file in the SAME folder as its technical page (naming: <page>-guia.md
+    pt-BR / <page>-guide.md en) so it inherits the same Confluence parent via the
+    folder's index file — docs-sync has no frontmatter field to force an explicit
+    parent (see ConfluenceMapper.resolve_parent). Guides only explain and link back
+    to the technical page; they never duplicate facts as source of truth, and they
+    are intentionally NOT part of the required ai-context.md reading chain, to keep
+    AI agent token usage unaffected. Rollout tracked per entry via the `human_guide`
+    key above (currently: team hub, dataforge pilot).

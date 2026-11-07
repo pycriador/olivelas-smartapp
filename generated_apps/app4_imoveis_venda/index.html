@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loft Imóveis — Venda de Casas e Apartamentos Exclusivos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Leaflet CSS for interactive Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Topbar Header -->
+  <header class="header">
+    <div class="header__inner">
+      <div class="header__left">
+        <a href="#" class="logo">
+          <span class="logo__brand">loft</span>
+          <span class="logo__badge">Imóveis & Financiamento</span>
+        </a>
+        <div class="city-selector">
+          <span>📍 São Paulo & Rio de Janeiro</span>
+        </div>
+      </div>
+
+      <div class="header__center">
+        <div class="search-input-wrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="propertySearchInput" placeholder="Buscar por bairro, condomínio, rua ou código...">
+        </div>
+      </div>
+
+      <div class="header__right">
+        <button class="btn btn--outline" id="btnToggleMapView">
+          🗺️ Alternar Vista Mapa/Lista
+        </button>
+        <button class="btn btn--primary" id="btnSimulator">
+          💰 Simular Financiamento
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Filter Bar -->
+  <section class="filters-bar">
+    <div class="filters-bar__inner">
+      <!-- Type Filter -->
+      <div class="filter-group">
+        <label>Tipo de Imóvel</label>
+        <select id="filterType">
+          <option value="ALL">Todos os Tipos</option>
+          <option value="Apartamento">Apartamento</option>
+          <option value="Casa">Casa de Condomínio</option>
+          <option value="Cobertura">Cobertura</option>
+          <option value="Studio">Studio</option>
+        </select>
+      </div>
+
+      <!-- Bedrooms Filter -->
+      <div class="filter-group">
+        <label>Quartos</label>
+        <div class="pill-group" id="bedroomPills">
+          <button class="pill-btn active" data-val="ALL">Todos</button>
+          <button class="pill-btn" data-val="1">1+</button>
+          <button class="pill-btn" data-val="2">2+</button>
+          <button class="pill-btn" data-val="3">3+</button>
+          <button class="pill-btn" data-val="4">4+</button>
+        </div>
+      </div>
+
+      <!-- Price Range -->
+      <div class="filter-group">
+        <label>Preço Máximo: <strong id="priceLabel">R$ 5.000.000</strong></label>
+        <input type="range" id="priceRange" min="300000" max="8000000" step="100000" value="5000000">
+      </div>
+
+      <!-- Neighborhood -->
+      <div class="filter-group">
+        <label>Bairro</label>
+        <select id="filterNeighborhood">
+          <option value="ALL">Todos os Bairros</option>
+          <option value="Jardins">Jardins (SP)</option>
+          <option value="Pinheiros">Pinheiros (SP)</option>
+          <option value="Itaim Bibi">Itaim Bibi (SP)</option>
+          <option value="Vila Madalena">Vila Madalena (SP)</option>
+          <option value="Moema">Moema (SP)</option>
+          <option value="Leblon">Leblon (RJ)</option>
+          <option value="Ipanema">Ipanema (RJ)</option>
+        </select>
+      </div>
+
+      <button class="btn btn--secondary" id="btnClearFilters">Limpar Filtros</button>
+    </div>
+  </section>
+
+  <!-- Main View Container -->
+  <main class="content-wrapper">
+    <!-- Left Column: Properties Feed -->
+    <div class="properties-column" id="propertiesColumn">
+      <div class="column-header">
+        <h1 class="results-title"><span id="resultsCount">0</span> imóveis encontrados para você</h1>
+        <div class="sort-wrap">
+          <label for="sortSelect">Ordenar por:</label>
+          <select id="sortSelect">
+            <option value="relevant">Mais Relevantes</option>
+            <option value="price_asc">Menor Preço</option>
+            <option value="price_desc">Maior Preço</option>
+            <option value="area_desc">Maior Metragem</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="properties-grid" id="propertiesGrid">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive Map -->
+    <div class="map-column" id="mapColumn">
+      <div class="map-container" id="map"></div>
+      <div class="map-hint">
+        <span>📍 Clique nos marcadores de preço para navegar no mapa</span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal: Property Full Details -->
+  <div class="modal-overlay" id="propertyModal" hidden>
+    <div class="modal modal--large">
+      <div class="modal__header">
+        <div>
+          <span class="badge badge--brand" id="modalPropType">Apartamento</span>
+          <span class="modal-code" id="modalPropCode">Código: LFT-8842</span>
+        </div>
+        <button class="modal-close" id="closePropertyModal">×</button>
+      </div>
+      <div class="modal__body">
+        <div class="gallery-container">
+          <div class="gallery-main" id="modalMainImgWrap">
+            <img id="modalMainImg" src="" alt="Foto principal do imóvel">
+          </div>
+          <div class="gallery-thumbs" id="modalThumbs"></div>
+        </div>
+
+        <div class="prop-detail-header">
+          <div>
+            <h2 id="modalPropTitle">Apartamento de Alto Padrão nos Jardins</h2>
+            <p id="modalPropAddress">Rua Oscar Freire, Jardins • São Paulo, SP</p>
+          </div>
+          <div class="prop-price-box">
+            <div class="price-val" id="modalPropPrice">R$ 2.450.000</div>
+            <div class="price-sub" id="modalPropCondo">Condomínio: R$ 1.850 • IPTU: R$ 620</div>
+          </div>
+        </div>
+
+        <div class="specs-grid">
+          <div class="spec-card">
+            <span class="spec-icon">📐</span>
+            <strong id="modalPropArea">145 m²</strong>
+            <small>Área útil</small>
+          </div>
+          <div class="spec-card">
+            <span class="spec-icon">🛏️</span>
+            <strong id="modalPropBeds">3 quartos</strong>
+            <small>2 suítes</small>
+          </div>
+          <div class="spec-card">
+            <span class="spec-icon">🚿</span>
+            <strong id="modalPropBaths">3 banheiros</strong>
+            <small>Lavabo social</small>
+          </div>
+          <div class="spec-card">
+            <span class="spec-icon">🚗</span>
+            <strong id="modalPropParking">2 vagas</strong>
+            <small>Garagem coberta</small>
+          </div>
+        </div>
+
+        <div class="ai-valuation-card" id="aiValuationCard">
+          <div class="ai-card__header">
+            <span>✨ Avaliação de Mercado & Rentabilidade com IA (AI Gateway)</span>
+            <button class="btn btn--outline btn--sm" id="btnRequestAiAppraisal">Recalcular com IA</button>
+          </div>
+          <div class="ai-card__body" id="aiAppraisalText">
+            Carregando estimativas de valorização, liquidez de aluguel e score de oportunidade...
+          </div>
+        </div>
+
+        <div class="description-section">
+          <h3>Sobre este imóvel</h3>
+          <p id="modalPropDesc"></p>
+        </div>
+
+        <div class="amenities-section">
+          <h3>Comodidades e Infraestrutura</h3>
+          <div class="amenities-grid" id="modalAmenities"></div>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--secondary" id="btnOpenFinancing">💰 Simular Parcelas</button>
+        <button class="btn btn--primary" id="btnScheduleVisit">📅 Agendar Visita com Corretor</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Financing Simulator -->
+  <div class="modal-overlay" id="financingModal" hidden>
+    <div class="modal modal--medium">
+      <div class="modal__header">
+        <h2>💰 Simulador de Financiamento Imobiliário Loft</h2>
+        <button class="modal-close" id="closeFinancingModal">×</button>
+      </div>
+      <div class="modal__body">
+        <div class="form-group">
+          <label>Valor do Imóvel: <strong id="simPropPriceLabel">R$ 1.500.000</strong></label>
+        </div>
+        <div class="form-group">
+          <label for="simDownPayment">Entrada (mínimo 20%): <strong id="downPaymentLabel">R$ 300.000</strong></label>
+          <input type="range" id="simDownPayment" min="20" max="80" value="20" step="5">
+        </div>
+        <div class="form-group">
+          <label for="simTermYears">Prazo do Financiamento:</label>
+          <select id="simTermYears">
+            <option value="30">30 anos (360 meses)</option>
+            <option value="25">25 anos (300 meses)</option>
+            <option value="20">20 anos (240 meses)</option>
+            <option value="15">15 anos (180 meses)</option>
+          </select>
+        </div>
+        <div class="sim-result-box">
+          <div class="sim-result-row">
+            <span>Primeira Parcela estimada:</span>
+            <strong id="simFirstInstallment" class="sim-highlight">R$ 9.850/mês</strong>
+          </div>
+          <div class="sim-result-row">
+            <span>Última Parcela estimada:</span>
+            <strong id="simLastInstallment">R$ 2.740/mês</strong>
+          </div>
+          <div class="sim-result-row">
+            <span>Taxa de Juros Loft Financiamento:</span>
+            <span>9,89% a.a. + TR</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--primary" id="btnApproveFinancing">Solicitar Pré-Aprovação de Crédito →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>

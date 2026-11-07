@@ -1,0 +1,52 @@
+# Publish docs/pt-BR into Confluence space AIOps under folder "Documentação Inicial".
+# Secrets MUST come from environment variables — never commit tokens.
+#
+# Parent folder:
+#   https://loftbr.atlassian.net/wiki/spaces/AIOps/folder/6086460456
+#
+# Usage:
+#   set -a && source ../.env && set +a
+#   uv run docs-sync validate --config config.pt-BR.yaml
+#   uv run docs-sync plan --config config.pt-BR.yaml --changes-only
+#   uv run docs-sync sync --config config.pt-BR.yaml --force --relink
+#
+# Flush + republish:
+#   uv run docs-sync flush --config config.pt-BR.yaml --dry-run
+#   uv run docs-sync flush --config config.pt-BR.yaml --yes --resync
+
+project:
+  name: "aiops-documentation-pt-BR"
+  repository_url: "https://github.com/loft-br/aiops-documentation"
+
+confluence:
+  url: "${CONFLUENCE_URL}"
+  space: "${CONFLUENCE_SPACE}"
+  username: "${CONFLUENCE_USERNAME}"
+  api_token: "${CONFLUENCE_API_TOKEN}"
+  api_profile: "cloud"
+  root_page: "Documentação Inicial"
+  # Confluence Cloud folder id
+  root_page_id: "6086460456"
+
+documentation:
+  language: "pt-BR"
+  path: "../docs/pt-BR"
+  exclude_globs:
+    - "**/generated/**"
+    - "**/.git/**"
+  index_filenames:
+    - "README.md"
+    - "index.md"
+
+sync:
+  dry_run: false
+  create_missing: true
+  update_existing: true
+  archive_removed: false
+  include_footer: true
+  managed_by: "docs-sync"
+  state_file: ".docs-sync-state.pt-BR.json"
+  labels:
+    - "documentation"
+    - "managed-by-docs-sync"
+    - "lang-pt-br"

@@ -1,0 +1,47 @@
+# Publish full docs/pt-BR tree → Confluence folder "Documentação Inicial"
+# Parent: https://loftbr.atlassian.net/wiki/spaces/AIOps/folder/6086460456
+#
+#   set -a && source ../.env && set +a
+#   uv run docs-sync sync --config aiops-config/documentacao-inicial.pt-BR.yaml --changes-only --relink
+#
+# aiops-apps/ is excluded: those pages live only under the dedicated
+# aiops-apps.pt-BR.yaml pack (Confluence enforces page-title uniqueness
+# per SPACE, not per parent, so the same titles cannot also exist here).
+
+project:
+  name: "aiops-documentation-pt-BR"
+  repository_url: "https://github.com/loft-br/aiops-documentation"
+
+confluence:
+  url: "${CONFLUENCE_URL}"
+  space: "${CONFLUENCE_SPACE}"
+  username: "${CONFLUENCE_USERNAME}"
+  api_token: "${CONFLUENCE_API_TOKEN}"
+  api_profile: "cloud"
+  root_page: "Documentação Inicial"
+  root_page_id: "6086460456"
+
+documentation:
+  language: "pt-BR"
+  path: "../../docs/pt-BR"
+  exclude_globs:
+    - "**/generated/**"
+    - "**/.git/**"
+    - "aiops-apps/**"
+  index_filenames:
+    - "README.md"
+    - "index.md"
+
+sync:
+  dry_run: false
+  create_missing: true
+  update_existing: true
+  archive_removed: false
+  include_footer: true
+  managed_by: "docs-sync"
+  state_file: "../.docs-sync-state.pt-BR.json"
+  labels:
+    - "documentation"
+    - "managed-by-docs-sync"
+    - "lang-pt-br"
+    - "pack-documentacao-inicial"

@@ -1,0 +1,42 @@
+# Publish docs/pt-BR/aiops-apps → Confluence "AIOps - Stack"
+# Parent: https://loftbr.atlassian.net/wiki/spaces/AIOps/pages/6091309071
+#
+#   set -a && source ../.env && set +a
+#   uv run docs-sync sync --config aiops-config/aiops-apps.pt-BR.yaml --force --relink
+
+project:
+  name: "aiops-apps-pt-BR"
+  repository_url: "https://github.com/loft-br/aiops-documentation"
+
+confluence:
+  url: "${CONFLUENCE_URL}"
+  space: "${CONFLUENCE_SPACE}"
+  username: "${CONFLUENCE_USERNAME}"
+  api_token: "${CONFLUENCE_API_TOKEN}"
+  api_profile: "cloud"
+  root_page: "AIOps - Stack"
+  root_page_id: "6091309071"
+
+documentation:
+  language: "pt-BR"
+  path: "../../docs/pt-BR/aiops-apps"
+  exclude_globs:
+    - "**/generated/**"
+    - "**/.git/**"
+  index_filenames:
+    - "README.md"
+    - "index.md"
+
+sync:
+  dry_run: false
+  create_missing: true
+  update_existing: true
+  archive_removed: false
+  include_footer: true
+  managed_by: "docs-sync"
+  state_file: "../.docs-sync-state.aiops-apps.pt-BR.json"
+  labels:
+    - "documentation"
+    - "managed-by-docs-sync"
+    - "lang-pt-br"
+    - "pack-aiops-apps"

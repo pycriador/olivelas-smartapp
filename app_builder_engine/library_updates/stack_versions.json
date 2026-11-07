@@ -1,0 +1,166 @@
+{
+  "frontend": {
+    "react": {
+      "ecosystem": "npm",
+      "current": "^19.0.0"
+    },
+    "react-dom": {
+      "ecosystem": "npm",
+      "current": "^19.0.0"
+    },
+    "@types/react": {
+      "ecosystem": "npm",
+      "current": "^19.0.0"
+    },
+    "@types/react-dom": {
+      "ecosystem": "npm",
+      "current": "^19.0.0"
+    },
+    "@types/node": {
+      "ecosystem": "npm",
+      "current": "^20.14.0"
+    },
+    "vite": {
+      "ecosystem": "npm",
+      "current": "^6.4.4"
+    },
+    "@vitejs/plugin-react": {
+      "ecosystem": "npm",
+      "current": "^4.3.4"
+    },
+    "typescript": {
+      "ecosystem": "npm",
+      "current": "^5.5.3"
+    },
+    "tailwindcss": {
+      "ecosystem": "npm",
+      "current": "^4.3.3"
+    },
+    "@tailwindcss/postcss": {
+      "ecosystem": "npm",
+      "current": "^4.3.3"
+    },
+    "postcss": {
+      "ecosystem": "npm",
+      "current": "^8.4.38"
+    },
+    "axios": {
+      "ecosystem": "npm",
+      "current": "^1.20.0"
+    },
+    "antd": {
+      "ecosystem": "npm",
+      "current": "^5.24.0"
+    },
+    "@ant-design/icons": {
+      "ecosystem": "npm",
+      "current": "^5.4.0"
+    },
+    "@ant-design/v5-patch-for-react-19": {
+      "ecosystem": "npm",
+      "current": "^1.0.3"
+    },
+    "@tanstack/react-query": {
+      "ecosystem": "npm",
+      "current": "^5.51.0"
+    },
+    "lucide-react": {
+      "ecosystem": "npm",
+      "current": "^0.428.0"
+    },
+    "zustand": {
+      "ecosystem": "npm",
+      "current": "^5.0.2"
+    },
+    "clsx": {
+      "ecosystem": "npm",
+      "current": "^2.1.1"
+    },
+    "tailwind-merge": {
+      "ecosystem": "npm",
+      "current": "^2.6.1"
+    },
+    "react-hook-form": {
+      "ecosystem": "npm",
+      "current": "^7.54.1"
+    },
+    "zod": {
+      "ecosystem": "npm",
+      "current": "^3.24.1"
+    }
+  },
+  "backend": {
+    "fastapi": {
+      "ecosystem": "pip",
+      "current": ">=0.115.0"
+    },
+    "uvicorn[standard]": {
+      "ecosystem": "pip",
+      "current": ">=0.30.0"
+    },
+    "pydantic": {
+      "ecosystem": "pip",
+      "current": ">=2.8.0"
+    },
+    "pydantic-settings": {
+      "ecosystem": "pip",
+      "current": ">=2.4.0"
+    },
+    "sqlalchemy": {
+      "ecosystem": "pip",
+      "current": ">=2.0.30"
+    },
+    "psycopg[binary]": {
+      "ecosystem": "pip",
+      "current": ">=3.2.0"
+    },
+    "psycopg2-binary": {
+      "ecosystem": "pip",
+      "current": ">=2.9.9"
+    },
+    "pymysql": {
+      "ecosystem": "pip",
+      "current": ">=1.1.1"
+    },
+    "alembic": {
+      "ecosystem": "pip",
+      "current": ">=1.13.0"
+    },
+    "pyjwt": {
+      "ecosystem": "pip",
+      "current": ">=2.8.0"
+    },
+    "bcrypt": {
+      "ecosystem": "pip",
+      "current": ">=4.1.0"
+    },
+    "argon2-cffi": {
+      "ecosystem": "pip",
+      "current": ">=23.1.0"
+    },
+    "cryptography": {
+      "ecosystem": "pip",
+      "current": ">=42.0.0"
+    },
+    "python-multipart": {
+      "ecosystem": "pip",
+      "current": ">=0.0.9"
+    },
+    "python-dotenv": {
+      "ecosystem": "pip",
+      "current": ">=1.0.0"
+    },
+    "httpx": {
+      "ecosystem": "pip",
+      "current": ">=0.27.0"
+    },
+    "pytest": {
+      "ecosystem": "pip",
+      "current": ">=8.3.0"
+    },
+    "pytest-asyncio": {
+      "ecosystem": "pip",
+      "current": ">=0.23.7"
+    }
+  }
+}

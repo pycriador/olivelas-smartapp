@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: loft-ai-copilot-support-backend
+    ports:
+      - "8001:8000"
+    environment:
+      - APP_ENV=production
+      - DATABASE_URL=sqlite:///./app_data.db
+      - SECRET_KEY=loft-production-secret-key-2026
+    volumes:
+      - ./backend/data:/app/data
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: loft-ai-copilot-support-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend

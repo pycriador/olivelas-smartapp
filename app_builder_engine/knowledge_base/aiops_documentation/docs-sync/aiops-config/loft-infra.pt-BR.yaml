@@ -1,0 +1,45 @@
+# Publish docs/pt-BR/loft-infra → Confluence "Infra Loft"
+# Parent: https://loftbr.atlassian.net/wiki/spaces/AIOps/pages/6090358809
+#
+#   set -a && source ../.env && set +a
+#   uv run docs-sync sync --config aiops-config/loft-infra.pt-BR.yaml --force --relink
+
+project:
+  name: "aiops-loft-infra-pt-BR"
+  repository_url: "https://github.com/loft-br/aiops-documentation"
+
+confluence:
+  url: "${CONFLUENCE_URL}"
+  space: "${CONFLUENCE_SPACE}"
+  username: "${CONFLUENCE_USERNAME}"
+  api_token: "${CONFLUENCE_API_TOKEN}"
+  api_profile: "cloud"
+  root_page: "Infra Loft"
+  root_page_id: "6090358809"
+
+documentation:
+  language: "pt-BR"
+  paths:
+    - "../../docs/pt-BR/loft-infra"
+    - "../../docs/pt-BR/loft-observability"
+  exclude_globs:
+    - "**/generated/**"
+    - "**/.git/**"
+  index_filenames:
+    - "README.md"
+    - "index.md"
+
+sync:
+  dry_run: false
+  create_missing: true
+  update_existing: true
+  archive_removed: false
+  include_footer: true
+  managed_by: "docs-sync"
+  state_file: "../.docs-sync-state.loft-infra.pt-BR.json"
+  labels:
+    - "documentation"
+    - "managed-by-docs-sync"
+    - "lang-pt-br"
+    - "pack-loft-infra"
+    - "pack-loft-observability"

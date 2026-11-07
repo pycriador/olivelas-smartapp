@@ -1,0 +1,28 @@
+---
+description: Required quality checks before finishing a task. Replace the commands with this project's real gates.
+alwaysApply: true
+---
+
+# Quality checks
+
+Before declaring any task done, run the project's real gates from the repository root and fix reported errors.
+
+Replace the examples below. Do not leave placeholder commands in a production service repo.
+
+```bash
+# Documentation (if this standard's linter is wired)
+make docs-validate
+
+# Examples — keep only what this repo actually runs:
+# uv run ruff check .
+# uv run pytest tests/unit/ -q
+# uv run pyright .
+# ./gradlew test
+```
+
+## Exit criteria
+
+| Tool | Criterion |
+| --- | --- |
+| Docs validate | No ERROR on governed docs |
+| Lint / tests / types | The project's existing bar (do not invent a new one) |

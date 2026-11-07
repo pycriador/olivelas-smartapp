@@ -1,0 +1,135 @@
+# Documentation validation configuration
+# Documentation Standard v1.0 — Governance & Automation
+# Changes to this file are governance changes and require review.
+
+standard_version: "1.0"
+
+roots:
+  - docs/en
+  - docs/pt-BR
+
+manifests:
+  - docs/en/manifest.yaml
+  - docs/pt-BR/manifest.yaml
+
+exclude_globs:
+  - "**/generated/**"
+  - "**/node_modules/**"
+  - "**/.git/**"
+
+# Manifest listing of the full corpus is optional (see manifest-rules.md).
+# ERROR when a manifest entry path is missing; INFO when a .md file is not listed.
+manifest:
+  require_listed_paths_exist: true
+  warn_unlisted_markdown: false
+  # Full corpus listing is optional (manifest-rules.md); keep off to avoid noise.
+  info_unlisted_markdown: false
+
+metadata:
+  # When YAML frontmatter exists, validate known fields.
+  validate_when_present: true
+  allowed_statuses:
+    - DRAFT
+    - REVIEW
+    - ACCEPTED
+    - DEPRECATED
+    - ARCHIVED
+  allowed_authority:
+    - Authoritative
+    - Verified
+    - Informational
+    - Reference
+    - Historical
+    - Draft
+    - Unknown
+  # Authoritative entries in the manifest must have owner (ERROR).
+  require_owner_for_manifest_authoritative: true
+  # ACCEPTED docs with frontmatter should have owner (WARNING if missing).
+  warn_missing_owner_when_accepted: true
+
+ids:
+  # IDs must be unique across each language tree when present.
+  detect_duplicates: true
+  # Pattern is advisory; malformed IDs are WARNING unless in manifest.
+  pattern: "^[A-Z][A-Z0-9]*(-[A-Z0-9]+)+$"
+  require_id_for_manifest_entries: true
+
+links:
+  check_internal_markdown: true
+  # Anchors: WARNING when target file exists but fragment cannot be verified cheaply
+  check_anchors: false
+  fail_on_broken: true
+  # Bare ../../pkg/README.md in prose (not a Markdown link) — broken on Confluence/GitHub
+  check_bare_relative_md_paths: true
+
+relationships:
+  # Validate Source/Target paths or IDs inside relationship templates when present
+  validate_relationship_docs: true
+
+freshness:
+  enabled: true
+  # Days since updated/review_date → WARNING (never auto-invalid)
+  stale_after_days: 365
+  apply_to_manifest_authoritative_only: true
+
+exceptions:
+  directory_globs:
+    - docs/en/exceptions/**/*.md
+    - docs/pt-BR/exceptions/**/*.md
+  detect_expired: true
+
+contradictions:
+  directory_globs:
+    - docs/en/contradictions/**/*.md
+    - docs/pt-BR/contradictions/**/*.md
+
+claims:
+  # Structural checks when claim templates are used
+  validate_claim_status_tokens: true
+  allowed_claim_status:
+    - CONFIRMED
+    - INFERRED
+    - PROPOSED
+    - UNKNOWN
+    - DEPRECATED
+  allowed_confidence:
+    - High
+    - Medium
+    - Low
+    - Unknown
+
+ai_readiness:
+  require_ai_context_exists: true
+  ai_context_paths:
+    - docs/en/ai-context.md
+    - docs/pt-BR/ai-context.md
+
+security:
+  scan_secret_patterns: true
+  # Never print matched secret values — only rule id and file:line
+
+generated:
+  allow_paths:
+    - docs/en/generated/
+    - docs/pt-BR/generated/
+    - docs/en/reports/
+    - docs/pt-BR/reports/
+  mark_as_generated: true
+
+rules:
+  # Severity overrides / disable (never silence critical security without exception record)
+  disabled: []
+  # Example severity override:
+  # severity_overrides:
+  #   DOC-LINK-001: WARNING
+  severity_overrides:
+    DOC-MAN-005: INFO
+
+exit_codes:
+  pass: 0
+  validation_failure: 1
+  tool_error: 2
+
+ci:
+  fail_on: ERROR
+  # WARNING and INFO do not fail CI

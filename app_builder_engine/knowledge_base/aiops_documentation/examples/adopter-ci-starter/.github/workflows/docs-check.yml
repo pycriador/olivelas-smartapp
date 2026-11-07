@@ -1,0 +1,23 @@
+# Optional starter workflow for projects adopting the documentation standard.
+# Copy into your product repository and adjust paths. Not required by the framework repo.
+name: docs-check
+
+on:
+  pull_request:
+    paths:
+      - "docs/**"
+      - "scripts/adopter_docs_check.py"
+  push:
+    paths:
+      - "docs/**"
+
+jobs:
+  adopter-docs-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run adopter docs check
+        run: python3 scripts/adopter_docs_check.py --docs-root docs

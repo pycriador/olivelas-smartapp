@@ -1,0 +1,36 @@
+[project]
+name = "docs-sync"
+version = "0.1.0"
+description = "Synchronize GitHub/local documentation standard trees to Confluence"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "httpx>=0.27",
+  "markdown>=3.6",
+  "pyyaml>=6.0",
+  "truststore>=0.10.4",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.6",
+]
+
+[project.scripts]
+docs-sync = "docs_sync.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"

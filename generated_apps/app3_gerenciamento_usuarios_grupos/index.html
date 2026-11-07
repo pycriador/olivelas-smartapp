@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loft IAM — Central de Gestão de Usuários & Grupos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="topbar">
+      <div class="topbar__left">
+        <a href="#" class="logo">
+          <span class="logo__brand">loft</span>
+          <span class="logo__sep">/</span>
+          <span class="logo__title">IAM & Access Hub</span>
+        </a>
+        <div class="tag-badge">Zero Database • In-Memory Mock</div>
+      </div>
+
+      <div class="topbar__right">
+        <div class="role-switcher">
+          <label for="roleSwitchSelect">Simular Perfil:</label>
+          <select id="roleSwitchSelect">
+            <option value="Global Admin">👑 Global Admin</option>
+            <option value="Admin">🛡️ Admin</option>
+            <option value="Editor">✏️ Editor</option>
+            <option value="Viewer">👁️ Viewer</option>
+          </select>
+        </div>
+
+        <div class="api-pill">
+          <span class="pulse-dot online" id="iamApiDot"></span>
+          <span id="iamApiStatus">API Conectada</span>
+        </div>
+
+        <div class="user-profile" id="userProfile">
+          <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Willian" alt="Avatar">
+          <span class="user-name">Willian Jesus</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Navigation Tabs -->
+    <nav class="subnav">
+      <div class="subnav__inner">
+        <button class="tab-btn active" data-tab="users">👥 Usuários (<span id="userCountBadge">0</span>)</button>
+        <button class="tab-btn" data-tab="groups">🏢 Grupos & Equipes (<span id="groupCountBadge">0</span>)</button>
+        <button class="tab-btn" data-tab="matrix">🔐 Matriz de Permissões RBAC</button>
+        <button class="tab-btn" data-tab="audit">📜 Trilha de Auditoria IAM</button>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-body">
+      <!-- TAB 1: USERS -->
+      <section class="tab-pane active" id="tabUsers">
+        <div class="action-bar">
+          <div class="search-filter">
+            <input type="text" id="userSearchInput" placeholder="Buscar por nome, email ou papel...">
+            <select id="userRoleFilter">
+              <option value="ALL">Todos os Papéis</option>
+              <option value="Global Admin">Global Admin</option>
+              <option value="Admin">Admin</option>
+              <option value="Editor">Editor</option>
+              <option value="Viewer">Viewer</option>
+            </select>
+            <select id="userStatusFilter">
+              <option value="ALL">Todos os Status</option>
+              <option value="Active">Ativo</option>
+              <option value="Inactive">Inativo</option>
+            </select>
+          </div>
+          <button class="btn btn--primary" id="btnOpenAddUser">+ Novo Usuário</button>
+        </div>
+
+        <div class="table-card">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Usuário</th>
+                <th>Papel (Role)</th>
+                <th>Grupos</th>
+                <th>Status</th>
+                <th>Último Acesso</th>
+                <th style="text-align: right;">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="userTableBody">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TAB 2: GROUPS -->
+      <section class="tab-pane" id="tabGroups" hidden>
+        <div class="action-bar">
+          <div class="search-filter">
+            <input type="text" id="groupSearchInput" placeholder="Buscar grupos...">
+          </div>
+          <button class="btn btn--primary" id="btnOpenAddGroup">+ Novo Grupo</button>
+        </div>
+
+        <div class="groups-grid" id="groupsGrid">
+          <!-- Rendered via JS -->
+        </div>
+      </section>
+
+      <!-- TAB 3: PERMISSION MATRIX -->
+      <section class="tab-pane" id="tabMatrix" hidden>
+        <div class="matrix-header">
+          <div>
+            <h2>Matriz Granular de Controle de Acesso (RBAC)</h2>
+            <p>Ativação e desativação instantânea de privilégios por papel. Conectado a <code>POST /api/v1/iam/permissions/{id}/toggle</code>.</p>
+          </div>
+          <button class="btn btn--secondary" id="btnRefreshMatrix">🔄 Recarregar Matriz</button>
+        </div>
+
+        <div class="table-card">
+          <table class="data-table matrix-table">
+            <thead>
+              <tr>
+                <th>Módulo / Recurso</th>
+                <th>Permissão</th>
+                <th style="text-align: center;">Global Admin</th>
+                <th style="text-align: center;">Admin</th>
+                <th style="text-align: center;">Editor</th>
+                <th style="text-align: center;">Viewer</th>
+              </tr>
+            </thead>
+            <tbody id="matrixTableBody">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TAB 4: AUDIT LOGS -->
+      <section class="tab-pane" id="tabAudit" hidden>
+        <div class="matrix-header">
+          <div>
+            <h2>Trilha de Auditoria Universal</h2>
+            <p>Registro imutável de eventos de criação, edição e alteração de privilégios. Conectado a <code>GET /api/v1/audit/logs</code>.</p>
+          </div>
+          <button class="btn btn--secondary" id="btnRefreshAudit">🔄 Atualizar Logs</button>
+        </div>
+
+        <div class="table-card">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>Ator</th>
+                <th>Ação / Evento</th>
+                <th>Recurso</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="auditTableBody">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal: Add / Edit User -->
+  <div class="modal-overlay" id="userModal" hidden>
+    <div class="modal modal--medium">
+      <div class="modal__header">
+        <h2 id="userModalTitle">Criar Novo Usuário</h2>
+        <button class="modal-close" id="closeUserModal">×</button>
+      </div>
+      <form id="userForm" class="modal__body">
+        <input type="hidden" id="userIdHidden">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="formUserName">Nome Completo *</label>
+            <input type="text" id="formUserName" required placeholder="Ex: Camila Rocha">
+          </div>
+          <div class="form-group">
+            <label for="formUserEmail">Email Corporativo *</label>
+            <input type="email" id="formUserEmail" required placeholder="camila.rocha@loft.com.br">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="formUserRole">Papel (Role) *</label>
+            <select id="formUserRole" required>
+              <option value="Global Admin">Global Admin</option>
+              <option value="Admin">Admin</option>
+              <option value="Editor" selected>Editor</option>
+              <option value="Viewer">Viewer</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="formUserStatus">Status da Conta *</label>
+            <select id="formUserStatus" required>
+              <option value="Active">Ativo</option>
+              <option value="Inactive">Inativo</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="formUserGroups">Grupos / Equipes (separados por vírgula)</label>
+          <input type="text" id="formUserGroups" placeholder="Engenharia, Produto, Fiança Aluguel">
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn--secondary" id="cancelUserModal">Cancelar</button>
+          <button type="submit" class="btn btn--primary" id="saveUserBtn">Salvar Usuário</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Add Group -->
+  <div class="modal-overlay" id="groupModal" hidden>
+    <div class="modal modal--medium">
+      <div class="modal__header">
+        <h2>Criar Novo Grupo de Acesso</h2>
+        <button class="modal-close" id="closeGroupModal">×</button>
+      </div>
+      <form id="groupForm" class="modal__body">
+        <div class="form-group">
+          <label for="formGroupName">Nome do Grupo *</label>
+          <input type="text" id="formGroupName" required placeholder="Ex: Squad Crédito & Fiança">
+        </div>
+        <div class="form-group">
+          <label for="formGroupDesc">Descrição do Propósito *</label>
+          <textarea id="formGroupDesc" rows="3" required placeholder="Equipe responsável pela esteira de crédito e aprovação de fiança..."></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn--secondary" id="cancelGroupModal">Cancelar</button>
+          <button type="submit" class="btn btn--primary">Salvar Grupo</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

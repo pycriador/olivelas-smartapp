@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loft News — Portal de Tecnologia, IA e Inovação</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header / Topbar -->
+  <header class="header">
+    <div class="header__inner">
+      <div class="header__left">
+        <a href="#" class="logo">
+          <span class="logo__text">loft</span>
+          <span class="logo__badge">News & Tech</span>
+        </a>
+        <div class="header__live-status">
+          <span class="pulse-dot" id="apiStatusDot"></span>
+          <span id="apiStatusText">Conectando à API...</span>
+        </div>
+      </div>
+
+      <div class="header__center">
+        <div class="search-box">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="searchInput" placeholder="Buscar notícias, IA, arquitetura, novidades..." autocomplete="off">
+          <button id="clearSearchBtn" class="clear-btn" hidden>×</button>
+        </div>
+      </div>
+
+      <div class="header__right">
+        <button class="btn btn--secondary" id="btnFavorites">
+          ★ Favoritos (<span id="favCount">0</span>)
+        </button>
+        <button class="btn btn--primary" id="btnNewArticle">
+          + Publicar Notícia
+        </button>
+        <div class="user-pill" id="userPill">
+          <img id="userAvatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Willian" alt="Avatar">
+          <span id="userName">Willian Jesus</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Nav -->
+    <nav class="nav-bar">
+      <div class="nav-bar__inner">
+        <button class="nav-tab active" data-category="ALL">Todas as Notícias</button>
+        <button class="nav-tab" data-category="AI & Inovação">🤖 IA & Inovação</button>
+        <button class="nav-tab" data-category="Tecnologia & Dev">💻 Engenharia & Dev</button>
+        <button class="nav-tab" data-category="Mercado Imobiliário">🏠 Mercado Imobiliário</button>
+        <button class="nav-tab" data-category="Arquitetura & Design">📐 Arquitetura & Design</button>
+        <button class="nav-tab" data-category="Governança & Segurança">🛡️ Segurança & RBAC</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Breaking News Banner -->
+  <div class="breaking-banner" id="breakingBanner">
+    <div class="breaking-banner__inner">
+      <span class="breaking-tag">URGENTE</span>
+      <div class="breaking-content" id="breakingText">
+        App Builder Engine v1.0.0 conecta ecossistema Loft a agentes inteligentes de IA.
+      </div>
+      <span class="breaking-time" id="breakingTime">Hoje, 20:45</span>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <main class="main-content">
+    <!-- Hero Highlight Section -->
+    <section class="hero-section" id="heroSection">
+      <div class="hero-card" id="heroCard">
+        <div class="hero-card__badge" id="heroBadge">DESTAQUE PRINCIPAL</div>
+        <h1 class="hero-card__title" id="heroTitle">Carregando notícia em destaque via API...</h1>
+        <p class="hero-card__summary" id="heroSummary">Aguarde enquanto os dados mais recentes são obtidos em tempo real da Central de Conhecimento e do AI Gateway.</p>
+        <div class="hero-card__meta">
+          <span id="heroAuthor">Por Loft Engineering</span> • 
+          <span id="heroDate">Setembro 2026</span> • 
+          <span class="read-time" id="heroReadTime">⏱️ 3 min de leitura</span>
+        </div>
+        <div class="hero-card__actions">
+          <button class="btn btn--primary" id="heroReadBtn">Ler Artigo Completo →</button>
+          <button class="btn btn--outline" id="heroAiSummaryBtn">✨ Resumir com IA</button>
+          <button class="btn btn--icon" id="heroFavBtn" title="Favoritar">★</button>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <div class="side-header">
+          <h3>🔥 Mais Lidas na Engenharia</h3>
+        </div>
+        <div class="side-list" id="trendingList">
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter & Section Title -->
+    <div class="section-bar">
+      <h2 id="currentCategoryTitle">Últimas Publicações</h2>
+      <div class="view-controls">
+        <span class="count-badge" id="newsCount">0 matérias</span>
+      </div>
+    </div>
+
+    <!-- News Grid -->
+    <section class="news-grid" id="newsGrid">
+      <!-- Cards rendered via JS -->
+    </section>
+
+    <!-- Empty / Loading / Error states -->
+    <div class="state-container" id="stateContainer" hidden>
+      <div class="state-content" id="stateContent"></div>
+    </div>
+  </main>
+
+  <!-- Modal: Article Full Reader -->
+  <div class="modal-overlay" id="articleModal" hidden>
+    <div class="modal modal--large">
+      <div class="modal__header">
+        <div class="modal__header-left">
+          <span class="category-pill" id="modalCategory">Tecnologia</span>
+          <span class="modal-date" id="modalDate">Data</span>
+        </div>
+        <button class="modal-close" id="closeArticleModal">×</button>
+      </div>
+      <div class="modal__body">
+        <h1 id="modalTitle" class="modal-article-title">Título do Artigo</h1>
+        <div class="modal-article-meta">
+          <span id="modalAuthor">Autor</span> • 
+          <span id="modalTags" class="tags-row"></span>
+        </div>
+        <div class="ai-box" id="modalAiBox" hidden>
+          <div class="ai-box__header">
+            <span>🤖 Resumo Inteligente (Gemini 3.X / AI Gateway)</span>
+            <button class="btn-copy" id="copyAiSummary">Copiar</button>
+          </div>
+          <div class="ai-box__content" id="modalAiContent"></div>
+        </div>
+        <div class="article-body-text" id="modalBodyText"></div>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--secondary" id="modalSummarizeBtn">✨ Gerar Resumo IA</button>
+        <button class="btn btn--primary" id="modalFavoriteBtn">★ Favoritar Notícia</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Publish New Article -->
+  <div class="modal-overlay" id="publishModal" hidden>
+    <div class="modal modal--medium">
+      <div class="modal__header">
+        <h2>✍️ Publicar Nova Matéria no Portal</h2>
+        <button class="modal-close" id="closePublishModal">×</button>
+      </div>
+      <form id="publishForm" class="modal__body">
+        <div class="form-group">
+          <label for="pubTitle">Título da Notícia *</label>
+          <input type="text" id="pubTitle" required placeholder="Ex: Loft lança novo motor de inteligência artificial...">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pubCategory">Categoria *</label>
+            <select id="pubCategory" required>
+              <option value="AI & Inovação">AI & Inovação</option>
+              <option value="Tecnologia & Dev">Tecnologia & Dev</option>
+              <option value="Mercado Imobiliário">Mercado Imobiliário</option>
+              <option value="Arquitetura & Design">Arquitetura & Design</option>
+              <option value="Governança & Segurança">Governança & Segurança</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="pubAuthor">Autor *</label>
+            <input type="text" id="pubAuthor" value="Willian Jesus" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pubSummary">Resumo / Subtítulo *</label>
+          <textarea id="pubSummary" rows="2" required placeholder="Breve introdução da notícia para a vitrine..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="pubContent">Conteúdo Completo (Markdown) *</label>
+          <textarea id="pubContent" rows="6" required placeholder="Escreva o artigo completo com detalhes, seções e análises..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="pubTags">Tags (separadas por vírgula)</label>
+          <input type="text" id="pubTags" placeholder="ai, arquitetura, fast-api, react, loft">
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn--secondary" id="cancelPublish">Cancelar</button>
+          <button type="submit" class="btn btn--primary" id="submitPublish">Publicar Matéria (POST /knowledge/docs)</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <p>Loft News Portal — Alimentado 100% pela API App Builder Engine (<code>http://localhost:8000/api/v1</code>)</p>
+      <div class="footer__endpoints">
+        <span>Endpoints:</span>
+        <code>/iam/login</code> • <code>/knowledge/docs</code> • <code>/knowledge/favorites</code> • <code>/ai/gateway/execute</code>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=/projects" />
+  <script>
+    window.location.replace('/projects');
+  </script>
+  <title>Central de Projetos Loft - Redirecionando...</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand: #FF774A;
+      --brand-light: #FFF0EB;
+      --green: #0B6B4F;
+      --green-light: #EAF9EF;
+      --text: #1F2937;
+      --muted: #6B7280;
+      --border: #E5E7EB;
+      --bg: #F8F9FA;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 40px 24px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .logo-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .brand-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--brand);
+    }
+    .brand-badge {
+      background: var(--green-light);
+      color: var(--green);
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .subtitle {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .api-status-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFF;
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 16px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10B981;
+    }
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 24px;
+    }
+    .app-card {
+      background: #FFF;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .app-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+      border-color: rgba(255, 119, 74, 0.5);
+    }
+    .app-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .app-icon {
+      font-size: 28px;
+    }
+    .app-tag {
+      font-size: 11px;
+      font-weight: 700;
+      background: var(--brand-light);
+      color: var(--brand);
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .app-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .app-desc {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .endpoints-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 20px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .endpoints-box strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .endpoints-box code {
+      background: #FFF;
+      padding: 1px 4px;
+      border-radius: 3px;
+      border: 1px solid #E5E7EB;
+    }
+    .btn-launch {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      background: var(--brand);
+      color: #FFF;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 16px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .btn-launch:hover {
+      background: #E55C30;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo-row">
+        <span class="brand-title">loft</span>
+        <span class="brand-badge">5 Aplicações Independentes</span>
+      </div>
+      <p class="subtitle">
+        Cada aplicação foi desenvolvida de forma 100% isolada e autônoma, consumindo exclusivamente os endpoints da API do <strong>App Builder Engine</strong> (<code>http://127.0.0.1:8000/api/v1</code>).
+      </p>
+      <div class="api-status-banner">
+        <span class="dot"></span>
+        <span>Backend FastAPI Ativo na porta 8000</span>
+      </div>
+      <div style="margin-top: 16px;">
+        <a href="evidencias_api_e_ia.html" style="display: inline-flex; align-items: center; gap: 8px; background: #0B6B4F; color: #FFF; text-decoration: none; padding: 10px 20px; border-radius: 9999px; font-size: 13px; font-weight: 700; box-shadow: 0 2px 6px rgba(11,107,79,0.2);">
+          <span>📊 Ver Painel de Evidências de API e Respostas de IA →</span>
+        </a>
+      </div>
+    </header>
+
+    <div class="apps-grid">
+      <!-- App 1 -->
+      <div class="app-card">
+        <div>
+          <div class="app-header">
+            <span class="app-icon">📰</span>
+            <span class="app-tag">App 1</span>
+          </div>
+          <h2 class="app-title">Portal de Notícias</h2>
+          <p class="app-desc">
+            Portal jornalístico moderno com manchetes em destaque, categorização em tempo real, busca instantânea, favoritos e geração de resumos executivos com IA.
+          </p>
+          <div class="endpoints-box">
+            <strong>Endpoints API utilizados:</strong>
+            <code>/knowledge/docs</code>, <code>/knowledge/favorites</code>, <code>/ai/gateway/execute</code>
+          </div>
+        </div>
+        <a href="app1_portal_noticias/index.html" class="btn-launch" target="_blank">Abrir Portal de Notícias →</a>
+      </div>
+
+      <!-- App 2 -->
+      <div class="app-card">
+        <div>
+          <div class="app-header">
+            <span class="app-icon">🤖</span>
+            <span class="app-tag">App 2</span>
+          </div>
+          <h2 class="app-title">Chatbot de Suporte</h2>
+          <p class="app-desc">
+            Assistente conversacional 24/7 com seletor de modelos de inteligência (Gemini 3.X), grounding RAG sobre documentações da base, sugestões rápidas e exportação.
+          </p>
+          <div class="endpoints-box">
+            <strong>Endpoints API utilizados:</strong>
+            <code>/ai/gateway/models</code>, <code>/ai/gateway/execute</code>, <code>/knowledge/search</code>
+          </div>
+        </div>
+        <a href="app2_chatbot_suporte/index.html" class="btn-launch" target="_blank">Abrir Chatbot de Suporte →</a>
+      </div>
+
+      <!-- App 3 -->
+      <div class="app-card">
+        <div>
+          <div class="app-header">
+            <span class="app-icon">👥</span>
+            <span class="app-tag">App 3</span>
+          </div>
+          <h2 class="app-title">Central de Gestão de Usuários e Grupos</h2>
+          <p class="app-desc">
+            Central administrativa sem banco de dados (mock/in-memory) com controle de usuários, squads/grupos, matriz de permissões RBAC com alternância instantânea e auditoria.
+          </p>
+          <div class="endpoints-box">
+            <strong>Endpoints API utilizados:</strong>
+            <code>/iam/users</code>, <code>/iam/groups</code>, <code>/iam/matrix</code>, <code>/audit/logs</code>
+          </div>
+        </div>
+        <a href="app3_gerenciamento_usuarios_grupos/index.html" class="btn-launch" target="_blank">Abrir Central de Usuários →</a>
+      </div>
+
+      <!-- App 4 -->
+      <div class="app-card">
+        <div>
+          <div class="app-header">
+            <span class="app-icon">🏠</span>
+            <span class="app-tag">App 4</span>
+          </div>
+          <h2 class="app-title">Portal de Imóveis para Venda</h2>
+          <p class="app-desc">
+            Vitrine de imóveis de alto padrão com fotos em alta definição, mapa interativo com marcadores de preço (Leaflet), simulador de parcelas e avaliação de rentabilidade com IA.
+          </p>
+          <div class="endpoints-box">
+            <strong>Endpoints API utilizados:</strong>
+            <code>/ai/gateway/execute</code>, <code>/api-client/execute</code>, <code>/iam/login</code>
+          </div>
+        </div>
+        <a href="app4_imoveis_venda/index.html" class="btn-launch" target="_blank">Abrir Portal de Imóveis →</a>
+      </div>
+
+      <!-- App 5 -->
+      <div class="app-card">
+        <div>
+          <div class="app-header">
+            <span class="app-icon">📖</span>
+            <span class="app-tag">App 5</span>
+          </div>
+          <h2 class="app-title">Wiki de Boas Práticas com IA</h2>
+          <p class="app-desc">
+            Base de conhecimento estilo Wiki com guias oficiais sobre Prompt Engineering, Guardrails de Segurança, RAG, Otimização de Tokens e Copilot interativo com IA.
+          </p>
+          <div class="endpoints-box">
+            <strong>Endpoints API utilizados:</strong>
+            <code>/knowledge/docs</code>, <code>/knowledge/search</code>, <code>/ai/gateway/execute</code>
+          </div>
+        </div>
+        <a href="app5_wiki_boas_praticas_ia/index.html" class="btn-launch" target="_blank">Abrir Wiki de IA →</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

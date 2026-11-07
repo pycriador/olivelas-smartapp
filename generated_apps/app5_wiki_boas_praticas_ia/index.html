@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loft AI & Engineering Wiki — Guia Oficial de Boas Práticas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Top Navigation -->
+  <header class="topbar">
+    <div class="topbar__left">
+      <a href="#" class="logo">
+        <span class="logo__brand">loft</span>
+        <span class="logo__sep">/</span>
+        <span class="logo__title">AI & Engineering Wiki</span>
+      </a>
+      <span class="version-tag">v2.0 • AI-Native</span>
+    </div>
+
+    <div class="topbar__center">
+      <div class="wiki-search-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="wikiSearchInput" placeholder="Buscar em 400+ documentações, regras e boas práticas de IA..." autocomplete="off">
+        <kbd class="search-kbd">Ctrl+K</kbd>
+      </div>
+    </div>
+
+    <div class="topbar__right">
+      <button class="btn btn--secondary" id="btnFavoritesFilter">
+        ★ Favoritos (<span id="wikiFavCount">0</span>)
+      </button>
+      <button class="btn btn--primary" id="btnNewDoc">
+        + Novo Guia / Artigo
+      </button>
+      <div class="status-indicator">
+        <span class="pulse-dot online" id="wikiApiDot"></span>
+        <span id="wikiApiStatus">API Conectada</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Wiki Layout -->
+  <div class="wiki-layout">
+    <!-- Left Navigation Sidebar -->
+    <aside class="wiki-sidebar" id="wikiSidebar">
+      <div class="sidebar-search-results" id="searchResultsSection" hidden>
+        <div class="sidebar-category-title">Resultados da Busca</div>
+        <div class="doc-list" id="searchResultsList"></div>
+      </div>
+
+      <div class="sidebar-nav-tree" id="navTree">
+        <!-- Section 1: AI Best Practices -->
+        <div class="nav-group">
+          <div class="nav-group__header is-open" data-group="ai">
+            <span>🤖 Boas Práticas com IA</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="nav-group__items" id="groupAi">
+            <a class="nav-item active" data-id="ai-prompt-engineering">1. Engenharia de Prompts Estruturados</a>
+            <a class="nav-item" data-id="ai-guardrails-safety">2. Guardrails, Segurança & Anti-Injeção</a>
+            <a class="nav-item" data-id="ai-rag-architecture">3. Padrão RAG & Grounding de Fatos</a>
+            <a class="nav-item" data-id="ai-token-optimization">4. Otimização de Tokens & Caching</a>
+            <a class="nav-item" data-id="ai-model-selection">5. Seleção de Modelos (Flash vs Pro)</a>
+            <a class="nav-item" data-id="ai-evaluation-metrics">6. Avaliação de Alucinação & Testes</a>
+          </div>
+        </div>
+
+        <!-- Section 2: Architecture & Golden Rules -->
+        <div class="nav-group">
+          <div class="nav-group__header is-open" data-group="rules">
+            <span>📐 Regras Canônicas Loft</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="nav-group__items" id="groupRules">
+            <a class="nav-item" data-id="rule-clean-architecture">Clean Architecture & FSD</a>
+            <a class="nav-item" data-id="rule-pydantic-validation">Pydantic v2 & Tipagem Estrita</a>
+            <a class="nav-item" data-id="rule-rbac-security">Autorização Semântica RBAC</a>
+            <a class="nav-item" data-id="rule-copan-design">Design System Copan & AntD</a>
+          </div>
+        </div>
+
+        <!-- Section 3: Live Knowledge Base Docs from API -->
+        <div class="nav-group">
+          <div class="nav-group__header is-open" data-group="api-docs">
+            <span>📚 Especificações da Base (SQLite)</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="nav-group__items" id="groupApiDocs">
+            <!-- Populated via API GET /knowledge/docs -->
+            <div class="skeleton-nav-item"></div>
+            <div class="skeleton-nav-item"></div>
+            <div class="skeleton-nav-item"></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Center: Content Reader -->
+    <main class="wiki-content" id="wikiContentArea">
+      <!-- Article Header -->
+      <div class="doc-header">
+        <div class="doc-breadcrumb">
+          <span id="docCategory">Boas Práticas com IA</span>
+          <span class="sep">/</span>
+          <span id="docSubCategory">Engenharia de Software</span>
+        </div>
+        <h1 id="docTitle" class="doc-title">Engenharia de Prompts Estruturados para Agentes e LLMs</h1>
+        <div class="doc-meta">
+          <span>✍️ Autor: <strong id="docAuthor">Loft AI Engineering</strong></span> • 
+          <span>📅 Atualizado em: <strong id="docUpdated">Hoje</strong></span> • 
+          <span>⏱️ Leitura: <strong id="docReadTime">4 min</strong></span>
+        </div>
+        <div class="doc-actions">
+          <button class="btn btn--secondary btn--sm" id="btnToggleFavorite">★ Favoritar</button>
+          <button class="btn btn--secondary btn--sm" id="btnCopyLink">🔗 Copiar Link</button>
+          <button class="btn btn--outline btn--sm" id="btnAskAiDoc">🤖 Perguntar à IA sobre este Guia</button>
+        </div>
+      </div>
+
+      <!-- AI Interactive Copilot Box -->
+      <div class="ai-copilot-box" id="aiCopilotBox" hidden>
+        <div class="copilot-header">
+          <div class="copilot-title">
+            <span>✨ Loft AI Wiki Copilot (Gemini 3.X / AI Gateway)</span>
+          </div>
+          <button class="btn-close-copilot" id="btnCloseCopilot">×</button>
+        </div>
+        <div class="copilot-body">
+          <p class="copilot-prompt-text" id="copilotQuestion">Tire dúvidas sobre este guia ou solicite exemplos práticos em Python/TypeScript:</p>
+          <div class="copilot-input-row">
+            <input type="text" id="copilotInput" placeholder="Ex: Gere um exemplo de prompt com JSON schema para extração de dados...">
+            <button class="btn btn--primary btn--sm" id="btnSendCopilot">Perguntar</button>
+          </div>
+          <div class="copilot-response" id="copilotResponse" hidden></div>
+        </div>
+      </div>
+
+      <!-- Article Body -->
+      <article class="doc-body" id="docBody">
+        <!-- Rendered Markdown Content -->
+      </article>
+
+      <footer class="doc-footer">
+        <div>
+          <span>Este documento faz parte da biblioteca oficial de engenharia da Loft.</span>
+          <br>
+          <small>Sincronizado via <code>/api/v1/knowledge/docs</code> e <code>/api/v1/rules</code>.</small>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Right Sidebar: On-page Table of Contents (TOC) -->
+    <aside class="wiki-toc">
+      <div class="toc-title">Nesta Página</div>
+      <nav class="toc-links" id="tocLinks">
+        <!-- Populated dynamically based on h2 / h3 -->
+      </nav>
+    </aside>
+  </div>
+
+  <!-- Modal: Create New Document -->
+  <div class="modal-overlay" id="newDocModal" hidden>
+    <div class="modal modal--large">
+      <div class="modal__header">
+        <h2>✍️ Criar Novo Guia ou Documento Técnico</h2>
+        <button class="modal-close" id="closeNewDocModal">×</button>
+      </div>
+      <form id="newDocForm" class="modal__body">
+        <div class="form-group">
+          <label for="newDocTitle">Título do Documento *</label>
+          <input type="text" id="newDocTitle" required placeholder="Ex: Boas Práticas para Modelos Multimodais na Loft...">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="newDocCategory">Categoria *</label>
+            <select id="newDocCategory" required>
+              <option value="Boas Práticas com IA">🤖 Boas Práticas com IA</option>
+              <option value="Arquitetura & Engenharia">📐 Arquitetura & Engenharia</option>
+              <option value="Segurança & RBAC">🛡️ Segurança & RBAC</option>
+              <option value="Design System Copan">🎨 Design System Copan</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="newDocAuthor">Autor *</label>
+            <input type="text" id="newDocAuthor" value="Willian Jesus" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="newDocSummary">Resumo Executivo *</label>
+          <textarea id="newDocSummary" rows="2" required placeholder="Breve introdução e objetivos do documento..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="newDocContent">Conteúdo em Markdown *</label>
+          <textarea id="newDocContent" rows="8" required placeholder="# Introdução&#10;&#10;Descreva as regras, diretrizes, exemplos de código e recomendações..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="newDocTags">Tags (separadas por vírgula)</label>
+          <input type="text" id="newDocTags" placeholder="ai, prompt, guardrails, python">
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn--secondary" id="cancelNewDocModal">Cancelar</button>
+          <button type="submit" class="btn btn--primary">Publicar na Base (POST /knowledge/docs)</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

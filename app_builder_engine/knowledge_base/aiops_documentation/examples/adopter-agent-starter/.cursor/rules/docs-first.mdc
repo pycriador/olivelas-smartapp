@@ -1,0 +1,15 @@
+---
+description: Read canonical project docs before inventing; update Markdown in the same session
+alwaysApply: true
+---
+
+# Documentation-first (adopter)
+
+1. Start at `docs/en/ai-context.md` or `docs/pt-BR/ai-context.md` when present; otherwise `README.md`.
+2. Prefer templates from the Engineering Documentation Standard over a new heading scheme.
+3. After a relevant code, contract, ops, or security change, run the `document-after-change` skill.
+4. Do not invent components, SLOs, owners, or controls. Mark Unknown or open documentation debt.
+5. Do not set `ACCEPTED` without human review.
+6. Do not merge execution scaffold (spec, RFC, task plan) as current-system source of truth.
+
+Packaging reference: `docs/en/ai-agent-entry.md` in the Documentation Standard repository (or the copy you vendored).
